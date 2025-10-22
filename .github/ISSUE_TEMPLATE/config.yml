@@ -1,0 +1,12 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Documentation
+    url: https://github.com/YOUR_USERNAME/biological-qubits-atlas/blob/main/README.md
+    about: Read the full documentation
+  - name: 💬 Discussions
+    url: https://github.com/YOUR_USERNAME/biological-qubits-atlas/discussions
+    about: Ask questions and discuss ideas
+  - name: 📊 Zenodo Repository
+    url: https://zenodo.org/
+    about: Access the citable dataset (DOI coming soon)
+

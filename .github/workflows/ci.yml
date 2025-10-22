@@ -1,0 +1,53 @@
+name: CI - Lint & QC
+
+on:
+  push:
+    branches: [develop, main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  qc:
+    name: Quality Control Check
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Run QC Linter
+        run: |
+          python qubits_linter.py
+          echo "Exit code: $?"
+      
+      - name: Upload QC Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qc-report
+          path: QC_REPORT.md
+          retention-days: 90
+      
+      - name: Display QC Summary
+        if: always()
+        run: |
+          echo "## Quality Control Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f QC_REPORT.md ]; then
+            head -n 30 QC_REPORT.md >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Check for blocking errors
+        run: |
+          if ! python qubits_linter.py; then
+            echo "❌ QC failed with blocking errors"
+            exit 1
+          else
+            echo "✅ QC passed - no blocking errors"
+          fi
+
