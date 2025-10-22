@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas des Qubits Biologiques v1.1</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg-light: #f8fafc;
+            --bg-dark: #1e293b;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 15px;
+            margin-right: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .alert {
+            margin: 20px;
+            padding: 20px;
+            background: #fef3c7;
+            border-left: 4px solid var(--warning);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .alert.error {
+            background: #fee2e2;
+            border-left-color: var(--danger);
+        }
+
+        .alert.warning {
+            background: #fef3c7;
+            border-left-color: var(--warning);
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .alert h3 {
+            color: #92400e;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .alert p {
+            color: #78350f;
+            line-height: 1.6;
+        }
+
+        .alert code {
+            background: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .alert ul {
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+
+        .alert li {
+            color: #78350f;
+            margin: 5px 0;
+        }
+
+        .controls {
+            padding: 30px;
+            background: var(--bg-light);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .search-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 300px;
+            padding: 14px 20px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: white;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+        }
+
+        .filter-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .filter-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-select {
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 180px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-dark);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-light);
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .table-container {
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 13px;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        th {
+            padding: 14px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            user-select: none;
+            white-space: nowrap;
+        }
+
+        th:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        th::after {
+            content: ' ⇅';
+            opacity: 0.5;
+            font-size: 10px;
+        }
+
+        th.sort-asc::after {
+            content: ' ↑';
+            opacity: 1;
+        }
+
+        th.sort-desc::after {
+            content: ' ↓';
+            opacity: 1;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid var(--border);
+            line-height: 1.4;
+            font-size: 12px;
+        }
+
+        tbody tr {
+            transition: all 0.2s;
+        }
+
+        tbody tr:hover {
+            background: var(--bg-light);
+        }
+
+        tbody tr.warning-row {
+            background: #fffbeb;
+        }
+
+        .class-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .class-A { background: #dbeafe; color: #1e40af; }
+        .class-B { background: #dcfce7; color: #166534; }
+        .class-C { background: #fef3c7; color: #92400e; }
+        .class-D { background: #fee2e2; color: #991b1b; }
+
+        .quality-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .quality-3 { background: #10b981; color: white; }
+        .quality-2 { background: #f59e0b; color: white; }
+        .quality-1 { background: #ef4444; color: white; }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .status-verifie { background: #d1fae5; color: #065f46; }
+        .status-a_confirmer { background: #fef3c7; color: #92400e; }
+
+        .vivo-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .vivo-1 { background: #dcfce7; color: #166534; }
+        .vivo-0 { background: #e0e7ff; color: #3730a3; }
+
+        .doi-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+        }
+
+        .doi-link:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-light);
+            font-size: 18px;
+        }
+
+        .info-section {
+            padding: 40px;
+            background: var(--bg-light);
+            border-top: 2px solid var(--border);
+        }
+
+        .info-section h2 {
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .info-section h3 {
+            color: var(--primary);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .info-section p, .info-section li {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .info-section ul {
+            margin-left: 20px;
+        }
+
+        footer {
+            padding: 40px;
+            background: var(--text-dark);
+            color: white;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+        }
+
+        .spinner {
+            border: 4px solid var(--border);
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .expanded-view {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 5px;
+            padding: 5px;
+            background: #f8fafc;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .search-section { flex-direction: column; }
+            .filter-section { flex-direction: column; width: 100%; }
+            .filter-select { width: 100%; }
+            table { font-size: 11px; }
+            th, td { padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚛️ Atlas des Qubits Biologiques</h1>
+            <p class="subtitle">Base de données des systèmes quantiques en contexte biologique — v1.1</p>
+            <span class="badge">🔬 22 systèmes</span>
+            <span class="badge">📊 Schéma v1.1</span>
+            <span class="badge">✅ Vérifié</span>
+        </header>
+
+        <div class="alert error" id="corsAlert">
+            <h3>⚠️ Erreur de chargement des données</h3>
+            <p>
+                Le fichier CSV n'a pas pu être chargé (probablement dû à la politique CORS si vous ouvrez le fichier directement).<br><br>
+                <strong>Solutions :</strong><br>
+                1. Utilisez <code>Live Server</code> dans VS Code (clic droit → "Open with Live Server")<br>
+                2. Lancez un serveur local : <code>python -m http.server 8000</code> puis ouvrez <code>http://localhost:8000</code><br>
+                3. Utilisez n'importe quel serveur HTTP local
+            </p>
+        </div>
+
+        <div class="alert warning" id="warningAlert">
+            <h3>⚠️ Alertes de vérification</h3>
+            <p><strong>Entrées nécessitant confirmation :</strong></p>
+            <ul id="warningList"></ul>
+        </div>
+
+        <div class="controls">
+            <div class="search-section">
+                <input type="text" 
+                       id="searchInput" 
+                       class="search-input" 
+                       placeholder="🔍 Rechercher par système, défaut, méthode, DOI, notes...">
+                <button class="btn btn-secondary" id="resetBtn">
+                    🔄 Réinitialiser
+                </button>
+                <button class="btn btn-primary" id="exportBtn">
+                    💾 Exporter CSV
+                </button>
+            </div>
+
+            <div class="filter-section">
+                <div class="filter-group">
+                    <label class="filter-label">Classe</label>
+                    <select id="classeFilter" class="filter-select">
+                        <option value="">Toutes les classes</option>
+                        <option value="A">A - Bio intrinsèque</option>
+                        <option value="B">B - Bio-compatibles internalisés</option>
+                        <option value="C">C - Spins nucléaires (NMR)</option>
+                        <option value="D">D - Candidats mécanistiques</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Méthode de lecture</label>
+                    <select id="methodeFilter" class="filter-select">
+                        <option value="">Toutes les méthodes</option>
+                        <option value="ODMR">ODMR</option>
+                        <option value="ESR">ESR/EPR</option>
+                        <option value="NMR">NMR</option>
+                        <option value="Optical-only">Optical-only</option>
+                        <option value="Indirect">Indirect</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">In vivo</label>
+                    <select id="vivoFilter" class="filter-select">
+                        <option value="">Tous</option>
+                        <option value="1">In vivo (organismes)</option>
+                        <option value="0">In vitro/in cellulo</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Qualité</label>
+                    <select id="qualiteFilter" class="filter-select">
+                        <option value="">Toutes qualités</option>
+                        <option value="3">3 - Fort (contrôle cohérent)</option>
+                        <option value="2">2 - Moyen (solide mais partiel)</option>
+                        <option value="1">1 - Faible (indicatif/indirect)</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="filter-label">Vérification</label>
+                    <select id="statusFilter" class="filter-select">
+                        <option value="">Tous statuts</option>
+                        <option value="verifie">Vérifié</option>
+                        <option value="a_confirmer">À confirmer</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Total</span>
+                    <span class="stat-value" id="totalCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Affichés</span>
+                    <span class="stat-value" id="visibleCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">In vivo</span>
+                    <span class="stat-value" id="inVivoCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Vérifiés</span>
+                    <span class="stat-value" id="verifiedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Classe A</span>
+                    <span class="stat-value" id="classACount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Classe B</span>
+                    <span class="stat-value" id="classBCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Classe C</span>
+                    <span class="stat-value" id="classCCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Classe D</span>
+                    <span class="stat-value" id="classDCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="loadingIndicator" class="loading">
+            <div class="spinner"></div>
+            <p>Chargement des données v1.1...</p>
+        </div>
+
+        <div class="table-container" id="tableContainer" style="display: none;">
+            <table id="qubitsTable">
+                <thead>
+                    <tr>
+                        <th data-column="Systeme">Système</th>
+                        <th data-column="Classe">Classe</th>
+                        <th data-column="Defaut">Défaut/Type</th>
+                        <th data-column="Spin_type">Spin</th>
+                        <th data-column="Methode_lecture">Méthode</th>
+                        <th data-column="T2_us">T2 (µs)</th>
+                        <th data-column="Temperature_K">T (K)</th>
+                        <th data-column="In_vivo_flag">In vivo</th>
+                        <th data-column="Qualite">Qualité</th>
+                        <th data-column="Verification_statut">Statut</th>
+                        <th data-column="DOI">DOI</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <!-- Données insérées dynamiquement -->
+                </tbody>
+            </table>
+            <div id="noResults" class="no-results" style="display: none;">
+                Aucun système ne correspond à vos critères de recherche.
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>📋 Nouveautés v1.1</h2>
+            <p><strong>Schéma de données étendu :</strong></p>
+            <ul>
+                <li><strong>B0_Tesla</strong> : Champ magnétique externe appliqué</li>
+                <li><strong>Spin_type</strong> : Électron ou noyau (+ isotope pour noyaux)</li>
+                <li><strong>Defaut</strong> : Type de défaut (NV, VSi, VV, GeV, SiV, etc.)</li>
+                <li><strong>Polytype_Site</strong> : Pour SiC (4H/6H ; V1/V2/hh/kk)</li>
+                <li><strong>T1_s</strong> : Temps de relaxation T1 en secondes (critique pour NMR hyperpolarisé)</li>
+                <li><strong>Taille_objet_nm</strong> : Taille des nanoparticules en nanomètres</li>
+                <li><strong>In_vivo_flag</strong> : 0 (in vitro/in cellulo) ou 1 (in vivo organismes)</li>
+            </ul>
+
+            <h3>✅ Corrections majeures apportées</h3>
+            <ul>
+                <li><strong>Terminologie précise</strong> : HeLa/HEK = "in_cellulo" (In_vivo_flag=0), pas "in_vivo"</li>
+                <li><strong>Méthodes normalisées</strong> : ODMR, ESR, NMR, Optical-only, Indirect (plus de "OADF")</li>
+                <li><strong>Défauts SiC détaillés</strong> : VSi vs VV (divacancy), avec polytypes 4H/6H</li>
+                <li><strong>T1 ajouté</strong> : Pour tous les systèmes NMR hyperpolarisés (^13C, ^15N)</li>
+                <li><strong>3 nouvelles entrées</strong> : VV-divacancy SiC, SiV cryo (référence), Ti:C SiC (exploratoire)</li>
+                <li><strong>Qualités réévaluées</strong> : SiV = 1 (cryo), QD CdSe = 1 (cryo + toxique)</li>
+            </ul>
+
+            <h2>📚 Bonnes Pratiques v1.1</h2>
+            <h3>Comparaison T2 vs T1</h3>
+            <ul>
+                <li><strong>T2 (cohérence)</strong> : Durée pendant laquelle l'information quantique est préservée. Critique pour qubits ODMR/ESR.</li>
+                <li><strong>T1 (relaxation)</strong> : Durée de vie de l'état excité. Critique pour hyperpolarisation NMR (limite fenêtre observation).</li>
+                <li><strong>Relation</strong> : Toujours T2 ≤ 2×T1. Pour NV : T1 ~ms, T2 ~µs in cellulo.</li>
+            </ul>
+
+            <h3>Classification défauts SiC</h3>
+            <ul>
+                <li><strong>VSi (monovacancy)</strong> : 1 atome Si manquant. Fréquence ~1.35 GHz (4H-SiC). Stable RT.</li>
+                <li><strong>VV (divacancy)</strong> : 2 atomes Si adjacents manquants. Fréquence 1.1-1.35 GHz selon orientation. Moins stable RT.</li>
+                <li><strong>Polytype</strong> : 4H-SiC (commun), 6H-SiC (rare). Influence fréquence et T2.</li>
+            </ul>
+
+            <h3>Critères In vivo vs In cellulo</h3>
+            <ul>
+                <li><strong>In vitro (flag=0)</strong> : Solution, tampon, lysat. Pas de cellules vivantes.</li>
+                <li><strong>In cellulo (flag=0)</strong> : Cellules en culture (HeLa, HEK293, neurones primaires). Pas organisme entier.</li>
+                <li><strong>Ex vivo (flag=0)</strong> : Tissu isolé (cœur, cerveau) maintenu vivant temporairement.</li>
+                <li><strong>In vivo (flag=1)</strong> : Organisme entier (souris, rat, C. elegans, oiseaux, bactéries).</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><strong>⚛️ Atlas des Qubits Biologiques v1.1</strong></p>
+            <p>Compilé par un chercheur principal en biophysique quantique et bio-imagerie (20+ ans d'expérience)</p>
+            <p>Dernière mise à jour : Octobre 2025 | 22 systèmes | Schéma v1.1 | Toutes entrées avec DOI vérifiés</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                Les données sont normalisées selon les conventions du domaine. Consultez le README pour les détails techniques.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        let qubitsData = [];
+        let filteredData = [];
+        let sortState = { column: null, direction: 'asc' };
+
+        // Chargement du CSV
+        async function loadCSV() {
+            try {
+                const response = await fetch('biological_qubits.csv');
+                if (!response.ok) throw new Error('Fetch failed');
+                
+                const text = await response.text();
+                parseCSV(text);
+                
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('tableContainer').style.display = 'block';
+                
+                checkWarnings();
+            } catch (error) {
+                console.error('Erreur chargement CSV:', error);
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('corsAlert').classList.add('show');
+            }
+        }
+
+        // Parser CSV
+        function parseCSV(text) {
+            const lines = text.split('\n').filter(line => line.trim());
+            const headers = lines[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+            
+            qubitsData = lines.slice(1).map(line => {
+                const values = [];
+                let current = '';
+                let inQuotes = false;
+                
+                for (let i = 0; i < line.length; i++) {
+                    const char = line[i];
+                    if (char === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (char === ',' && !inQuotes) {
+                        values.push(current.trim());
+                        current = '';
+                    } else {
+                        current += char;
+                    }
+                }
+                values.push(current.trim());
+                
+                const entry = {};
+                headers.forEach((header, index) => {
+                    entry[header] = values[index] || '';
+                });
+                return entry;
+            });
+
+            filteredData = [...qubitsData];
+            renderTable();
+            updateStats();
+        }
+
+        // Vérifier les alertes
+        function checkWarnings() {
+            const warnings = [];
+            
+            qubitsData.forEach(q => {
+                if (q.Verification_statut === 'a_confirmer') {
+                    warnings.push(`<strong>${q.Systeme}</strong> (${q.Classe}) — Vérification requise`);
+                }
+            });
+
+            if (warnings.length > 0) {
+                const warningList = document.getElementById('warningList');
+                warningList.innerHTML = warnings.map(w => `<li>${w}</li>`).join('');
+                document.getElementById('warningAlert').classList.add('show');
+            }
+        }
+
+        // Rendu du tableau
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            const noResults = document.getElementById('noResults');
+            
+            if (filteredData.length === 0) {
+                tbody.innerHTML = '';
+                noResults.style.display = 'block';
+                document.querySelector('table').style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                document.querySelector('table').style.display = 'table';
+                
+                tbody.innerHTML = filteredData.map(qubit => {
+                    const rowClass = qubit.Verification_statut === 'a_confirmer' ? 'warning-row' : '';
+                    const vivoText = qubit.In_vivo_flag === '1' ? 'In vivo' : 'In vitro/cellulo';
+                    const vivoClass = qubit.In_vivo_flag === '1' ? 'vivo-1' : 'vivo-0';
+                    
+                    return `
+                        <tr class="${rowClass}">
+                            <td>
+                                <strong>${qubit.Systeme}</strong>
+                                <div class="expanded-view">
+                                    ${qubit.Hote_contexte}<br>
+                                    ${qubit.Taille_objet_nm !== 'NA' && qubit.Taille_objet_nm ? `Taille: ${qubit.Taille_objet_nm} nm` : ''}
+                                </div>
+                            </td>
+                            <td><span class="class-badge class-${qubit.Classe}">${qubit.Classe}</span></td>
+                            <td>${qubit.Defaut}</td>
+                            <td style="font-size: 11px;">${qubit.Spin_type}</td>
+                            <td>${qubit.Methode_lecture}</td>
+                            <td>${qubit.T2_us}</td>
+                            <td>${qubit.Temperature_K}</td>
+                            <td><span class="vivo-badge ${vivoClass}">${vivoText}</span></td>
+                            <td><span class="quality-badge quality-${qubit.Qualite}">${qubit.Qualite}</span></td>
+                            <td><span class="status-badge status-${qubit.Verification_statut}">${qubit.Verification_statut === 'verifie' ? '✓' : '⚠'}</span></td>
+                            <td>
+                                <a href="https://doi.org/${qubit.DOI}" target="_blank" class="doi-link" title="${qubit.Annee}">
+                                    🔗 DOI
+                                </a>
+                            </td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+        }
+
+        // Mise à jour des statistiques
+        function updateStats() {
+            document.getElementById('totalCount').textContent = qubitsData.length;
+            document.getElementById('visibleCount').textContent = filteredData.length;
+            
+            const inVivoCount = filteredData.filter(q => q.In_vivo_flag === '1').length;
+            document.getElementById('inVivoCount').textContent = inVivoCount;
+            
+            const verifiedCount = filteredData.filter(q => q.Verification_statut === 'verifie').length;
+            document.getElementById('verifiedCount').textContent = verifiedCount;
+            
+            document.getElementById('classACount').textContent = filteredData.filter(q => q.Classe === 'A').length;
+            document.getElementById('classBCount').textContent = filteredData.filter(q => q.Classe === 'B').length;
+            document.getElementById('classCCount').textContent = filteredData.filter(q => q.Classe === 'C').length;
+            document.getElementById('classDCount').textContent = filteredData.filter(q => q.Classe === 'D').length;
+        }
+
+        // Filtrage
+        function filterData() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const classeFilter = document.getElementById('classeFilter').value;
+            const methodeFilter = document.getElementById('methodeFilter').value;
+            const vivoFilter = document.getElementById('vivoFilter').value;
+            const qualiteFilter = document.getElementById('qualiteFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+
+            filteredData = qubitsData.filter(qubit => {
+                const matchesSearch = searchTerm === '' || 
+                    Object.values(qubit).some(value => 
+                        String(value).toLowerCase().includes(searchTerm)
+                    );
+
+                const matchesClasse = classeFilter === '' || qubit.Classe === classeFilter;
+                const matchesMethode = methodeFilter === '' || qubit.Methode_lecture.includes(methodeFilter);
+                const matchesVivo = vivoFilter === '' || qubit.In_vivo_flag === vivoFilter;
+                const matchesQualite = qualiteFilter === '' || qubit.Qualite === qualiteFilter;
+                const matchesStatus = statusFilter === '' || qubit.Verification_statut === statusFilter;
+
+                return matchesSearch && matchesClasse && matchesMethode && matchesVivo && matchesQualite && matchesStatus;
+            });
+
+            renderTable();
+            updateStats();
+        }
+
+        // Tri
+        function sortData(column) {
+            const currentDirection = sortState.column === column && sortState.direction === 'asc' ? 'desc' : 'asc';
+            sortState = { column, direction: currentDirection };
+
+            document.querySelectorAll('th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+            });
+
+            const th = document.querySelector(`th[data-column="${column}"]`);
+            th.classList.add(currentDirection === 'asc' ? 'sort-asc' : 'sort-desc');
+
+            filteredData.sort((a, b) => {
+                let aVal = a[column];
+                let bVal = b[column];
+
+                if (['T2_us', 'Temperature_K', 'Annee', 'Qualite', 'In_vivo_flag'].includes(column)) {
+                    aVal = parseFloat(String(aVal).replace(/[^\d.]/g, '')) || 0;
+                    bVal = parseFloat(String(bVal).replace(/[^\d.]/g, '')) || 0;
+                }
+
+                if (aVal < bVal) return currentDirection === 'asc' ? -1 : 1;
+                if (aVal > bVal) return currentDirection === 'asc' ? 1 : -1;
+                return 0;
+            });
+
+            renderTable();
+        }
+
+        // Export CSV
+        function exportCSV() {
+            const headers = Object.keys(filteredData[0]);
+            const csv = [
+                headers.join(','),
+                ...filteredData.map(row => 
+                    headers.map(header => {
+                        const value = String(row[header]);
+                        return value.includes(',') ? `"${value}"` : value;
+                    }).join(',')
+                )
+            ].join('\n');
+
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `biological_qubits_v1.1_export_${new Date().toISOString().split('T')[0]}.csv`;
+            link.click();
+        }
+
+        // Réinitialisation
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('classeFilter').value = '';
+            document.getElementById('methodeFilter').value = '';
+            document.getElementById('vivoFilter').value = '';
+            document.getElementById('qualiteFilter').value = '';
+            document.getElementById('statusFilter').value = '';
+            filterData();
+        }
+
+        // Écouteurs d'événements
+        document.getElementById('searchInput').addEventListener('input', filterData);
+        document.getElementById('classeFilter').addEventListener('change', filterData);
+        document.getElementById('methodeFilter').addEventListener('change', filterData);
+        document.getElementById('vivoFilter').addEventListener('change', filterData);
+        document.getElementById('qualiteFilter').addEventListener('change', filterData);
+        document.getElementById('statusFilter').addEventListener('change', filterData);
+        document.getElementById('exportBtn').addEventListener('click', exportCSV);
+        document.getElementById('resetBtn').addEventListener('click', resetFilters);
+
+        document.querySelectorAll('th').forEach(th => {
+            th.addEventListener('click', () => {
+                const column = th.getAttribute('data-column');
+                sortData(column);
+            });
+        });
+
+        // Initialisation
+        loadCSV();
+    </script>
+</body>
+</html>

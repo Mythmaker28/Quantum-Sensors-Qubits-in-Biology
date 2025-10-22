@@ -1,0 +1,85 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Atlas des Qubits Biologiques
+Copyright (c) 2025 Contributeurs de l'Atlas des Qubits Biologiques
+
+This work is licensed under the Creative Commons Attribution 4.0 International License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
+or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+---
+
+YOU ARE FREE TO:
+
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+---
+
+UNDER THE FOLLOWING TERMS:
+
+- **Attribution** — You must give appropriate credit, provide a link to the license,
+  and indicate if changes were made. You may do so in any reasonable manner, but
+  not in any way that suggests the licensor endorses you or your use.
+
+- **No additional restrictions** — You may not apply legal terms or technological
+  measures that legally restrict others from doing anything the license permits.
+
+---
+
+NOTICES:
+
+You do not have to comply with the license for elements of the material in the
+public domain or where your use is permitted by an applicable exception or limitation.
+
+No warranties are given. The license may not give you all of the permissions necessary
+for your intended use. For example, other rights such as publicity, privacy, or moral
+rights may limit how you use the material.
+
+---
+
+CITATION:
+
+When using this dataset, please cite:
+
+Atlas des Qubits Biologiques v1.2 (2025). Zenodo. https://doi.org/10.5281/zenodo.XXXXXX
+
+See CITATION.cff for detailed citation information in machine-readable format.
+
+---
+
+ATTRIBUTION GUIDELINES:
+
+For academic use:
+- Cite the dataset in your references using the DOI
+- Mention specific entries by their DOI when using individual data points
+
+For web/app use:
+- Include "Data from Atlas des Qubits Biologiques (CC BY 4.0)" with link to repository
+
+For derived datasets:
+- Clearly indicate which data originates from this atlas
+- Maintain provenance information (Source_T2, Source_T1, Source_Contraste columns)
+
+---
+
+DISCLAIMER:
+
+This dataset is provided "as is" without warranty of any kind, express or implied.
+The authors make no representations concerning the completeness, accuracy,
+or applicability of the information contained herein. Users are responsible for
+verifying data before use in critical applications.
+
+Values marked with Verification_statut="a_confirmer" are preliminary and should
+be independently verified before publication or clinical use.
+
+---
+
+For questions or contributions:
+https://github.com/YOUR_REPO/biological-qubits-atlas
+
+Version: 1.2
+Last updated: October 2025
+
