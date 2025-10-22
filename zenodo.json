@@ -1,0 +1,44 @@
+{
+  "title": "Biological Qubits Atlas (v1.2)",
+  "upload_type": "dataset",
+  "description": "A curated atlas of quantum systems operating in, or compatible with, biological environments (in vitro, in cellulo, in vivo). Includes structured CSV (33 columns), linter, QC report, and a web UI. This dataset covers 22 systems across 4 classes: biological intrinsic (proteins), bio-compatible internalized (NV nanodiamonds, SiC), hyperpolarized nuclear spins (NMR), and mechanistic candidates (magnetoreception).",
+  "creators": [
+    {
+      "name": "Anonymisé, Chercheur Principal",
+      "affiliation": "Institution de Recherche",
+      "orcid": "0000-0000-0000-0000"
+    }
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open",
+  "keywords": [
+    "biological qubits",
+    "quantum sensing",
+    "NV centers",
+    "SiC defects",
+    "ODMR",
+    "ESR",
+    "NMR",
+    "hyperpolarized 13C",
+    "quantum biology",
+    "bio-imaging",
+    "nanodiamonds",
+    "magnetometry"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/Mythmaker28/biological-qubits-atlas",
+      "resource_type": "other"
+    }
+  ],
+  "version": "1.2.0",
+  "language": "fra",
+  "notes": "Version 1.2 includes complete provenance (Source_T2/T1/Contraste), quantified uncertainties, biological flags (Hyperpol_flag, Cytotox_flag, Temp_controlled), and automated quality control (qubits_linter.py). 22 systems, 14 verified entries (64%), 0 blocking errors.",
+  "communities": [
+    {
+      "identifier": "zenodo"
+    }
+  ]
+}
+
