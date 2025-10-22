@@ -1,5 +1,9 @@
 # ⚛️ Atlas des Qubits Biologiques — v1.2 ✅
 
+[![CI - Lint & QC](https://github.com/Mythmaker28/tableau-proteine-fluo/actions/workflows/ci.yml/badge.svg)](https://github.com/Mythmaker28/tableau-proteine-fluo/actions/workflows/ci.yml)
+[![GitHub Pages](https://github.com/Mythmaker28/tableau-proteine-fluo/actions/workflows/pages.yml/badge.svg)](https://mythmaker28.github.io/tableau-proteine-fluo/)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
 ## 🎯 Vue d'ensemble
 
 Base de données structurée et vérifiée de tous les **systèmes quantiques biologiques ou bio-compatibles** utilisés comme qubits ou capteurs quantiques dans un contexte vivant (in vitro, in cellulo, in vivo).
@@ -11,6 +15,15 @@ Base de données structurée et vérifiée de tous les **systèmes quantiques bi
 - ✅ Linter automatique intégré (`qubits_linter.py`)
 - ✅ 0 erreur bloquante (validé QC_REPORT.md)
 - ✅ Prêt pour dépôt Zenodo
+
+## 📊 Aperçu visuel
+
+Voici un aperçu des données actuelles :
+
+| T2 vs Température | Timeline des publications |
+|:---:|:---:|
+| ![T2 vs Température](figures/fig_t2_vs_temp.png) | ![Timeline des publications](figures/fig_pub_timeline.png) |
+
 
 Ce projet recense les systèmes de **4 classes** :
 - **Classe A** : Bio intrinsèque (protéines/molécules biologiques natives)
