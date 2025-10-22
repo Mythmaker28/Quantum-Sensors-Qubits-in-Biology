@@ -1,7 +1,8 @@
 # ⚛️ Atlas des Qubits Biologiques — v1.2 ✅
 
-[![CI - Lint & QC](https://github.com/Mythmaker28/tableau-proteine-fluo/actions/workflows/ci.yml/badge.svg)](https://github.com/Mythmaker28/tableau-proteine-fluo/actions/workflows/ci.yml)
-[![GitHub Pages](https://github.com/Mythmaker28/tableau-proteine-fluo/actions/workflows/pages.yml/badge.svg)](https://mythmaker28.github.io/tableau-proteine-fluo/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXX)
+[![CI - Lint & QC](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml)
+[![GitHub Pages](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/pages.yml/badge.svg)](https://mythmaker28.github.io/biological-qubits-atlas/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 ## 🎯 Vue d'ensemble
@@ -36,15 +37,18 @@ Ce projet recense les systèmes de **4 classes** :
 ## 📁 Structure du projet
 
 ```
-/atlas_qubits_bio
-  ├─ biological_qubits.csv      # Dataset structuré (22 entrées, schéma v1.2) ✅
-  ├─ biological_qubits.html     # Interface web filtrable/triable v1.2
-  ├─ qubits_linter.py          # ✨ NOUVEAU : Linter automatique Python
-  ├─ QC_REPORT.md               # ✨ NOUVEAU : Rapport de contrôle qualité
-  ├─ LICENSE                    # ✨ NOUVEAU : CC BY 4.0
-  ├─ CITATION.cff               # ✨ NOUVEAU : Citation machine-readable
+/biological-qubits-atlas
+  ├─ biological_qubits.csv      # Dataset structuré (26 entrées, schéma v1.2) ✅
+  ├─ index.html                 # Interface web filtrable/triable v1.2
+  ├─ qubits_linter.py          # ✨ v1.2 : Linter automatique Python
+  ├─ QC_REPORT.md               # ✨ v1.2 : Rapport de contrôle qualité
+  ├─ zenodo.json                # ✨ v1.2 : Métadonnées Zenodo
+  ├─ LICENSE                    # ✨ v1.2 : CC BY 4.0
+  ├─ CITATION.cff               # ✨ v1.2 : Citation machine-readable
+  ├─ RELEASE_NOTES_v1.2.0.md    # ✨ v1.2 : Notes de version détaillées
   ├─ README.md                  # Ce fichier
-  └─ REPORT.md                  # Rapport de corrections + 5 papiers structurants
+  ├─ CHANGELOG.md               # Historique des versions
+  └─ figures/                   # Graphiques (T2 vs Temp, Timeline)
 ```
 
 ---
@@ -461,25 +465,25 @@ La majorité des systèmes restent au stade **in vitro** ou **ex vivo**. Les dé
 **Mise à jour Octobre 2025 — Qualité Publication**
 
 ### Contenu
-- **22 entrées** couvrant les 4 classes
-- **8 systèmes in vivo** (flag=1) — organismes entiers (souris, C. elegans, oiseaux, bactéries)
-- **14 systèmes in vitro/in cellulo** (flag=0) — solutions, cultures cellulaires, tissus ex vivo
-- **11 systèmes NV/SiC internalisés** (classe B)
-- **5 systèmes hyperpolarisés** (classe C) — T1 + sources renseignés
+- **26 entrées** couvrant les 4 classes (+5 vs v1.1)
+- **11 systèmes in vivo** (flag=1) — organismes entiers (souris, rat, C. elegans, oiseaux, bactéries)
+- **15 systèmes in vitro/in cellulo/ex vivo** (flag=0) — solutions, cultures cellulaires, tissus
+- **13 systèmes NV/SiC internalisés** (classe B)
+- **9 systèmes hyperpolarisés** (classe C) — T1 + sources renseignés
 - **2 protéines bio-intrinsèques** (classe A)
 - **2 candidats mécanistiques** (classe D)
 
 ### Qualité
-- **14 entrées vérifiées** (64% avec Verification_statut=verifie) ✅
-- **8 entrées à confirmer** (36%, marquées explicitement)
+- **20 entrées vérifiées** (77% avec Verification_statut=verifie) ✅
+- **6 entrées à confirmer** (23%, marquées explicitement)
 - **0 erreur bloquante** (validé par linter automatique) ✅
 - **3 warnings** (sources de provenance partielles, non bloquant)
 - **100% DOI valides** (tous liens fonctionnels) ✅
 
 ### Provenance v1.2
-- **Source_T2** : 19/22 systèmes (86%) avec référence DOI+Fig
-- **Source_T1** : 9/9 systèmes NMR hyperpolarisés (100%)
-- **Source_Contraste** : 16/18 systèmes ODMR/ESR (89%)
+- **Source_T2** : 23/26 systèmes (88%) avec référence DOI+Fig
+- **Source_T1** : 13/13 systèmes NMR hyperpolarisés (100%)
+- **Source_Contraste** : 18/20 systèmes ODMR/ESR (90%)
 - **Incertitudes** : 100% estimées (±σ sur T2, T1, Contraste)
 
 ---
