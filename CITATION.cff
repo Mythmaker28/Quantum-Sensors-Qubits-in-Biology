@@ -4,6 +4,7 @@ title: "Biological Qubits Atlas"
 type: dataset
 version: "1.2.1"
 date-released: "2025-10-23"
+doi: "10.5281/zenodo.17420604"
 authors:
   - family-names: "Lepesteur"
     given-names: "Tommy"
@@ -39,3 +40,4 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0009-0577-9563"
   year: 2025
   version: "1.2.1"
+  doi: "10.5281/zenodo.17420604"

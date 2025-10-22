@@ -1,6 +1,6 @@
 # ⚛️ Atlas des Qubits Biologiques — v1.2 ✅
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![CI - Lint & QC](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/pages.yml/badge.svg)](https://mythmaker28.github.io/biological-qubits-atlas/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
