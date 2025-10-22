@@ -1,15 +1,15 @@
 # 🔍 Rapport de Contrôle Qualité — Atlas des Qubits Biologiques v1.2
 
-**Date** : 2025-10-22 21:55
+**Date** : 2025-10-23 01:02
 **Fichier** : `biological_qubits.csv`
 
 ## 📊 Statistiques
 
-- **Total systèmes analysés** : 21
+- **Total systèmes analysés** : 26
 - **❌ Erreurs bloquantes** : 0
 - **⚠️ Warnings** : 3
 - **ℹ️ Informations** : 0
-- **✅ Systèmes sans erreur** : 21
+- **✅ Systèmes sans erreur** : 26
 
 ### ✅ Aucune erreur bloquante détectée !
 
