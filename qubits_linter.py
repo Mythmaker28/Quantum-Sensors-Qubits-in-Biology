@@ -109,6 +109,19 @@ class QubitsLinter:
             self.add_issue(idx+2, systeme, 'Defaut', 'ERROR',
                            f'Système SiC sans défaut spécifié', defaut,
                            'Renseigner VSi, VV, TiC ou autre')
+        
+        # ✨ NOUVEAU CHECK v1.2.1
+        # Vérifie la fréquence des défauts VV (divacancy) dans SiC
+        if defaut == 'VV':
+            freq = row.get('Frequence', '').strip()
+            if freq and freq != 'NA':
+                match = re.search(r'([\d.]+)\s*GHz', freq)
+                if match:
+                    freq_val = float(match.group(1))
+                    if not (0.8 <= freq_val <= 1.5):
+                        self.add_issue(idx+2, systeme, 'Frequence', 'WARNING',
+                                       f'Fréquence {freq} inhabituelle pour SiC-VV', freq,
+                                       'VV sont typiquement entre 0.8 et 1.5 GHz. Vérifier source.')
     
     def check_nmr_b0(self, row: Dict, idx: int):
         """Vérifie que les NMR ont B0_Tesla renseigné"""

@@ -1,0 +1,4 @@
+# Fichier CODEOWNERS
+
+# Chaque nouvelle Pull Request sera automatiquement assignée à @Mythmaker28 pour revue.
+* @Mythmaker28
