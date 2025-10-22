@@ -1,183 +1,41 @@
 cff-version: 1.2.0
-message: "Si vous utilisez ce dataset, veuillez le citer en utilisant les métadonnées de ce fichier."
+message: "If you use this dataset, please cite it as below."
+title: "Biological Qubits Atlas"
 type: dataset
-title: "Atlas des Qubits Biologiques : Dataset structuré des systèmes quantiques en contexte biologique"
-version: "1.2.0"
-date-released: "2025-10-22"
-url: "https://github.com/YOUR_REPO/biological-qubits-atlas"
-repository-code: "https://github.com/YOUR_REPO/biological-qubits-atlas"
-license: CC-BY-4.0
-doi: 10.5281/zenodo.XXXXXX
-
-abstract: |
-  Base de données complète et vérifiée de tous les systèmes quantiques biologiques
-  ou bio-compatibles utilisés comme qubits ou capteurs quantiques dans un contexte
-  vivant (in vitro, in cellulo, in vivo). Le dataset recense 22 systèmes couvrant
-  4 classes : bio intrinsèque (protéines), bio-compatibles internalisés (nanodiamants
-  NV, SiC), spins nucléaires hyperpolarisés (NMR) et candidats mécanistiques
-  (magnétoréception). Version 1.2 inclut provenance complète, incertitudes,
-  flags de toxicité et contrôle qualité automatisé.
-
-keywords:
-  - qubits biologiques
-  - bio-imagerie quantique
-  - centres NV
-  - ODMR
-  - hyperpolarisation
-  - magnétométrie quantique
-  - nanodiamants
-  - carbure de silicium
-  - RMN hyperpolarisée
-  - capteurs quantiques
-
+version: "1.2.1"
+date-released: "2025-10-23"
 authors:
-  - family-names: "Anonymisé"
-    given-names: "Chercheur Principal"
-    affiliation: "Institution de Recherche"
-    orcid: "https://orcid.org/0000-0000-0000-0000"
-
+  - family-names: "Lepesteur"
+    given-names: "Tommy"
+    orcid: "https://orcid.org/0009-0009-0577-9563"
+repository-code: "https://github.com/Mythmaker28/biological-qubits-atlas"
+url: "https://mythmaker28.github.io/biological-qubits-atlas/"
+license: "CC-BY-4.0"
+keywords:
+  - "biological qubits"
+  - "quantum sensing"
+  - "NV centers"
+  - "SiC defects"
+  - "ODMR"
+  - "ESR"
+  - "NMR"
+  - "hyperpolarized carbon-13"
+  - "quantum biology"
+  - "biophysics"
+abstract: |
+  A curated atlas of quantum systems operating in, or compatible with, biological 
+  environments (in vitro, in cellulo, in vivo). This dataset includes 26 verified 
+  systems across 4 classes: biological intrinsic (proteins), bio-compatible 
+  internalized (NV nanodiamonds, SiC), hyperpolarized nuclear spins (NMR), and 
+  mechanistic candidates (magnetoreception). Version 1.2 includes complete provenance 
+  (Source_T2/T1/Contraste), quantified uncertainties, biological flags, and automated 
+  quality control.
 preferred-citation:
   type: dataset
-  title: "Atlas des Qubits Biologiques v1.2"
+  title: "Biological Qubits Atlas"
   authors:
-    - family-names: "Anonymisé"
-      given-names: "Chercheur Principal"
+    - family-names: "Lepesteur"
+      given-names: "Tommy"
+      orcid: "https://orcid.org/0009-0009-0577-9563"
   year: 2025
-  publisher: "Zenodo"
-  doi: 10.5281/zenodo.XXXXXX
-  url: "https://zenodo.org/record/XXXXXX"
-
-references:
-  - type: article
-    title: "Fluorescent Nanodiamonds for Biological Applications"
-    authors:
-      - family-names: "Fu"
-        given-names: "Chih-Chung"
-    doi: "10.1073/pnas.0912611107"
-    year: 2010
-    journal: "Proceedings of the National Academy of Sciences"
-    scope: "Référence fondatrice classe B (nanodiamants NV in cellulo)"
-
-  - type: article
-    title: "Increase in Signal-to-Noise Ratio of > 10,000 Times in Liquid-State NMR"
-    authors:
-      - family-names: "Ardenkjær-Larsen"
-        given-names: "Jan Henrik"
-    doi: "10.1073/pnas.0606881103"
-    year: 2006
-    journal: "Proceedings of the National Academy of Sciences"
-    scope: "Référence fondatrice classe C (hyperpolarisation ^13C DNP)"
-
-  - type: article
-    title: "Biocompatible Fluorescent Silicon Carbide Nanoparticles"
-    authors:
-      - family-names: "Castelletto"
-        given-names: "Stefania"
-    doi: "10.1126/sciadv.aaw1874"
-    year: 2019
-    journal: "Science Advances"
-    scope: "Alternative NV : défauts VSi dans SiC biocompatibles"
-
-  - type: article
-    title: "Optical Control of Spin States in a Fluorescent Protein"
-    authors:
-      - family-names: "Auteur"
-        given-names: "Premier"
-    doi: "10.1038/s41586-024-08300-4"
-    year: 2025
-    journal: "Nature"
-    scope: "Premier qubit protéique classe A (révolution bio intrinsèque)"
-
-  - type: article
-    title: "Magnetic Sensitivity of Cryptochrome"
-    authors:
-      - family-names: "Ritz"
-        given-names: "Thorsten"
-    doi: "10.1038/nature09324"
-    year: 2010
-    journal: "Nature"
-    scope: "Hypothèse magnétoréception quantique (classe D)"
-
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.XXXXXX"
-    description: "DOI Zenodo principal"
-
-# Informations de contact
-contact:
-  - email: "contact@example.com"
-    name: "Équipe Atlas Qubits Biologiques"
-
-# Financement (optionnel, à compléter si applicable)
-# funding:
-#   - agency: "Agence Nationale de la Recherche (ANR)"
-#     award: "ANR-XX-XXXX-XXXX"
-
-# Mots-clés supplémentaires
-subjects:
-  - quantum sensing
-  - biophysics
-  - nanomedicine
-  - quantum biology
-  - diamond NV centers
-  - silicon carbide defects
-  - hyperpolarized MRI
-  - magnetoreception
-
-# Formats de données
-formats:
-  - text/csv
-  - text/html
-  - text/markdown
-
-# Taille du dataset
-size: "~200 KB"
-
-# Nombre d'entrées
-entries: 22
-
-# Langue
-language: fr
-
-# Couverture temporelle
-temporal-coverage:
-  start: "2006"
-  end: "2025"
-
-# Domaines scientifiques
-disciplines:
-  - Biophysique quantique
-  - Nanomédecine
-  - Imagerie biomédicale
-  - Physique de la matière condensée
-  - Biologie moléculaire
-
-# Statut de revue
-review-status: "peer-reviewed (en cours)"
-
-# Informations de contribution
-contribution:
-  instructions: |
-    Les contributions sont bienvenues via pull requests sur GitHub.
-    Voir README.md section "Comment contribuer" pour les critères d'acceptation.
-    Toutes les entrées doivent avoir un DOI valide et données quantitatives vérifiées.
-
-# Notes de version
-version-notes: |
-  Version 1.2 (October 2025):
-  - Ajout de 10 colonnes (provenance, incertitudes, flags)
-  - Corrections d'incohérences (NV bulk contraste, VV fréquence)
-  - Intégration linter automatique (qubits_linter.py)
-  - 22 systèmes (vs 18 en v1.0)
-  - 14 entrées vérifiées (64%)
-  - Préparé pour dépôt Zenodo
-
-  Version 1.1 (October 2025):
-  - Schéma étendu (défauts SiC, polytypes, T1, In_vivo_flag)
-  - Terminologie corrigée (in_cellulo vs in_vivo)
-  - 18 entrées initiales
-
-  Version 1.0 (October 2025):
-  - Lancement initial
-  - 15 entrées de base
-
+  version: "1.2.1"

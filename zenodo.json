@@ -4,9 +4,8 @@
   "description": "A curated atlas of quantum systems operating in, or compatible with, biological environments (in vitro, in cellulo, in vivo). Includes structured CSV (33 columns), linter, QC report, and a web UI. This dataset covers 22 systems across 4 classes: biological intrinsic (proteins), bio-compatible internalized (NV nanodiamonds, SiC), hyperpolarized nuclear spins (NMR), and mechanistic candidates (magnetoreception).",
   "creators": [
     {
-      "name": "Anonymisé, Chercheur Principal",
-      "affiliation": "Institution de Recherche",
-      "orcid": "0000-0000-0000-0000"
+      "name": "Lepesteur, Tommy",
+      "orcid": "0009-0009-0577-9563"
     }
   ],
   "license": "CC-BY-4.0",
