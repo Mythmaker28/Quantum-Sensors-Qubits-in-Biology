@@ -204,6 +204,7 @@ Mécanismes biologiques **proposés** (hypothèses), preuves souvent **indirecte
 **Exemples** :
 - Cryptochrome (paires radicalaires, magnétoréception)
 - Magnétosomes bactériens
+- FMO complex (cohérence quantique photosynthèse)
 
 **Critères d'inclusion** :
 - Hypothèse de mécanisme quantique biologique
@@ -213,6 +214,59 @@ Mécanismes biologiques **proposés** (hypothèses), preuves souvent **indirecte
 **Exclusion** :
 - Théories sans publication peer-reviewed
 - Spéculations sans données expérimentales
+
+---
+
+### ⚛️🧬 Frontière Biologie Quantique
+
+**Hypothèse unificatrice** : La biologie optimise la **fonction sous bruit**, pas la **durée de cohérence**.
+
+#### Observation Centrale
+
+L'atlas révèle une tendance intrigante : les systèmes biologiques optimisent pour des **fonctions quantiques robustes** (noise-assisted quantum processes), PAS pour une **cohérence longue** nécessitant isolation parfaite.
+
+**Exemples dans l'Atlas** :
+
+| Système | T2 | Fonction | Observation Clé |
+|---------|-----|----------|-----------------|
+| **FMO complex** | 0.6 ns | Transfert énergie (<100 fs) | T2 court mais >> temps transfert ✅ |
+| **Cryptochrome** | ~1 ns | Magnétoréception (paires radicalaires) | Cohérence suffisante pour recombinaison ✅ |
+| **Tyrosyl-RNR** | 15 ns | Catalyse ADN (transfert ~ps) | T2 >> temps réaction, suffisant ✅ |
+
+**Implication** : **T2 court ≠ dysfonction** si temps_fonction << T2
+
+#### Le Paradoxe du Tyrosyl
+
+L'atlas contient maintenant **2 radicaux tyrosyl** dans des contextes évolutifs différents :
+
+- **RNR** (Classe A) : T2=15ns, catalyse rapide, transitoire, universel
+- **Cryptochrome Cry4** (Classe D) : T2=1ns, magnétoréception, stable, oiseaux migrateurs
+
+**Question** : Même radical, T2 similaires (~1-15 ns), mais fonctions opposées (catalyse vs détection). Pourquoi ?
+
+**Réponse** : L'évolution optimise pour la **fonction**, pas pour T2. La cohérence longue n'est sélectionnée que si elle procure un **avantage adaptatif direct**.
+
+#### Débats Actifs
+
+**Photosynthèse** (FMO complex, Engel 2007, Nature) :
+- Pour : Cohérence quantique robuste améliore transfert énergie
+- Contre : Explications classiques suffisantes, artefacts de mesure
+- Statut : **Débat actif depuis 18 ans** (14 000+ citations)
+
+**Magnétoréception** (Cryptochromes) :
+- Pour : Paires radicalaires sensibles champ B terrestre (50 µT)
+- Contre : Mécanismes alternatifs (magnétite, autres)
+- Statut : **Recherche active**
+
+#### Références Clés
+
+- **FMO** : Engel et al., Nature 2007 (DOI: 10.1038/nature05678)
+- **Cryptochrome** : Hore & Mouritsen, Ann. Rev. Biophys. 2016
+- **RNR** : Stubbe & van der Donk, Chem. Rev. 1998
+
+**Pour approfondir** : Voir `PARADOXE_TYROSYL_ANALYSE.md` et `RESEARCH_BACKLOG.md`
+
+**Avertissement** : Les systèmes de classe D représentent des hypothèses en cours de validation. Les interprétations quantiques sont débattues et doivent être considérées avec prudence scientifique
 
 ---
 
