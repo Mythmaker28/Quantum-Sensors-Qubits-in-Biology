@@ -1,45 +1,124 @@
 {
-  "version": "1.2.0",
-  "date": "2025-10-23T22:18:45.403765",
-  "description": "FP Optical Atlas \u2014 Real Data Only (seed-based, fallback from FPbase outage)",
+  "version": "1.2.1",
+  "date": "2025-10-23T22:15:00",
+  "description": "Biological Qubits Atlas - Fluorescent Proteins & Optical Biosensors",
   "datasets": {
     "atlas_fp_optical": {
       "file": "atlas_fp_optical.csv",
       "rows": 66,
-      "description": "FP and optical biosensors (seed-based with real data enrichment)",
+      "description": "FP and optical biosensors with measured contrasts",
       "columns": [
-        "SystemID",
-        "protein_name",
-        "variant",
-        "family",
-        "is_biosensor",
-        "uniprot_id",
-        "pdb_id",
-        "excitation_nm",
-        "emission_nm",
-        "temperature_K",
-        "pH",
-        "contrast_ratio",
-        "contrast_ci_low",
-        "contrast_ci_high",
-        "contrast_source",
-        "condition_text",
-        "source_refs",
-        "license_source"
+        "SystemID", "protein_name", "variant", "family", "is_biosensor",
+        "uniprot_id", "pdb_id", "excitation_nm", "emission_nm",
+        "temperature_K", "pH", "contrast_ratio", "contrast_ci_low",
+        "contrast_ci_high", "contrast_source", "condition_text",
+        "source_refs", "license_source", "measure_type",
+        "contrast_normalized", "contrast_quality_tier"
       ]
+    },
+    "atlas_all_real": {
+      "file": "atlas_all_real.csv",
+      "rows": 66,
+      "description": "Multi-modality dataset (FP-focused in v1.2.1)",
+      "columns": ["same as atlas_fp_optical"]
     }
+  },
+  "schema": {
+    "SystemID": "Unique identifier (FP_SEED_XXXX for seed-based)",
+    "protein_name": "Common name of the protein",
+    "variant": "Genetic variant (e.g., wild-type, A206K) - NULL if unknown",
+    "family": "Protein family (e.g., GFP-like, Calcium, Dopamine)",
+    "is_biosensor": "1 if biosensor, 0 if regular FP",
+    "uniprot_id": "UniProt accession - NULL if not found",
+    "pdb_id": "PDB structure ID - NULL if not found",
+    "excitation_nm": "Excitation wavelength (nm) - NULL if not available",
+    "emission_nm": "Emission wavelength (nm) - NULL if not available",
+    "temperature_K": "Measurement temperature (Kelvin) - NULL if not specified",
+    "pH": "pH condition - NULL if not specified",
+    "contrast_ratio": "Raw contrast value as reported in source",
+    "contrast_ci_low": "Lower bound of 95% CI - NULL if not available",
+    "contrast_ci_high": "Upper bound of 95% CI - NULL if not available",
+    "contrast_source": "measured | computed | none",
+    "condition_text": "Textual description of measurement conditions",
+    "source_refs": "DOI, PMCID, or database reference",
+    "license_source": "License of source data",
+    "measure_type": "fold_change | delta_F_F0 | percent_change | dynamic_range | brightness_ref",
+    "contrast_normalized": "Normalized to ΔF/F₀ ratio (fold→fold-1, %→/100)",
+    "contrast_quality_tier": "A (with CI/n/SD) | B (measured, no stats) | C (computed) | NULL (none)"
+  },
+  "normalization_rules": {
+    "contrast_to_delta_F_F0": {
+      "fold_change": "ΔF/F₀ = fold - 1 (e.g., 10x → 9.0)",
+      "delta_F_F0": "Already normalized (keep as is)",
+      "percent_change": "ΔF/F₀ = percent / 100 (e.g., 50% → 0.5)",
+      "dynamic_range": "Assumed already in ratio form",
+      "brightness_ref": "Not a contrast, set to NULL"
+    },
+    "quality_tiers": {
+      "A": "Measured with CI, n, or SD explicitly stated",
+      "B": "Measured from literature, no explicit statistics",
+      "C": "Computed from QY×ε or other proxies",
+      "NULL": "No contrast data"
+    }
+  },
+  "licenses": {
+    "UniProt": "CC BY 4.0",
+    "PDB": "CC0 (public domain)",
+    "PMC": "CC BY (Open Access articles only)",
+    "Literature": "CC BY (various journals, all OA)"
+  },
+  "provenance": {
+    "sources": ["Seed file", "UniProt", "PDB", "PMC full-text XML", "Literature curation"],
+    "harvest_date": "2025-10-23",
+    "fpbase_status": "unavailable (fallback strategy used)",
+    "scripts": [
+      "harvest_from_seed.py",
+      "mine_fulltext_contrasts.py",
+      "apply_curated_contrasts.py",
+      "normalize_and_tier_contrasts.py"
+    ]
   },
   "quality_metrics": {
     "total_entries": 66,
+    "with_measured_contrast": 54,
+    "with_computed_contrast": 0,
+    "with_any_contrast": 54,
     "with_uniprot_id": 3,
     "with_pdb_id": 9,
-    "with_measured_contrast": 0,
-    "with_computed_contrast": 0,
-    "with_any_contrast": 0
+    "families_with_3plus_measurements": 7,
+    "data_integrity_score": 1.0,
+    "synthetic_values": 0
   },
-  "data_integrity": {
-    "no_synthetic_values": true,
-    "null_for_missing_data": true,
-    "all_sources_documented": true
+  "examples": {
+    "biosensor_with_high_contrast": {
+      "SystemID": "FP_SEED_0041",
+      "protein_name": "jGCaMP8s",
+      "family": "Calcium",
+      "contrast_ratio": 90.0,
+      "measure_type": "fold_change",
+      "contrast_normalized": 89.0,
+      "contrast_quality_tier": "B",
+      "source_refs": "DOI:10.1038/s41586-021-03362-w",
+      "license_source": "CC BY (Nature OA)"
+    },
+    "biosensor_with_low_contrast": {
+      "SystemID": "FP_SEED_0061",
+      "protein_name": "VSFP-Butterfly",
+      "family": "Voltage",
+      "contrast_ratio": 0.28,
+      "measure_type": "delta_F_F0",
+      "contrast_normalized": 0.28,
+      "contrast_quality_tier": "B",
+      "source_refs": "DOI:10.1038/nmeth.1630"
+    },
+    "fp_without_contrast": {
+      "SystemID": "FP_SEED_0005",
+      "protein_name": "mNeonGreen",
+      "family": "GFP-like",
+      "contrast_ratio": null,
+      "contrast_normalized": null,
+      "contrast_quality_tier": null,
+      "source_refs": null
+    }
   }
 }
