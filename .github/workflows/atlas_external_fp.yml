@@ -1,0 +1,239 @@
+name: Atlas External FP Pipeline
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: '0 2 * * 1'  # Weekly, Monday 2am UTC
+
+jobs:
+  harvest:
+    name: External Data Harvest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/v1.2-fp-optical
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Harvest FPbase
+        run: |
+          python scripts/etl/fetch_fpbase_candidates.py
+      
+      - name: Harvest UniProt
+        run: |
+          python scripts/etl/fetch_uniprot_bulk.py
+      
+      - name: Harvest PDB
+        run: |
+          python scripts/etl/fetch_pdb_pdbe_bulk.py
+      
+      - name: Upload harvest artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: harvest-raw-data
+          path: |
+            data/raw/external/
+            reports/EXTERNAL_HARVEST_LOG.md
+          retention-days: 30
+  
+  build_candidates:
+    name: Build Candidates & Classify
+    needs: harvest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/v1.2-fp-optical
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Download harvest data
+        uses: actions/download-artifact@v4
+        with:
+          name: harvest-raw-data
+      
+      - name: Build external candidates
+        run: |
+          python scripts/etl/build_external_candidates.py
+      
+      - name: Classify modality
+        run: |
+          python scripts/etl/classify_modality.py
+      
+      - name: Upload candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidates-interim
+          path: |
+            data/interim/
+            reports/MODALITY_SPLIT.md
+          retention-days: 30
+  
+  extract_contrast:
+    name: Extract PMC Contrast & Proxies
+    needs: build_candidates
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/v1.2-fp-optical
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Download candidates
+        uses: actions/download-artifact@v4
+        with:
+          name: candidates-interim
+      
+      - name: Extract PMC contrast
+        run: |
+          python scripts/etl/fetch_pmc_contrast.py
+      
+      - name: Compute proxies
+        run: |
+          python scripts/etl/compute_proxies.py
+      
+      - name: Upload enriched data
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidates-enriched
+          path: data/interim/
+          retention-days: 30
+  
+  build_tables:
+    name: Build Atlas Tables
+    needs: extract_contrast
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/v1.2-fp-optical
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Download enriched data
+        uses: actions/download-artifact@v4
+        with:
+          name: candidates-enriched
+      
+      - name: Build tables
+        run: |
+          python scripts/etl/build_atlas_tables_v1_2.py
+      
+      - name: Upload processed data
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-tables
+          path: data/processed/
+          retention-days: 90
+  
+  qa_audit:
+    name: QA Audit & Reports
+    needs: build_tables
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/v1.2-fp-optical
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      
+      - name: Download tables
+        uses: actions/download-artifact@v4
+        with:
+          name: atlas-tables
+      
+      - name: Run QA audit
+        id: audit
+        run: |
+          python scripts/qa/audit_fp_optical_v1_2.py
+        continue-on-error: true
+      
+      - name: Upload QA reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-reports
+          path: |
+            reports/AUDIT_v1.2_fp_optical.md
+            reports/MISSING_FP_WITH_CONTRAST.md
+            patch/SCHEMA_MAP.yaml
+          retention-days: 90
+      
+      - name: Check QA status
+        if: steps.audit.outcome == 'failure'
+        run: |
+          echo "::warning::QA audit failed - thresholds not met"
+          echo "Review MISSING_FP_WITH_CONTRAST.md for action plan"
+          exit 1
+  
+  publish:
+    name: Publish Release
+    needs: qa_audit
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/v1.2-fp-optical
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+      
+      - name: Create release tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag -a v1.2.0 -m "Release v1.2.0: FP Optical Atlas"
+          git push origin v1.2.0
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v1.2.0
+          name: Atlas v1.2.0 — FP Optical Extension
+          body_path: RELEASE_NOTES_v1.2.md
+          files: |
+            data/processed/atlas_all_real.csv
+            data/processed/atlas_fp_optical.csv
+            data/processed/TRAINING.METADATA.json
+            reports/AUDIT_v1.2_fp_optical.md
+            reports/MISSING_FP_WITH_CONTRAST.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
