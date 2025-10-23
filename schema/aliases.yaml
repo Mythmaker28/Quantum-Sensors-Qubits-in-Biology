@@ -1,0 +1,261 @@
+# Aliases et Synonymes — Biological Qubits Atlas
+# Normalisation pour déduplication et recherche
+# Format: canonical_name: [alias1, alias2, ...]
+
+# ===== PROTÉINES & ENZYMES =====
+
+ferredoxin:
+  - Fd
+  - ferredoxine
+  - "[4Fe-4S]"
+  - iron-sulfur protein
+  - [Fe4S4]
+
+ribonucleotide_reductase:
+  - RNR
+  - RR
+  - ribonucleoside-diphosphate reductase
+  - RDPR
+
+DNA_photolyase:
+  - photolyase
+  - cryptochrome photolyase family
+  - PHR
+
+azurin:
+  - cupredoxin
+  - blue copper protein
+
+# ===== PHOTOSYNTHÈSE =====
+
+photosystem_II:
+  - PSII
+  - PS II
+  - PS2
+  - photosystème II
+
+photosystem_I:
+  - PSI
+  - PS I
+  - PS1
+  - photosystème I
+
+P680:
+  - P680 radical
+  - P680•+
+  - P680 cation radical
+  - chlorophyll P680
+
+P700:
+  - P700 radical
+  - P700•+
+  - P700 cation radical
+  - chlorophyll P700
+
+FMO_complex:
+  - Fenna-Matthews-Olson
+  - FMO protein
+  - chlorosome baseplate
+
+oxygen_evolving_complex:
+  - OEC
+  - Mn4CaO5 cluster
+  - Mn cluster PSII
+  - water oxidation complex
+
+# ===== RADICAUX BIOLOGIQUES =====
+
+tyrosyl_radical:
+  - Tyr radical
+  - Y• radical
+  - tyrosine radical
+  - TyrO•
+
+flavin_radical:
+  - FMN•−
+  - FAD•−
+  - flavin semiquinone
+  - FADH•
+
+tryptophanyl_radical:
+  - Trp radical
+  - W• radical
+  - tryptophan radical
+  - TrpH•+
+
+glycyl_radical:
+  - Gly radical
+  - G• radical
+  - glycine radical
+
+ascorbyl_radical:
+  - ascorbate radical
+  - Asc•−
+  - vitamin C radical
+  - dehydroascorbate radical
+  - semidehydroascorbate
+
+nitroxyl_radical:
+  - nitroxide
+  - TEMPO
+  - aminoxyl radical
+  - N-O• radical
+
+ubisemiquinone:
+  - ubiquinone radical
+  - coenzyme Q radical
+  - Q•−
+  - UQ•−
+
+# ===== DÉFAUTS SOLIDES =====
+
+NV_center:
+  - nitrogen-vacancy
+  - NV−
+  - NV centre
+  - N-V center
+
+VSi_defect:
+  - silicon vacancy SiC
+  - V_Si
+  - monovacancy silicon
+
+VV_defect:
+  - divacancy SiC
+  - V-V
+  - double vacancy
+
+GeV_center:
+  - germanium vacancy
+  - Ge-V
+  - GeV−
+
+SiV_center:
+  - silicon vacancy diamond
+  - Si-V
+  - SiV−
+
+P1_center:
+  - nitrogen substitutional
+  - P1 nitrogen
+  - single nitrogen
+  - Ns0
+
+TiC_defect:
+  - titanium carbon complex
+  - Ti-C
+
+# ===== MÉTABOLITES HYPERPOLARISÉS =====
+
+hyperpolarized_pyruvate:
+  - HP pyruvate
+  - [1-13C]pyruvate
+  - pyruvate-13C
+
+hyperpolarized_lactate:
+  - HP lactate
+  - [1-13C]lactate
+  - lactate-13C
+
+hyperpolarized_glucose:
+  - HP glucose
+  - [1-13C]glucose
+  - glucose-13C
+
+hyperpolarized_fumarate:
+  - HP fumarate
+  - [1,4-13C]fumarate
+  - fumarate-13C
+
+hyperpolarized_bicarbonate:
+  - HP bicarbonate
+  - H13CO3−
+  - bicarbonate-13C
+
+hyperpolarized_urea:
+  - HP urea
+  - [13C,15N2]urea
+  - urée hyperpolarisée
+
+hyperpolarized_AKG:
+  - alpha-ketoglutarate
+  - [1-13C]AKG
+  - α-ketoglutarate
+  - 2-oxoglutarate
+
+hyperpolarized_succinate:
+  - HP succinate
+  - [1-13C]succinate
+  - succinate-13C
+
+hyperpolarized_alanine:
+  - HP alanine
+  - [1-13C]alanine
+  - alanine-13C
+
+hyperpolarized_acetate:
+  - HP acetate
+  - [1-13C]acetate
+  - acetate-13C
+
+# ===== MÉTHODES DE LECTURE =====
+
+ODMR:
+  - optically detected magnetic resonance
+  - optical detection
+  - photoluminescence detection
+
+ESR:
+  - EPR
+  - electron spin resonance
+  - electron paramagnetic resonance
+
+NMR:
+  - nuclear magnetic resonance
+  - RMN
+  - magnetic resonance
+
+# ===== CONTEXTES BIOLOGIQUES =====
+
+in_vitro:
+  - solution
+  - buffer
+  - PBS
+  - tampon
+
+in_cellulo:
+  - cell culture
+  - cultured cells
+  - culture cellulaire
+
+in_vivo:
+  - whole organism
+  - organisme entier
+  - live animal
+
+ex_vivo:
+  - isolated tissue
+  - tissu isolé
+  - perfused organ
+
+# ===== ORGANISMES MODÈLES =====
+
+HeLa_cells:
+  - HeLa
+  - human cervical carcinoma cells
+
+HEK293_cells:
+  - HEK293
+  - HEK-293
+  - human embryonic kidney
+
+C_elegans:
+  - Caenorhabditis elegans
+  - C. elegans
+  - nematode
+
+E_coli:
+  - Escherichia coli
+  - E. coli
+  - bacteria
+
