@@ -30,7 +30,7 @@ https://doi.org/10.5281/zenodo.XXXXXXX  # À compléter après dépôt
 
 **Checksum (SHA256)**:
 ```
-4924904F093A6A3D9C6ED15A5294E77AD31899CD689CF50A898F565BDAADE3DA
+333ADC871F5B2EC5118298DE4E534A468C7379F053D8B03C13D7CD9EB7C43285
 ```
 
 **Format**: CSV (UTF-8, comma-separated)
@@ -102,7 +102,43 @@ v1.1.0: https://doi.org/10.5281/zenodo.VERSION_ID_1_1_0
 
 ---
 
-## How to Consume
+## Consumption Recipe (Quick Start)
+
+### Step-by-Step Integration
+
+```python
+import pandas as pd
+import hashlib
+
+# 1. Download from stable URL
+url = "https://github.com/Mythmaker28/biological-qubits-atlas/releases/download/v1.2.1/atlas_fp_optical.csv"
+df = pd.read_csv(url)
+
+# 2. Verify checksum (optional but recommended)
+expected_sha256 = "333ADC871F5B2EC5118298DE4E534A468C7379F053D8B03C13D7CD9EB7C43285"
+actual_sha256 = hashlib.sha256(df.to_csv(index=False).encode()).hexdigest().upper()
+assert actual_sha256 == expected_sha256, "Checksum mismatch!"
+
+# 3. Filter for biosensors with measured contrast
+biosensors = df[(df['is_biosensor'] == 1) & (df['contrast_source'] == 'measured')]
+
+# 4. Use normalized contrast for ML/analysis
+X = biosensors[['excitation_nm', 'emission_nm']].fillna(0).values
+y = biosensors['contrast_normalized'].values
+
+print(f"Loaded {len(df)} FP entries")
+print(f"  Biosensors with measured contrast: {len(biosensors)}")
+print(f"  Top performer: {biosensors.iloc[0]['protein_name']} ({biosensors.iloc[0]['contrast_ratio']}x)")
+```
+
+**Expected Output**:
+```
+Loaded 66 FP entries
+  Biosensors with measured contrast: 25
+  Top performer: jGCaMP8s (90.0x)
+```
+
+## How to Consume (Detailed Options)
 
 ### Option 1: Direct Download (Recommended for Production)
 
@@ -110,7 +146,7 @@ v1.1.0: https://doi.org/10.5281/zenodo.VERSION_ID_1_1_0
 import pandas as pd
 
 # Utiliser l'URL de release stable ou le DOI Zenodo
-url = "https://github.com/[OWNER]/[REPO]/releases/download/v1.2.0/atlas_fp_optical.csv"
+url = "https://github.com/Mythmaker28/biological-qubits-atlas/releases/download/v1.2.1/atlas_fp_optical.csv"
 
 df = pd.read_csv(url)
 print(f"Loaded {len(df)} FP entries")
