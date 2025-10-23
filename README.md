@@ -650,7 +650,7 @@ python qubits_linter.py
 
 ## 📧 Contact
 
-Ce projet est maintenu par un **chercheur principal en biophysique quantique et bio-imagerie** avec 20+ ans d'expérience.
+Ce projet est maintenu par un **chercheur independant
 
 Pour toute question, suggestion ou contribution :
 - Ouvrez une issue GitHub (si applicable)
