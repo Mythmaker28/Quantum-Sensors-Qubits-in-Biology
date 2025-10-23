@@ -1,0 +1,45 @@
+{
+  "version": "1.2.0",
+  "date": "2025-10-23T22:18:45.403765",
+  "description": "FP Optical Atlas \u2014 Real Data Only (seed-based, fallback from FPbase outage)",
+  "datasets": {
+    "atlas_fp_optical": {
+      "file": "atlas_fp_optical.csv",
+      "rows": 66,
+      "description": "FP and optical biosensors (seed-based with real data enrichment)",
+      "columns": [
+        "SystemID",
+        "protein_name",
+        "variant",
+        "family",
+        "is_biosensor",
+        "uniprot_id",
+        "pdb_id",
+        "excitation_nm",
+        "emission_nm",
+        "temperature_K",
+        "pH",
+        "contrast_ratio",
+        "contrast_ci_low",
+        "contrast_ci_high",
+        "contrast_source",
+        "condition_text",
+        "source_refs",
+        "license_source"
+      ]
+    }
+  },
+  "quality_metrics": {
+    "total_entries": 66,
+    "with_uniprot_id": 3,
+    "with_pdb_id": 9,
+    "with_measured_contrast": 0,
+    "with_computed_contrast": 0,
+    "with_any_contrast": 0
+  },
+  "data_integrity": {
+    "no_synthetic_values": true,
+    "null_for_missing_data": true,
+    "all_sources_documented": true
+  }
+}
