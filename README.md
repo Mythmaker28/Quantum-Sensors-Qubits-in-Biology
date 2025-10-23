@@ -9,6 +9,26 @@
 
 Base de données structurée et vérifiée de tous les **systèmes quantiques biologiques ou bio-compatibles** utilisés comme qubits ou capteurs quantiques dans un contexte vivant (in vitro, in cellulo, in vivo).
 
+### 📌 Clarification : "Qubits" vs "Sondes Quantiques"
+
+**Terminologie inclusive** : Cet atlas utilise "qubits biologiques" au sens large pour inclure :
+
+1. **Qubits contrôlables** : Systèmes avec manipulation cohérente d'états quantiques
+   - Exemples : NV (ODMR), SiC (ODMR), Protéine ODMR
+   - Critère : Lecture de spin + manipulation micro-ondes démontrée
+
+2. **Sondes quantiques passives** : Systèmes exploitant propriétés quantiques pour mesure
+   - Exemples : NMR hyperpolarisé (spins nucléaires ¹³C), TEMPO (EPR imaging)
+   - Critère : Cohérence quantique mesurée, application biologique
+
+3. **Candidats mécanistiques** : Hypothèses de fonctions quantiques biologiques
+   - Exemples : Cryptochrome (magnétoréception), FMO (cohérence photosynthèse)
+   - Critère : Effet quantique proposé, débat scientifique actif
+
+**Justification** : La frontière "qubit pur" vs "sonde quantique" est floue en contexte biologique. L'atlas documente TOUS les systèmes quantiques pertinents pour applications biologiques.
+
+**Pour chercheurs en quantum computing** : Filtrer par `Methode_lecture=ODMR` et `Classe=A ou B` pour qubits contrôlables stricts.
+
 **Version 1.2 — Qualité Publication** ✅
 - ✅ Provenance complète (Source_T2, Source_T1, Source_Contraste)
 - ✅ Incertitudes quantifiées (T2_us_err, T1_s_err, Contraste_err)
