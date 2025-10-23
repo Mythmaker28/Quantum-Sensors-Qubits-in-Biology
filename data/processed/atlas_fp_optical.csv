@@ -28,16 +28,19 @@ FP_SEED_0026,mApple,,RFP,0,,,,,,,,,,none,,,
 FP_SEED_0027,mRuby2,,RFP,0,,,,,,,,,,none,,,
 FP_SEED_0028,mRuby3,,RFP,0,,,,,,,,,,none,,,
 FP_SEED_0029,mKO2,,Orange,0,,,,,,,,,,none,,,
-FP_SEED_0030,mOrange2,,Orange,0,,,,,,,,,,none,,,
+FP_SEED_0030,mOrange2,,Orange,0,,,,,,,19.3,,,measured,"arable fluorescence responses were observed in the SVI mode
+versus the conventional mode for ASAP3 (ΔF/F0 = 19.3 ± 1.5% versus 17.3% ± 1.3%),
+QuasAr2 (ΔF/F0 =
+−6.8 ± 1.0% versus −6.7 ± 0.6%), and HVI-",PMC:PMC11503715,CC BY (PMC OA)
 FP_SEED_0031,tdTomato,,RFP-dimer,0,,,,,,,,,,none,,,
 FP_SEED_0032,DsRed2,,RFP-dimer,0,,,,,,,,,,none,,,
 FP_SEED_0033,mKate2,,Far-red,0,,,,,,,,,,none,,,
-FP_SEED_0034,FusionRed,,RFP,0,,,,,,,,,,none,,,
+FP_SEED_0034,FusionRed,,RFP,0,,,,,,,7.0,,,measured,"tification of an improved, but still dim, variant, FR-GECO0.2, with λex = 586 nm, λem = 632 nm and ~7-fold increase of fluorescence upon Ca2+ addition. We then subjected FR-GECO0.2 to eight rounds of ",PMC:PMC11977202,CC BY (PMC OA)
 FP_SEED_0035,Katushka,,Far-red,0,,,,,,,,,,none,,,
 FP_SEED_0036,eqFP650,,Far-red,0,,,,,,,,,,none,,,
 FP_SEED_0037,iRFP670,,NIR,0,,,,,,,,,,none,,,
 FP_SEED_0038,iRFP713,,NIR,0,,,,,,,,,,none,,,
-FP_SEED_0039,mCardinal,,Far-red,0,,,,,,,,,,none,,,
+FP_SEED_0039,mCardinal,,Far-red,0,,,,,,,18.0,,,measured,". From this library, we isolated a variant with λex = 596 nm and λem = 646 nm. It also exhibited an 18-fold increase in fluorescence intensity in the Ca2+-bound state, which is an over 2-fold improvem",PMC:PMC11977202,CC BY (PMC OA)
 FP_SEED_0040,mPlum,,Far-red,0,,,,,,,,,,none,,,
 FP_SEED_0041,mMaroon1,,Far-red,0,,,,,,,,,,none,,,
 FP_SEED_0042,GCaMP6s,,Calcium,1,,,,,,,,,,none,,,
@@ -47,8 +50,8 @@ FP_SEED_0045,jGCaMP7s,,Calcium,1,,,,,,,,,,none,,,
 FP_SEED_0046,jGCaMP7f,,Calcium,1,,,,,,,,,,none,,,
 FP_SEED_0047,jGCaMP8s,,Calcium,1,,,,,,,,,,none,,,
 FP_SEED_0048,jGCaMP8f,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0049,R-GECO1,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0050,jRGECO1a,,Calcium,1,,,,,,,,,,none,,,
+FP_SEED_0049,R-GECO1,,Calcium,1,,,,,,,5.8,,,measured,FR-GECO1cmKelly2*Excitation maxima λex (nm)596596598Emission maxima λem (nm)642646649Ca2+-dependent ΔF/F05.8 ± 0.218.1 ± 0.4n/aKd (nM)2983n/aApparent Hill coefficient (nH)1.491.98n/aApparent pKa (Ca2+,PMC:PMC11977202,CC BY (PMC OA)
+FP_SEED_0050,jRGECO1a,,Calcium,1,,,,,,,1.74,,,measured,"rization of non-targeted indicators in neurons, SomaFRCaMPi exhibited the highest sensitivity (peak ΔF/F0 = 1.74 at 1 pulse) among all tested indicators (Fig 3I-3K). Furthermore, we found that the pea",PMC:PMC12040222,CC BY (PMC OA)
 FP_SEED_0051,RCaMP1h,,Calcium,1,,,,,,,,,,none,,,
 FP_SEED_0052,iGluSnFR,,Glutamate,1,,,,,,,,,,none,,,
 FP_SEED_0053,iGluSnFR-A184S,,Glutamate,1,,,,,,,,,,none,,,
