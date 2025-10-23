@@ -53,10 +53,10 @@ def run_script(script_path: str) -> int:
     result = subprocess.run([sys.executable, script_path])
     
     if result.returncode != 0:
-        print(f"\n❌ ERROR: {script_path} failed with code {result.returncode}", file=sys.stderr)
+        print(f"\nERROR: {script_path} failed with code {result.returncode}", file=sys.stderr)
         return result.returncode
     
-    print(f"\n✓ {script_path} completed successfully")
+    print(f"\nOK {script_path} completed successfully")
     return 0
 
 def run_stage(stage_name: str, scripts: list) -> int:
@@ -68,10 +68,10 @@ def run_stage(stage_name: str, scripts: list) -> int:
     for script in scripts:
         ret = run_script(script)
         if ret != 0:
-            print(f"\n❌ STAGE '{stage_name}' FAILED", file=sys.stderr)
+            print(f"\nERROR STAGE '{stage_name}' FAILED", file=sys.stderr)
             return ret
     
-    print(f"\n✓ STAGE '{stage_name}' COMPLETED")
+    print(f"\nOK STAGE '{stage_name}' COMPLETED")
     return 0
 
 def main():
@@ -141,9 +141,9 @@ def main():
     print(f"Duration:    {duration}")
     
     if ret == 0:
-        print("\n✓ PIPELINE COMPLETED SUCCESSFULLY!")
+        print("\nOK PIPELINE COMPLETED SUCCESSFULLY!")
     else:
-        print(f"\n❌ PIPELINE FAILED (exit code {ret})", file=sys.stderr)
+        print(f"\nERROR PIPELINE FAILED (exit code {ret})", file=sys.stderr)
     
     print("=" * 70)
     

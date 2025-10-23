@@ -176,3 +176,4 @@ make clean      # Remove generated files
 **Dernière mise à jour** : 2025-10-23  
 **Statut** : ✅ **CONTRIBUTION-READY**
 
+

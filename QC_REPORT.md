@@ -1,6 +1,6 @@
 # 🔍 Rapport de Contrôle Qualité — Atlas des Qubits Biologiques v1.2
 
-**Date** : 2025-10-23 03:33
+**Date** : 2025-10-23 04:16
 **Fichier** : `biological_qubits.csv`
 
 ## 📊 Statistiques

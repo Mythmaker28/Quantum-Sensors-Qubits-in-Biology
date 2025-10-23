@@ -244,7 +244,7 @@ def main():
     # Save
     save_outputs(all_df, fp_df, metadata)
     
-    print("\n✓ Atlas tables v1.2 built successfully!")
+    print("\nOK Atlas tables v1.2 built successfully!")
     print(f"  atlas_all_real: {len(all_df)} entries")
     print(f"  atlas_fp_optical: {len(fp_df)} entries")
     print(f"  Measured contrast: {metadata['quality_metrics']['with_measured_contrast']}")

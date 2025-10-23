@@ -78,16 +78,16 @@ def check_thresholds(metrics: dict) -> bool:
     passed = True
     
     if metrics['n_fp_like_total'] < MIN_TOTAL:
-        print(f"❌ FAIL: Total FP entries ({metrics['n_fp_like_total']}) < {MIN_TOTAL}", file=sys.stderr)
+        print(f"ERROR FAIL: Total FP entries ({metrics['n_fp_like_total']}) < {MIN_TOTAL}", file=sys.stderr)
         passed = False
     else:
-        print(f"✓ PASS: Total FP entries ({metrics['n_fp_like_total']}) >= {MIN_TOTAL}")
+        print(f"OK PASS: Total FP entries ({metrics['n_fp_like_total']}) >= {MIN_TOTAL}")
     
     if metrics['n_fp_like_with_contrast_measured'] < MIN_MEASURED:
-        print(f"❌ FAIL: Measured contrast ({metrics['n_fp_like_with_contrast_measured']}) < {MIN_MEASURED}", file=sys.stderr)
+        print(f"ERROR FAIL: Measured contrast ({metrics['n_fp_like_with_contrast_measured']}) < {MIN_MEASURED}", file=sys.stderr)
         passed = False
     else:
-        print(f"✓ PASS: Measured contrast ({metrics['n_fp_like_with_contrast_measured']}) >= {MIN_MEASURED}")
+        print(f"OK PASS: Measured contrast ({metrics['n_fp_like_with_contrast_measured']}) >= {MIN_MEASURED}")
     
     return passed
 
@@ -98,16 +98,16 @@ def generate_audit_report(df: pd.DataFrame, metrics: dict, passed: bool):
     with open(AUDIT_REPORT, 'w', encoding='utf-8') as f:
         f.write("# Atlas FP Optical v1.2 — Audit Report\n\n")
         f.write(f"**Date**: {datetime.now().isoformat()}\n")
-        f.write(f"**Status**: {'✓ PASS' if passed else '❌ FAIL'}\n\n")
+        f.write(f"**Status**: {'OK PASS' if passed else 'ERROR FAIL'}\n\n")
         
         f.write("## Quality Thresholds\n\n")
         f.write("| Metric | Value | Threshold | Status |\n")
         f.write("|--------|-------|-----------|--------|\n")
         
-        total_status = "✓" if metrics['n_fp_like_total'] >= MIN_TOTAL else "❌"
+        total_status = "OK" if metrics['n_fp_like_total'] >= MIN_TOTAL else "ERROR"
         f.write(f"| Total FP entries | {metrics['n_fp_like_total']} | ≥ {MIN_TOTAL} | {total_status} |\n")
         
-        measured_status = "✓" if metrics['n_fp_like_with_contrast_measured'] >= MIN_MEASURED else "❌"
+        measured_status = "OK" if metrics['n_fp_like_with_contrast_measured'] >= MIN_MEASURED else "ERROR"
         f.write(f"| Measured contrast | {metrics['n_fp_like_with_contrast_measured']} | ≥ {MIN_MEASURED} | {measured_status} |\n")
         
         f.write("\n## Summary Statistics\n\n")
@@ -169,7 +169,7 @@ def generate_missing_report(df: pd.DataFrame):
             f.write("|----------|--------------|--------|--------|----------|\n")
             
             for _, row in no_contrast_df.head(20).iterrows():  # Top 20
-                has_proxy = "✓" if row.get('contrast_source') == 'computed' else "✗"
+                has_proxy = "OK" if row.get('contrast_source') == 'computed' else "✗"
                 f.write(f"| {row['SystemID']} | {row['protein_name']} | {row.get('family', 'N/A')} | {row.get('source_refs', 'N/A')} | {has_proxy} |\n")
             
             f.write("\n## Recommendations\n\n")
@@ -250,10 +250,10 @@ def main():
     print("=" * 70)
     
     if not passed:
-        print("\n❌ AUDIT FAILED - Thresholds not met", file=sys.stderr)
+        print("\nERROR AUDIT FAILED - Thresholds not met", file=sys.stderr)
         sys.exit(1)
     else:
-        print("\n✓ AUDIT PASSED - All thresholds met")
+        print("\nOK AUDIT PASSED - All thresholds met")
         sys.exit(0)
 
 if __name__ == "__main__":

@@ -118,7 +118,7 @@ def main():
     df.to_parquet(CANDIDATES_FILE, index=False)
     print(f"\nUpdated {CANDIDATES_FILE}")
     
-    print("\n✓ Contrast proxies computed!")
+    print("\nOK Contrast proxies computed!")
     
     return 0
 

@@ -173,7 +173,7 @@ def main():
     sha256 = save_results(summaries)
     update_log(len(summaries), sha256)
     
-    print("\n✓ PDB/PDBe harvest completed!")
+    print("\nOK PDB/PDBe harvest completed!")
     print(f"  Total structures: {len(summaries)}")
     
     return 0

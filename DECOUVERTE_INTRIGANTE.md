@@ -228,3 +228,5 @@ Les **paires radicalaires photosynthétiques** (Engel 2007) car :
 - ✅ Ajout structurant pour l'atlas (dimension philosophique)
 
 **Ma recommandation** : Ajouter ce système en **Classe D** avec une note explicite du débat scientifique.
+
+

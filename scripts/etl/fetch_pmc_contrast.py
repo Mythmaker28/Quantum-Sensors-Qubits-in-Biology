@@ -187,7 +187,7 @@ def main():
         OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
         measurements_df.to_parquet(OUTPUT_FILE, index=False)
         
-        print(f"\n✓ Extracted {len(measurements_df)} contrast measurements")
+        print(f"\nOK Extracted {len(measurements_df)} contrast measurements")
         print(f"  Saved to {OUTPUT_FILE}")
     else:
         print("\nWARNING: No contrast measurements extracted!")

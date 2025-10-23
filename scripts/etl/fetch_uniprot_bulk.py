@@ -128,7 +128,7 @@ def main():
     sha256 = save_results(proteins)
     update_log(len(proteins), sha256)
     
-    print("\n✓ UniProt harvest completed!")
+    print("\nOK UniProt harvest completed!")
     print(f"  Total unique proteins: {len(proteins)}")
     
     return 0

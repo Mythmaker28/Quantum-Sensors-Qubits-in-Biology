@@ -466,3 +466,5 @@ git push origin docs/doi-badge
 **📊 Version** : v1.2.1 (Metadata Fix)  
 **✅ Erreur citation** : CORRIGÉE
 
+
+

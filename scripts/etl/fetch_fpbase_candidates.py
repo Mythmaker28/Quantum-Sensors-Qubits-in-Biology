@@ -148,7 +148,7 @@ def main():
     # Update log
     update_log(len(proteins), sha256)
     
-    print("\n✓ FPbase harvest completed successfully!")
+    print("\nOK FPbase harvest completed successfully!")
     print(f"  Total proteins: {len(proteins)}")
     print(f"  SHA256: {sha256}")
     

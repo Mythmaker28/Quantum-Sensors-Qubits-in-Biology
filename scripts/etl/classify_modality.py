@@ -126,7 +126,7 @@ def main():
     # Generate report
     generate_report(df)
     
-    print("\n✓ Modality classification completed!")
+    print("\nOK Modality classification completed!")
     
     return 0
 

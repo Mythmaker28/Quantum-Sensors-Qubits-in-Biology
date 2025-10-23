@@ -179,7 +179,7 @@ def main():
     # Save
     save_candidates(final_df)
     
-    print("\n✓ External candidates built successfully!")
+    print("\nOK External candidates built successfully!")
     print(f"  Total candidates: {len(final_df)}")
     
     return 0

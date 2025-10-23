@@ -1,0 +1,36 @@
+column_aliases:
+  SystemID:
+  - system_id
+  - id
+  - entry_id
+  contrast_ratio:
+  - delta_f_f0
+  - contrast
+  - dynamic_range
+  - on_off_ratio
+  emission_nm:
+  - em_max
+  - emission
+  - em_wavelength
+  excitation_nm:
+  - ex_max
+  - excitation
+  - ex_wavelength
+  extinction_coef:
+  - epsilon
+  - ε
+  - ext_coeff
+  protein_name:
+  - name
+  - protein
+  - fp_name
+  quantum_yield:
+  - qy
+  - φ
+description: Schema mapping and aliases for Atlas FP Optical
+parsing_rules:
+  ci_interpretation: 95% confidence interval
+  contrast_interpretation: ΔF/F₀, on/off ratio, or fold-change (dimensionless)
+  temperature_units: Kelvin (K)
+  wavelength_units: nanometers (nm)
+version: 1.2.0

@@ -452,3 +452,5 @@ git commit -m "ci: add automated data quality checks"
 **🎯 Actions** : 2 immédiates, 3 différées  
 **📊 Score projeté** : 81/100 (immédiat) → 85+ (v1.3)
 
+
+

@@ -195,3 +195,5 @@ De 26 à **32 systèmes** en explorant :
 
 **Prochaine étape** : Vérifier GitHub Pages affiche 32 entrées (attendre 2-3 min)
 
+
+

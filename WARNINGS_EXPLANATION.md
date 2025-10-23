@@ -171,3 +171,5 @@ Si un reviewer questionne les warnings :
 **🎯 Objectif** : Documenter pourquoi warnings sont acceptables  
 **✅ Statut** : Transparence scientifique maintenue
 
+
+
