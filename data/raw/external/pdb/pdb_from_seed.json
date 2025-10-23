@@ -1,0 +1,152 @@
+[
+  {
+    "seed_name": "GFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "6FWW"
+  },
+  {
+    "seed_name": "GFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "2QLE"
+  },
+  {
+    "seed_name": "GFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "5B61"
+  },
+  {
+    "seed_name": "EGFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "6XZF"
+  },
+  {
+    "seed_name": "EGFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "9F22"
+  },
+  {
+    "seed_name": "EGFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "9F23"
+  },
+  {
+    "seed_name": "sfGFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "8BXP"
+  },
+  {
+    "seed_name": "sfGFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "8C1X"
+  },
+  {
+    "seed_name": "sfGFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "8RLB"
+  },
+  {
+    "seed_name": "mNeonGreen",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "9FEM"
+  },
+  {
+    "seed_name": "mNeonGreen",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "6XW2"
+  },
+  {
+    "seed_name": "mNeonGreen",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "5LTP"
+  },
+  {
+    "seed_name": "mVenus",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "7PNN"
+  },
+  {
+    "seed_name": "YFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "3W1C"
+  },
+  {
+    "seed_name": "YFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "3W1D"
+  },
+  {
+    "seed_name": "YFP",
+    "family": "GFP-like",
+    "type": "FP",
+    "pdb_id": "7UGR"
+  },
+  {
+    "seed_name": "mTurquoise2",
+    "family": "CFP-like",
+    "type": "FP",
+    "pdb_id": "8IYZ"
+  },
+  {
+    "seed_name": "mTurquoise2",
+    "family": "CFP-like",
+    "type": "FP",
+    "pdb_id": "8IZ0"
+  },
+  {
+    "seed_name": "mTurquoise2",
+    "family": "CFP-like",
+    "type": "FP",
+    "pdb_id": "6YLO"
+  },
+  {
+    "seed_name": "mTFP1",
+    "family": "Teal",
+    "type": "FP",
+    "pdb_id": "6FP9"
+  },
+  {
+    "seed_name": "mTFP1",
+    "family": "Teal",
+    "type": "FP",
+    "pdb_id": "6FP7"
+  },
+  {
+    "seed_name": "mTFP1",
+    "family": "Teal",
+    "type": "FP",
+    "pdb_id": "6FP8"
+  },
+  {
+    "seed_name": "mTagRFP-T",
+    "family": "RFP",
+    "type": "FP",
+    "pdb_id": "1A7U"
+  },
+  {
+    "seed_name": "mTagRFP-T",
+    "family": "RFP",
+    "type": "FP",
+    "pdb_id": "1OBR"
+  },
+  {
+    "seed_name": "mTagRFP-T",
+    "family": "RFP",
+    "type": "FP",
+    "pdb_id": "3QNV"
+  }
+]
