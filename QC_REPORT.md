@@ -1,21 +1,21 @@
 # 🔍 Rapport de Contrôle Qualité — Atlas des Qubits Biologiques v1.2
 
-**Date** : 2025-10-23 02:57
+**Date** : 2025-10-23 03:33
 **Fichier** : `biological_qubits.csv`
 
 ## 📊 Statistiques
 
-- **Total systèmes analysés** : 32
+- **Total systèmes analysés** : 34
 - **❌ Erreurs bloquantes** : 0
-- **⚠️ Warnings** : 4
+- **⚠️ Warnings** : 6
 - **ℹ️ Informations** : 0
-- **✅ Systèmes sans erreur** : 32
+- **✅ Systèmes sans erreur** : 34
 
 ### ✅ Aucune erreur bloquante détectée !
 
 Le dataset est prêt pour publication.
 
-## ⚠️ WARNINGS (4)
+## ⚠️ WARNINGS (6)
 
 ### Ligne 8 : Quantum dots CdSe avec lecture de spin
 
@@ -65,9 +65,33 @@ Le dataset est prêt pour publication.
 
 ---
 
+### Ligne 34 : Paires radicalaires FMO complex (cohérence quantique)
+
+**Colonne** : `Temperature_K`
+
+**Problème** : Température in vivo inhabituelle : 77 K
+
+**Valeur actuelle** : `77`
+
+**Suggestion** : In vivo typiquement 295-310 K
+
+---
+
+### Ligne 34 : Paires radicalaires FMO complex (cohérence quantique)
+
+**Colonne** : `Temperature_K`
+
+**Problème** : Cryogénique 77 K devrait avoir Qualite=1
+
+**Valeur actuelle** : `77`
+
+**Suggestion** : Systèmes cryo non applicables biologie → Qualité 1
+
+---
+
 ## 📝 Systèmes à confirmer (Verification_statut=a_confirmer)
 
-**Total** : 9 systèmes
+**Total** : 11 systèmes
 
 - **Nanotubes de carbone avec défauts sp3** (Classe B) — DOI: 10.1038/s41467-020-19390-3
 - **Cryptochrome (Cry1) - paires radicalaires** (Classe D) — DOI: 10.1038/nature09324
@@ -78,6 +102,8 @@ Le dataset est prêt pour publication.
 - **Centres P1 dans nanodiamants (azote isolé)** (Classe B) — DOI: 10.1021/acsnano.8b07278
 - **Radicaux tyrosyl dans ribonucléotide réductase** (Classe A) — DOI: 10.1021/bi00483a003
 - **Quantum dots InP/ZnS biocompatibles** (Classe B) — DOI: 10.1021/acsnano.7b08724
+- **Paires radicalaires FMO complex (cohérence quantique)** (Classe D) — DOI: 10.1038/nature05678
+- **Radical tyrosyl dans Cryptochrome (magnétoréception)** (Classe D) — DOI: 10.1038/ncomms5865
 
 ---
 
