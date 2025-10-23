@@ -1,0 +1,33 @@
+name,type,family,priority,aliases
+GCaMP6s,Biosensor,Calcium,1,GCaMP 6s;G-CaMP6s
+GCaMP6f,Biosensor,Calcium,1,GCaMP 6f;G-CaMP6f
+GCaMP6m,Biosensor,Calcium,1,GCaMP 6m;G-CaMP6m
+jGCaMP7s,Biosensor,Calcium,1,jGCaMP 7s;j-GCaMP7s
+jGCaMP7f,Biosensor,Calcium,1,jGCaMP 7f;j-GCaMP7f
+jGCaMP7c,Biosensor,Calcium,1,jGCaMP 7c;j-GCaMP7c
+jGCaMP7b,Biosensor,Calcium,1,jGCaMP 7b;j-GCaMP7b
+jGCaMP8s,Biosensor,Calcium,1,jGCaMP 8s;j-GCaMP8s
+jGCaMP8f,Biosensor,Calcium,1,jGCaMP 8f;j-GCaMP8f
+jGCaMP8m,Biosensor,Calcium,1,jGCaMP 8m;j-GCaMP8m
+R-GECO1,Biosensor,Calcium,1,R-GECO 1;RGECO1
+jRGECO1a,Biosensor,Calcium,1,jRGECO 1a;j-RGECO1a
+iGluSnFR,Biosensor,Glutamate,2,iGlu SnFR;iGluSnFR
+iGluSnFR-A184S,Biosensor,Glutamate,2,iGluSnFR A184S
+dLight1.1,Biosensor,Dopamine,2,dLight 1.1
+dLight1.2,Biosensor,Dopamine,2,dLight 1.2
+dLight1.3,Biosensor,Dopamine,2,dLight 1.3
+GRAB-DA2m,Biosensor,Dopamine,2,GRAB DA2m;GRABDA2m
+GRAB-DA1h,Biosensor,Dopamine,2,GRAB DA1h;GRABDA1h
+Epac-SH187,Biosensor,cAMP,3,Epac SH187
+PinkFlamindo,Biosensor,cAMP,3,Pink Flamindo
+PercevalHR,Biosensor,ATP/ADP,3,Perceval HR
+HyPer3,Biosensor,H2O2,3,Hyper 3;HyPer-3
+roGFP2,Biosensor,Redox,3,ro GFP2;roGFP 2
+pHluorin,Biosensor,pH,3,pH luorin
+ASAP3,Biosensor,Voltage,2,ASAP 3;ASAP-3
+ArcLight,Biosensor,Voltage,2,Arc Light
+VSFP-Butterfly,Biosensor,Voltage,3,VSFP Butterfly
+mNeonGreen,FP,GFP-like,4,mNeon Green;m NeonGreen
+mScarlet,FP,RFP,4,m Scarlet;mScarlet
+mCherry,FP,RFP,4,m Cherry;mCherry
+

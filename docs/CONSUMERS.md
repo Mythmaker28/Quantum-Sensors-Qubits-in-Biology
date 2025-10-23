@@ -30,8 +30,7 @@ https://doi.org/10.5281/zenodo.XXXXXXX  # À compléter après dépôt
 
 **Checksum (SHA256)**:
 ```
-# Sera calculé lors de la release finale
-TBD
+4924904F093A6A3D9C6ED15A5294E77AD31899CD689CF50A898F565BDAADE3DA
 ```
 
 **Format**: CSV (UTF-8, comma-separated)

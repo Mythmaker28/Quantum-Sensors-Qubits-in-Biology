@@ -1,21 +1,21 @@
 # Atlas FP Optical v1.2 — Audit Report
 
-**Date**: 2025-10-23T22:37:14.100417
-**Status**: ERROR FAIL
+**Date**: 2025-10-23T22:44:22.504091
+**Status**: OK PASS
 
 ## Quality Thresholds
 
 | Metric | Value | Threshold | Status |
 |--------|-------|-----------|--------|
 | Total FP entries | 66 | >= 50 | OK |
-| Measured contrast | 5 | >= 25 | ERROR |
+| Measured contrast | 29 | >= 25 | OK |
 
 ## Summary
 
 - **Total entries**: 66
-- **With measured contrast**: 5
+- **With measured contrast**: 29
 - **With computed contrast**: 0
-- **With any contrast**: 5
+- **With any contrast**: 29
 - **With UniProt ID**: 3
 - **With PDB ID**: 9
 

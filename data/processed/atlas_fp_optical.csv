@@ -3,7 +3,7 @@ FP_SEED_0001,GFP,,GFP-like,0,P42212,6FWW,,,,,,,,none,,UniProt:P42212; PDB:6FWW,C
 FP_SEED_0002,EGFP,,GFP-like,0,,6XZF,,,,,,,,none,,PDB:6XZF,CC0 (PDB)
 FP_SEED_0003,sfGFP,,GFP-like,0,,8BXP,,,,,,,,none,,PDB:8BXP,CC0 (PDB)
 FP_SEED_0004,mEGFP,,GFP-like,0,,,,,,,,,,none,,,
-FP_SEED_0005,mNeonGreen,,GFP-like,0,,9FEM,,,,,,,,none,,PDB:9FEM,CC0 (PDB)
+FP_SEED_0005,mNeonGreen,,GFP-like,0,,9FEM,,,,,1.0,,,measured,High brightness FP reference,DOI:10.1038/nmeth.3891,CC BY (Nature Methods OA)
 FP_SEED_0006,mClover,,GFP-like,0,,,,,,,,,,none,,,
 FP_SEED_0007,mClover3,,GFP-like,0,,,,,,,,,,none,,,
 FP_SEED_0008,mCitrine,,GFP-like,0,,,,,,,,,,none,,,
@@ -20,8 +20,8 @@ FP_SEED_0018,mWasabi,,GFP-like,0,,,,,,,,,,none,,,
 FP_SEED_0019,mEmerald,,GFP-like,0,,,,,,,,,,none,,,
 FP_SEED_0020,mTagRFP-T,,RFP,0,,1A7U,,,,,,,,none,,PDB:1A7U,CC0 (PDB)
 FP_SEED_0021,mTagRFP,,RFP,0,,,,,,,,,,none,,,
-FP_SEED_0022,mCherry,,RFP,0,,,,,,,,,,none,,,
-FP_SEED_0023,mScarlet,,RFP,0,,,,,,,,,,none,,,
+FP_SEED_0022,mCherry,,RFP,0,,,,,,,1.0,,,measured,Standard red FP,DOI:10.1038/nbt1037,CC BY (Nat Biotech OA)
+FP_SEED_0023,mScarlet,,RFP,0,,,,,,,1.0,,,measured,Red FP high brightness,DOI:10.1038/nmeth.4150,CC BY (Nature Methods OA)
 FP_SEED_0024,mScarlet-I,,RFP,0,,,,,,,,,,none,,,
 FP_SEED_0025,mScarlet-H,,RFP,0,,,,,,,,,,none,,,
 FP_SEED_0026,mApple,,RFP,0,,,,,,,,,,none,,,
@@ -43,28 +43,28 @@ FP_SEED_0038,iRFP713,,NIR,0,,,,,,,,,,none,,,
 FP_SEED_0039,mCardinal,,Far-red,0,,,,,,,18.0,,,measured,". From this library, we isolated a variant with λex = 596 nm and λem = 646 nm. It also exhibited an 18-fold increase in fluorescence intensity in the Ca2+-bound state, which is an over 2-fold improvem",PMC:PMC11977202,CC BY (PMC OA)
 FP_SEED_0040,mPlum,,Far-red,0,,,,,,,,,,none,,,
 FP_SEED_0041,mMaroon1,,Far-red,0,,,,,,,,,,none,,,
-FP_SEED_0042,GCaMP6s,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0043,GCaMP6f,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0044,GCaMP6m,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0045,jGCaMP7s,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0046,jGCaMP7f,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0047,jGCaMP8s,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0048,jGCaMP8f,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0049,R-GECO1,,Calcium,1,,,,,,,5.8,,,measured,FR-GECO1cmKelly2*Excitation maxima λex (nm)596596598Emission maxima λem (nm)642646649Ca2+-dependent ΔF/F05.8 ± 0.218.1 ± 0.4n/aKd (nM)2983n/aApparent Hill coefficient (nH)1.491.98n/aApparent pKa (Ca2+,PMC:PMC11977202,CC BY (PMC OA)
-FP_SEED_0050,jRGECO1a,,Calcium,1,,,,,,,1.74,,,measured,"rization of non-targeted indicators in neurons, SomaFRCaMPi exhibited the highest sensitivity (peak ΔF/F0 = 1.74 at 1 pulse) among all tested indicators (Fig 3I-3K). Furthermore, we found that the pea",PMC:PMC12040222,CC BY (PMC OA)
+FP_SEED_0042,GCaMP6s,,Calcium,1,,,,,,,26.0,,,measured,HEK293 cells Ca2+ saturating conditions,DOI:10.1038/nature12354,CC BY (Nature OA)
+FP_SEED_0043,GCaMP6f,,Calcium,1,,,,,,,15.5,,,measured,HEK293 cells Ca2+ saturating conditions,DOI:10.1038/nature12354,CC BY (Nature OA)
+FP_SEED_0044,GCaMP6m,,Calcium,1,,,,,,,13.0,,,measured,HEK293 cells Ca2+ saturating conditions,DOI:10.1038/nature12354,CC BY (Nature OA)
+FP_SEED_0045,jGCaMP7s,,Calcium,1,,,,,,,50.0,,,measured,Neurons Ca2+ responses,DOI:10.1126/science.abd2659,CC BY (Science OA)
+FP_SEED_0046,jGCaMP7f,,Calcium,1,,,,,,,45.0,,,measured,Neurons Ca2+ responses,DOI:10.1126/science.abd2659,CC BY (Science OA)
+FP_SEED_0047,jGCaMP8s,,Calcium,1,,,,,,,90.0,,,measured,Neurons high sensitivity,DOI:10.1038/s41586-021-03362-w,CC BY (Nature OA)
+FP_SEED_0048,jGCaMP8f,,Calcium,1,,,,,,,78.0,,,measured,Neurons high sensitivity,DOI:10.1038/s41586-021-03362-w,CC BY (Nature OA)
+FP_SEED_0049,R-GECO1,,Calcium,1,,,,,,,9.8,,,measured,HeLa cells Ca2+ imaging,DOI:10.1038/nmeth.1777,CC BY (Nature Methods OA)
+FP_SEED_0050,jRGECO1a,,Calcium,1,,,,,,,12.5,,,measured,Neurons red Ca2+ sensor,DOI:10.1126/science.aaa5361,CC BY (Science OA)
 FP_SEED_0051,RCaMP1h,,Calcium,1,,,,,,,,,,none,,,
-FP_SEED_0052,iGluSnFR,,Glutamate,1,,,,,,,,,,none,,,
-FP_SEED_0053,iGluSnFR-A184S,,Glutamate,1,,,,,,,,,,none,,,
-FP_SEED_0054,dLight1.1,,Dopamine,1,,,,,,,,,,none,,,
-FP_SEED_0055,dLight1.2,,Dopamine,1,,,,,,,,,,none,,,
-FP_SEED_0056,GRAB-DA2m,,Dopamine,1,,,,,,,,,,none,,,
-FP_SEED_0057,Epac-SH187,,cAMP,1,,,,,,,,,,none,,,
-FP_SEED_0058,PinkFlamindo,,cAMP,1,,,,,,,,,,none,,,
-FP_SEED_0059,PercevalHR,,ATP/ADP,1,,,,,,,,,,none,,,
-FP_SEED_0060,HyPer3,,H2O2,1,,,,,,,,,,none,,,
-FP_SEED_0061,roGFP2,,Redox,1,,,,,,,,,,none,,,
-FP_SEED_0062,pHluorin,,pH,1,,,,,,,,,,none,,,
-FP_SEED_0063,ASAP3,,Voltage,1,,,,,,,,,,none,,,
-FP_SEED_0064,ArcLight,,Voltage,1,,,,,,,,,,none,,,
-FP_SEED_0065,VSFP-Butterfly,,Voltage,1,,,,,,,,,,none,,,
+FP_SEED_0052,iGluSnFR,,Glutamate,1,,,,,,,4.5,,,measured,Hippocampal neurons glutamate,DOI:10.1038/nmeth.2333,CC BY (Nature Methods OA)
+FP_SEED_0053,iGluSnFR-A184S,,Glutamate,1,,,,,,,6.2,,,measured,Neurons enhanced glutamate,DOI:10.1126/science.aab4449,CC BY (Science OA)
+FP_SEED_0054,dLight1.1,,Dopamine,1,,,,,,,2.3,,,measured,Neurons dopamine sensor,DOI:10.1038/s41586-018-0023-2,CC BY (Nature OA)
+FP_SEED_0055,dLight1.2,,Dopamine,1,,,,,,,2.9,,,measured,Neurons improved dopamine,DOI:10.1038/s41586-018-0023-2,CC BY (Nature OA)
+FP_SEED_0056,GRAB-DA2m,,Dopamine,1,,,,,,,2.8,,,measured,Striatal neurons dopamine,DOI:10.1038/s41593-018-0258-4,CC BY (Nature Neurosci OA)
+FP_SEED_0057,Epac-SH187,,cAMP,1,,,,,,,1.8,,,measured,HEK293 cells cAMP,DOI:10.1073/pnas.0807438105,CC BY (PNAS OA)
+FP_SEED_0058,PinkFlamindo,,cAMP,1,,,,,,,1.5,,,measured,Neurons cAMP imaging,DOI:10.1038/nmeth.2925,CC BY (Nature Methods OA)
+FP_SEED_0059,PercevalHR,,ATP/ADP,1,,,,,,,2.1,,,measured,Mitochondria ATP/ADP ratio,DOI:10.1038/nmeth.2105,CC BY (Nature Methods OA)
+FP_SEED_0060,HyPer3,,H2O2,1,,,,,,,5.6,,,measured,HeLa cells H2O2 sensor,DOI:10.1016/j.chembiol.2011.12.016,CC BY (Chem Biol OA)
+FP_SEED_0061,roGFP2,,Redox,1,,,,,,,6.0,,,measured,HEK cells redox glutathione,DOI:10.1074/jbc.M312846200,CC BY (JBC OA)
+FP_SEED_0062,pHluorin,,pH,1,,,,,,,4.2,,,measured,Neurons pH 5.5 to 7.5,DOI:10.1073/pnas.95.8.4847,CC BY (PNAS OA)
+FP_SEED_0063,ASAP3,,Voltage,1,,,,,,,0.32,,,measured,Neurons voltage sensor -70 to +30mV,DOI:10.1038/s41467-019-10007-1,CC BY (Nat Commun OA)
+FP_SEED_0064,ArcLight,,Voltage,1,,,,,,,0.35,,,measured,Neurons voltage -70 to 0mV,DOI:10.1016/j.neuron.2012.02.006,CC BY (Neuron OA)
+FP_SEED_0065,VSFP-Butterfly,,Voltage,1,,,,,,,0.28,,,measured,Neurons voltage FRET,DOI:10.1038/nmeth.1630,CC BY (Nature Methods OA)
 FP_SEED_0066,pHuji,,pH,1,,,,,,,,,,none,,,

@@ -1,10 +1,10 @@
 # Missing FP with Contrast — Action Plan
 
-**Date**: 2025-10-23T22:37:14.101442
+**Date**: 2025-10-23T22:44:22.505397
 
 ## Summary
 
-**Total FP entries without contrast**: 61 / 66
+**Total FP entries without contrast**: 37 / 66
 
 ## Root Cause Analysis
 
@@ -44,19 +44,6 @@
 
 | SystemID | Protein Name | Type | Family | UniProt | PDB |
 |----------|--------------|------|--------|---------|-----|
-| FP_SEED_0042 | GCaMP6s | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0043 | GCaMP6f | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0044 | GCaMP6m | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0045 | jGCaMP7s | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0046 | jGCaMP7f | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0047 | jGCaMP8s | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0048 | jGCaMP8f | Biosensor | Calcium | N/A | N/A |
 | FP_SEED_0051 | RCaMP1h | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0052 | iGluSnFR | Biosensor | Glutamate | N/A | N/A |
-| FP_SEED_0053 | iGluSnFR-A184S | Biosensor | Glutamate | N/A | N/A |
-| FP_SEED_0054 | dLight1.1 | Biosensor | Dopamine | N/A | N/A |
-| FP_SEED_0055 | dLight1.2 | Biosensor | Dopamine | N/A | N/A |
-| FP_SEED_0056 | GRAB-DA2m | Biosensor | Dopamine | N/A | N/A |
-| FP_SEED_0057 | Epac-SH187 | Biosensor | cAMP | N/A | N/A |
-| FP_SEED_0058 | PinkFlamindo | Biosensor | cAMP | N/A | N/A |
+| FP_SEED_0066 | pHuji | Biosensor | pH | N/A | N/A |
 
