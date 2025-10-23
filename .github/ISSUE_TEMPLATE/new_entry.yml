@@ -1,0 +1,185 @@
+name: 🆕 Nouvelle Entrée
+description: Proposer l'ajout d'un nouveau système quantique biologique
+title: "[New Entry] "
+labels: ["enhancement", "new-entry"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de proposer une nouvelle entrée ! Remplissez les champs ci-dessous avec le maximum d'informations.
+        
+  - type: input
+    id: system_name
+    attributes:
+      label: Nom du Système
+      description: Nom descriptif du système quantique
+      placeholder: "Ex: Nanodiamants NV (50 nm) en cellules souches"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: class
+    attributes:
+      label: Classe
+      description: Classification du système
+      options:
+        - "A - Bio intrinsèque (protéines, molécules biologiques)"
+        - "B - Bio-compatibles internalisés (NV, SiC, nanoparticules)"
+        - "C - Spins nucléaires (NMR, hyperpolarisation)"
+        - "D - Candidats mécanistiques (magnétoréception, hypothèses)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: context
+    attributes:
+      label: Contexte Biologique
+      description: Environnement du système
+      options:
+        - "in vitro (solution, tampon)"
+        - "in cellulo (cultures cellulaires)"
+        - "ex vivo (tissus isolés)"
+        - "in vivo (organisme entier)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: method
+    attributes:
+      label: Méthode de Lecture
+      description: Technique de mesure
+      options:
+        - "ODMR"
+        - "ESR"
+        - "NMR"
+        - "Optical-only"
+        - "Indirect (comportement)"
+    validations:
+      required: true
+
+  - type: input
+    id: frequency
+    attributes:
+      label: Fréquence
+      description: Fréquence de résonance avec unité
+      placeholder: "Ex: 2.87 GHz ou 128 MHz"
+    validations:
+      required: true
+
+  - type: input
+    id: t2
+    attributes:
+      label: T2 (Temps de Cohérence)
+      description: Valeur en microsecondes (µs) avec incertitude si disponible
+      placeholder: "Ex: 1.2 ± 0.3"
+
+  - type: input
+    id: t1
+    attributes:
+      label: T1 (Temps de Relaxation)
+      description: Valeur en secondes (s) avec incertitude si disponible
+      placeholder: "Ex: 0.003 ± 0.0005"
+
+  - type: input
+    id: contrast
+    attributes:
+      label: Contraste (%)
+      description: Contraste de lecture en pourcentage avec incertitude
+      placeholder: "Ex: 15 ± 4"
+
+  - type: input
+    id: temperature
+    attributes:
+      label: Température (K)
+      description: Température de mesure en Kelvin
+      placeholder: "Ex: 295 ou 310"
+    validations:
+      required: true
+
+  - type: input
+    id: doi
+    attributes:
+      label: DOI de la Publication
+      description: DOI de l'article source (obligatoire)
+      placeholder: "10.xxxx/xxxxx"
+    validations:
+      required: true
+
+  - type: input
+    id: source_t2
+    attributes:
+      label: Source T2
+      description: Localisation précise de la valeur T2 dans l'article
+      placeholder: "DOI:10.xxxx/xxxxx Fig.3a"
+
+  - type: input
+    id: source_t1
+    attributes:
+      label: Source T1
+      description: Localisation précise de la valeur T1 dans l'article
+      placeholder: "DOI:10.xxxx/xxxxx Table1"
+
+  - type: input
+    id: source_contrast
+    attributes:
+      label: Source Contraste
+      description: Localisation précise du contraste dans l'article
+      placeholder: "DOI:10.xxxx/xxxxx Fig.2b"
+
+  - type: input
+    id: year
+    attributes:
+      label: Année de Publication
+      description: Année de l'article
+      placeholder: "2023"
+    validations:
+      required: true
+
+  - type: textarea
+    id: conditions
+    attributes:
+      label: Conditions Expérimentales
+      description: Détails des conditions (laser, champ B, milieu, etc.)
+      placeholder: "Milieu culture DMEM+FBS, laser 532 nm CW 10 mW, champ B 5 mT"
+
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Limitations
+      description: Limitations connues du système
+      placeholder: "Agrégation possible, cytotoxicité >100 µg/mL, T2 réduit vs bulk"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes Additionnelles
+      description: Contexte supplémentaire, résultats clés, commentaires
+      placeholder: "Première démonstration in cellulo, référence fondatrice, etc."
+
+  - type: dropdown
+    id: quality
+    attributes:
+      label: Qualité de la Démonstration
+      description: Évaluation de la robustesse de l'étude
+      options:
+        - "3 - Robuste (publication majeure, paramètres quantifiés, reproductibilité)"
+        - "2 - Solide (démonstration technique convaincante, in vitro ou partiel)"
+        - "1 - Exploratoire (preuve de concept, indirect, performances limitées)"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Vérifications avant soumission
+      options:
+        - label: J'ai vérifié qu'une entrée similaire n'existe pas déjà
+          required: true
+        - label: Le DOI est valide et accessible
+          required: true
+        - label: Les valeurs proviennent directement de la publication citée
+          required: true
+        - label: J'ai inclus les sources (Fig/Table) pour chaque valeur
+          required: false
+

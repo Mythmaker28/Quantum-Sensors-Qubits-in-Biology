@@ -1,0 +1,113 @@
+name: 🔧 Correction de Données
+description: Signaler une erreur ou proposer une correction dans le dataset
+title: "[Data Fix] "
+labels: ["bug", "data-quality"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de signaler cette erreur ! Votre contribution améliore la qualité du dataset.
+        
+  - type: input
+    id: system_name
+    attributes:
+      label: Système Concerné
+      description: Nom du système dans le CSV
+      placeholder: "Ex: Nanodiamants NV (50-100 nm) en cellules HeLa"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: field
+    attributes:
+      label: Champ Concerné
+      description: Colonne à corriger
+      options:
+        - "T2_us (temps de cohérence)"
+        - "T1_s (temps de relaxation)"
+        - "Contraste_% (contraste de lecture)"
+        - "Frequence"
+        - "B0_Tesla (champ magnétique)"
+        - "Temperature_K"
+        - "Source_T2/T1/Contraste (provenance)"
+        - "DOI"
+        - "Systeme (nom)"
+        - "Hote_contexte"
+        - "Methode_lecture"
+        - "Conditions"
+        - "Limitations"
+        - "Notes"
+        - "Autre (préciser ci-dessous)"
+    validations:
+      required: true
+
+  - type: input
+    id: current_value
+    attributes:
+      label: Valeur Actuelle (Incorrecte)
+      description: Valeur actuellement dans le CSV
+      placeholder: "Ex: 1.8"
+    validations:
+      required: true
+
+  - type: input
+    id: corrected_value
+    attributes:
+      label: Valeur Corrigée (Proposée)
+      description: Valeur correcte à utiliser
+      placeholder: "Ex: 1.2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: justification
+    attributes:
+      label: Justification
+      description: Pourquoi cette correction est nécessaire
+      placeholder: "La valeur 1.8 µs correspond à T1 (ligne suivante), pas T2. La vraie valeur T2 est 1.2 µs selon Fig.3a de l'article."
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source de la Correction
+      description: DOI + Figure/Table où se trouve la valeur correcte
+      placeholder: "DOI:10.xxxx/xxxxx Fig.3a"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: error_type
+    attributes:
+      label: Type d'Erreur
+      description: Nature de l'erreur
+      options:
+        - "Typo / Erreur de saisie"
+        - "Confusion entre paramètres (T1/T2, contraste/autre)"
+        - "Unité incorrecte"
+        - "Source / DOI incorrect"
+        - "Valeur obsolète (publication plus récente disponible)"
+        - "Interprétation erronée de la publication"
+        - "Autre"
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Contexte Additionnel
+      description: Informations supplémentaires utiles
+      placeholder: "Références croisées, discussions avec auteurs, etc."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Vérifications
+      options:
+        - label: J'ai vérifié la publication originale (DOI)
+          required: true
+        - label: La correction améliore la précision du dataset
+          required: true
+        - label: J'ai fourni la source exacte (Fig/Table) de la valeur corrigée
+          required: true
+
