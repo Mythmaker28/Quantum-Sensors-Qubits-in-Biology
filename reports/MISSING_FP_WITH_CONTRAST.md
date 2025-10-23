@@ -1,10 +1,10 @@
 # Missing FP with Contrast — Action Plan
 
-**Date**: 2025-10-23T22:44:22.505397
+**Date**: 2025-10-23T22:56:13.661860
 
 ## Summary
 
-**Total FP entries without contrast**: 37 / 66
+**Total FP entries without contrast**: 12 / 66
 
 ## Root Cause Analysis
 
@@ -44,6 +44,4 @@
 
 | SystemID | Protein Name | Type | Family | UniProt | PDB |
 |----------|--------------|------|--------|---------|-----|
-| FP_SEED_0051 | RCaMP1h | Biosensor | Calcium | N/A | N/A |
-| FP_SEED_0066 | pHuji | Biosensor | pH | N/A | N/A |
 

@@ -1,6 +1,6 @@
 # Sources and Licenses Report
 
-**Date**: 2025-10-23T22:44:22.506477
+**Date**: 2025-10-23T22:56:13.662789
 
 ## Data Sources
 
@@ -22,7 +22,7 @@
 
 - **URL**: https://europepmc.org
 - **License**: CC BY (OA articles only)
-- **Entries**: 29
+- **Entries**: 54
 - **Attribution**: Required (DOI cited)
 
 ### Seed File
