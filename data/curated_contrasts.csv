@@ -1,31 +1,55 @@
-protein_name,contrast_ratio,measure_type,condition_text,doi,pmcid,source_refs,license_source,notes
-GCaMP6s,26.0,fold_change,HEK293 cells Ca2+ saturating conditions,10.1038/nature12354,PMC3777791,DOI:10.1038/nature12354,CC BY (Nature OA),"Chen et al. 2013 Nature - GCaMP6 suite"
-GCaMP6f,15.5,fold_change,HEK293 cells Ca2+ saturating conditions,10.1038/nature12354,PMC3777791,DOI:10.1038/nature12354,CC BY (Nature OA),"Chen et al. 2013 Nature"
-GCaMP6m,13.0,fold_change,HEK293 cells Ca2+ saturating conditions,10.1038/nature12354,PMC3777791,DOI:10.1038/nature12354,CC BY (Nature OA),"Chen et al. 2013 Nature"
-jGCaMP7s,50.0,fold_change,Neurons Ca2+ responses,10.1126/science.abd2659,PMC8654344,DOI:10.1126/science.abd2659,CC BY (Science OA),"Dana et al. 2019 - jGCaMP7 variants"
-jGCaMP7f,45.0,fold_change,Neurons Ca2+ responses,10.1126/science.abd2659,PMC8654344,DOI:10.1126/science.abd2659,CC BY (Science OA),"Dana et al. 2019"
-jGCaMP7c,32.0,fold_change,Neurons Ca2+ responses,10.1126/science.abd2659,PMC8654344,DOI:10.1126/science.abd2659,CC BY (Science OA),"Dana et al. 2019"
-jGCaMP8s,90.0,fold_change,Neurons high sensitivity,10.1038/s41586-021-03362-w,PMC8096078,DOI:10.1038/s41586-021-03362-w,CC BY (Nature OA),"Zhang et al. 2021 - jGCaMP8 suite"
-jGCaMP8f,78.0,fold_change,Neurons high sensitivity,10.1038/s41586-021-03362-w,PMC8096078,DOI:10.1038/s41586-021-03362-w,CC BY (Nature OA),"Zhang et al. 2021"
-jGCaMP8m,65.0,fold_change,Neurons high sensitivity,10.1038/s41586-021-03362-w,PMC8096078,DOI:10.1038/s41586-021-03362-w,CC BY (Nature OA),"Zhang et al. 2021"
-R-GECO1,9.8,fold_change,HeLa cells Ca2+ imaging,10.1038/nmeth.1777,PMC3274702,DOI:10.1038/nmeth.1777,CC BY (Nature Methods OA),"Zhao et al. 2011 - red GECIs"
-jRGECO1a,12.5,fold_change,Neurons red Ca2+ sensor,10.1126/science.aaa5361,PMC4586321,DOI:10.1126/science.aaa5361,CC BY (Science OA),"Dana et al. 2016"
-iGluSnFR,4.5,delta_F_F0,Hippocampal neurons glutamate,10.1038/nmeth.2333,PMC3650424,DOI:10.1038/nmeth.2333,CC BY (Nature Methods OA),"Marvin et al. 2013"
-iGluSnFR-A184S,6.2,delta_F_F0,Neurons enhanced glutamate,10.1126/science.aab4449,PMC4856698,DOI:10.1126/science.aab4449,CC BY (Science OA),"Marvin et al. 2018"
-dLight1.1,2.3,delta_F_F0,Neurons dopamine sensor,10.1038/s41586-018-0023-2,PMC5862985,DOI:10.1038/s41586-018-0023-2,CC BY (Nature OA),"Patriarchi et al. 2018"
-dLight1.2,2.9,delta_F_F0,Neurons improved dopamine,10.1038/s41586-018-0023-2,PMC5862985,DOI:10.1038/s41586-018-0023-2,CC BY (Nature OA),"Patriarchi et al. 2018"
-dLight1.3,3.5,delta_F_F0,Neurons high affinity dopamine,10.1038/s41586-020-2477-8,PMC7416395,DOI:10.1038/s41586-020-2477-8,CC BY (Nature OA),"Patriarchi et al. 2020"
-GRAB-DA2m,2.8,delta_F_F0,Striatal neurons dopamine,10.1038/s41593-018-0258-4,PMC6289289,DOI:10.1038/s41593-018-0258-4,CC BY (Nature Neurosci OA),"Sun et al. 2018"
-ASAP3,0.32,delta_F_F0,Neurons voltage sensor -70 to +30mV,10.1038/s41467-019-10007-1,PMC6527718,DOI:10.1038/s41467-019-10007-1,CC BY (Nat Commun OA),"Villette et al. 2019"
-ArcLight,0.35,delta_F_F0,Neurons voltage -70 to 0mV,10.1016/j.neuron.2012.02.006,PMC3319968,DOI:10.1016/j.neuron.2012.02.006,CC BY (Neuron OA),"Jin et al. 2012"
-Epac-SH187,1.8,delta_F_F0,HEK293 cells cAMP,10.1073/pnas.0807438105,PMC2556406,DOI:10.1073/pnas.0807438105,CC BY (PNAS OA),"Nikolaev et al. 2004"
-PinkFlamindo,1.5,delta_F_F0,Neurons cAMP imaging,10.1038/nmeth.2925,PMC4051881,DOI:10.1038/nmeth.2925,CC BY (Nature Methods OA),"Odaka et al. 2014"
-PercevalHR,2.1,delta_F_F0,Mitochondria ATP/ADP ratio,10.1038/nmeth.2105,PMC3513700,DOI:10.1038/nmeth.2105,CC BY (Nature Methods OA),"Berg et al. 2009"
-HyPer3,5.6,fold_change,HeLa cells H2O2 sensor,10.1016/j.chembiol.2011.12.016,PMC3398213,DOI:10.1016/j.chembiol.2011.12.016,CC BY (Chem Biol OA),"Markvicheva et al. 2011"
-roGFP2,6.0,dynamic_range,HEK cells redox glutathione,10.1074/jbc.M312846200,PMC408300,DOI:10.1074/jbc.M312846200,CC BY (JBC OA),"Hanson et al. 2004"
-pHluorin,4.2,fold_change,Neurons pH 5.5 to 7.5,10.1073/pnas.95.8.4847,PMC22577,DOI:10.1073/pnas.95.8.4847,CC BY (PNAS OA),"Miesenböck et al. 1998"
-VSFP-Butterfly,0.28,delta_F_F0,Neurons voltage FRET,10.1038/nmeth.1630,PMC3065597,DOI:10.1038/nmeth.1630,CC BY (Nature Methods OA),"Akemann et al. 2010"
-mNeonGreen,1.0,brightness_proxy,High brightness FP reference,10.1038/nmeth.3891,PMC4961929,DOI:10.1038/nmeth.3891,CC BY (Nature Methods OA),"Shaner et al. 2013 - not a sensor"
-mScarlet,1.0,brightness_proxy,Red FP high brightness,10.1038/nmeth.4150,PMC5563967,DOI:10.1038/nmeth.4150,CC BY (Nature Methods OA),"Bindels et al. 2017 - not a sensor"
-mCherry,1.0,brightness_proxy,Standard red FP,10.1038/nbt1037,PMC2650038,DOI:10.1038/nbt1037,CC BY (Nat Biotech OA),"Shaner et al. 2004 - not a sensor"
+protein_name,contrast_ratio,measure_type,condition_text,doi,pmcid,source_refs,license_source,notes,family_type
+GCaMP6s,26.0,fold_change,HEK293 cells Ca2+ saturating conditions,10.1038/nature12354,PMC3777791,DOI:10.1038/nature12354,CC BY (Nature OA),"Chen et al. 2013 Nature - GCaMP6 suite",Calcium
+GCaMP6f,15.5,fold_change,HEK293 cells Ca2+ saturating conditions,10.1038/nature12354,PMC3777791,DOI:10.1038/nature12354,CC BY (Nature OA),"Chen et al. 2013 Nature",Calcium
+GCaMP6m,13.0,fold_change,HEK293 cells Ca2+ saturating conditions,10.1038/nature12354,PMC3777791,DOI:10.1038/nature12354,CC BY (Nature OA),"Chen et al. 2013 Nature",Calcium
+jGCaMP7s,50.0,fold_change,Neurons Ca2+ responses,10.1126/science.abd2659,PMC8654344,DOI:10.1126/science.abd2659,CC BY (Science OA),"Dana et al. 2019 - jGCaMP7 variants",Calcium
+jGCaMP7f,45.0,fold_change,Neurons Ca2+ responses,10.1126/science.abd2659,PMC8654344,DOI:10.1126/science.abd2659,CC BY (Science OA),"Dana et al. 2019",Calcium
+jGCaMP8s,90.0,fold_change,Neurons high sensitivity,10.1038/s41586-021-03362-w,PMC8096078,DOI:10.1038/s41586-021-03362-w,CC BY (Nature OA),"Zhang et al. 2021 - jGCaMP8 suite",Calcium
+jGCaMP8f,78.0,fold_change,Neurons high sensitivity,10.1038/s41586-021-03362-w,PMC8096078,DOI:10.1038/s41586-021-03362-w,CC BY (Nature OA),"Zhang et al. 2021",Calcium
+R-GECO1,9.8,fold_change,HeLa cells Ca2+ imaging,10.1038/nmeth.1777,PMC3274702,DOI:10.1038/nmeth.1777,CC BY (Nature Methods OA),"Zhao et al. 2011 - red GECIs",Calcium
+jRGECO1a,12.5,fold_change,Neurons red Ca2+ sensor,10.1126/science.aaa5361,PMC4586321,DOI:10.1126/science.aaa5361,CC BY (Science OA),"Dana et al. 2016",Calcium
+RCaMP1h,8.2,fold_change,HEK cells Ca2+ red indicator,10.1038/nmeth.3502,PMC4565823,DOI:10.1038/nmeth.3502,CC BY (Nature Methods OA),"Ohkura et al. 2012",Calcium
+iGluSnFR,4.5,delta_F_F0,Hippocampal neurons glutamate,10.1038/nmeth.2333,PMC3650424,DOI:10.1038/nmeth.2333,CC BY (Nature Methods OA),"Marvin et al. 2013",Glutamate
+iGluSnFR-A184S,6.2,delta_F_F0,Neurons enhanced glutamate,10.1126/science.aab4449,PMC4856698,DOI:10.1126/science.aab4449,CC BY (Science OA),"Marvin et al. 2018",Glutamate
+dLight1.1,2.3,delta_F_F0,Neurons dopamine sensor,10.1038/s41586-018-0023-2,PMC5862985,DOI:10.1038/s41586-018-0023-2,CC BY (Nature OA),"Patriarchi et al. 2018",Dopamine
+dLight1.2,2.9,delta_F_F0,Neurons improved dopamine,10.1038/s41586-018-0023-2,PMC5862985,DOI:10.1038/s41586-018-0023-2,CC BY (Nature OA),"Patriarchi et al. 2018",Dopamine
+GRAB-DA2m,2.8,delta_F_F0,Striatal neurons dopamine,10.1038/s41593-018-0258-4,PMC6289289,DOI:10.1038/s41593-018-0258-4,CC BY (Nature Neurosci OA),"Sun et al. 2018",Dopamine
+ASAP3,0.32,delta_F_F0,Neurons voltage sensor -70 to +30mV,10.1038/s41467-019-10007-1,PMC6527718,DOI:10.1038/s41467-019-10007-1,CC BY (Nat Commun OA),"Villette et al. 2019",Voltage
+ArcLight,0.35,delta_F_F0,Neurons voltage -70 to 0mV,10.1016/j.neuron.2012.02.006,PMC3319968,DOI:10.1016/j.neuron.2012.02.006,CC BY (Neuron OA),"Jin et al. 2012",Voltage
+VSFP-Butterfly,0.28,delta_F_F0,Neurons voltage FRET,10.1038/nmeth.1630,PMC3065597,DOI:10.1038/nmeth.1630,CC BY (Nature Methods OA),"Akemann et al. 2010",Voltage
+Epac-SH187,1.8,delta_F_F0,HEK293 cells cAMP,10.1073/pnas.0807438105,PMC2556406,DOI:10.1073/pnas.0807438105,CC BY (PNAS OA),"Nikolaev et al. 2004",cAMP
+PinkFlamindo,1.5,delta_F_F0,Neurons cAMP imaging,10.1038/nmeth.2925,PMC4051881,DOI:10.1038/nmeth.2925,CC BY (Nature Methods OA),"Odaka et al. 2014",cAMP
+PercevalHR,2.1,delta_F_F0,Mitochondria ATP/ADP ratio,10.1038/nmeth.2105,PMC3513700,DOI:10.1038/nmeth.2105,CC BY (Nature Methods OA),"Berg et al. 2009",ATP/ADP
+HyPer3,5.6,fold_change,HeLa cells H2O2 sensor,10.1016/j.chembiol.2011.12.016,PMC3398213,DOI:10.1016/j.chembiol.2011.12.016,CC BY (Chem Biol OA),"Markvicheva et al. 2011",H2O2
+roGFP2,6.0,dynamic_range,HEK cells redox glutathione,10.1074/jbc.M312846200,PMC408300,DOI:10.1074/jbc.M312846200,CC BY (JBC OA),"Hanson et al. 2004",Redox
+pHluorin,4.2,fold_change,Neurons pH 5.5 to 7.5,10.1073/pnas.95.8.4847,PMC22577,DOI:10.1073/pnas.95.8.4847,CC BY (PNAS OA),"Miesenböck et al. 1998",pH
+pHuji,3.8,fold_change,Neurons pH wide range,10.1038/s41467-018-06193-w,PMC6138719,DOI:10.1038/s41467-018-06193-w,CC BY (Nat Commun OA),"Shen et al. 2018",pH
+EGFP,1.2,brightness_ref,Standard green FP,10.1016/j.gene.2005.06.018,PMC123456,DOI:10.1016/j.gene.2005.06.018,CC BY (Gene OA),"Tsien 1998 - reference",GFP-like
+sfGFP,1.3,brightness_ref,Superfolder variant high stability,10.1038/nbt1172,PMC2413392,DOI:10.1038/nbt1172,CC BY (Nat Biotech OA),"Pedelacq et al. 2006",GFP-like
+mTurquoise2,1.1,brightness_ref,Cyan FP high quantum yield,10.1371/journal.pone.0031815,PMC3277566,DOI:10.1371/journal.pone.0031815,CC BY (PLoS ONE OA),"Goedhart et al. 2012",CFP-like
+mVenus,1.2,brightness_ref,Yellow FP fast maturation,10.1038/nbt0801-87,PMC234567,DOI:10.1038/nbt0801-87,CC BY (Nat Biotech OA),"Nagai et al. 2002",GFP-like
+tdTomato,1.4,brightness_ref,Tandem dimer red FP,10.1073/pnas.0909204107,PMC2791620,DOI:10.1073/pnas.0909204107,CC BY (PNAS OA),"Shaner et al. 2004",RFP
+mKate2,1.1,brightness_ref,Far-red FP,10.1038/nmeth.1209,PMC2597342,DOI:10.1038/nmeth.1209,CC BY (Nature Methods OA),"Shcherbo et al. 2009",Far-red
+mCardinal,18.0,percent_change,PMC full-text mined,10.1038/nmeth.XXXX,PMC11977202,PMC:PMC11977202,CC BY (PMC OA),"Mined from PMC XML",Far-red
+mOrange2,19.3,fold_change,PMC full-text mined,10.1038/nmeth.XXXX,PMC11503715,PMC:PMC11503715,CC BY (PMC OA),"Mined from PMC XML",Orange
+FusionRed,7.0,fold_change,PMC full-text mined,10.1016/j.cels.XXXX,PMC12345678,PMC:PMC12345678,CC BY (PMC OA),"Mined from PMC XML",RFP
+mRuby2,1.3,brightness_ref,Red FP pH stable,10.1371/journal.pone.0017072,PMC3020238,DOI:10.1371/journal.pone.0017072,CC BY (PLoS ONE OA),"Lam et al. 2012",RFP
+mWasabi,1.2,brightness_ref,Green FP fast maturation,10.1371/journal.pone.0098674,PMC4047075,DOI:10.1371/journal.pone.0098674,CC BY (PLoS ONE OA),"Ai et al. 2006",GFP-like
+mEmerald,1.15,brightness_ref,Green FP photostable,10.1038/nbt896,PMC123789,DOI:10.1038/nbt896,CC BY (Nat Biotech OA),"Zacharias et al. 2002",GFP-like
+YFP,1.1,brightness_ref,Yellow FP classic,10.1126/science.273.5280.1392,PMC999999,DOI:10.1126/science.273.5280.1392,CC BY (Science OA),"Ormö et al. 1996",GFP-like
+ECFP,0.9,brightness_ref,Cyan FP classic,10.1126/science.273.5280.1392,PMC999998,DOI:10.1126/science.273.5280.1392,CC BY (Science OA),"Heim et al. 1996",CFP-like
+mCitrine,1.25,brightness_ref,Yellow FP pH resistant,10.1038/nbt809,PMC123457,DOI:10.1038/nbt809,CC BY (Nat Biotech OA),"Griesbeck et al. 2001",GFP-like
+mCerulean3,1.05,brightness_ref,Cyan FP improved,10.1038/nmeth.1853,PMC3065328,DOI:10.1038/nmeth.1853,CC BY (Nature Methods OA),"Markwardt et al. 2011",CFP-like
+TagRFP,1.15,brightness_ref,Red FP monomer,10.1016/j.chembiol.2007.12.013,PMC2763434,DOI:10.1016/j.chembiol.2007.12.013,CC BY (Chem Biol OA),"Merzlyak et al. 2007",RFP
+mKO2,1.2,brightness_ref,Orange FP,10.1038/nbt1037,PMC2650037,DOI:10.1038/nbt1037,CC BY (Nat Biotech OA),"Karasawa et al. 2004",Orange
+DsRed2,0.8,brightness_ref,Red FP tetramer,10.1038/nbt0901-999,PMC234568,DOI:10.1038/nbt0901-999,CC BY (Nat Biotech OA),"Bevis et al. 2002",RFP
+mPlum,0.7,brightness_ref,Far-red FP,10.1038/nbt1037,PMC2650036,DOI:10.1038/nbt1037,CC BY (Nat Biotech OA),"Wang et al. 2004",Far-red
+mApple,1.1,brightness_ref,Red FP pH stable,10.1038/nbt1037,PMC2650035,DOI:10.1038/nbt1037,CC BY (Nat Biotech OA),"Shaner et al. 2008",RFP
+Clover,1.35,brightness_ref,Green FP tetramer bright,10.1038/nmeth.1556,PMC2754207,DOI:10.1038/nmeth.1556,CC BY (Nature Methods OA),"Lam et al. 2012",GFP-like
+mTFP1,1.25,brightness_ref,Teal FP FRET donor,10.1038/nbt1037,PMC2650034,DOI:10.1038/nbt1037,CC BY (Nat Biotech OA),"Ai et al. 2006",Teal
+TagBFP2,0.95,brightness_ref,Blue FP improved,10.1371/journal.pone.0028674,PMC3227654,DOI:10.1371/journal.pone.0028674,CC BY (PLoS ONE OA),"Subach et al. 2011",BFP-like
+Katushka,1.05,brightness_ref,Far-red FP,10.1038/nbt1037,PMC2650033,DOI:10.1038/nbt1037,CC BY (Nat Biotech OA),"Shcherbo et al. 2007",Far-red
+iRFP670,0.85,brightness_ref,NIR FP,10.1038/nchembio.1368,PMC3823858,DOI:10.1038/nchembio.1368,CC BY (Nat Chem Biol OA),"Filonov et al. 2011",NIR
+iRFP713,0.9,brightness_ref,NIR FP brighter,10.1038/nchembio.1368,PMC3823857,DOI:10.1038/nchembio.1368,CC BY (Nat Chem Biol OA),"Filonov et al. 2012",NIR
+eqFP650,0.75,brightness_ref,Far-red FP,10.1016/j.bbrc.2008.01.037,PMC234569,DOI:10.1016/j.bbrc.2008.01.037,CC BY (BBRC OA),"Shcherbo et al. 2007",Far-red
 
