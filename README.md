@@ -368,6 +368,27 @@ Mécanismes biologiques **proposés** (hypothèses), preuves souvent **indirecte
 
 ## 🛠️ Comment contribuer
 
+👉 **Guide complet** : Voir [CONTRIBUTING.md](CONTRIBUTING.md)
+
+### Quick Start (< 10 minutes)
+
+1. **Fork** ce repository
+2. **Cloner** localement : `git clone https://github.com/VOTRE_USERNAME/biological-qubits-atlas.git`
+3. **Créer une branche** : `git checkout -b add-entry-VOTRE-SYSTEME`
+4. **Ajouter une ligne** au CSV `biological_qubits.csv`
+5. **Valider** : `make lint` (ou `python qubits_linter.py`)
+6. **Commit** : `git commit -m "feat(data): add [système] from DOI:10.xxxx"`
+7. **Push & Pull Request** : `git push origin add-entry-VOTRE-SYSTEME`
+
+### Commandes Rapides (Makefile)
+
+```bash
+make setup      # Installer dépendances
+make lint       # Valider le CSV
+make qc         # Générer QC_REPORT.md
+make figures    # Générer les graphiques
+```
+
 ### Ajouter une nouvelle entrée
 
 1. **Vérifiez le périmètre** : Le système est-il bio-compatible ou bio-intrinsèque ?
