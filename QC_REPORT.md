@@ -1,21 +1,21 @@
 # 🔍 Rapport de Contrôle Qualité — Atlas des Qubits Biologiques v1.2
 
-**Date** : 2025-10-23 01:02
+**Date** : 2025-10-23 02:57
 **Fichier** : `biological_qubits.csv`
 
 ## 📊 Statistiques
 
-- **Total systèmes analysés** : 26
+- **Total systèmes analysés** : 32
 - **❌ Erreurs bloquantes** : 0
-- **⚠️ Warnings** : 3
+- **⚠️ Warnings** : 4
 - **ℹ️ Informations** : 0
-- **✅ Systèmes sans erreur** : 26
+- **✅ Systèmes sans erreur** : 32
 
 ### ✅ Aucune erreur bloquante détectée !
 
 Le dataset est prêt pour publication.
 
-## ⚠️ WARNINGS (3)
+## ⚠️ WARNINGS (4)
 
 ### Ligne 8 : Quantum dots CdSe avec lecture de spin
 
@@ -53,9 +53,21 @@ Le dataset est prêt pour publication.
 
 ---
 
+### Ligne 31 : Radicaux tyrosyl dans ribonucléotide réductase
+
+**Colonne** : `Source_Contraste`
+
+**Problème** : Contraste sans source
+
+**Valeur actuelle** : `NA`
+
+**Suggestion** : Ajouter référence publication
+
+---
+
 ## 📝 Systèmes à confirmer (Verification_statut=a_confirmer)
 
-**Total** : 6 systèmes
+**Total** : 9 systèmes
 
 - **Nanotubes de carbone avec défauts sp3** (Classe B) — DOI: 10.1038/s41467-020-19390-3
 - **Cryptochrome (Cry1) - paires radicalaires** (Classe D) — DOI: 10.1038/nature09324
@@ -63,6 +75,9 @@ Le dataset est prêt pour publication.
 - **Centres GeV dans diamant (bioconjugué)** (Classe B) — DOI: 10.1021/acsphotonics.1c00935
 - **Défauts divacancy VV dans SiC (nanoparticules)** (Classe B) — DOI: 10.1021/acs.nanolett.0c02342
 - **Défauts Ti:C dans SiC (en développement)** (Classe B) — DOI: 10.1038/s41467-022-32717-8
+- **Centres P1 dans nanodiamants (azote isolé)** (Classe B) — DOI: 10.1021/acsnano.8b07278
+- **Radicaux tyrosyl dans ribonucléotide réductase** (Classe A) — DOI: 10.1021/bi00483a003
+- **Quantum dots InP/ZnS biocompatibles** (Classe B) — DOI: 10.1021/acsnano.7b08724
 
 ---
 
