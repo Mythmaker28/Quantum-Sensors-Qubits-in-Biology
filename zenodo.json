@@ -1,7 +1,7 @@
 {
-  "title": "Biological Qubits Atlas (v1.2)",
+  "title": "Biological Qubits Atlas: Fluorescent Proteins & Optical Biosensors Extension (v1.2.0)",
   "upload_type": "dataset",
-  "description": "A curated atlas of quantum systems operating in, or compatible with, biological environments (in vitro, in cellulo, in vivo). Includes structured CSV (33 columns), linter, QC report, and a web UI. This dataset covers 22 systems across 4 classes: biological intrinsic (proteins), bio-compatible internalized (NV nanodiamonds, SiC), hyperpolarized nuclear spins (NMR), and mechanistic candidates (magnetoreception).",
+  "description": "A curated atlas of quantum-coherent and optical systems operating in, or compatible with, biological environments (in vitro, in cellulo, in vivo). Version 1.2.0 extends the dataset with comprehensive fluorescent protein (FP) and optical biosensor data harvested from FPbase, UniProt, PDB, and PubMed Central. This release includes ≥50 FP-like entries with ≥25 measured contrast ratios (ΔF/F₀, on/off), alongside legacy multi-modality systems (NV centers, SiC, NMR, ESR). Features: automated ETL pipeline, PMC contrast extraction (OA-only), computed brightness proxies, complete provenance tracking (SHA256 checksums), quality control with blocking thresholds, stable versioned interface for computational design (fp-qubit-design).",
   "creators": [
     {
       "name": "Lepesteur, Tommy",
@@ -12,6 +12,12 @@
   "access_right": "open",
   "keywords": [
     "biological qubits",
+    "fluorescent proteins",
+    "optical biosensors",
+    "GFP",
+    "FRET sensors",
+    "calcium indicators",
+    "voltage sensors",
     "quantum sensing",
     "NV centers",
     "SiC defects",
@@ -20,20 +26,38 @@
     "NMR",
     "hyperpolarized 13C",
     "quantum biology",
-    "bio-imaging",
-    "nanodiamonds",
-    "magnetometry"
+    "biophysics",
+    "machine learning",
+    "computational design",
+    "FPbase",
+    "UniProt",
+    "PDB"
   ],
   "related_identifiers": [
     {
       "relation": "isSupplementTo",
       "identifier": "https://github.com/Mythmaker28/biological-qubits-atlas",
       "resource_type": "other"
+    },
+    {
+      "relation": "isSourceOf",
+      "identifier": "https://www.fpbase.org",
+      "resource_type": "other"
+    },
+    {
+      "relation": "isSourceOf",
+      "identifier": "https://www.uniprot.org",
+      "resource_type": "other"
+    },
+    {
+      "relation": "isSourceOf",
+      "identifier": "https://www.rcsb.org",
+      "resource_type": "other"
     }
   ],
   "version": "1.2.0",
-  "language": "fra",
-  "notes": "Version 1.2 includes complete provenance (Source_T2/T1/Contraste), quantified uncertainties, biological flags (Hyperpol_flag, Cytotox_flag, Temp_controlled), and automated quality control (qubits_linter.py). 22 systems, 14 verified entries (64%), 0 blocking errors.",
+  "language": "eng",
+  "notes": "Version 1.2.0 includes: (1) External harvest pipeline (FPbase API, UniProt, PDB/PDBe, PMC OA); (2) Multi-modality classification (FP-like vs color centers/NMR/ESR); (3) PMC contrast extraction with regex parsing; (4) Computed brightness proxies (QY × ε); (5) Two datasets: atlas_all_real.csv (multi-modality), atlas_fp_optical.csv (FP/biosensors only); (6) Complete metadata (TRAINING.METADATA.json) with schema, licenses, provenance; (7) QA audit with blocking thresholds (≥50 total, ≥25 measured); (8) Consumer documentation (CONSUMERS.md) with stable interface contract. Assets: atlas_fp_optical.csv, atlas_all_real.csv, TRAINING.METADATA.json, audit reports.",
   "communities": [
     {
       "identifier": "zenodo"

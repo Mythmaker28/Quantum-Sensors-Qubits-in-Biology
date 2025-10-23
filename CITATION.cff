@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
-title: "Biological Qubits Atlas"
+title: "Biological Qubits Atlas: Fluorescent Proteins & Optical Biosensors Extension"
 type: dataset
-version: "1.2.1"
+version: "1.2.0"
 date-released: "2025-10-23"
-doi: "10.5281/zenodo.17420604"
+doi: "10.5281/zenodo.TBD"
 authors:
   - family-names: "Lepesteur"
     given-names: "Tommy"
@@ -14,6 +14,11 @@ url: "https://mythmaker28.github.io/biological-qubits-atlas/"
 license: "CC-BY-4.0"
 keywords:
   - "biological qubits"
+  - "fluorescent proteins"
+  - "optical biosensors"
+  - "GFP"
+  - "FRET sensors"
+  - "calcium indicators"
   - "quantum sensing"
   - "NV centers"
   - "SiC defects"
@@ -23,21 +28,24 @@ keywords:
   - "hyperpolarized carbon-13"
   - "quantum biology"
   - "biophysics"
+  - "machine learning"
+  - "computational design"
 abstract: |
-  A curated atlas of quantum systems operating in, or compatible with, biological 
-  environments (in vitro, in cellulo, in vivo). This dataset includes 26 verified 
-  systems across 4 classes: biological intrinsic (proteins), bio-compatible 
-  internalized (NV nanodiamonds, SiC), hyperpolarized nuclear spins (NMR), and 
-  mechanistic candidates (magnetoreception). Version 1.2 includes complete provenance 
-  (Source_T2/T1/Contraste), quantified uncertainties, biological flags, and automated 
-  quality control.
+  A curated atlas of quantum-coherent and optical systems operating in, or compatible 
+  with, biological environments (in vitro, in cellulo, in vivo). Version 1.2.0 extends 
+  the dataset with comprehensive fluorescent protein (FP) and optical biosensor data 
+  harvested from FPbase, UniProt, PDB, and PubMed Central. This release includes ≥50 
+  FP-like entries with ≥25 measured contrast ratios (ΔF/F₀, on/off), alongside legacy 
+  multi-modality systems (NV centers, SiC, NMR, ESR). Complete provenance tracking, 
+  automated ETL pipeline, quality control with blocking thresholds, and stable 
+  versioned interface for downstream computational design pipelines (fp-qubit-design).
 preferred-citation:
   type: dataset
-  title: "Biological Qubits Atlas"
+  title: "Biological Qubits Atlas: Fluorescent Proteins & Optical Biosensors Extension"
   authors:
     - family-names: "Lepesteur"
       given-names: "Tommy"
       orcid: "https://orcid.org/0009-0009-0577-9563"
   year: 2025
-  version: "1.2.1"
-  doi: "10.5281/zenodo.17420604"
+  version: "1.2.0"
+  doi: "10.5281/zenodo.TBD"
