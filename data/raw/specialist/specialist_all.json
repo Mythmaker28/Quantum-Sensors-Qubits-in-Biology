@@ -1,0 +1,340 @@
+{
+  "results": [
+    {
+      "status": "success",
+      "source": "geci_db_preseed",
+      "biosensors": [
+        {
+          "name": "GCaMP6s",
+          "doi": "10.1038/nature12354",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2013
+        },
+        {
+          "name": "GCaMP6f",
+          "doi": "10.1038/nature12354",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2013
+        },
+        {
+          "name": "GCaMP6m",
+          "doi": "10.1038/nature12354",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2013
+        },
+        {
+          "name": "jGCaMP7s",
+          "doi": "10.1126/science.abf4084",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2021
+        },
+        {
+          "name": "jGCaMP7f",
+          "doi": "10.1126/science.abf4084",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2021
+        },
+        {
+          "name": "jGCaMP8s",
+          "doi": "10.1016/j.neuron.2023.02.011",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2023
+        },
+        {
+          "name": "jGCaMP8f",
+          "doi": "10.1016/j.neuron.2023.02.011",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2023
+        },
+        {
+          "name": "jGCaMP8m",
+          "doi": "10.1016/j.neuron.2023.02.011",
+          "family": "Calcium",
+          "type": "GCaMP",
+          "year": 2023
+        },
+        {
+          "name": "R-GECO1",
+          "doi": "10.1021/cb400931x",
+          "family": "Calcium",
+          "type": "R-GECO",
+          "year": 2013
+        },
+        {
+          "name": "jRGECO1a",
+          "doi": "10.7554/eLife.13415",
+          "family": "Calcium",
+          "type": "R-GECO",
+          "year": 2016
+        },
+        {
+          "name": "jRGECO1b",
+          "doi": "10.7554/eLife.13415",
+          "family": "Calcium",
+          "type": "R-GECO",
+          "year": 2016
+        },
+        {
+          "name": "RCaMP1h",
+          "doi": "10.1038/nmeth.3764",
+          "family": "Calcium",
+          "type": "RCaMP",
+          "year": 2016
+        },
+        {
+          "name": "RCaMP2",
+          "doi": "10.1038/s41467-019-12888-2",
+          "family": "Calcium",
+          "type": "RCaMP",
+          "year": 2019
+        },
+        {
+          "name": "NIR-GECO1",
+          "doi": "10.1038/nmeth.4333",
+          "family": "Calcium",
+          "type": "NIR-GECO",
+          "year": 2017
+        },
+        {
+          "name": "NIR-GECO2",
+          "doi": "10.1038/s41589-021-00813-6",
+          "family": "Calcium",
+          "type": "NIR-GECO",
+          "year": 2021
+        }
+      ],
+      "count": 15,
+      "timestamp": 1761264948.4634063
+    },
+    {
+      "status": "success",
+      "source": "neurotransmitter_preseed",
+      "biosensors": [
+        {
+          "name": "iGluSnFR",
+          "doi": "10.1016/j.neuron.2013.06.043",
+          "family": "Glutamate",
+          "year": 2013
+        },
+        {
+          "name": "SF-iGluSnFR.A184S",
+          "doi": "10.7554/eLife.41275",
+          "family": "Glutamate",
+          "year": 2019
+        },
+        {
+          "name": "dLight1.1",
+          "doi": "10.1038/s41592-018-0251-6",
+          "family": "Dopamine",
+          "year": 2018
+        },
+        {
+          "name": "dLight1.2",
+          "doi": "10.1038/s41592-018-0251-6",
+          "family": "Dopamine",
+          "year": 2018
+        },
+        {
+          "name": "dLight1.3b",
+          "doi": "10.1038/s41592-020-0870-6",
+          "family": "Dopamine",
+          "year": 2020
+        },
+        {
+          "name": "GRAB-DA2m",
+          "doi": "10.1038/s41592-020-0786-1",
+          "family": "Dopamine",
+          "year": 2020
+        },
+        {
+          "name": "GRAB-DA2h",
+          "doi": "10.1038/s41592-020-0786-1",
+          "family": "Dopamine",
+          "year": 2020
+        },
+        {
+          "name": "iAChSnFR",
+          "doi": "10.1016/j.neuron.2018.11.003",
+          "family": "Acetylcholine",
+          "year": 2019
+        },
+        {
+          "name": "GRAB-ACh3.0",
+          "doi": "10.1038/s41586-020-2421-8",
+          "family": "Acetylcholine",
+          "year": 2020
+        },
+        {
+          "name": "GRAB-NE1m",
+          "doi": "10.1016/j.cell.2019.12.015",
+          "family": "Norepinephrine",
+          "year": 2020
+        },
+        {
+          "name": "GRAB-5HT1.0",
+          "doi": "10.1016/j.cell.2020.08.034",
+          "family": "Serotonin",
+          "year": 2020
+        }
+      ],
+      "count": 11,
+      "timestamp": 1761264948.4634116
+    },
+    {
+      "status": "success",
+      "source": "metabolic_preseed",
+      "biosensors": [
+        {
+          "name": "Epac-SH187",
+          "doi": "10.1073/pnas.0408543101",
+          "family": "cAMP",
+          "year": 2004
+        },
+        {
+          "name": "Pink Flamindo",
+          "doi": "10.1038/s41467-017-01417-3",
+          "family": "cAMP",
+          "year": 2017
+        },
+        {
+          "name": "cADDis",
+          "doi": "10.1038/s41467-021-27626-z",
+          "family": "cAMP",
+          "year": 2021
+        },
+        {
+          "name": "PercevalHR",
+          "doi": "10.1038/nature10433",
+          "family": "ATP/ADP",
+          "year": 2011
+        },
+        {
+          "name": "iATPSnFR",
+          "doi": "10.1038/s41467-019-10178-4",
+          "family": "ATP",
+          "year": 2019
+        },
+        {
+          "name": "HyPer",
+          "doi": "10.1038/ncb1197",
+          "family": "H2O2",
+          "year": 2006
+        },
+        {
+          "name": "HyPer3",
+          "doi": "10.1089/ars.2013.5255",
+          "family": "H2O2",
+          "year": 2013
+        },
+        {
+          "name": "roGFP2",
+          "doi": "10.1074/jbc.M312846200",
+          "family": "Redox",
+          "year": 2004
+        },
+        {
+          "name": "pHluorin",
+          "doi": "10.1016/S0896-6273(00)80127-4",
+          "family": "pH",
+          "year": 1998
+        },
+        {
+          "name": "pHuji",
+          "doi": "10.1016/j.bpj.2018.02.002",
+          "family": "pH",
+          "year": 2018
+        },
+        {
+          "name": "SypHer3s",
+          "doi": "10.1021/acschembio.9b00864",
+          "family": "pH",
+          "year": 2020
+        }
+      ],
+      "count": 11,
+      "timestamp": 1761264948.463416
+    },
+    {
+      "status": "success",
+      "source": "voltage_preseed",
+      "biosensors": [
+        {
+          "name": "ASAP3",
+          "doi": "10.1016/j.neuron.2018.08.021",
+          "family": "Voltage",
+          "year": 2018
+        },
+        {
+          "name": "Ace-mNeon",
+          "doi": "10.1038/s41592-019-0552-6",
+          "family": "Voltage",
+          "year": 2019
+        },
+        {
+          "name": "ArcLight",
+          "doi": "10.1016/j.neuron.2012.01.033",
+          "family": "Voltage",
+          "year": 2012
+        },
+        {
+          "name": "VSFP-Butterfly",
+          "doi": "10.1126/science.1108404",
+          "family": "Voltage",
+          "year": 2005
+        },
+        {
+          "name": "QuasAr2",
+          "doi": "10.1126/science.aab0810",
+          "family": "Voltage",
+          "year": 2015
+        },
+        {
+          "name": "Archon1",
+          "doi": "10.1038/s41586-019-1166-7",
+          "family": "Voltage",
+          "year": 2019
+        }
+      ],
+      "count": 6,
+      "timestamp": 1761264948.4634187
+    },
+    {
+      "status": "success",
+      "source": "fluorofinder_preseed",
+      "dois": [
+        {
+          "name": "Alexa Fluor 488",
+          "doi": "10.1002/jlac.199619961206",
+          "type": "dye"
+        },
+        {
+          "name": "Cy3",
+          "doi": "10.1021/ja9732960",
+          "type": "dye"
+        },
+        {
+          "name": "Cy5",
+          "doi": "10.1021/ja9732960",
+          "type": "dye"
+        },
+        {
+          "name": "FITC",
+          "doi": "10.1002/jlac.19603640105",
+          "type": "dye"
+        }
+      ],
+      "count": 4,
+      "timestamp": 1761264948.4634216,
+      "note": "Dyes not FP-biosensors, included for completeness"
+    }
+  ],
+  "total_biosensors": 47,
+  "timestamp": 1761264948.464112
+}

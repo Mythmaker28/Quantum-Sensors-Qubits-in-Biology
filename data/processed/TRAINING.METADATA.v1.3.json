@@ -1,0 +1,17 @@
+{
+  "version": "1.3.0-fallback",
+  "generated": "2025-10-24 00:18:10 UTC",
+  "note": "Built with fallback strategy due to FPbase/PMC API outage",
+  "counts": {
+    "N_total": 98,
+    "N_measured": 0,
+    "N_tier_A": 0,
+    "N_tier_B": 54,
+    "N_tier_C": 32
+  },
+  "sources": {
+    "v1.2.1_base": 66,
+    "specialist_dbs": 43,
+    "extended_fps": 50
+  }
+}
