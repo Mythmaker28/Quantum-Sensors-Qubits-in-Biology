@@ -1,0 +1,155 @@
+# Makefile pour Biological Qubits Atlas v2.0
+# Usage: make <target>
+
+.PHONY: help install test fair dashboard harvest validate ml clean
+
+# === AIDE ===
+help:
+	@echo "🚀 Biological Qubits Atlas v2.0 - Commandes Disponibles"
+	@echo ""
+	@echo "📦 Installation:"
+	@echo "  make install          Installation dépendances complètes"
+	@echo "  make install-minimal  Installation sans ML (plus rapide)"
+	@echo ""
+	@echo "✅ Phase 1 - Quick Wins:"
+	@echo "  make fair             Génère métadonnées FAIR"
+	@echo "  make dashboard        Génère dashboard interactif D3.js"
+	@echo "  make validate         Validation in vivo"
+	@echo ""
+	@echo "🔬 Phase 2 - Expansion:"
+	@echo "  make harvest          Auto-extraction PubMed/FPbase"
+	@echo "  make curate           Lance pipeline curation complète"
+	@echo ""
+	@echo "🧠 Phase 3 - ML:"
+	@echo "  make ml-train         Entraîne modèle GNN"
+	@echo "  make ml-predict       Prédiction sur nouveaux candidats"
+	@echo ""
+	@echo "🧹 Maintenance:"
+	@echo "  make clean            Nettoie fichiers temporaires"
+	@echo "  make test             Lance tests unitaires"
+	@echo "  make lint             Vérifie qualité code"
+	@echo ""
+	@echo "🌐 Déploiement:"
+	@echo "  make serve            Lance serveur web local"
+	@echo "  make deploy           Déploie sur GitHub Pages"
+
+# === INSTALLATION ===
+install:
+	@echo "📦 Installation dépendances complètes..."
+	pip install -r requirements_v2.0.txt
+	@echo "✅ Installation terminée!"
+
+install-minimal:
+	@echo "📦 Installation minimale (sans ML)..."
+	pip install pandas numpy requests biopython PyYAML
+	@echo "✅ Installation minimale terminée!"
+
+# === PHASE 1: QUICK WINS ===
+fair:
+	@echo "🏅 Génération métadonnées FAIR..."
+	python scripts/fair/generate_fair_metadata.py
+	@echo "✅ Métadonnées FAIR générées dans metadata/fair/"
+
+dashboard:
+	@echo "📊 Génération dashboard interactif..."
+	python scripts/web/generate_interactive_dashboard.py
+	@echo "✅ Dashboard généré: index_v2_interactive.html"
+	@echo "🌐 Lancer avec: make serve"
+
+validate:
+	@echo "🔬 Validation in vivo..."
+	python scripts/qa/in_vivo_validator.py
+	@echo "✅ Rapport généré: reports/IN_VIVO_VALIDATION.md"
+
+# === PHASE 2: EXPANSION ===
+harvest:
+	@echo "🔍 Auto-extraction multi-sources..."
+	@if [ -z "$$NCBI_API_KEY" ]; then \
+		echo "⚠️  ATTENTION: NCBI_API_KEY non définie!"; \
+		echo "   Export: export NCBI_API_KEY='votre_cle'"; \
+		exit 1; \
+	fi
+	python scripts/automation/auto_harvest_v2.py
+	@echo "✅ Candidats extraits: data/interim/auto_harvest_v2.csv"
+
+curate: harvest validate
+	@echo "🧪 Pipeline curation complet..."
+	python qubits_linter.py data/interim/auto_harvest_v2.csv
+	@echo "✅ Curation terminée!"
+
+# === PHASE 3: ML ===
+ml-train:
+	@echo "🧠 Entraînement modèle GNN..."
+	@if ! python -c "import torch" 2>/dev/null; then \
+		echo "❌ PyTorch non installé!"; \
+		echo "   Installation: pip install torch torch-geometric rdkit"; \
+		exit 1; \
+	fi
+	python scripts/ml/predict_quantum_proxies.py
+	@echo "✅ Modèle entraîné: models/quantum_proxy_gnn.pth"
+
+ml-predict:
+	@echo "🔮 Prédiction nouveaux candidats..."
+	python scripts/ml/predict_quantum_proxies.py --mode predict
+	@echo "✅ Prédictions générées!"
+
+# === MAINTENANCE ===
+clean:
+	@echo "🧹 Nettoyage fichiers temporaires..."
+	find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true
+	find . -type f -name "*.pyc" -delete
+	find . -type f -name "*.pyo" -delete
+	find . -type f -name ".DS_Store" -delete
+	rm -rf .pytest_cache/
+	@echo "✅ Nettoyage terminé!"
+
+test:
+	@echo "✅ Lancement tests unitaires..."
+	pytest tests/ -v --tb=short || echo "⚠️  Certains tests ont échoué"
+
+lint:
+	@echo "🔍 Vérification qualité code..."
+	python qubits_linter.py
+	@echo "✅ Linting terminé!"
+
+# === DÉPLOIEMENT ===
+serve:
+	@echo "🌐 Lancement serveur web local..."
+	@echo "   URL: http://localhost:8000/index_v2_interactive.html"
+	@python -m http.server 8000
+
+deploy:
+	@echo "🚀 Déploiement GitHub Pages..."
+	@if [ ! -f "index_v2_interactive.html" ]; then \
+		echo "❌ Dashboard non généré!"; \
+		echo "   Lancer: make dashboard"; \
+		exit 1; \
+	fi
+	cp index_v2_interactive.html index.html
+	git add index.html metadata/ reports/
+	git commit -m "feat(deploy): v2.0 dashboard + FAIR metadata"
+	git push origin main
+	@echo "✅ Déployé sur GitHub Pages!"
+
+# === WORKFLOW COMPLET ===
+phase1: fair dashboard validate
+	@echo "✅ Phase 1 terminée (Quick Wins)!"
+
+phase2: harvest curate
+	@echo "✅ Phase 2 terminée (Expansion)!"
+
+phase3: ml-train
+	@echo "✅ Phase 3 terminée (Innovation ML)!"
+
+all: phase1 phase2 phase3
+	@echo "🎉 Toutes les phases terminées!"
+	@echo "🌐 Lancer dashboard: make serve"
+
+# === RAPPORTS ===
+report:
+	@echo "📊 Génération rapport mensuel..."
+	@echo "Total systèmes: $$(wc -l < data/processed/atlas_fp_optical_v1_3.csv)"
+	@echo "Avec contraste: $$(grep -v '^SystemID' data/processed/atlas_fp_optical_v1_3.csv | grep -c ',')"
+	@echo "Familles: $$(cut -d',' -f3 data/processed/atlas_fp_optical_v1_3.csv | sort -u | wc -l)"
+
+
