@@ -401,12 +401,13 @@ def generate_dashboard_html(atlas_csv: str, output_html: str = "index_v2_interac
     print(f"[INFO] {len(df)} systemes inclus dans les visualisations")
 
 if __name__ == "__main__":
-    atlas_path = "data/processed/atlas_fp_optical_v1_3.csv"
+    # Utiliser version v2.0 (mise à jour)
+    atlas_path = "data/processed/atlas_fp_optical_v2_0.csv"
     
     if os.path.exists(atlas_path):
         generate_dashboard_html(atlas_path)
     else:
-        print(f"⚠️ Fichier non trouvé: {atlas_path}")
+        print(f"[WARN] Fichier non trouve: {atlas_path}")
         print("   Utiliser le bon chemin vers votre atlas CSV")
 
 
