@@ -60,10 +60,10 @@ class AutoHarvester:
             data = response.json()
             
             pmids = data.get('esearchresult', {}).get('idlist', [])
-            print(f"✅ Trouvé {len(pmids)} publications pour '{query}'")
+            print(f"[OK] Trouve {len(pmids)} publications pour '{query}'")
             return pmids
         except Exception as e:
-            print(f"⚠️ Erreur PubMed: {e}")
+            print(f"[WARN] Erreur PubMed: {e}")
             return []
     
     def fetch_pmc_fulltext(self, pmcid: str) -> str:
@@ -91,7 +91,7 @@ class AutoHarvester:
             response.raise_for_status()
             return response.text
         except Exception as e:
-            print(f"⚠️ Erreur PMC {pmcid}: {e}")
+            print(f"[WARN] Erreur PMC {pmcid}: {e}")
             return ""
     
     def extract_quantum_metrics(self, xml_text: str) -> Optional[Dict]:
@@ -216,7 +216,7 @@ class AutoHarvester:
             data = response.json()
             
             proteins = data.get('data', {}).get('proteins', [])
-            print(f"✅ FPbase: {len(proteins)} protéines extraites")
+            print(f"[OK] FPbase: {len(proteins)} proteines extraites")
             
             rows = []
             for p in proteins:
@@ -238,7 +238,7 @@ class AutoHarvester:
             return pd.DataFrame(rows)
         
         except Exception as e:
-            print(f"⚠️ Erreur FPbase API: {e}")
+            print(f"[WARN] Erreur FPbase API: {e}")
             return pd.DataFrame()
     
     def run_full_harvest(self, output_path: str = "data/interim/auto_harvest_v2.csv"):
@@ -255,7 +255,7 @@ class AutoHarvester:
         all_candidates = []
         
         # ÉTAPE 1: PubMed NV/SiC
-        print("\n🔬 ÉTAPE 1: Recherche PubMed...")
+        print("\n[STEP 1] Recherche PubMed...")
         queries = [
             '"nitrogen vacancy" AND (biological OR cell OR vivo)',
             '"silicon vacancy" AND (biological OR biocompatible)',
@@ -265,10 +265,10 @@ class AutoHarvester:
         
         for query in queries:
             pmids = self.search_pubmed(query, max_results=100)
-            print(f"  → {len(pmids)} PMIDs pour '{query[:40]}...'")
+            print(f"  -> {len(pmids)} PMIDs pour '{query[:40]}...'")
         
         # ÉTAPE 2: FPbase Biosensors
-        print("\n🧬 ÉTAPE 2: Extraction FPbase...")
+        print("\n[STEP 2] Extraction FPbase...")
         families = ['Calcium', 'Voltage', 'Dopamine', 'Glutamate', 'pH']
         
         for family in families:
@@ -281,15 +281,15 @@ class AutoHarvester:
             final_df = pd.concat(all_candidates, ignore_index=True)
             final_df = final_df.drop_duplicates(subset=['name'])
             
-            print(f"\n✅ Total candidates: {len(final_df)}")
+            print(f"\n[OK] Total candidates: {len(final_df)}")
             
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
             final_df.to_csv(output_path, index=False)
-            print(f"📁 Exporté vers: {output_path}")
+            print(f"[SAVE] Exporte vers: {output_path}")
             
             return final_df
         else:
-            print("⚠️ Aucun candidat extrait")
+            print("[WARN] Aucun candidat extrait")
             return pd.DataFrame()
 
 if __name__ == "__main__":
@@ -303,7 +303,7 @@ if __name__ == "__main__":
     harvester = AutoHarvester(api_keys)
     df = harvester.run_full_harvest()
     
-    print("\n📊 Statistiques:")
+    print("\n[STATS] Statistiques:")
     print(f"  - Candidats uniques: {len(df)}")
     print(f"  - Avec DOI: {df['doi'].notna().sum()}")
     print(f"  - Familles: {df['family'].nunique()}")
