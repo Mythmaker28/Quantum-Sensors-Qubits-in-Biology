@@ -1,0 +1,167 @@
+# Biological Qubit Atlas v1.3 — Provider Configuration
+# =====================================================
+# Circuit-breakers, fallbacks, rate limits, toggles
+
+version: "1.3"
+last_updated: "2025-01-15"
+
+# Provider priorities (1=highest)
+provider_priorities:
+  fpbase: 1
+  specialist_dbs: 2
+  uniprot: 3
+  pdb: 4
+  pmc: 5
+
+# FPbase GraphQL API
+fpbase:
+  enabled: true
+  api_url: "https://fpbase.org/api/graphql/"
+  rate_limit:
+    requests_per_minute: 60
+    requests_per_hour: 1000
+    max_batch_size: 50
+  circuit_breaker:
+    enabled: true
+    failure_threshold: 3
+    timeout_seconds: 30
+    retry_delay_seconds: 5
+    max_retries: 3
+  fallback:
+    enabled: true
+    strategy: "csv_export"  # Use FPbase CSV export if GraphQL fails
+    csv_url: "https://fpbase.org/api/proteins/?format=csv"
+  cache:
+    enabled: true
+    ttl_hours: 24
+    path: "data/cache/fpbase/"
+  license: "CC BY-SA 4.0 (pointer-only)"
+
+# Specialist Biosensor Databases
+specialist_dbs:
+  geci_db:
+    enabled: true
+    url: "https://geci.janelia.org/"
+    scrape_mode: true  # HTML scraping + DOI extraction
+    license: "varies (check per-entry)"
+  
+  biosensor_db:
+    enabled: false  # Not yet available
+    url: null
+  
+  fluorofinder:
+    enabled: true
+    api_url: null  # Pointer-only, scrape for DOIs
+    scrape_mode: true
+    license: "commercial data (DOI pointers only)"
+
+# UniProt
+uniprot:
+  enabled: true
+  api_url: "https://rest.uniprot.org/uniprotkb/search"
+  rate_limit:
+    requests_per_second: 10
+  batch_size: 100
+  license: "CC BY 4.0"
+  cache:
+    enabled: true
+    ttl_hours: 168  # 1 week
+    path: "data/cache/uniprot/"
+
+# PDB / PDBe
+pdb:
+  enabled: true
+  api_url: "https://www.ebi.ac.uk/pdbe/api/"
+  rate_limit:
+    requests_per_second: 5
+  license: "CC0"
+  cache:
+    enabled: true
+    ttl_hours: 168
+    path: "data/cache/pdb/"
+
+# Europe PMC (Open Access full-text mining)
+europe_pmc:
+  enabled: true
+  api_url: "https://www.ebi.ac.uk/europepmc/webservices/rest/"
+  rate_limit:
+    requests_per_second: 3
+  fulltext:
+    enabled: true
+    formats: ["xml", "pdf"]
+    download_path: "data/raw/oa/"
+  supplements:
+    enabled: true
+    formats: ["xlsx", "csv", "zip"]
+    download_path: "data/raw/oa_supp/"
+  license_filter: ["CC BY", "CC0", "CC BY-SA"]
+  cache:
+    enabled: true
+    ttl_hours: 720  # 30 days
+    path: "data/cache/pmc/"
+
+# OCR (optional, for figures)
+ocr:
+  enabled: false  # Disabled by default (requires Tesseract)
+  engine: "pytesseract"
+  languages: ["eng"]
+  confidence_threshold: 60
+
+# Data Quality & Validation
+validation:
+  fuzzy_match:
+    enabled: true
+    algorithm: "levenshtein"
+    threshold: 2  # Max edit distance
+  
+  deduplication:
+    enabled: true
+    keys: ["fpbase_slug", "uniprot_id", "name_family_year"]
+    conflict_resolution: "evidence_tier"  # supplement > table > paragraph
+  
+  license_check:
+    enabled: true
+    allowed: ["CC BY", "CC BY 4.0", "CC0", "CC BY-SA 4.0"]
+    reject_uncertain: true
+  
+  contrast_normalization:
+    enabled: true
+    target_unit: "fold"  # All contrasts normalized to fold-change
+    mappings:
+      fold: "fold"
+      deltaF_F0: "fold = deltaF_F0 + 1"
+      percent: "fold = 1 + percent/100"
+
+# Evidence Tiers (for conflict resolution)
+evidence_tiers:
+  1: "supplement_table"
+  2: "main_table"
+  3: "supplement_figure"
+  4: "main_figure"
+  5: "paragraph_with_ci"
+  6: "paragraph_measured"
+  7: "secondary_db"
+  8: "computed"
+
+# Thresholds (blocking)
+thresholds:
+  N_total_min: 200
+  N_measured_min: 120
+  families_with_ge_5_min: 10
+  unique_doi_rate_min: 0.85
+  license_ok_rate_min: 1.0
+
+# Output paths
+output:
+  raw: "data/raw/"
+  interim: "data/interim/"
+  processed: "data/processed/"
+  reports: "reports/"
+  cache: "data/cache/"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  outage_log: "reports/OUTAGE_LOG_v1.3.md"
+  harvest_log: "reports/HARVEST_LOG_v1.3.md"
