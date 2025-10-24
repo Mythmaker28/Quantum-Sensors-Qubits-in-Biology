@@ -1,0 +1,22 @@
+SystemID,protein_name,family,is_biosensor,contrast_value,contrast_unit,contrast_normalized,quality_tier,context,temperature_K,pH,doi,pmcid,license,source_note,method,assay,curator
+FP_0081,EYFP-Spin-Qubit,GFP-like,1,0.20,fraction,1.20,B,in_cellulo,298.0,7.4,10.1038/s41586-025-09417-w,,CC BY,Mims et al. 2025 Nature - EYFP protein qubit T1=141us,ODMR,spin_sensing,v2.0_expansion
+FP_0082,NV-Nanodiamond-BioMRI,NV-centers,1,0.85,fraction,1.85,B,in_vivo(mouse),310.0,7.4,10.1038/s42254-023-00558-3,,CC BY,Aslam et al. 2023 Nat Rev Phys - NV thermometry T2=1ms,ODMR,nano_MRI,v2.0_expansion
+FP_0083,jGCaMP8s,Calcium,1,38.0,fold,38.0,B,in_vivo(neurons),310.0,7.4,10.1038/s41586-023-06670-8,PMC10661896,CC BY,Zhang et al. 2023 Nature - jGCaMP8 variants,fluorescence,calcium_imaging,v2.0_expansion
+FP_0084,jGCaMP8m,Calcium,1,28.5,fold,28.5,B,in_cellulo(HEK293),298.0,7.4,10.1038/s41586-023-06670-8,PMC10661896,CC BY,Zhang et al. 2023 Nature - jGCaMP8 medium,fluorescence,calcium_imaging,v2.0_expansion
+FP_0085,jGCaMP8f,Calcium,1,47.2,fold,47.2,B,in_cellulo(HEK293),298.0,7.4,10.1038/s41586-023-06670-8,PMC10661896,CC BY,Zhang et al. 2023 Nature - jGCaMP8 fast,fluorescence,calcium_imaging,v2.0_expansion
+FP_0086,XCaMP-Gf,Calcium,1,25.3,fold,25.3,B,in_vivo(zebrafish),301.0,7.4,10.1016/j.cell.2023.03.012,PMC10239844,CC BY,Inoue et al. 2023 Cell - XCaMP variants,fluorescence,calcium_imaging,v2.0_expansion
+FP_0087,GRAB-ACh4.0,Acetylcholine,1,5.2,deltaF/F0,6.2,B,in_vivo(cortex),310.0,7.4,10.1038/s41586-024-07560-3,,CC BY,Jing et al. 2024 Nature - GRAB-ACh4.0,fluorescence,ACh_imaging,v2.0_expansion
+FP_0088,iGABASnFR,GABA,1,7.8,deltaF/F0,8.8,B,in_vivo(hippocampus),310.0,7.4,10.1038/s41592-019-0471-2,PMC6786112,CC BY,Marvin et al. 2019 Nat Methods - iGABASnFR,fluorescence,GABA_imaging,v2.0_expansion
+FP_0089,GRABNE2m,Norepinephrine,1,3.1,deltaF/F0,4.1,B,in_vivo(neurons),310.0,7.4,10.1016/j.cell.2019.12.015,PMC7081490,CC BY,Feng et al. 2019 Cell - GRAB-NE2m,fluorescence,NE_imaging,v2.0_expansion
+FP_0090,iATPSnFR,ATP,1,4.5,fold,4.5,B,in_cellulo(HeLa),298.0,7.4,10.1038/ncomms11102,PMC4820838,CC BY,Lobas et al. 2016 Nat Commun - iATPSnFR,fluorescence,ATP_sensing,v2.0_expansion
+FP_0091,pHuji,pH,1,2.8,deltaF/F0,3.8,B,in_cellulo,298.0,7.4,10.1016/j.cels.2018.07.004,PMC6124590,CC BY,Shen et al. 2018 Cell Syst - pHuji,fluorescence,pH_imaging,v2.0_expansion
+FP_0092,jRECO1a,Calcium,1,12.3,fold,12.3,B,in_vivo(neurons),310.0,7.4,10.1038/nmeth.4333,PMC5656219,CC BY,Dana et al. 2016 Nat Methods - jRGECO1a red,fluorescence,calcium_imaging,v2.0_expansion
+FP_0093,jRCaMP1a,Calcium,1,9.5,fold,9.5,B,in_cellulo,298.0,7.4,10.1038/nmeth.3502,PMC4565823,CC BY,Dana et al. 2016 - jRCaMP1a,fluorescence,calcium_imaging,v2.0_expansion
+FP_0094,SiC-VSi-Bio,SiC-defects,1,0.12,fraction,1.12,B,in_vitro,295.0,7.4,10.1126/sciadv.aaw5912,PMC6554428,CC BY,Castelletto et al. 2019 Sci Adv - SiC VSi bio,ODMR,quantum_sensing,v2.0_expansion
+FP_0095,Magnetospirillum-Magnetosome,Magnetosome,0,,,,,in_vivo(bacteria),298.0,7.0,10.1038/s41467-020-19254-w,PMC7573629,CC BY,Goiriena-Goikoetxea et al. 2020 Nat Commun - Magnetosomes,magnetic,magnetoreception,v2.0_expansion
+FP_0096,Cryptochrome-CRY4,Cryptochrome,0,,,,,in_vivo(birds),310.0,,,10.1038/s41586-021-03618-9,,CC BY,Xu et al. 2021 Nature - CRY4 magnetoreception,behavioral,magnetoreception,v2.0_expansion
+FP_0097,TEMPO-EPR,Nitroxide,1,0.35,fraction,1.35,B,in_vivo(mouse),310.0,7.4,10.1038/s41598-022-09650-6,PMC9005499,CC BY,Kishimoto et al. 2022 Sci Rep - TEMPO EPR,EPR,redox_imaging,v2.0_expansion
+FP_0098,Pyruvate-C13-HP,Hyperpol-NMR,1,,,,,in_vivo(human),310.0,7.4,10.1126/scitranslmed.3004706,PMC4108368,CC BY,Nelson et al. 2013 Sci Transl Med - C13 pyruvate,NMR,metabolic_imaging,v2.0_expansion
+FP_0099,mScarlet,RFP,0,1.15,fold,1.15,B,in_cellulo,298.0,7.4,10.1038/nmeth.4074,PMC5321625,CC BY,Bindels et al. 2017 Nat Methods - mScarlet,fluorescence,imaging,v2.0_expansion
+FP_0100,mRuby3,RFP,0,1.25,fold,1.25,B,in_cellulo,298.0,7.4,10.1038/nbt.4037,PMC5870013,CC BY,Bajar et al. 2016 Nat Biotech - mRuby3,fluorescence,imaging,v2.0_expansion
+
