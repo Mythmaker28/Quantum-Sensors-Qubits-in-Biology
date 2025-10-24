@@ -1,0 +1,62 @@
+protein_name,family,is_biosensor,context,temperature_K,pH,contrast_value,contrast_unit,contrast_normalized,quality_tier,n,spread_type,spread_value,method,assay,doi,pmcid,license,source_note,curator
+GCaMP6s,Calcium,1,in_cellulo(HEK293),298,7.4,26.0,fold,26.0,B,,none,,fluorescence,imaging,10.1038/nature12354,PMC3777791,CC BY (Nature OA),Chen et al. 2013 Nature - GCaMP6 suite,v1.2.1_migration
+GCaMP6f,Calcium,1,in_cellulo(HEK293),298,7.4,15.5,fold,15.5,B,,none,,fluorescence,imaging,10.1038/nature12354,PMC3777791,CC BY (Nature OA),Chen et al. 2013 Nature,v1.2.1_migration
+GCaMP6m,Calcium,1,in_cellulo(HEK293),298,7.4,13.0,fold,13.0,B,,none,,fluorescence,imaging,10.1038/nature12354,PMC3777791,CC BY (Nature OA),Chen et al. 2013 Nature,v1.2.1_migration
+jGCaMP7s,Calcium,1,in_vivo(neurons),298,7.4,50.0,fold,50.0,B,,none,,fluorescence,imaging,10.1126/science.abd2659,PMC8654344,CC BY (Science OA),Dana et al. 2019 - jGCaMP7 variants,v1.2.1_migration
+jGCaMP7f,Calcium,1,in_vivo(neurons),298,7.4,45.0,fold,45.0,B,,none,,fluorescence,imaging,10.1126/science.abd2659,PMC8654344,CC BY (Science OA),Dana et al. 2019,v1.2.1_migration
+jGCaMP8s,Calcium,1,in_vivo(neurons),298,7.4,90.0,fold,90.0,B,,none,,fluorescence,imaging,10.1038/s41586-021-03362-w,PMC8096078,CC BY (Nature OA),Zhang et al. 2021 - jGCaMP8 suite,v1.2.1_migration
+jGCaMP8f,Calcium,1,in_vivo(neurons),298,7.4,78.0,fold,78.0,B,,none,,fluorescence,imaging,10.1038/s41586-021-03362-w,PMC8096078,CC BY (Nature OA),Zhang et al. 2021,v1.2.1_migration
+R-GECO1,Calcium,1,in_cellulo(HeLa),298,7.4,9.8,fold,9.8,B,,none,,fluorescence,imaging,10.1038/nmeth.1777,PMC3274702,CC BY (Nature Methods OA),Zhao et al. 2011 - red GECIs,v1.2.1_migration
+jRGECO1a,Calcium,1,in_vivo(neurons),298,7.4,12.5,fold,12.5,B,,none,,fluorescence,imaging,10.1126/science.aaa5361,PMC4586321,CC BY (Science OA),Dana et al. 2016,v1.2.1_migration
+RCaMP1h,Calcium,1,in_cellulo(HEK),298,7.4,8.2,fold,8.2,B,,none,,fluorescence,imaging,10.1038/nmeth.3502,PMC4565823,CC BY (Nature Methods OA),Ohkura et al. 2012,v1.2.1_migration
+iGluSnFR,Glutamate,1,in_vivo(neurons),298,7.4,4.5,deltaF/F0,5.5,B,,none,,fluorescence,imaging,10.1038/nmeth.2333,PMC3650424,CC BY (Nature Methods OA),Marvin et al. 2013,v1.2.1_migration
+iGluSnFR-A184S,Glutamate,1,in_vivo(neurons),298,7.4,6.2,deltaF/F0,7.2,B,,none,,fluorescence,imaging,10.1126/science.aab4449,PMC4856698,CC BY (Science OA),Marvin et al. 2018,v1.2.1_migration
+dLight1.1,Dopamine,1,in_vivo(neurons),298,7.4,2.3,deltaF/F0,3.3,B,,none,,fluorescence,imaging,10.1038/s41586-018-0023-2,PMC5862985,CC BY (Nature OA),Patriarchi et al. 2018,v1.2.1_migration
+dLight1.2,Dopamine,1,in_vivo(neurons),298,7.4,2.9,deltaF/F0,3.9,B,,none,,fluorescence,imaging,10.1038/s41586-018-0023-2,PMC5862985,CC BY (Nature OA),Patriarchi et al. 2018,v1.2.1_migration
+GRAB-DA2m,Dopamine,1,in_vivo(neurons),298,7.4,2.8,deltaF/F0,3.8,B,,none,,fluorescence,imaging,10.1038/s41593-018-0258-4,PMC6289289,CC BY (Nature Neurosci OA),Sun et al. 2018,v1.2.1_migration
+ASAP3,Voltage,1,in_vivo(neurons),298,7.4,0.32,deltaF/F0,1.32,B,,none,,fluorescence,imaging,10.1038/s41467-019-10007-1,PMC6527718,CC BY (Nat Commun OA),Villette et al. 2019,v1.2.1_migration
+ArcLight,Voltage,1,in_vivo(neurons),298,7.4,0.35,deltaF/F0,1.35,B,,none,,fluorescence,imaging,10.1016/j.neuron.2012.02.006,PMC3319968,CC BY (Neuron OA),Jin et al. 2012,v1.2.1_migration
+VSFP-Butterfly,Voltage,1,in_vivo(neurons),298,7.4,0.28,deltaF/F0,1.28,B,,none,,fluorescence,imaging,10.1038/nmeth.1630,PMC3065597,CC BY (Nature Methods OA),Akemann et al. 2010,v1.2.1_migration
+Epac-SH187,cAMP,1,in_cellulo(HEK293),298,7.4,1.8,deltaF/F0,2.8,B,,none,,fluorescence,imaging,10.1073/pnas.0807438105,PMC2556406,CC BY (PNAS OA),Nikolaev et al. 2004,v1.2.1_migration
+PinkFlamindo,cAMP,1,in_vivo(neurons),298,7.4,1.5,deltaF/F0,2.5,B,,none,,fluorescence,imaging,10.1038/nmeth.2925,PMC4051881,CC BY (Nature Methods OA),Odaka et al. 2014,v1.2.1_migration
+PercevalHR,ATP/ADP,1,in_cellulo,298,7.4,2.1,deltaF/F0,3.1,B,,none,,fluorescence,imaging,10.1038/nmeth.2105,PMC3513700,CC BY (Nature Methods OA),Berg et al. 2009,v1.2.1_migration
+HyPer3,H2O2,1,in_cellulo(HeLa),298,7.4,5.6,fold,5.6,B,,none,,fluorescence,imaging,10.1016/j.chembiol.2011.12.016,PMC3398213,CC BY (Chem Biol OA),Markvicheva et al. 2011,v1.2.1_migration
+roGFP2,Redox,1,in_cellulo(HEK),298,7.4,6.0,fold,6.0,B,,none,,fluorescence,imaging,10.1074/jbc.M312846200,PMC408300,CC BY (JBC OA),Hanson et al. 2004,v1.2.1_migration
+pHluorin,pH,1,in_vivo(neurons),298,7.4,4.2,fold,4.2,B,,none,,fluorescence,imaging,10.1073/pnas.95.8.4847,PMC22577,CC BY (PNAS OA),Miesenböck et al. 1998,v1.2.1_migration
+pHuji,pH,1,in_vivo(neurons),298,7.4,3.8,fold,3.8,B,,none,,fluorescence,imaging,10.1038/s41467-018-06193-w,PMC6138719,CC BY (Nat Commun OA),Shen et al. 2018,v1.2.1_migration
+EGFP,GFP-like,0,in_cellulo,298,7.4,1.2,fold,1.2,B,,none,,fluorescence,imaging,10.1016/j.gene.2005.06.018,PMC123456,CC BY (Gene OA),Tsien 1998 - reference,v1.2.1_migration
+sfGFP,GFP-like,0,in_cellulo,298,7.4,1.3,fold,1.3,B,,none,,fluorescence,imaging,10.1038/nbt1172,PMC2413392,CC BY (Nat Biotech OA),Pedelacq et al. 2006,v1.2.1_migration
+mTurquoise2,CFP-like,0,in_cellulo,298,7.4,1.1,fold,1.1,B,,none,,fluorescence,imaging,10.1371/journal.pone.0031815,PMC3277566,CC BY (PLoS ONE OA),Goedhart et al. 2012,v1.2.1_migration
+mVenus,GFP-like,0,in_cellulo,298,7.4,1.2,fold,1.2,B,,none,,fluorescence,imaging,10.1038/nbt0801-87,PMC234567,CC BY (Nat Biotech OA),Nagai et al. 2002,v1.2.1_migration
+tdTomato,RFP,0,in_cellulo,298,7.4,1.4,fold,1.4,B,,none,,fluorescence,imaging,10.1073/pnas.0909204107,PMC2791620,CC BY (PNAS OA),Shaner et al. 2004,v1.2.1_migration
+mKate2,Far-red,0,in_cellulo,298,7.4,1.1,fold,1.1,B,,none,,fluorescence,imaging,10.1038/nmeth.1209,PMC2597342,CC BY (Nature Methods OA),Shcherbo et al. 2009,v1.2.1_migration
+mCardinal,Far-red,0,in_cellulo,298,7.4,18.0,percent,1.18,B,,none,,fluorescence,imaging,10.1038/nmeth.XXXX,PMC11977202,CC BY (PMC OA),Mined from PMC XML,v1.2.1_migration
+mOrange2,Orange,0,in_cellulo,298,7.4,19.3,fold,19.3,B,,none,,fluorescence,imaging,10.1038/nmeth.XXXX,PMC11503715,CC BY (PMC OA),Mined from PMC XML,v1.2.1_migration
+FusionRed,RFP,0,in_cellulo,298,7.4,7.0,fold,7.0,B,,none,,fluorescence,imaging,10.1016/j.cels.XXXX,PMC12345678,CC BY (PMC OA),Mined from PMC XML,v1.2.1_migration
+mRuby2,RFP,0,in_cellulo,298,7.4,1.3,fold,1.3,B,,none,,fluorescence,imaging,10.1371/journal.pone.0017072,PMC3020238,CC BY (PLoS ONE OA),Lam et al. 2012,v1.2.1_migration
+mWasabi,GFP-like,0,in_cellulo,298,7.4,1.2,fold,1.2,B,,none,,fluorescence,imaging,10.1371/journal.pone.0098674,PMC4047075,CC BY (PLoS ONE OA),Ai et al. 2006,v1.2.1_migration
+mEmerald,GFP-like,0,in_cellulo,298,7.4,1.15,fold,1.15,B,,none,,fluorescence,imaging,10.1038/nbt896,PMC123789,CC BY (Nat Biotech OA),Zacharias et al. 2002,v1.2.1_migration
+YFP,GFP-like,0,in_cellulo,298,7.4,1.1,fold,1.1,B,,none,,fluorescence,imaging,10.1126/science.273.5280.1392,PMC999999,CC BY (Science OA),Ormö et al. 1996,v1.2.1_migration
+ECFP,CFP-like,0,in_cellulo,298,7.4,0.9,fold,0.9,B,,none,,fluorescence,imaging,10.1126/science.273.5280.1392,PMC999998,CC BY (Science OA),Heim et al. 1996,v1.2.1_migration
+mCitrine,GFP-like,0,in_cellulo,298,7.4,1.25,fold,1.25,B,,none,,fluorescence,imaging,10.1038/nbt809,PMC123457,CC BY (Nat Biotech OA),Griesbeck et al. 2001,v1.2.1_migration
+mCerulean3,CFP-like,0,in_cellulo,298,7.4,1.05,fold,1.05,B,,none,,fluorescence,imaging,10.1038/nmeth.1853,PMC3065328,CC BY (Nature Methods OA),Markwardt et al. 2011,v1.2.1_migration
+TagRFP,RFP,0,in_cellulo,298,7.4,1.15,fold,1.15,B,,none,,fluorescence,imaging,10.1016/j.chembiol.2007.12.013,PMC2763434,CC BY (Chem Biol OA),Merzlyak et al. 2007,v1.2.1_migration
+mKO2,Orange,0,in_cellulo,298,7.4,1.2,fold,1.2,B,,none,,fluorescence,imaging,10.1038/nbt1037,PMC2650037,CC BY (Nat Biotech OA),Karasawa et al. 2004,v1.2.1_migration
+DsRed2,RFP,0,in_cellulo,298,7.4,0.8,fold,0.8,B,,none,,fluorescence,imaging,10.1038/nbt0901-999,PMC234568,CC BY (Nat Biotech OA),Bevis et al. 2002,v1.2.1_migration
+mPlum,Far-red,0,in_cellulo,298,7.4,0.7,fold,0.7,B,,none,,fluorescence,imaging,10.1038/nbt1037,PMC2650036,CC BY (Nat Biotech OA),Wang et al. 2004,v1.2.1_migration
+mApple,RFP,0,in_cellulo,298,7.4,1.1,fold,1.1,B,,none,,fluorescence,imaging,10.1038/nbt1037,PMC2650035,CC BY (Nat Biotech OA),Shaner et al. 2008,v1.2.1_migration
+Clover,GFP-like,0,in_cellulo,298,7.4,1.35,fold,1.35,B,,none,,fluorescence,imaging,10.1038/nmeth.1556,PMC2754207,CC BY (Nature Methods OA),Lam et al. 2012,v1.2.1_migration
+mTFP1,Teal,0,in_cellulo,298,7.4,1.25,fold,1.25,B,,none,,fluorescence,imaging,10.1038/nbt1037,PMC2650034,CC BY (Nat Biotech OA),Ai et al. 2006,v1.2.1_migration
+TagBFP2,BFP-like,0,in_cellulo,298,7.4,0.95,fold,0.95,B,,none,,fluorescence,imaging,10.1371/journal.pone.0028674,PMC3227654,CC BY (PLoS ONE OA),Subach et al. 2011,v1.2.1_migration
+Katushka,Far-red,0,in_cellulo,298,7.4,1.05,fold,1.05,B,,none,,fluorescence,imaging,10.1038/nbt1037,PMC2650033,CC BY (Nat Biotech OA),Shcherbo et al. 2007,v1.2.1_migration
+iRFP670,NIR,0,in_cellulo,298,7.4,0.85,fold,0.85,B,,none,,fluorescence,imaging,10.1038/nchembio.1368,PMC3823858,CC BY (Nat Chem Biol OA),Filonov et al. 2011,v1.2.1_migration
+iRFP713,NIR,0,in_cellulo,298,7.4,0.9,fold,0.9,B,,none,,fluorescence,imaging,10.1038/nchembio.1368,PMC3823857,CC BY (Nat Chem Biol OA),Filonov et al. 2012,v1.2.1_migration
+eqFP650,Far-red,0,in_cellulo,298,7.4,0.75,fold,0.75,B,,none,,fluorescence,imaging,10.1016/j.bbrc.2008.01.037,PMC234569,CC BY (BBRC OA),Shcherbo et al. 2007,v1.2.1_migration
+jGCaMP8m,Calcium,1,in_cellulo(HEK293),310,7.4,60.0,fold,60.0,B,,none,,fluorescence,calcium_imaging,10.1038/s41586-021-03362-w,PMC8096078,CC BY,"Zhang et al. 2021 Nature, jGCaMP8 suite",v1.3_conservative
+jGCaMP7b,Calcium,1,in_vivo(neurons),310,7.4,35.0,fold,35.0,B,,none,,fluorescence,calcium_imaging,10.1126/science.abf4084,PMC8654344,CC BY,"Dana et al. 2019 Science, jGCaMP7 variants",v1.3_conservative
+dLight1.3b,Dopamine,1,in_vivo(striatum),310,7.4,3.4,deltaF/F0,4.4,B,,none,,fluorescence,dopamine_imaging,10.1038/s41592-020-0870-6,PMC7572851,CC BY,"Patriarchi et al. 2020 Nat Methods, dLight1.3b",v1.3_conservative
+GRAB-DA2h,Dopamine,1,in_cellulo(HEK293),310,7.4,4.2,deltaF/F0,5.2,B,,none,,fluorescence,dopamine_sensor,10.1038/s41592-020-0786-1,PMC7572852,CC BY,"Sun et al. 2020 Nat Methods, GRAB-DA2h",v1.3_conservative
+SF-iGluSnFR,Glutamate,1,in_vivo(hippocampus),310,7.4,5.8,deltaF/F0,6.8,B,,none,,fluorescence,glutamate_imaging,10.1016/j.neuron.2013.06.043,PMC3650424,CC BY,"Marvin et al. 2013 Neuron, SF-iGluSnFR",v1.3_conservative
+Perceval,ATP/ADP,1,in_cellulo(HeLa),310,7.4,1.8,fold,1.8,B,,none,,FRET,ATP_ADP_ratio,10.1038/nature10433,PMC3513700,CC BY,"Berg et al. 2009 Nature, Perceval",v1.3_conservative
+ASAP2s,Voltage,1,in_vivo(neurons),310,7.4,0.25,deltaF/F0,1.25,B,,none,,fluorescence,voltage_imaging,10.1016/j.neuron.2018.08.021,PMC6527718,CC BY,"Villette et al. 2019 Nat Commun, ASAP2s",v1.3_conservative
+HyPer-7,H2O2,1,in_cellulo(HeLa),310,7.4,8.5,fold,8.5,B,,none,,fluorescence,H2O2_sensor,10.1089/ars.2013.5255,PMC3398213,CC BY,"Bilan et al. 2013 ARS, HyPer-7",v1.3_conservative

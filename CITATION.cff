@@ -1,16 +1,17 @@
 cff-version: 1.2.0
-message: "If you use this dataset, please cite it as below."
-title: "Biological Qubits Atlas: Fluorescent Proteins & Optical Biosensors Extension"
+message: "If you use this dataset, please cite the stable release (v1.2.1) until peer-reviewed version is available."
+title: "Biological Qubits Catalog"
 type: dataset
-version: "1.2.0"
+version: "1.2.1"
 date-released: "2025-10-23"
-doi: "10.5281/zenodo.TBD"
+doi: "10.5281/zenodo.17420604"
 authors:
   - family-names: "Lepesteur"
     given-names: "Tommy"
     orcid: "https://orcid.org/0009-0009-0577-9563"
-repository-code: "https://github.com/Mythmaker28/biological-qubits-atlas"
-url: "https://mythmaker28.github.io/biological-qubits-atlas/"
+    affiliation: "Independent Researcher"
+repository-code: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology"
+url: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology"
 license: "CC-BY-4.0"
 keywords:
   - "biological qubits"
@@ -31,21 +32,23 @@ keywords:
   - "machine learning"
   - "computational design"
 abstract: |
-  A curated atlas of quantum-coherent and optical systems operating in, or compatible 
-  with, biological environments (in vitro, in cellulo, in vivo). Version 1.2.0 extends 
-  the dataset with comprehensive fluorescent protein (FP) and optical biosensor data 
-  harvested from FPbase, UniProt, PDB, and PubMed Central. This release includes ≥50 
-  FP-like entries with ≥25 measured contrast ratios (ΔF/F₀, on/off), alongside legacy 
-  multi-modality systems (NV centers, SiC, NMR, ESR). Complete provenance tracking, 
-  automated ETL pipeline, quality control with blocking thresholds, and stable 
-  versioned interface for downstream computational design pipelines (fp-qubit-design).
+  A curated catalog of quantum-coherent and optical systems operating in, or compatible 
+  with, biological environments (in vitro, in cellulo, in vivo). Version 1.2.1 provides 
+  66 quantum systems with comprehensive provenance tracking, quantified uncertainties, 
+  and quality control validation. Includes NV centers, SiC defects, hyperpolarized nuclei, 
+  and fluorescent protein biosensors. All entries are traceable to peer-reviewed literature 
+  with DOI references. This dataset is actively curated and has not yet undergone formal 
+  peer review (submission planned Q1 2026). Stable releases are production-ready for 
+  research use; pre-releases are for community testing.
 preferred-citation:
   type: dataset
-  title: "Biological Qubits Atlas: Fluorescent Proteins & Optical Biosensors Extension"
+  title: "Biological Qubits Catalog v1.2.1"
   authors:
     - family-names: "Lepesteur"
       given-names: "Tommy"
       orcid: "https://orcid.org/0009-0009-0577-9563"
   year: 2025
-  version: "1.2.0"
-  doi: "10.5281/zenodo.TBD"
+  version: "1.2.1"
+  doi: "10.5281/zenodo.17420604"
+  url: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.2.1"
+  notes: "Stable release (66 systems, 54 measured). Peer-review submission planned Q1 2026. Always verify original sources via provided DOIs."

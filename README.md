@@ -1,9 +1,24 @@
-# ⚛️ Atlas des Qubits Biologiques — v1.2 ✅
+# ⚛️ Biological Qubits Catalog
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![CI - Lint & QC](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/pages.yml/badge.svg)](https://mythmaker28.github.io/biological-qubits-atlas/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+
+---
+
+## 📊 Status & Versioning
+
+- 🟢 **Stable**: [v1.2.1](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.2.1) — 66 systems, 54 measured, QA passed
+- 🟡 **Pre-release**: [v1.3.0-beta](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.3.0-beta) — 80 systems, hybrid curated expansion (+21%)
+- 📝 **Peer-review**: Planned (Data Descriptor submission Q1 2026)
+- 🔗 **DOI**: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) (archived snapshot)
+
+### ⚠️ Research Dataset Disclaimer
+
+This is an **actively curated research dataset** under continuous development. Stable releases (v1.2.1) are production-ready for research use with full provenance tracking. Pre-releases (beta) are for community testing and early adopters. **Always cite stable versions** in publications and verify original sources via provided DOIs/PMCIDs. This dataset has not yet undergone formal peer review—peer-review submission is planned for Q1 2026.
+
+---
 
 ## 🎯 Vue d'ensemble
 
@@ -29,13 +44,13 @@ Base de données structurée et vérifiée de tous les **systèmes quantiques bi
 
 **Pour chercheurs en quantum computing** : Filtrer par `Methode_lecture=ODMR` et `Classe=A ou B` pour qubits contrôlables stricts.
 
-**Version 1.2 — Qualité Publication** ✅
-- ✅ Provenance complète (Source_T2, Source_T1, Source_Contraste)
-- ✅ Incertitudes quantifiées (T2_us_err, T1_s_err, Contraste_err)
-- ✅ Flags biologiques (Hyperpol_flag, Cytotox_flag, Temp_controlled)
-- ✅ Linter automatique intégré (`qubits_linter.py`)
-- ✅ 0 erreur bloquante (validé QC_REPORT.md)
-- ✅ Prêt pour dépôt Zenodo
+**Version 1.2.1 — Stable Release** 🟢
+- ✅ Full provenance tracking (Source_T2, Source_T1, Source_Contraste)
+- ✅ Quantified uncertainties (T2_us_err, T1_s_err, Contraste_err)
+- ✅ Biological flags (Hyperpol_flag, Cytotox_flag, Temp_controlled)
+- ✅ Automated linter integrated (`qubits_linter.py`)
+- ✅ 0 blocking errors (validated via QC_REPORT.md)
+- 🚧 Zenodo archived (DOI minted, peer-review pending)
 
 ## 📊 Aperçu visuel
 

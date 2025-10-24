@@ -1,0 +1,10 @@
+# Configuration Environment Variables — v2.0
+# Copier vers .env et remplir les valeurs
+# NE PAS COMMITER .env (protégé par .gitignore)
+
+NCBI_API_KEY=a0b0aa017e8720528fb9f89dc68088ce8208
+NCBI_EMAIL=tommy.lepesteur@hotmail.fr
+FPBASE_API_KEY=
+GH_TOKEN=
+
+

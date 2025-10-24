@@ -1,0 +1,65 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Biological Qubits Atlas v2.0.0",
+  "description": "Comprehensive catalog of quantum systems in biology: NV centers, SiC defects, fluorescent proteins, and biosensors with measured coherence times (T2), contrast, and provenance.",
+  "version": "2.0.0",
+  "url": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v2.0.0",
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "propertyID": "DOI",
+      "value": "10.5281/zenodo.XXXXX"
+    },
+    {
+      "@type": "PropertyValue",
+      "propertyID": "GitHub",
+      "value": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology"
+    }
+  ],
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Biological Qubits Consortium",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "ORCID",
+        "value": "0000-0000-0000-0000"
+      }
+    }
+  ],
+  "datePublished": "2025-10-24",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "keywords": [
+    "quantum biology",
+    "quantum sensors",
+    "fluorescent proteins",
+    "biosensors",
+    "coherence time",
+    "ODMR",
+    "nitrogen vacancy centers"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/download/v2.0.0/atlas.csv"
+    }
+  ],
+  "variableMeasured": [
+    {
+      "@type": "PropertyValue",
+      "name": "T2 Coherence Time",
+      "description": "Transverse coherence time in microseconds",
+      "unitText": "\u00b5s"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Contrast",
+      "description": "Optical/ODMR contrast (normalized 0-1)",
+      "unitText": "dimensionless"
+    }
+  ],
+  "temporalCoverage": "2006/2025",
+  "isAccessibleForFree": true
+}

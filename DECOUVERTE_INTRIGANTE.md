@@ -230,3 +230,6 @@ Les **paires radicalaires photosynthétiques** (Engel 2007) car :
 **Ma recommandation** : Ajouter ce système en **Classe D** avec une note explicite du débat scientifique.
 
 
+
+
+

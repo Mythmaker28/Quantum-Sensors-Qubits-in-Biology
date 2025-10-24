@@ -1,13 +1,26 @@
 #!/usr/bin/env python3
 """
-Linter pour biological_qubits.csv — Atlas des Qubits Biologiques v1.2
+Linter pour biological_qubits.csv — Biological Qubits Catalog v1.3
 Vérifie cohérence, unités, plages de valeurs et génère QC_REPORT.md
+
+Modes:
+- beta: Warnings allowed (exit 0)
+- stable: Warnings = errors (exit 1)
+
+Usage:
+  QA_MODE=beta python qubits_linter.py    # Beta mode (default)
+  QA_MODE=stable python qubits_linter.py  # Strict mode
 """
 
 import csv
 import re
+import os
+import sys
 from typing import List, Dict, Tuple
 from dataclasses import dataclass, field
+
+# Validation mode from environment
+QA_MODE = os.getenv("QA_MODE", "beta")  # "beta" or "stable"
 
 @dataclass
 class LintIssue:
@@ -323,16 +336,32 @@ class QubitsLinter:
 
 def main():
     """Point d'entrée principal"""
+    print(f"[QA] Validation mode: {QA_MODE.upper()}")
+    
     linter = QubitsLinter("biological_qubits.csv")
     stats = linter.lint_all()
     linter.generate_report_md("QC_REPORT.md")
     
-    # Code de sortie : 1 si erreurs bloquantes, 0 sinon
-    exit_code = 1 if stats.erreurs > 0 else 0
-    if exit_code == 0:
-        print("\n[OK] No blocking errors. Dataset ready for publication!")
+    # Exit code logic depends on mode
+    if QA_MODE == "stable":
+        # STRICT MODE: Warnings = errors
+        exit_code = 1 if (stats.erreurs > 0 or stats.warnings > 0) else 0
+        if exit_code == 0:
+            print("\n[OK] No errors or warnings. Dataset ready for STABLE release!")
+        elif stats.erreurs > 0:
+            print(f"\n[ERROR] {stats.erreurs} blocking error(s) found (STABLE mode)")
+        else:
+            print(f"\n[ERROR] {stats.warnings} warning(s) found (not acceptable in STABLE mode)")
     else:
-        print(f"\n[ERROR] {stats.erreurs} blocking error(s) to fix.")
+        # BETA MODE: Warnings OK
+        exit_code = 1 if stats.erreurs > 0 else 0
+        if exit_code == 0:
+            if stats.warnings > 0:
+                print(f"\n[OK] No blocking errors. {stats.warnings} warning(s) present (acceptable in BETA mode)")
+            else:
+                print("\n[OK] No errors or warnings. Dataset ready for BETA release!")
+        else:
+            print(f"\n[ERROR] {stats.erreurs} blocking error(s) to fix.")
     
     return exit_code
 

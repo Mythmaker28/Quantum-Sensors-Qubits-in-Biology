@@ -18,14 +18,14 @@ L'Atlas FP Optical est un dataset curé de protéines fluorescentes (FP) et bios
 
 ### 1. atlas_fp_optical.csv
 
-**URL stable (Release v1.2.0)**:
+**URL stable (Release v1.2.1)**:
 ```
-https://github.com/[OWNER]/[REPO]/releases/download/v1.2.0/atlas_fp_optical.csv
+https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/download/v1.2.1/atlas_fp_optical.csv
 ```
 
 **Zenodo DOI** (versionné):
 ```
-https://doi.org/10.5281/zenodo.XXXXXXX  # À compléter après dépôt
+https://doi.org/10.5281/zenodo.TBD  # À compléter après dépôt Zenodo
 ```
 
 **Checksum (SHA256)**:
@@ -33,9 +33,22 @@ https://doi.org/10.5281/zenodo.XXXXXXX  # À compléter après dépôt
 333ADC871F5B2EC5118298DE4E534A468C7379F053D8B03C13D7CD9EB7C43285
 ```
 
+**Integrity Verification**:
+```bash
+# Download and verify
+wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/download/v1.2.1/atlas_fp_optical.csv
+sha256sum atlas_fp_optical.csv
+# Expected: 333ADC871F5B2EC5118298DE4E534A468C7379F053D8B03C13D7CD9EB7C43285
+
+# Or with PowerShell (Windows)
+Invoke-WebRequest -Uri "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/download/v1.2.1/atlas_fp_optical.csv" -OutFile "atlas_fp_optical.csv"
+(Get-FileHash atlas_fp_optical.csv -Algorithm SHA256).Hash
+# Expected: 333ADC871F5B2EC5118298DE4E534A468C7379F053D8B03C13D7CD9EB7C43285
+```
+
 **Format**: CSV (UTF-8, comma-separated)
 
-**Taille estimée**: ~50-200 entrées (v1.2.0)
+**Size**: 66 entries (8 KB)
 
 ---
 

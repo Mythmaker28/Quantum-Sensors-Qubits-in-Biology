@@ -1,0 +1,65 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Biological Qubits Atlas",
+  "version": "2.0.0",
+  "description": "Curated database of quantum-enabled biosensing systems with reproducible ETL pipeline, ML predictions, and interactive dashboard",
+  "applicationCategory": "Scientific Database",
+  "operatingSystem": [
+    "Windows",
+    "macOS",
+    "Linux"
+  ],
+  "programmingLanguage": [
+    "Python",
+    "JavaScript"
+  ],
+  "runtimePlatform": "Python 3.8+",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Tommy",
+      "familyName": "Lepesteur",
+      "@id": "https://orcid.org/0009-0009-0577-9563",
+      "email": "tommy.lepesteur@hotmail.fr",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Independent researcher"
+      }
+    }
+  ],
+  "maintainer": {
+    "@type": "Person",
+    "givenName": "Tommy",
+    "familyName": "Lepesteur"
+  },
+  "license": "https://www.apache.org/licenses/LICENSE-2.0",
+  "codeRepository": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology",
+  "contIntegration": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/actions",
+  "issueTracker": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues",
+  "readme": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/blob/main/README.md",
+  "dateCreated": "2024-01-01",
+  "dateModified": "2025-10-24",
+  "datePublished": "2025-10-24",
+  "softwareRequirements": [
+    "Python >=3.8",
+    "pandas >=2.0",
+    "numpy >=1.24",
+    "requests >=2.31",
+    "PyYAML >=6.0"
+  ],
+  "keywords": [
+    "quantum biology",
+    "biosensors",
+    "fluorescent proteins",
+    "machine learning",
+    "GNN",
+    "FAIR data",
+    "open science"
+  ],
+  "citation": {
+    "@type": "ScholarlyArticle",
+    "name": "Biological Qubits Atlas: a curated, reproducible catalog",
+    "url": "https://www.biorxiv.org/content/XXX"
+  }
+}
