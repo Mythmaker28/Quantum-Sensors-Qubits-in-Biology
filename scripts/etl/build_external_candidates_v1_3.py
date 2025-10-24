@@ -36,7 +36,18 @@ def load_config() -> Dict:
     with open("config/providers.yml", 'r', encoding='utf-8') as f:
         return yaml.safe_load(f)
 
+def load_alias_config() -> Dict:
+    """Load alias configuration."""
+    alias_path = Path("config/alias.yaml")
+    if not alias_path.exists():
+        print("WARNING: alias.yaml not found, skipping alias mapping")
+        return {'aliases': [], 'no_merge_variants': []}
+    
+    with open(alias_path, 'r', encoding='utf-8') as f:
+        return yaml.safe_load(f)
+
 CONFIG = load_config()
+ALIAS_CONFIG = load_alias_config()
 
 def normalize_name(name: str) -> str:
     """Normalize protein name."""
@@ -46,6 +57,43 @@ def normalize_name(name: str) -> str:
     normalized = re.sub(r'[^\w\s-]', '', normalized)
     normalized = re.sub(r'\s+', '_', normalized)
     return normalized
+
+def apply_aliases(name: str, alias_config: Dict) -> str:
+    """
+    Apply alias mapping to protein name.
+    
+    Args:
+        name: Protein name
+        alias_config: Alias configuration dict
+        
+    Returns:
+        Canonical name from alias mapping, or original name if no alias found
+    """
+    if not name or pd.isna(name):
+        return name
+    
+    # Build alias mapping (first in group is canonical)
+    alias_map = {}
+    for alias_group in alias_config.get('aliases', []):
+        if not alias_group or len(alias_group) < 2:
+            continue
+        canonical = alias_group[0]  # First is canonical
+        for variant in alias_group:
+            alias_map[variant] = canonical
+            # Also map lowercase versions
+            alias_map[variant.lower()] = canonical
+            alias_map[normalize_name(variant)] = normalize_name(canonical)
+    
+    # Check exact match first
+    if name in alias_map:
+        return alias_map[name]
+    
+    # Check normalized match
+    normalized = normalize_name(name)
+    if normalized in alias_map:
+        return alias_map[normalized]
+    
+    return name
 
 def load_fpbase() -> pd.DataFrame:
     """Load FPbase data."""
@@ -217,7 +265,7 @@ def load_supplement_contrasts() -> pd.DataFrame:
 
 def fuzzy_match_names(df: pd.DataFrame, threshold: int = 2) -> pd.DataFrame:
     """
-    Fuzzy match protein names within a group.
+    Fuzzy match protein names within a group, respecting no_merge_variants.
     
     Args:
         df: DataFrame with normalized_name column
@@ -229,6 +277,15 @@ def fuzzy_match_names(df: pd.DataFrame, threshold: int = 2) -> pd.DataFrame:
     unique_names = df['normalized_name'].unique()
     name_groups = {}
     
+    # Build no_merge set from config
+    no_merge_pairs = set()
+    for pair in ALIAS_CONFIG.get('no_merge_variants', []):
+        if len(pair) == 2:
+            n1 = normalize_name(pair[0])
+            n2 = normalize_name(pair[1])
+            no_merge_pairs.add((n1, n2))
+            no_merge_pairs.add((n2, n1))  # Bidirectional
+    
     for name in unique_names:
         if not name:
             continue
@@ -236,6 +293,10 @@ def fuzzy_match_names(df: pd.DataFrame, threshold: int = 2) -> pd.DataFrame:
         # Find existing group within threshold
         matched = False
         for canonical, group in name_groups.items():
+            # Check if this pair is in no_merge list
+            if (name, canonical) in no_merge_pairs or (canonical, name) in no_merge_pairs:
+                continue  # Skip fuzzy match for this pair
+            
             if levenshtein_distance(name, canonical) <= threshold:
                 group.append(name)
                 matched = True
@@ -252,7 +313,8 @@ def fuzzy_match_names(df: pd.DataFrame, threshold: int = 2) -> pd.DataFrame:
     
     df['canonical_name'] = df['normalized_name'].map(name_to_canonical)
     
-    print(f"Fuzzy matching: {len(unique_names)} names → {len(name_groups)} canonical groups")
+    print(f"Fuzzy matching: {len(unique_names)} names -> {len(name_groups)} canonical groups")
+    print(f"   Protected {len(no_merge_pairs)//2} variant pairs from merging")
     
     return df
 
@@ -290,10 +352,18 @@ def deduplicate_advanced(df: pd.DataFrame) -> pd.DataFrame:
     # Group by canonical_name and keep best row
     df = df.sort_values(by=['canonical_name', 'tier', 'contrast_value'], na_position='last')
     
-    # For rows with same canonical_name, merge data
-    grouped = df.groupby('canonical_name', as_index=False).agg({
+    # Build aggregation dict dynamically based on available columns
+    agg_dict = {
         'protein_name': 'first',
         'normalized_name': 'first',
+        'tier': 'min',
+        'source': 'first',
+        'source_refs': lambda x: '; '.join([str(v) for v in x if pd.notna(v)]),
+        'license_source': 'first'
+    }
+    
+    # Add optional columns if they exist
+    optional_cols = {
         'fpbase_slug': 'first',
         'family': 'first',
         'excitation_nm': 'first',
@@ -315,14 +385,17 @@ def deduplicate_advanced(df: pd.DataFrame) -> pd.DataFrame:
         'ci_low': 'first',
         'ci_high': 'first',
         'condition_text': 'first',
-        'evidence_type': 'first',
-        'source': 'first',
-        'source_refs': lambda x: '; '.join([str(v) for v in x if pd.notna(v)]),
-        'license_source': 'first',
-        'tier': 'min'
-    })
+        'evidence_type': 'first'
+    }
     
-    print(f"Deduplication: {len(df)} rows → {len(grouped)} unique systems")
+    for col, agg_func in optional_cols.items():
+        if col in df.columns:
+            agg_dict[col] = agg_func
+    
+    # For rows with same canonical_name, merge data
+    grouped = df.groupby('canonical_name', as_index=False).agg(agg_dict)
+    
+    print(f"Deduplication: {len(df)} rows -> {len(grouped)} unique systems")
     
     return grouped
 
@@ -348,7 +421,16 @@ def main():
     all_df = pd.concat([fpbase_df, specialist_df, pmc_df, supp_df], ignore_index=True)
     print(f"\nTotal raw records: {len(all_df)}")
     
-    # Fuzzy matching
+    # Apply aliases BEFORE fuzzy matching
+    print("\nApplying alias mapping...")
+    all_df['protein_name_original'] = all_df['protein_name']
+    all_df['protein_name'] = all_df['protein_name'].apply(lambda x: apply_aliases(x, ALIAS_CONFIG))
+    all_df['normalized_name'] = all_df['protein_name'].apply(normalize_name)
+    
+    alias_count = (all_df['protein_name'] != all_df['protein_name_original']).sum()
+    print(f"   Applied {alias_count} alias transformations")
+    
+    # Fuzzy matching (with no_merge_variants protection)
     all_df = fuzzy_match_names(all_df, threshold=CONFIG['validation']['fuzzy_match']['threshold'])
     
     # Deduplicate

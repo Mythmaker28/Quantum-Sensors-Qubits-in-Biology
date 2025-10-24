@@ -1,0 +1,43 @@
+SUPPLEMENTARY MATERIAL A - QUALITY ASSURANCE AUDIT REPORT
+
+Atlas Version: 1.2.1
+Date: October 23, 2025
+Status: QA PASS
+
+EXECUTIVE SUMMARY
+The Biological Qubits Atlas v1.2.1 passed all quality assurance thresholds for publication. The dataset contains 66 fluorescent protein (FP) biosensor entries, of which 54 (82%) have measured optical contrast values extracted from peer-reviewed, Open Access literature.
+
+QUALITY THRESHOLDS (Blocking Gates)
+Metric                    Value    Threshold    Status
+Total FP entries         66       >= 50        PASS
+Measured contrast        54       >= 25        PASS
+Families with >=3       7        >= 6         PASS
+
+DATASET COMPOSITION
+- Total entries: 66
+- With measured contrast: 54 (81.8%)
+- With computed contrast: 0 (0%)
+- With any contrast: 54 (81.8%)
+- With UniProt ID: 3 (4.5%)
+- With PDB ID: 9 (13.6%)
+
+FAMILY COVERAGE
+The dataset covers 7 protein families with >=3 measured systems each:
+
+Family      Total  Measured  Top Sensor    Peak Contrast
+Calcium     10     10        jGCaMP8s      90-fold
+GFP-like    8      8         sfGFP         1.3-fold
+Far-red     5      5         mCardinal     18-fold
+RFP         5      5         FusionRed     7-fold
+Dopamine    3      3         dLight1.2     2.9-fold
+CFP-like    3      3         mTurquoise2   1.1-fold
+Voltage     3      3         ArcLight      35% ΔF/F₀
+
+DATA INTEGRITY
+- 100% of measured contrasts have DOI or PMCID citation
+- 98% of entries have figure/table reference
+- 100% of entries have license source (CC-BY, CC0, or CC BY-SA)
+- No synthetic data: Zero synthetic, placeholder, or demo values
+
+CONCLUSION
+Atlas v1.2.1 meets all quality gates for publication. Data integrity is confirmed with 100% real values, full traceability (DOI/PMCID), and open licenses (CC-BY/CC0). The dataset is ready for release and consumer handoff.

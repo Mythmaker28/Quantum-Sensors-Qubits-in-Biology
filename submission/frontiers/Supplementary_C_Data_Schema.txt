@@ -1,0 +1,160 @@
+SUPPLEMENTARY MATERIAL C - DATA SCHEMA AND COLUMN DESCRIPTIONS
+
+Atlas Version: 1.2.1
+Date: October 23, 2025
+File: atlas_fp_optical.csv
+
+OVERVIEW
+This document defines the complete schema for the Biological Qubits Atlas v1.2.1 dataset, including column names, data types, units, and descriptions. The schema is guaranteed stable for v1.2.x releases (semantic versioning).
+
+FILE FORMAT
+- Format: CSV (Comma-Separated Values)
+- Encoding: UTF-8
+- Delimiter: , (comma)
+- Quote Character: " (double quote)
+- Header: First row contains column names
+- Rows: 66 (data) + 1 (header)
+- File Size: ~8 KB
+
+COLUMN SCHEMA
+
+IDENTIFICATION COLUMNS
+Column Name      Type     Description                                    Nullable  Example
+SystemID         string   Unique identifier (format: FP_EXT_XXXX)       No        FP_EXT_0001
+protein_name     string   Common protein name                           No        jGCaMP8s
+variant          string   Genetic variant or mutation                   Yes       A206K
+family           string   Protein family classification                 Yes       Calcium
+is_biosensor     int      Binary flag: 1 = biosensor, 0 = standard FP   No        1
+
+CROSS-REFERENCES
+Column Name      Type     Description                    Nullable  Example
+uniprot_id       string   UniProt accession number      Yes       P42212
+pdb_id           string   Protein Data Bank structure ID Yes       3WLD
+
+OPTICAL PROPERTIES
+Column Name         Type     Unit         Description                    Nullable  Example
+excitation_nm       float    nm           Peak excitation wavelength     Yes       488.0
+emission_nm         float    nm           Peak emission wavelength        Yes       510.0
+quantum_yield       float    dimensionless Fluorescence quantum yield     Yes       0.60
+extinction_coef     float    M⁻¹cm⁻¹      Molar extinction coefficient   Yes       56000.0
+brightness_relative float    dimensionless Relative brightness           Yes       33.6
+
+CONTRAST MEASUREMENTS
+Column Name            Type     Unit     Description                    Nullable  Example
+contrast_ratio         float    varies   Measured or computed contrast   Yes       90.0
+contrast_unit          string   N/A      Unit of contrast_ratio         Yes       fold
+contrast_normalized    float    fold     Contrast normalized to fold   Yes       90.0
+contrast_ci_low        float    varies   Lower bound of 95% CI         Yes       85.0
+contrast_ci_high       float    varies   Upper bound of 95% CI         Yes       95.0
+contrast_source        string   N/A      Source: measured/computed/none No        measured
+contrast_quality_tier  string   N/A      Quality tier: A/B/C           Yes       A
+
+EXPERIMENTAL CONTEXT
+Column Name      Type     Unit         Description                    Nullable  Example
+temperature_K    float    Kelvin       Measurement temperature         Yes       310.0
+pH               float    dimensionless Measurement pH                  Yes       7.4
+host_system      string   N/A          Expression system              Yes       HEK293
+condition_text   string   N/A          Free-text description           Yes       "Saturating Ca²⁺ (10 µM)"
+
+PROVENANCE AND LICENSING
+Column Name      Type     Description                    Nullable  Example
+source_refs      string   DOI, PMCID, or database ref   Yes       DOI:10.1038/s41586-021-03362-w
+license_source   string   License of source data        Yes       CC-BY
+figure_ref       string   Figure/table reference        Yes       Figure 2C
+evidence_type    string   Evidence source               Yes       xml
+
+DATA TYPES AND CONSTRAINTS
+
+STRING COLUMNS
+- Encoding: UTF-8
+- Max Length: 255 characters (practical limit)
+- NULL Representation: Empty string "" or NULL in Pandas
+
+NUMERIC COLUMNS
+- Type: float64 (Pandas) or REAL (SQLite)
+- NULL Representation: NaN (Pandas) or NULL (SQLite)
+- Range Constraints:
+  - excitation_nm, emission_nm: 300-800 nm (visible to NIR)
+  - quantum_yield: 0.0-1.0
+  - extinction_coef: 1000-200000 M⁻¹cm⁻¹
+  - contrast_ratio: 0.0-100.0 (typical range; outliers >100 flagged in QA)
+  - temperature_K: 273-323 K (-0°C to 50°C)
+  - pH: 4.0-10.0 (physiological range)
+
+BOOLEAN COLUMNS
+- is_biosensor: Integer (0 or 1, not TRUE/FALSE)
+
+MISSING DATA POLICY
+- NULL: Data not available or not applicable
+- 0.0: Actual measurement of zero (rare; typically means "no contrast")
+
+EXAMPLES
+
+Case                    contrast_ratio  contrast_source  Interpretation
+Measured value          90.0           "measured"      Real measurement from literature
+Computed value          2.5           "computed"      Estimated from QY × ε
+Unknown                 NULL           "none"          No data available
+No contrast             1.0           "measured"      Measured, no change (e.g., control FP)
+
+QUALITY ASSURANCE RULES
+All data in v1.2.1 satisfy:
+1. No synthetic data: All values are real or NULL
+2. License compliance: Only OA-compatible licenses (CC-BY, CC0, CC BY-SA)
+3. Provenance: All measured contrasts have DOI/PMCID
+4. No duplicates: Unique SystemID per entry
+5. Type consistency: All columns match declared types
+
+EXAMPLE ROW (jGCaMP8s)
+SystemID,protein_name,variant,family,is_biosensor,uniprot_id,pdb_id,excitation_nm,emission_nm,temperature_K,pH,contrast_ratio,contrast_unit,contrast_normalized,contrast_ci_low,contrast_ci_high,contrast_source,contrast_quality_tier,condition_text,source_refs,license_source,figure_ref,evidence_type
+FP_EXT_0012,jGCaMP8s,,Calcium,1,,,488.0,510.0,310.0,7.4,90.0,fold,90.0,85.0,95.0,measured,A,"Saturating Ca²⁺ (10 µM) vs. resting (100 nM), HEK293 cells",DOI:10.1038/s41586-021-03362-w,CC-BY,Figure 2C,xml
+
+VERSION HISTORY
+v1.2.1 (October 2025)
+- Columns: 22
+- Entries: 66
+- Schema: Stable (guaranteed compatible with v1.2.0)
+
+v1.2.0 (October 2025)
+- Initial schema with 22 columns
+- Breaking change from v1.1.x (renamed columns, added quality tiers)
+
+CONSUMER RECIPE
+
+PYTHON (PANDAS)
+import pandas as pd
+
+# Load dataset
+url = "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/download/v1.2.1/atlas_fp_optical.csv"
+df = pd.read_csv(url)
+
+# Enforce schema types
+df['SystemID'] = df['SystemID'].astype(str)
+df['is_biosensor'] = df['is_biosensor'].astype(int)
+df['excitation_nm'] = pd.to_numeric(df['excitation_nm'], errors='coerce')
+df['emission_nm'] = pd.to_numeric(df['emission_nm'], errors='coerce')
+df['contrast_ratio'] = pd.to_numeric(df['contrast_ratio'], errors='coerce')
+
+# Filter for measured contrasts only
+measured = df[df['contrast_source'] == 'measured']
+
+print(f"Loaded {len(df)} entries, {len(measured)} with measured contrast")
+
+R
+library(readr)
+
+# Load dataset
+url <- "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/download/v1.2.1/atlas_fp_optical.csv"
+df <- read_csv(url)
+
+# Filter for biosensors with measured contrast
+biosensors <- df[df$is_biosensor == 1 & df$contrast_source == "measured", ]
+
+cat(sprintf("Loaded %d entries, %d biosensors with measured contrast
+", nrow(df), nrow(biosensors)))
+
+CONTACT AND SUPPORT
+For schema questions or data issues, please contact:
+- GitHub Issues: https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues
+- Email: (to be provided)
+
+End of Schema Documentation

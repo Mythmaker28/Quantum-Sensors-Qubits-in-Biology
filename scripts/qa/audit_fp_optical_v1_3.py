@@ -138,8 +138,8 @@ def generate_report(audit_results: dict, output_path: Path):
         "",
         "### Counts",
         "",
-        f"- **N_total**: {audit_results['counts']['N_total']} {'✓ PASS' if audit_results['counts']['pass_N_total'] else '✗ FAIL'}",
-        f"- **N_measured**: {audit_results['counts']['N_measured']} {'✓ PASS' if audit_results['counts']['pass_N_measured'] else '✗ FAIL'}",
+        f"- **N_total**: {audit_results['counts']['N_total']} {'[OK] PASS' if audit_results['counts']['pass_N_total'] else '[FAIL]'}",
+        f"- **N_measured**: {audit_results['counts']['N_measured']} {'[OK] PASS' if audit_results['counts']['pass_N_measured'] else '[FAIL]'}",
         f"- N_with_ci: {audit_results['counts']['N_with_ci']}",
         f"- N_tier_A: {audit_results['counts']['N_tier_A']}",
         f"- N_tier_B: {audit_results['counts']['N_tier_B']}",
@@ -147,7 +147,7 @@ def generate_report(audit_results: dict, output_path: Path):
         "",
         "### Family Coverage",
         "",
-        f"- **families_with_ge_5**: {audit_results['families']['families_with_ge_5']} {'✓ PASS' if audit_results['families']['pass_families'] else '✗ FAIL'}",
+        f"- **families_with_ge_5**: {audit_results['families']['families_with_ge_5']} {'[OK] PASS' if audit_results['families']['pass_families'] else '[FAIL]'}",
         "",
         "#### Family Breakdown (measured systems):",
         ""
@@ -163,13 +163,13 @@ def generate_report(audit_results: dict, output_path: Path):
         "",
         f"- unique_dois: {audit_results['dois']['unique_dois']}",
         f"- total_measured: {audit_results['dois']['total_measured']}",
-        f"- **unique_doi_rate**: {audit_results['dois']['unique_doi_rate']:.3f} {'✓ PASS' if audit_results['dois']['pass_doi_rate'] else '✗ FAIL'}",
+        f"- **unique_doi_rate**: {audit_results['dois']['unique_doi_rate']:.3f} {'[OK] PASS' if audit_results['dois']['pass_doi_rate'] else '[FAIL]'}",
         "",
         "### License Compliance",
         "",
         f"- license_ok_count: {audit_results['licenses']['license_ok_count']}",
         f"- license_uncertain_count: {audit_results['licenses']['license_uncertain_count']}",
-        f"- **license_ok_rate**: {audit_results['licenses']['license_ok_rate']:.3f} {'✓ PASS' if audit_results['licenses']['pass_license'] else '✗ FAIL'}",
+        f"- **license_ok_rate**: {audit_results['licenses']['license_ok_rate']:.3f} {'[OK] PASS' if audit_results['licenses']['pass_license'] else '[FAIL]'}",
         "",
         "## Overall Status",
         ""
@@ -184,7 +184,7 @@ def generate_report(audit_results: dict, output_path: Path):
     ])
     
     if all_pass:
-        report_lines.append("**✓ ALL CHECKS PASSED** - Ready for release v1.3.0")
+        report_lines.append("**[OK] ALL CHECKS PASSED** - Ready for release v1.3.0")
     else:
         report_lines.append("**✗ SOME CHECKS FAILED** - Release blocked, see details above")
     
@@ -245,10 +245,10 @@ def main():
     ])
     
     if all_pass:
-        print("\n✓ ALL CHECKS PASSED - Ready for release v1.3.0!")
+        print("\n[OK] ALL CHECKS PASSED - Ready for release v1.3.0!")
         return 0
     else:
-        print("\n✗ SOME CHECKS FAILED - Release blocked")
+        print("\n[X] SOME CHECKS FAILED - Release blocked")
         return 1
 
 if __name__ == "__main__":

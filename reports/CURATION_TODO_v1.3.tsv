@@ -1,0 +1,37 @@
+protein_name	family	is_biosensor	context_guess	host_guess	first_doi	candidate_dois	priority	note
+PercevalHR	ATP/ADP	1.0	cells	unknown	10.1038/nature10433	10.1038/nature10433	HIGH	needs_measured_contrast
+GRAB-ACh3.0	Acetylcholine	1.0	neurons	unknown	10.1038/s41586-020-2421-8	10.1038/s41586-020-2421-8	HIGH	needs_measured_contrast
+iAChSnFR	Acetylcholine	1.0	neurons	unknown	10.1016/j.neuron.2018.11.003	10.1016/j.neuron.2018.11.003; 10.1038/s41467-019-10178-4	HIGH	needs_measured_contrast
+GCaMP6s	Calcium	1.0	neurons	neurons(mouse/rat)	10.1038/nature12354	10.1038/nature12354; 10.1038/nature12354; 10.1038/nature12354	HIGH	needs_measured_contrast
+NIR-GECO2	Calcium	1.0	neurons	neurons(mouse/rat)	10.1038/s41589-021-00813-6	10.1038/s41589-021-00813-6	HIGH	needs_measured_contrast
+R-GECO1	Calcium	1.0	neurons	neurons(mouse/rat)	10.1021/cb400931x	10.1021/cb400931x; 10.1038/nmeth.4333	HIGH	needs_measured_contrast
+RCaMP1h	Calcium	1.0	neurons	neurons(mouse/rat)	10.1038/nmeth.3764	10.1038/nmeth.3764	HIGH	needs_measured_contrast
+RCaMP2	Calcium	1.0	neurons	neurons(mouse/rat)	10.1038/s41467-019-12888-2	10.1038/s41467-019-12888-2	HIGH	needs_measured_contrast
+jGCaMP7s	Calcium	1.0	neurons	neurons(mouse/rat)	10.1126/science.abf4084	10.1126/science.abf4084; 10.1126/science.abf4084; 10.1016/j.neuron.2023.02.011	HIGH	needs_measured_contrast
+jGCaMP8s	Calcium	1.0	neurons	neurons(mouse/rat)	10.1016/j.neuron.2023.02.011	10.1016/j.neuron.2023.02.011	HIGH	needs_measured_contrast
+jRGECO1a	Calcium	1.0	neurons	neurons(mouse/rat)	10.7554/eLife.13415	10.7554/eLife.13415	HIGH	needs_measured_contrast
+jRGECO1b	Calcium	1.0	neurons	neurons(mouse/rat)	10.7554/eLife.13415	10.7554/eLife.13415	HIGH	needs_measured_contrast
+GRAB-DA2h	Dopamine	1.0	neurons	neurons(mouse/rat)	10.1038/s41592-020-0786-1	10.1038/s41592-020-0786-1	HIGH	needs_measured_contrast
+GRAB-DA2m	Dopamine	1.0	neurons	neurons(mouse/rat)	10.1038/s41592-020-0786-1	10.1038/s41592-020-0786-1	HIGH	needs_measured_contrast
+dLight1.1	Dopamine	1.0	neurons	neurons(mouse/rat)	10.1038/s41592-018-0251-6	10.1038/s41592-018-0251-6	HIGH	needs_measured_contrast
+dLight1.2	Dopamine	1.0	neurons	neurons(mouse/rat)	10.1038/s41592-018-0251-6	10.1038/s41592-018-0251-6	HIGH	needs_measured_contrast
+dLight1.3b	Dopamine	1.0	neurons	neurons(mouse/rat)	10.1038/s41592-020-0870-6	10.1038/s41592-020-0870-6	HIGH	needs_measured_contrast
+SF-iGluSnFR.A184S	Glutamate	1.0	neurons	neurons(mouse/rat)	10.7554/eLife.41275	10.7554/eLife.41275	HIGH	needs_measured_contrast
+iGluSnFR	Glutamate	1.0	neurons	neurons(mouse/rat)	10.1016/j.neuron.2013.06.043	10.1016/j.neuron.2013.06.043	HIGH	needs_measured_contrast
+HyPer	H2O2	1.0	cells	HEK293/HeLa	10.1038/ncb1197	10.1038/ncb1197	HIGH	needs_measured_contrast
+HyPer3	H2O2	1.0	cells	HEK293/HeLa	10.1089/ars.2013.5255	10.1089/ars.2013.5255	HIGH	needs_measured_contrast
+GRAB-NE1m	Norepinephrine	1.0	neurons	unknown	10.1016/j.cell.2019.12.015	10.1016/j.cell.2019.12.015	HIGH	needs_measured_contrast
+roGFP2	Redox	1.0	cells	HEK293/HeLa	10.1074/jbc.M312846200	10.1074/jbc.M312846200	HIGH	needs_measured_contrast
+GRAB-5HT1.0	Serotonin	1.0	neurons	unknown	10.1016/j.cell.2020.08.034	10.1016/j.cell.2020.08.034	HIGH	needs_measured_contrast
+ASAP3	Voltage	1.0	neurons/voltage_clamp	neurons(mouse/rat)	10.1016/j.neuron.2018.08.021	10.1016/j.neuron.2018.08.021	HIGH	needs_measured_contrast
+Ace-mNeon	Voltage	1.0	neurons/voltage_clamp	neurons(mouse/rat)	10.1038/s41592-019-0552-6	10.1038/s41592-019-0552-6	HIGH	needs_measured_contrast
+ArcLight	Voltage	1.0	neurons/voltage_clamp	neurons(mouse/rat)	10.1016/j.neuron.2012.01.033	10.1016/j.neuron.2012.01.033	HIGH	needs_measured_contrast
+Archon1	Voltage	1.0	neurons/voltage_clamp	neurons(mouse/rat)	10.1038/s41586-019-1166-7	10.1038/s41586-019-1166-7	HIGH	needs_measured_contrast
+QuasAr2	Voltage	1.0	neurons/voltage_clamp	neurons(mouse/rat)	10.1126/science.aab0810	10.1126/science.aab0810	HIGH	needs_measured_contrast
+VSFP-Butterfly	Voltage	1.0	neurons/voltage_clamp	neurons(mouse/rat)	10.1126/science.1108404	10.1126/science.1108404	HIGH	needs_measured_contrast
+Epac-SH187	cAMP	1.0	cells	HEK293/HeLa	10.1073/pnas.0408543101	10.1073/pnas.0408543101	HIGH	needs_measured_contrast
+Pink Flamindo	cAMP	1.0	cells	HEK293/HeLa	10.1038/s41467-017-01417-3	10.1038/s41467-017-01417-3	HIGH	needs_measured_contrast
+cADDis	cAMP	1.0	cells	HEK293/HeLa	10.1038/s41467-021-27626-z	10.1038/s41467-021-27626-z	HIGH	needs_measured_contrast
+SypHer3s	pH	1.0	cells/organelles	HEK293/HeLa	10.1021/acschembio.9b00864	10.1021/acschembio.9b00864	HIGH	needs_measured_contrast
+pHluorin	pH	1.0	cells/organelles	HEK293/HeLa	10.1016/S0896-6273(00)80127-4	10.1016/S0896-6273(00)80127-4	HIGH	needs_measured_contrast
+pHuji	pH	1.0	cells/organelles	HEK293/HeLa	10.1016/j.bpj.2018.02.002	10.1016/j.bpj.2018.02.002	HIGH	needs_measured_contrast

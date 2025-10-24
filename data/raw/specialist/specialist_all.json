@@ -111,7 +111,7 @@
         }
       ],
       "count": 15,
-      "timestamp": 1761264948.4634063
+      "timestamp": 1761270206.9209974
     },
     {
       "status": "success",
@@ -185,7 +185,7 @@
         }
       ],
       "count": 11,
-      "timestamp": 1761264948.4634116
+      "timestamp": 1761270206.921003
     },
     {
       "status": "success",
@@ -259,7 +259,7 @@
         }
       ],
       "count": 11,
-      "timestamp": 1761264948.463416
+      "timestamp": 1761270206.9210076
     },
     {
       "status": "success",
@@ -303,7 +303,7 @@
         }
       ],
       "count": 6,
-      "timestamp": 1761264948.4634187
+      "timestamp": 1761270206.92101
     },
     {
       "status": "success",
@@ -331,10 +331,10 @@
         }
       ],
       "count": 4,
-      "timestamp": 1761264948.4634216,
+      "timestamp": 1761270206.9210129,
       "note": "Dyes not FP-biosensors, included for completeness"
     }
   ],
   "total_biosensors": 47,
-  "timestamp": 1761264948.464112
+  "timestamp": 1761270206.921601
 }

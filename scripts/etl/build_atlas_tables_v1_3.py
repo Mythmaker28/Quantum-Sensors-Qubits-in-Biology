@@ -164,18 +164,18 @@ def build_training_metadata(df: pd.DataFrame) -> dict:
         'schema_version': '1.3',
         
         'counts': {
-            'N_total': len(df),
-            'N_measured': df['contrast_value'].notna().sum(),
-            'N_with_ci': df['ci_low'].notna().sum(),
-            'N_tier_A': (df['contrast_quality_tier'] == 'A').sum(),
-            'N_tier_B': (df['contrast_quality_tier'] == 'B').sum(),
-            'N_tier_C': (df['contrast_quality_tier'] == 'C').sum(),
-            'N_is_biosensor': df['is_biosensor'].sum()
+            'N_total': int(len(df)),
+            'N_measured': int(df['contrast_value'].notna().sum()) if 'contrast_value' in df.columns else 0,
+            'N_with_ci': int(df['ci_low'].notna().sum()) if 'ci_low' in df.columns else 0,
+            'N_tier_A': int((df['contrast_quality_tier'] == 'A').sum()) if 'contrast_quality_tier' in df.columns else 0,
+            'N_tier_B': int((df['contrast_quality_tier'] == 'B').sum()) if 'contrast_quality_tier' in df.columns else 0,
+            'N_tier_C': int((df['contrast_quality_tier'] == 'C').sum()) if 'contrast_quality_tier' in df.columns else 0,
+            'N_is_biosensor': int(df['is_biosensor'].sum()) if 'is_biosensor' in df.columns else 0
         },
         
-        'families': df.groupby('family').size().to_dict(),
+        'families': {str(k): int(v) for k, v in df.groupby('family').size().to_dict().items()} if 'family' in df.columns else {},
         
-        'sources': df.groupby('source').size().to_dict(),
+        'sources': {str(k): int(v) for k, v in df.groupby('source').size().to_dict().items()} if 'source' in df.columns else {},
         
         'licenses': {
             'fpbase': 'CC BY-SA 4.0 (pointer-only)',

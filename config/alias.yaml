@@ -1,0 +1,154 @@
+# Biological Qubit Atlas v1.3 — Protein Name Aliases
+# =====================================================
+# Synonymes exacts et typos tolérées pour fuzzy matching
+# 
+# Format:
+# - aliases: Liste de groupes de synonymes qui doivent être fusionnés
+# - no_merge_variants: Paires de protéines SIMILAIRES mais DISTINCTES (ne pas fusionner)
+
+version: "1.3"
+last_updated: "2025-10-24"
+
+# Synonymes à fusionner (typos, variantes orthographiques)
+aliases:
+  # Standard FPs
+  - ["TagRFP", "TagRFP-T"]
+  - ["mNeonGreen", "mNeon G", "mNeon-Green", "mNeonG"]
+  - ["mClover", "Clover"]
+  - ["mCitrine", "Citrine"]
+  - ["mVenus", "Venus"]
+  - ["EGFP", "eGFP"]
+  - ["ECFP", "eCFP"]
+  - ["EYFP", "eYFP"]
+  - ["mCherry", "m-Cherry"]
+  - ["tdTomato", "td-Tomato", "tdTom"]
+  - ["mScarlet", "mScarlet-I"]  # mScarlet-I est souvent utilisé comme synonyme de mScarlet
+  - ["mTurquoise2", "mTurq2"]
+  - ["mKate2", "mKate-2"]
+  - ["mCardinal", "m-Cardinal"]
+  
+  # GECIs - Typos uniquement
+  - ["GCaMP6s", "GCAMP6s", "G-CaMP6s"]
+  - ["GCaMP6f", "GCAMP6f", "G-CaMP6f"]
+  - ["GCaMP6m", "GCAMP6m", "G-CaMP6m"]
+  - ["jGCaMP7s", "jGCAMP7s", "j-GCaMP7s"]
+  - ["jGCaMP7f", "jGCAMP7f", "j-GCaMP7f"]
+  - ["jGCaMP7b", "jGCAMP7b", "j-GCaMP7b"]
+  - ["jGCaMP8s", "jGCAMP8s", "j-GCaMP8s"]
+  - ["jGCaMP8f", "jGCAMP8f", "j-GCaMP8f"]
+  - ["jGCaMP8m", "jGCAMP8m", "j-GCaMP8m"]
+  - ["R-GECO1", "R-GECO 1", "RGECO1"]
+  - ["jRGECO1a", "jRGECO-1a", "j-RGECO1a"]
+  - ["jRGECO1b", "jRGECO-1b", "j-RGECO1b"]
+  - ["RCaMP1h", "R-CaMP1h", "RCaMP-1h"]
+  - ["RCaMP2", "R-CaMP2", "RCaMP-2"]
+  - ["NIR-GECO1", "NIR-GECO 1", "NIRGECO1"]
+  - ["NIR-GECO2", "NIR-GECO 2", "NIRGECO2"]
+  
+  # Neurotransmitter sensors
+  - ["iGluSnFR", "i-GluSnFR", "iGlu-SnFR"]
+  - ["SF-iGluSnFR", "SF-iGlu-SnFR", "SF iGluSnFR"]
+  - ["dLight1.1", "dLight 1.1", "d-Light1.1"]
+  - ["dLight1.2", "dLight 1.2", "d-Light1.2"]
+  - ["dLight1.3b", "dLight 1.3b", "d-Light1.3b"]
+  - ["GRAB-DA2m", "GRAB DA2m", "GRABDA2m"]
+  - ["GRAB-DA2h", "GRAB DA2h", "GRABDA2h"]
+  - ["iAChSnFR", "i-AChSnFR", "iACh-SnFR"]
+  - ["GRAB-ACh3.0", "GRAB ACh3.0", "GRABACh3.0"]
+  - ["GRAB-NE1m", "GRAB NE1m", "GRABNE1m"]
+  - ["GRAB-5HT1.0", "GRAB 5HT1.0", "GRAB5HT1.0"]
+  
+  # Metabolic sensors
+  - ["Epac-SH187", "EPAC-SH187", "Epac SH187"]
+  - ["Pink Flamindo", "PinkFlamindo", "Pink-Flamindo"]
+  - ["cADDis", "c-ADDis", "cADDIS"]
+  - ["PercevalHR", "Perceval HR", "Perceval-HR"]
+  - ["iATPSnFR", "i-ATPSnFR", "iATP-SnFR"]
+  - ["HyPer", "Hyper"]
+  - ["HyPer3", "Hyper3", "HyPer-3"]
+  - ["roGFP2", "ro-GFP2", "roGFP-2"]
+  - ["pHluorin", "pH-luorin", "phluorin"]
+  - ["pHuji", "pH-uji", "phuji"]
+  - ["SypHer3s", "SypHer-3s", "Sypher3s"]
+  
+  # Voltage sensors
+  - ["ASAP3", "ASAP-3", "ASAP 3"]
+  - ["Ace-mNeon", "Ace mNeon", "AcemNeon"]
+  - ["ArcLight", "Arc-Light", "Arclight"]
+  - ["VSFP-Butterfly", "VSFP Butterfly", "VSFPButterfly"]
+  - ["QuasAr2", "Quasar2", "QuasAr-2"]
+  - ["Archon1", "Archon-1", "Archon 1"]
+  
+  # Photoswitchable FPs
+  - ["PA-GFP", "PAGFP", "Pa-GFP"]
+  - ["PA-mCherry", "PAmCherry", "Pa-mCherry"]
+  - ["Dendra2", "Dendra-2"]
+  - ["mEos2", "m-Eos2", "mEOS2"]
+  - ["mEos3.2", "m-Eos3.2", "mEOS3.2"]
+  - ["mEos4b", "m-Eos4b", "mEOS4b"]
+
+# Paires de protéines SIMILAIRES mais DISTINCTES (NE PAS FUSIONNER)
+# Ces variants ont des propriétés différentes et doivent rester séparés
+no_merge_variants:
+  # GCaMP generations (propriétés très différentes)
+  - ["GCaMP6s", "GCaMP7s"]
+  - ["GCaMP6s", "jGCaMP7s"]
+  - ["GCaMP6s", "jGCaMP8s"]
+  - ["GCaMP6f", "GCaMP7f"]
+  - ["GCaMP6f", "jGCaMP7f"]
+  - ["GCaMP6f", "jGCaMP8f"]
+  - ["GCaMP6m", "GCaMP7m"]
+  - ["GCaMP6m", "jGCaMP8m"]
+  - ["jGCaMP7s", "jGCaMP8s"]
+  - ["jGCaMP7f", "jGCaMP8f"]
+  
+  # dLight variants (affinités différentes)
+  - ["dLight1.1", "dLight1.2"]
+  - ["dLight1.1", "dLight1.3b"]
+  - ["dLight1.2", "dLight1.3b"]
+  
+  # GRAB-DA variants (affinités différentes)
+  - ["GRAB-DA2m", "GRAB-DA2h"]
+  
+  # iGluSnFR variants
+  - ["iGluSnFR", "iGluSnFR-A184S"]
+  - ["iGluSnFR", "SF-iGluSnFR"]
+  - ["iGluSnFR-A184S", "SF-iGluSnFR.A184S"]
+  
+  # R-GECO variants
+  - ["R-GECO1", "jRGECO1a"]
+  - ["R-GECO1", "jRGECO1b"]
+  - ["jRGECO1a", "jRGECO1b"]
+  
+  # RCaMP variants
+  - ["RCaMP1h", "RCaMP2"]
+  
+  # NIR-GECO variants
+  - ["NIR-GECO1", "NIR-GECO2"]
+  
+  # HyPer variants
+  - ["HyPer", "HyPer3"]
+  
+  # mScarlet variants (sauf mScarlet-I qui est synonyme de mScarlet)
+  - ["mScarlet", "mScarlet-H"]
+  - ["mScarlet-I", "mScarlet-H"]
+  
+  # mRuby variants
+  - ["mRuby2", "mRuby3"]
+  
+  # mEos variants (générations différentes)
+  - ["mEos2", "mEos3.2"]
+  - ["mEos2", "mEos4b"]
+  - ["mEos3.2", "mEos4b"]
+  
+  # Clover variants
+  - ["mClover", "mClover3"]
+
+# Notes de curation
+notes: |
+  - Les alias sont appliqués AVANT le fuzzy matching (Levenshtein ≤2)
+  - Les no_merge_variants forcent la séparation même si distance Levenshtein ≤2
+  - Si conflit entre alias et no_merge_variants, no_merge_variants prévaut
+  - Les variantes de générations (GCaMP6 vs 7 vs 8) ont des sensibilités, cinétiques, 
+    et brightness très différentes → TOUJOURS séparer
+

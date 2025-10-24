@@ -82,7 +82,7 @@ pdb:
 
 # Europe PMC (Open Access full-text mining)
 europe_pmc:
-  enabled: true
+  enabled: false  # Disabled for v1.3 first pass (hybrid curated strategy)
   api_url: "https://www.ebi.ac.uk/europepmc/webservices/rest/"
   rate_limit:
     requests_per_second: 3

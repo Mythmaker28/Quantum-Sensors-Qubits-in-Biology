@@ -1,0 +1,17 @@
+Cover Letter - Frontiers in Advanced Optical Technologies
+
+Dear Editor,
+
+We submit our manuscript "The Biological Qubits Atlas v1.2.1: an open, curated dataset of fluorescent protein biosensors with measured optical contrast for applied photonics" for consideration as a Data Report in the Applied Photonics section.
+
+This work addresses a critical gap in the fluorescent protein biosensor field by providing the first open, quality-controlled dataset of measured optical contrast values with full DOI/PMCID traceability. The dataset includes 66 FP variants and biosensors across 7 protein families, with 54 systems having experimentally measured contrast.
+
+Key innovations include 100% real data (no synthetic values), all Open Access sources (CC-BY/CC0), full provenance with DOI/PMCID for every measurement, quality tier system (A/B/C) for measurement confidence, and SHA256 checksums for reproducibility.
+
+This resource enables quantitative biosensor selection, machine learning applications, and meta-analyses in applied photonics. All data and code are publicly available via GitHub and will be deposited on Zenodo upon acceptance.
+
+We believe this work is well-suited for Frontiers in Advanced Optical Technologies and will be of broad interest to the biophysics, neuroscience, and photonics communities.
+
+Sincerely,
+Tommy Lepesteur
+ORCID: 0009-0009-0577-9563
