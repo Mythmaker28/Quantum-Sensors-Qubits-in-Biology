@@ -53,3 +53,21 @@ logs/*.log
 tmp/
 temp/
 *.tmp
+
+# Fichiers de rapport/documentation de session (non-professionnels)
+RAPPORT_*.md
+SYNTHESE_*.md
+RECAP_*.md
+PROGRESSION_*.md
+EXECUTION_*.md
+GUIDE_*.md
+INDEX_*.md
+AMELIORATIONS_*.md
+RECAPITULATIF_*.md
+EXECUTE_*.ps1
+EXECUTE_*.sh
+run_phase*.sh
+start_v*.sh
+Makefile_v*
+PRD_v*.md
+requirements_v*.txt

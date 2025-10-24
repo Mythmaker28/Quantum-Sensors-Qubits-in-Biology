@@ -9,7 +9,7 @@
 
 ## 📊 Status & Versioning
 
-- 🟢 **Stable**: [v2.0.0](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v2.0.0) — 80 systems, Interactive Dashboard, FAIR 12/12 ✨
+- 🟢 **Stable**: [v2.0.0](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v2.0.0) — **100 systems**, Interactive Dashboard, FAIR 12/12 ✨
 - 🟡 **Previous**: [v1.3.0-beta](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.3.0-beta) — 80 systems, hybrid curated expansion
 - 📝 **Peer-review**: Planned (Data Descriptor submission Q1 2026)
 - 🔗 **DOI**: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) (archived snapshot)
@@ -46,7 +46,7 @@ Base de données structurée et vérifiée de tous les **systèmes quantiques bi
 **Pour chercheurs en quantum computing** : Filtrer par `Methode_lecture=ODMR` et `Classe=A ou B` pour qubits contrôlables stricts.
 
 **Version 2.0.0 — Stable Release** 🟢
-- ✅ 80 systems (fluorescent proteins + quantum sensors)
+- ✅ **100 systems** (fluorescent proteins + quantum sensors)
 - ✅ Interactive Dashboard with real-time filtering (docs/index.html)
 - ✅ FAIR 12/12 compliance (Findable, Accessible, Interoperable, Reusable)
 - ✅ Full provenance tracking (Source_T2, Source_T1, Source_Contraste)
@@ -149,7 +149,7 @@ http-server -p 8000
 
 | Artefact | Format | Description | Lien |
 |----------|--------|-------------|------|
-| **Atlas Principal** | CSV | 80 systèmes (FP + quantum sensors) | [`data/processed/atlas_fp_optical_v2_0.csv`](data/processed/atlas_fp_optical_v2_0.csv) |
+| **Atlas Principal** | CSV | **100 systèmes** (FP + quantum sensors) | [`data/processed/atlas_fp_optical_v2_0.csv`](data/processed/atlas_fp_optical_v2_0.csv) |
 | **Dashboard Interactif** | HTML | Filtres, tri, export, statistiques | [`docs/index.html`](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) |
 | **Checksums** | TXT | SHA256 pour validation d'intégrité | `data/processed/SHA256SUMS_v2.0.txt` *(à générer)* |
 | **Metadata** | JSON | Training metadata (FAIR) | `data/processed/TRAINING.METADATA.v2.0.json` *(à générer)* |
@@ -611,7 +611,7 @@ La majorité des systèmes restent au stade **in vitro** ou **ex vivo**. Les dé
 **Mise à jour Octobre 2025 — Version 2.0**
 
 ### Contenu
-- **80 systèmes** couvrant fluorescent proteins (FP) et quantum sensors
+- **100 systèmes** couvrant fluorescent proteins (FP) et quantum sensors
 - **Interactive Dashboard** avec filtres en temps réel, tri multi-colonnes, export CSV
 - **FAIR 12/12** compliance (Findable, Accessible, Interoperable, Reusable)
 - **Full provenance tracking** pour toutes les valeurs critiques (T2, T1, Contraste)
