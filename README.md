@@ -650,12 +650,12 @@ python qubits_linter.py
 ### Sortie exemple
 
 ```
-[LINT] Analysing biological_qubits.csv...
-[OK] Lint completed: 22 systems analysed
+[LINT] Analysing atlas_fp_optical_v2_0.csv...
+[OK] Lint completed: 100 systems analysed
    [ERROR] Errors: 0
-   [WARN]  Warnings: 3
+   [WARN]  Warnings: 0
    [INFO]  Infos: 0
-   [OK]    Systems OK: 22
+   [OK]    Systems OK: 100
 
 [OK] Report generated: QC_REPORT.md
 [OK] No blocking errors. Dataset ready for publication!
