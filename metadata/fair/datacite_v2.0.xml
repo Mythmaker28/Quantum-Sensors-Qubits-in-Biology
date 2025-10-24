@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://datacite.org/schema/kernel-4">
+  <identifier identifierType="DOI">10.5281/zenodo.XXXXX</identifier>
+  <creators>
+    <creator>
+      <creatorName>Biological Qubits Consortium</creatorName>
+    </creator>
+  </creators>
+  <titles>
+    <title>Biological Qubits Atlas v2.0.0</title>
+  </titles>
+  <publisher>Zenodo</publisher>
+  <publicationYear>2025</publicationYear>
+  <subjects>
+    <subject>Quantum Biology</subject>
+    <subject>Biosensors</subject>
+  </subjects>
+  <version>2.0.0</version>
+  <rightsList>
+    <rights rightsURI="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</rights>
+  </rightsList>
+  <descriptions>
+    <description descriptionType="Abstract">
+      Comprehensive catalog of 80 quantum systems in biology with measured coherence times.
+    </description>
+  </descriptions>
+</resource>
