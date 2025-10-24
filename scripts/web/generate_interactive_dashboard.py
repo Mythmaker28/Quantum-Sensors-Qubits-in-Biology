@@ -7,6 +7,7 @@ Licence: MIT
 import pandas as pd
 import json
 import os
+import numpy as np
 
 def generate_dashboard_html(atlas_csv: str, output_html: str = "index_v2_interactive.html"):
     """
@@ -20,7 +21,33 @@ def generate_dashboard_html(atlas_csv: str, output_html: str = "index_v2_interac
     """
     
     df = pd.read_csv(atlas_csv)
-    data_json = df.to_json(orient='records')
+    
+    # PATCH 1 : Filtrage données aberrantes (avant génération JSON)
+    df_clean = df[
+        (df['temperature_K'] > 270) & (df['temperature_K'] < 320) &  # Biologique uniquement
+        (df['contrast_normalized'].notna()) &
+        (df['contrast_normalized'] > 0)
+    ].copy()
+    
+    print(f"[FILTER] {len(df)} -> {len(df_clean)} systemes (aberrants exclus)")
+    
+    # PATCH 2 : Jitter coordonnées (éviter superposition exacte)
+    np.random.seed(42)
+    df_clean['temperature_K_jitter'] = df_clean['temperature_K'] + np.random.uniform(-1, 1, len(df_clean))
+    df_clean['contrast_normalized_jitter'] = df_clean['contrast_normalized'] * (1 + np.random.uniform(-0.02, 0.02, len(df_clean)))
+    
+    # PATCH 3 : Taille conditionnelle (importance = contraste élevé)
+    df_clean['point_size'] = df_clean['contrast_normalized'].clip(0.01, 100).apply(lambda x: 4 + np.log10(max(x, 0.01)) * 1.5)
+    
+    # PATCH 4 : Opacité adaptative (simple version)
+    df_clean['opacity'] = 0.6  # Base opacity
+    
+    # PATCH 5 : Sauvegarder JSON propre
+    os.makedirs('docs/data', exist_ok=True)
+    df_clean.to_json('docs/data/plot_v2_clean.json', orient='records', indent=2)
+    
+    # Utiliser données filtrées pour le dashboard
+    data_json = df_clean.to_json(orient='records')
     
     html_template = f"""<!DOCTYPE html>
 <html lang="fr">
@@ -211,7 +238,7 @@ def generate_dashboard_html(atlas_csv: str, output_html: str = "index_v2_interac
             .attr("height", height);
         
         const xScale = d3.scaleLinear()
-            .domain([270, d3.max(scatterData, d => d.temperature_k) + 10])
+            .domain([270, d3.max(scatterData, d => d.temperature_K) + 10])
             .range([margin.left, width - margin.right]);
         
         const yScale = d3.scaleLinear()
@@ -248,16 +275,16 @@ def generate_dashboard_html(atlas_csv: str, output_html: str = "index_v2_interac
         
         const tooltip = d3.select("#tooltip");
         
-        // Points
+        // Points (avec jitter, taille et opacité personnalisées)
         svg.selectAll("circle")
             .data(scatterData)
             .join("circle")
             .attr("class", "data-point")
-            .attr("cx", d => xScale(d.temperature_k))
-            .attr("cy", d => yScale(d.contrast_normalized))
-            .attr("r", 6)
+            .attr("cx", d => xScale(d.temperature_K_jitter || d.temperature_K))
+            .attr("cy", d => yScale(d.contrast_normalized_jitter || d.contrast_normalized))
+            .attr("r", d => d.point_size || 6)
             .attr("fill", d => colorScale(d.family))
-            .attr("opacity", 0.7)
+            .attr("opacity", d => d.opacity || 0.6)
             .on("mouseover", function(event, d) {{
                 d3.select(this)
                     .transition()
@@ -273,7 +300,7 @@ def generate_dashboard_html(atlas_csv: str, output_html: str = "index_v2_interac
                         <strong>${{d.protein_name || 'Unknown'}}</strong><br>
                         Family: ${{d.family}}<br>
                         Contrast: ${{(d.contrast_normalized * 100).toFixed(1)}}%<br>
-                        Temp: ${{d.temperature_k}} K<br>
+                        Temp: ${{d.temperature_K}} K<br>
                         DOI: ${{d.doi || 'N/A'}}
                     `);
             }})
