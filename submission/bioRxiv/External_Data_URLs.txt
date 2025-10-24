@@ -1,0 +1,5 @@
+External Data & Code URLs for bioRxiv submission form
+-----------------------------------------------------
+GitHub (code+data): https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology
+Zenodo stable (v1.2.1): https://doi.org/10.5281/zenodo.17420604
+Zenodo (v1.3.0-beta, to be minted upon release): TBD
