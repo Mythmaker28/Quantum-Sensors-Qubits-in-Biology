@@ -1,0 +1,81 @@
+SystemID,protein_name,score,organism,validated,details
+FP_0052,jGCaMP7f,50,N/A,True,Context: in_vivo explicit; Journal: high-impact; Measured contrast
+FP_0051,jGCaMP7b,50,N/A,True,Context: in_vivo explicit; Journal: high-impact; Measured contrast
+FP_0053,jGCaMP7s,50,N/A,True,Context: in_vivo explicit; Journal: high-impact; Measured contrast
+FP_0057,jRGECO1a,50,N/A,True,Context: in_vivo explicit; Journal: high-impact; Measured contrast
+FP_0048,iGluSnFR-A184S,50,N/A,True,Context: in_vivo explicit; Journal: high-impact; Measured contrast
+FP_0001,ASAP2s,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0004,ArcLight,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0002,ASAP3,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0026,Perceval,30,N/A,False,Journal: high-impact; Measured contrast
+FP_0029,PinkFlamindo,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0019,GRAB-DA2m,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0008,ECFP,30,N/A,False,Journal: high-impact; Measured contrast
+FP_0013,GCaMP6m,30,N/A,False,Journal: high-impact; Measured contrast
+FP_0014,GCaMP6s,30,N/A,False,Journal: high-impact; Measured contrast
+FP_0012,GCaMP6f,30,N/A,False,Journal: high-impact; Measured contrast
+FP_0047,iGluSnFR,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0077,pHuji,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0076,pHluorin,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0054,jGCaMP8f,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0056,jGCaMP8s,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0040,YFP,30,N/A,False,Journal: high-impact; Measured contrast
+FP_0039,VSFP-Butterfly,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0034,SF-iGluSnFR,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0043,dLight1.2,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0044,dLight1.3b,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0042,dLight1.1,30,N/A,False,Context: in_vivo explicit; Measured contrast
+FP_0007,DsRed2,10,N/A,False,Measured contrast
+FP_0015,GFP,10,N/A,False,Measured contrast
+FP_0009,EGFP,10,N/A,False,Measured contrast
+FP_0006,Clover,10,N/A,False,Measured contrast
+FP_0010,Epac-SH187,10,N/A,False,Measured contrast
+FP_0011,FusionRed,10,N/A,False,Measured contrast
+FP_0072,mTFP1,10,N/A,False,Measured contrast
+FP_0064,mClover3,10,N/A,False,Measured contrast
+FP_0065,mEmerald,10,N/A,False,Measured contrast
+FP_0032,RCaMP1h,10,N/A,False,Measured contrast
+FP_0027,PercevalHR,10,N/A,False,Measured contrast
+FP_0060,mCardinal,10,N/A,False,Measured contrast
+FP_0059,mApple,10,N/A,False,Measured contrast
+FP_0055,jGCaMP8m,10,N/A,False,Measured contrast
+FP_0038,TagRFP,10,N/A,False,Measured contrast
+FP_0045,eqFP650,10,N/A,False,Measured contrast
+FP_0037,TagBFP2,10,N/A,False,Measured contrast
+FP_0018,GRAB-DA2h,10,N/A,False,Measured contrast
+FP_0024,Katushka,10,N/A,False,Measured contrast
+FP_0031,R-GECO1,10,N/A,False,Measured contrast
+FP_0023,HyPer3,10,N/A,False,Measured contrast
+FP_0022,HyPer-7,10,N/A,False,Measured contrast
+FP_0079,sfGFP,10,N/A,False,Measured contrast
+FP_0078,roGFP2,10,N/A,False,Measured contrast
+FP_0080,tdTomato,10,N/A,False,Measured contrast
+FP_0066,mKO2,10,N/A,False,Measured contrast
+FP_0069,mOrange2,10,N/A,False,Measured contrast
+FP_0070,mPlum,10,N/A,False,Measured contrast
+FP_0067,mKate2,10,N/A,False,Measured contrast
+FP_0068,mNeonGreen,10,N/A,False,Measured contrast
+FP_0075,mWasabi,10,N/A,False,Measured contrast
+FP_0071,mRuby2,10,N/A,False,Measured contrast
+FP_0074,mVenus,10,N/A,False,Measured contrast
+FP_0061,mCerulean3,10,N/A,False,Measured contrast
+FP_0063,mClover,10,N/A,False,Measured contrast
+FP_0062,mCitrine,10,N/A,False,Measured contrast
+FP_0049,iRFP670,10,N/A,False,Measured contrast
+FP_0050,iRFP713,10,N/A,False,Measured contrast
+FP_0073,mTurquoise2,10,N/A,False,Measured contrast
+FP_0016,GRAB-5HT1.0,0,N/A,False,
+FP_0003,Ace-mNeon,0,N/A,False,
+FP_0005,Archon1,0,N/A,False,
+FP_0046,iAChSnFR,0,N/A,False,
+FP_0041,cADDis,0,N/A,False,
+FP_0033,RCaMP2,0,N/A,False,
+FP_0030,QuasAr2,0,N/A,False,
+FP_0021,HyPer,0,N/A,False,
+FP_0020,GRAB-NE1m,0,N/A,False,
+FP_0017,GRAB-ACh3.0,0,N/A,False,
+FP_0035,SF-iGluSnFR.A184S,0,N/A,False,
+FP_0036,SypHer3s,0,N/A,False,
+FP_0025,NIR-GECO2,0,N/A,False,
+FP_0028,Pink Flamindo,0,N/A,False,
+FP_0058,jRGECO1b,0,N/A,False,
