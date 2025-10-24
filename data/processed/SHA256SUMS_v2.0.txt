@@ -1,0 +1,3 @@
+8097c3b49ecbf649c26c40ed6818bce29cba9c018f7736984ce658850a46326d  data/processed/atlas_fp_optical_v2_0.csv
+5836bf029dba28838dce32b94b41f5f80a4d2b04657f1c3bafc5d86599c19d6d  data/processed/atlas_fp_optical_v2_0.parquet
+d98d4bf593deb65e48d1a1ccf7ab5dfc859d06dfbec5527606890384672acbc0  data/processed/TRAINING.METADATA.v2.0.json
