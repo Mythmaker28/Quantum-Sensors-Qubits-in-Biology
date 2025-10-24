@@ -1,0 +1,13 @@
+# Normalisation des fins de ligne (LF) et encodage UTF-8
+* text=auto eol=lf
+*.csv text working-tree-encoding=UTF-8
+*.json text
+*.md text
+*.yml text
+*.yaml text
+*.html text
+*.py text
+*.sh text
+*.ps1 text
+*.txt text
+
