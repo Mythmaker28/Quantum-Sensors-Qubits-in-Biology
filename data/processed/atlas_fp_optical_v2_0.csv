@@ -11,7 +11,6 @@ FP_0009,EGFP,GFP-like,0.0,1.2,fold,1.2,B,in_cellulo,298.0,7.4,10.1016/j.gene.200
 FP_0010,Epac-SH187,cAMP,1.0,1.8,deltaF/F0,2.8,B,in_cellulo(HEK293),298.0,7.4,10.1073/pnas.0807438105,PMC2556406,CC BY (PNAS OA),metabolic_preseed,Nikolaev et al. 2004,epac-sh187,epac-sh187,999.0,10.1073/pnas.0408543101,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0011,FusionRed,RFP,0.0,7.0,fold,7.0,B,in_cellulo,298.0,7.4,10.1016/j.cels.XXXX,PMC12345678,CC BY (PMC OA),,Mined from PMC XML,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0012,GCaMP6f,Calcium,1.0,15.5,fold,15.5,B,in_cellulo(HEK293),298.0,7.4,10.1038/nature12354,PMC3777791,CC BY (Nature OA),,Chen et al. 2013 Nature,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
-FP_0013,GCaMP6m,Calcium,1.0,13.0,fold,13.0,B,in_cellulo(HEK293),298.0,7.4,10.1038/nature12354,PMC3777791,CC BY (Nature OA),,Chen et al. 2013 Nature,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0014,GCaMP6s,Calcium,1.0,26.0,fold,26.0,B,in_cellulo(HEK293),298.0,7.4,10.1038/nature12354,PMC3777791,CC BY (Nature OA),geci_db_preseed,Chen et al. 2013 Nature - GCaMP6 suite,gcamp6s,gcamp6s,999.0,10.1038/nature12354; 10.1038/nature12354; 10.1038/nature12354,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0015,GFP,,1.0,0.206,,,,,,,,,CC BY,pmc_fulltext,,gfp,gfp,999.0,PMCID:PMC11613326; PMCID:PMC11613326; PMCID:PMC11613326; PMCID:PMC11613326; PMCID:PMC11613326; PMCID:PMC5771076,CC BY/CC0 (PMC OA),,,,,"stability, response time,
 tissue penetration, and dynamic range.206 Some of these parameters are “fundamental” and gr",paragraph,,,,,,B
@@ -39,7 +38,6 @@ FP_0036,SypHer3s,pH,1.0,,,,,,,,,,CC BY,metabolic_preseed,,sypher3s,sypher3s,999.
 FP_0037,TagBFP2,BFP-like,0.0,0.95,fold,0.95,B,in_cellulo,298.0,7.4,10.1371/journal.pone.0028674,PMC3227654,CC BY (PLoS ONE OA),,Subach et al. 2011,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0038,TagRFP,RFP,0.0,1.15,fold,1.15,B,in_cellulo,298.0,7.4,10.1016/j.chembiol.2007.12.013,PMC2763434,CC BY (Chem Biol OA),,Merzlyak et al. 2007,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0039,VSFP-Butterfly,Voltage,1.0,0.28,deltaF/F0,1.28,B,in_vivo(neurons),298.0,7.4,10.1038/nmeth.1630,PMC3065597,CC BY (Nature Methods OA),voltage_preseed,Akemann et al. 2010,vsfp-butterfly,vsfp-butterfly,999.0,10.1126/science.1108404,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
-FP_0040,YFP,GFP-like,0.0,1.1,fold,1.1,B,in_cellulo,298.0,7.4,10.1126/science.273.5280.1392,PMC999999,CC BY (Science OA),,Ormö et al. 1996,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0041,cADDis,cAMP,1.0,,,,,,,,,,CC BY,metabolic_preseed,,caddis,caddis,999.0,10.1038/s41467-021-27626-z,varies (see DOI),,,,,,,,,,,,B
 FP_0042,dLight1.1,Dopamine,1.0,2.3,deltaF/F0,3.3,B,in_vivo(neurons),298.0,7.4,10.1038/s41586-018-0023-2,PMC5862985,CC BY (Nature OA),neurotransmitter_preseed,Patriarchi et al. 2018,dlight11,dlight11,999.0,10.1038/s41592-018-0251-6,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0043,dLight1.2,Dopamine,1.0,2.9,deltaF/F0,3.9,B,in_vivo(neurons),298.0,7.4,10.1038/s41586-018-0023-2,PMC5862985,CC BY (Nature OA),neurotransmitter_preseed,Patriarchi et al. 2018,dlight12,dlight12,999.0,10.1038/s41592-018-0251-6,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
@@ -49,16 +47,13 @@ FP_0046,iAChSnFR,Acetylcholine,1.0,,,,,,,,,,CC BY,neurotransmitter_preseed,,iach
 FP_0047,iGluSnFR,Glutamate,1.0,4.5,deltaF/F0,5.5,B,in_vivo(neurons),298.0,7.4,10.1038/nmeth.2333,PMC3650424,CC BY (Nature Methods OA),neurotransmitter_preseed,Marvin et al. 2013,iglusnfr,iglusnfr,999.0,10.1016/j.neuron.2013.06.043,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0048,iGluSnFR-A184S,Glutamate,1.0,6.2,deltaF/F0,7.2,B,in_vivo(neurons),298.0,7.4,10.1126/science.aab4449,PMC4856698,CC BY (Science OA),,Marvin et al. 2018,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0049,iRFP670,NIR,0.0,0.85,fold,0.85,B,in_cellulo,298.0,7.4,10.1038/nchembio.1368,PMC3823858,CC BY (Nat Chem Biol OA),,Filonov et al. 2011,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
-FP_0050,iRFP713,NIR,0.0,0.9,fold,0.9,B,in_cellulo,298.0,7.4,10.1038/nchembio.1368,PMC3823857,CC BY (Nat Chem Biol OA),,Filonov et al. 2012,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0051,jGCaMP7b,Calcium,1.0,35.0,fold,35.0,B,in_vivo(neurons),310.0,7.4,10.1126/science.abf4084,PMC8654344,CC BY,,"Dana et al. 2019 Science, jGCaMP7 variants",,,,,,,,,,,,none,,fluorescence,calcium_imaging,v1.3_conservative,B
 FP_0052,jGCaMP7f,Calcium,1.0,45.0,fold,45.0,B,in_vivo(neurons),298.0,7.4,10.1126/science.abd2659,PMC8654344,CC BY (Science OA),,Dana et al. 2019,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0053,jGCaMP7s,Calcium,1.0,50.0,fold,50.0,B,in_vivo(neurons),298.0,7.4,10.1126/science.abd2659,PMC8654344,CC BY (Science OA),geci_db_preseed,Dana et al. 2019 - jGCaMP7 variants,jgcamp7s,jgcamp7s,999.0,10.1126/science.abf4084; 10.1126/science.abf4084; 10.1016/j.neuron.2023.02.011; 10.1016/j.neuron.2023.02.011,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0054,jGCaMP8f,Calcium,1.0,78.0,fold,78.0,B,in_vivo(neurons),298.0,7.4,10.1038/s41586-021-03362-w,PMC8096078,CC BY (Nature OA),,Zhang et al. 2021,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
-FP_0055,jGCaMP8m,Calcium,1.0,60.0,fold,60.0,B,in_cellulo(HEK293),310.0,7.4,10.1038/s41586-021-03362-w,PMC8096078,CC BY,,"Zhang et al. 2021 Nature, jGCaMP8 suite",,,,,,,,,,,,none,,fluorescence,calcium_imaging,v1.3_conservative,B
 FP_0056,jGCaMP8s,Calcium,1.0,90.0,fold,90.0,B,in_vivo(neurons),298.0,7.4,10.1038/s41586-021-03362-w,PMC8096078,CC BY (Nature OA),geci_db_preseed,Zhang et al. 2021 - jGCaMP8 suite,jgcamp8s,jgcamp8s,999.0,10.1016/j.neuron.2023.02.011,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0057,jRGECO1a,Calcium,1.0,12.5,fold,12.5,B,in_vivo(neurons),298.0,7.4,10.1126/science.aaa5361,PMC4586321,CC BY (Science OA),geci_db_preseed,Dana et al. 2016,jrgeco1a,jrgeco1a,999.0,10.7554/eLife.13415,varies (see DOI),,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0058,jRGECO1b,Calcium,1.0,,,,,,,,,,CC BY,geci_db_preseed,,jrgeco1b,jrgeco1b,999.0,10.7554/eLife.13415,varies (see DOI),,,,,,,,,,,,B
-FP_0059,mApple,RFP,0.0,1.1,fold,1.1,B,in_cellulo,298.0,7.4,10.1038/nbt1037,PMC2650035,CC BY (Nat Biotech OA),,Shaner et al. 2008,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0060,mCardinal,Far-red,0.0,18.0,percent,1.18,B,in_cellulo,298.0,7.4,10.1038/nmeth.XXXX,PMC11977202,CC BY (PMC OA),,Mined from PMC XML,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0061,mCerulean3,CFP-like,0.0,1.05,fold,1.05,B,in_cellulo,298.0,7.4,10.1038/nmeth.1853,PMC3065328,CC BY (Nature Methods OA),,Markwardt et al. 2011,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0062,mCitrine,GFP-like,0.0,1.25,fold,1.25,B,in_cellulo,298.0,7.4,10.1038/nbt809,PMC123457,CC BY (Nat Biotech OA),pmc_fulltext,Griesbeck et al. 2001,mcitrine,mcitrine,999.0,PMCID:PMC11613326,CC BY/CC0 (PMC OA),,,,,"stability, response time,
@@ -68,12 +63,9 @@ tissue penetration, and dynamic range.206 Some of these parameters are “fundam
 FP_0064,mClover3,,1.0,0.206,,,,,,,,,CC BY,pmc_fulltext,,mclover3,mclover3,999.0,PMCID:PMC11613326,CC BY/CC0 (PMC OA),,,,,"stability, response time,
 tissue penetration, and dynamic range.206 Some of these parameters are “fundamental” and gr",paragraph,,,,,,B
 FP_0065,mEmerald,GFP-like,0.0,1.15,fold,1.15,B,in_cellulo,298.0,7.4,10.1038/nbt896,PMC123789,CC BY (Nat Biotech OA),,Zacharias et al. 2002,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
-FP_0066,mKO2,Orange,0.0,1.2,fold,1.2,B,in_cellulo,298.0,7.4,10.1038/nbt1037,PMC2650037,CC BY (Nat Biotech OA),,Karasawa et al. 2004,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0067,mKate2,Far-red,0.0,1.1,fold,1.1,B,in_cellulo,298.0,7.4,10.1038/nmeth.1209,PMC2597342,CC BY (Nature Methods OA),,Shcherbo et al. 2009,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0068,mNeonGreen,,1.0,0.206,,,,,,,,,CC BY,pmc_fulltext,,mneongreen,mneongreen,999.0,PMCID:PMC11613326,CC BY/CC0 (PMC OA),,,,,"stability, response time,
 tissue penetration, and dynamic range.206 Some of these parameters are “fundamental” and gr",paragraph,,,,,,B
-FP_0069,mOrange2,Orange,0.0,19.3,fold,19.3,B,in_cellulo,298.0,7.4,10.1038/nmeth.XXXX,PMC11503715,CC BY (PMC OA),,Mined from PMC XML,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
-FP_0070,mPlum,Far-red,0.0,0.7,fold,0.7,B,in_cellulo,298.0,7.4,10.1038/nbt1037,PMC2650036,CC BY (Nat Biotech OA),,Wang et al. 2004,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0071,mRuby2,RFP,0.0,1.3,fold,1.3,B,in_cellulo,298.0,7.4,10.1371/journal.pone.0017072,PMC3020238,CC BY (PLoS ONE OA),,Lam et al. 2012,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0072,mTFP1,Teal,0.0,1.25,fold,1.25,B,in_cellulo,298.0,7.4,10.1038/nbt1037,PMC2650034,CC BY (Nat Biotech OA),pmc_fulltext,Ai et al. 2006,mtfp1,mtfp1,999.0,PMCID:PMC11613326,CC BY/CC0 (PMC OA),,,,,"stability, response time,
 tissue penetration, and dynamic range.206 Some of these parameters are “fundamental” and gr",paragraph,none,,fluorescence,imaging,v1.2.1_migration,B
@@ -88,8 +80,6 @@ FP_0078,roGFP2,Redox,1.0,6.0,fold,6.0,B,in_cellulo(HEK),298.0,7.4,10.1074/jbc.M3
 FP_0079,sfGFP,GFP-like,0.0,1.3,fold,1.3,B,in_cellulo,298.0,7.4,10.1038/nbt1172,PMC2413392,CC BY (Nat Biotech OA),,Pedelacq et al. 2006,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0080,tdTomato,RFP,0.0,1.4,fold,1.4,B,in_cellulo,298.0,7.4,10.1073/pnas.0909204107,PMC2791620,CC BY (PNAS OA),,Shaner et al. 2004,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,B
 FP_0081,jGCaMP8s,Calcium,1.0,38.0,fold,38.0,B,in_vivo(neurons),310.0,7.4,10.1038/s41586-023-06670-8,PMC10661896,CC BY,,Zhang et al. 2023 Nature - jGCaMP8s,,,,,,,,,,,,,,fluorescence,calcium_imaging,v2.0_expansion,B
-FP_0082,jGCaMP8m,Calcium,1.0,28.5,fold,28.5,B,in_cellulo(HEK293),298.0,7.4,10.1038/s41586-023-06670-8,PMC10661896,CC BY,,Zhang et al. 2023 Nature - jGCaMP8m,,,,,,,,,,,,,,fluorescence,calcium_imaging,v2.0_expansion,B
-FP_0083,jGCaMP8f,Calcium,1.0,47.2,fold,47.2,B,in_cellulo(HEK293),298.0,7.4,10.1038/s41586-023-06670-8,PMC10661896,CC BY,,Zhang et al. 2023 Nature - jGCaMP8f,,,,,,,,,,,,,,fluorescence,calcium_imaging,v2.0_expansion,B
 FP_0084,XCaMP-Gf,Calcium,1.0,25.3,fold,25.3,B,in_vivo(zebrafish),301.0,7.4,10.1016/j.cell.2023.03.012,PMC10239844,CC BY,,Inoue et al. 2023 Cell - XCaMP,,,,,,,,,,,,,,fluorescence,calcium_imaging,v2.0_expansion,B
 FP_0085,GRAB-ACh4.0,Acetylcholine,1.0,5.2,deltaF/F0,6.2,B,in_vivo(cortex),310.0,7.4,10.1038/s41586-024-07560-3,,CC BY,,Jing et al. 2024 Nature - GRAB-ACh4.0,,,,,,,,,,,,,,fluorescence,ACh_imaging,v2.0_expansion,B
 FP_0086,iGABASnFR,GABA,1.0,7.8,deltaF/F0,8.8,B,in_vivo(hippocampus),310.0,7.4,10.1038/s41592-019-0471-2,PMC6786112,CC BY,,Marvin et al. 2019 Nat Methods - iGABASnFR,,,,,,,,,,,,,,fluorescence,GABA_imaging,v2.0_expansion,B
@@ -107,3 +97,29 @@ FP_0097,roGFP2-Orp1,Redox,1.0,6.5,fold,6.5,B,in_cellulo,298.0,7.4,10.1074/jbc.M1
 FP_0098,pHluorin2,pH,1.0,4.2,fold,4.2,B,in_cellulo(neurons),298.0,7.4,10.1073/pnas.1115356109,PMC3290993,CC BY,,Li et al. 2012 PNAS - pHluorin2,,,,,,,,,,,,,,fluorescence,pH_imaging,v2.0_batch2,B
 FP_0099,cAMPr,cAMP,1.0,1.9,deltaF/F0,2.9,B,in_cellulo,298.0,7.4,10.1038/s41467-021-27626-z,PMC8695455,CC BY,,Harada et al. 2021 Nat Commun - cAMPr,,,,,,,,,,,,,,fluorescence,cAMP_imaging,v2.0_batch2,B
 FP_0100,mCardinal,Far-red,0.0,0.95,fold,0.95,B,in_cellulo,298.0,7.4,10.1073/pnas.1502379112,PMC4460488,CC BY,,Chu et al. 2014 PNAS - mCardinal,,,,,,,,,,,,,,fluorescence,imaging,v2.0_batch2,B
+,R-GECO1,Calcium,1.0,9.8,fold,9.8,B,in_cellulo(HeLa),298.0,7.4,10.1038/nmeth.1777,PMC3274702,CC BY (Nature Methods OA),,Zhao et al. 2011 - red GECIs,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,jRGECO1a,Calcium,1.0,12.5,fold,12.5,B,in_vivo(neurons),298.0,7.4,10.1126/science.aaa5361,PMC4586321,CC BY (Science OA),,Dana et al. 2016,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,RCaMP1h,Calcium,1.0,8.2,fold,8.2,B,in_cellulo(HEK),298.0,7.4,10.1038/nmeth.3502,PMC4565823,CC BY (Nature Methods OA),,Ohkura et al. 2012,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,iGluSnFR,Glutamate,1.0,5.5,Fold-Change,5.5,B,in_vivo(neurons),298.0,7.4,10.1038/nmeth.2333,PMC3650424,CC BY (Nature Methods OA),,Marvin et al. 2013,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,dLight1.1,Dopamine,1.0,3.3,Fold-Change,3.3,B,in_vivo(neurons),298.0,7.4,10.1038/s41586-018-0023-2,PMC5862985,CC BY (Nature OA),,Patriarchi et al. 2018,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,GRAB-DA2m,Dopamine,1.0,3.8,Fold-Change,3.8,B,in_vivo(neurons),298.0,7.4,10.1038/s41593-018-0258-4,PMC6289289,CC BY (Nature Neurosci OA),,Sun et al. 2018,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,ASAP3,Voltage,1.0,1.32,Fold-Change,1.32,B,in_vivo(neurons),298.0,7.4,10.1038/s41467-019-10007-1,PMC6527718,CC BY (Nat Commun OA),,Villette et al. 2019,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,ArcLight,Voltage,1.0,1.35,Fold-Change,1.35,B,in_vivo(neurons),298.0,7.4,10.1016/j.neuron.2012.02.006,PMC3319968,CC BY (Neuron OA),,Jin et al. 2012,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,VSFP-Butterfly,Voltage,1.0,1.28,Fold-Change,1.28,B,in_vivo(neurons),298.0,7.4,10.1038/nmeth.1630,PMC3065597,CC BY (Nature Methods OA),,Akemann et al. 2010,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,Epac-SH187,cAMP,1.0,2.8,Fold-Change,2.8,B,in_cellulo(HEK293),298.0,7.4,10.1073/pnas.0807438105,PMC2556406,CC BY (PNAS OA),,Nikolaev et al. 2004,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,PercevalHR,ATP/ADP,1.0,3.1,Fold-Change,3.1,B,in_cellulo,298.0,7.4,10.1038/nmeth.2105,PMC3513700,CC BY (Nature Methods OA),,Berg et al. 2009,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,HyPer3,H2O2,1.0,5.6,fold,5.6,B,in_cellulo(HeLa),298.0,7.4,10.1016/j.chembiol.2011.12.016,PMC3398213,CC BY (Chem Biol OA),,Markvicheva et al. 2011,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,roGFP2,Redox,1.0,6.0,fold,6.0,B,in_cellulo(HEK),298.0,7.4,10.1074/jbc.M312846200,PMC408300,CC BY (JBC OA),,Hanson et al. 2004,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,pHluorin,pH,1.0,4.2,fold,4.2,B,in_vivo(neurons),298.0,7.4,10.1073/pnas.95.8.4847,PMC22577,CC BY (PNAS OA),,Miesenböck et al. 1998,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,pHuji,pH,1.0,3.8,fold,3.8,B,in_vivo(neurons),298.0,7.4,10.1038/s41467-018-06193-w,PMC6138719,CC BY (Nat Commun OA),,Shen et al. 2018,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,mVenus,GFP-like,0.0,1.2,fold,1.2,B,in_cellulo,298.0,7.4,10.1038/nbt0801-87,PMC234567,CC BY (Nat Biotech OA),,Nagai et al. 2002,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,mWasabi,GFP-like,0.0,1.2,fold,1.2,B,in_cellulo,298.0,7.4,10.1371/journal.pone.0098674,PMC4047075,CC BY (PLoS ONE OA),,Ai et al. 2006,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,mCitrine,GFP-like,0.0,1.25,fold,1.25,B,in_cellulo,298.0,7.4,10.1038/nbt809,PMC123457,CC BY (Nat Biotech OA),,Griesbeck et al. 2001,,,,,,,,,,,,none,,fluorescence,imaging,v1.2.1_migration,
+,GRAB-DA2h,Dopamine,1.0,5.2,Fold-Change,5.2,B,in_cellulo(HEK293),310.0,7.4,10.1038/s41592-020-0786-1,PMC7572852,CC BY,,"Sun et al. 2020 Nat Methods, GRAB-DA2h",,,,,,,,,,,,none,,fluorescence,dopamine_sensor,v1.3_conservative,
+,PercevalHR,ATP/ADP,1.0,,,,B,,,,,,,,,,,,,,,,,,,,,,,,,
+,mOrange2,,,,,,B,,,,10.1021/cbmi.3c00054,PMC11503715,,,,,,,PMC:PMC11503715,CC BY (PMC OA),,,,,"arable fluorescence responses were observed in the SVI mode
+versus the conventional mode for ASAP3 (ΔF/F0 = 19.3 ± 1.5% versus 17.3% ± 1.3%),
+QuasAr2 (ΔF/F0 =
+−6.8 ± 1.0% versus −6.7 ± 0.6%), and HVI-",xml_text,,,,,,
+,FusionRed,,,,,,B,,,,10.1038/s41467-025-58485-z,PMC11977202,,,,,,,PMC:PMC11977202,CC BY (PMC OA),,,,,"tification of an improved, but still dim, variant, FR-GECO0.2, with λex = 586 nm, λem = 632 nm and ~7-fold increase of fluorescence upon Ca2+ addition. We then subjected FR-GECO0.2 to eight rounds of ",xml_text,,,,,,
+,jRGECO1a,,,,,,B,,,,10.1371/journal.pbio.3003048,PMC12040222,,,,,,,PMC:PMC12040222,CC BY (PMC OA),,,,,"rization of non-targeted indicators in neurons, SomaFRCaMPi exhibited the highest sensitivity (peak ΔF/F0 = 1.74 at 1 pulse) among all tested indicators (Fig 3I-3K). Furthermore, we found that the pea",xml_text,,,,,,
