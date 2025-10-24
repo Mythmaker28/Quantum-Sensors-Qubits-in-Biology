@@ -4,6 +4,23 @@ __pycache__/
 *$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
 venv/
 ENV/
 env/
@@ -19,30 +36,20 @@ env/
 .DS_Store
 Thumbs.db
 
-# Temporary files
-*.tmp
-*.bak
-*.log
-
-# QC reports (auto-generated, committed explicitly)
-# QC_REPORT.md is tracked
-
-# Local development
+# Secrets (IMPORTANT)
 .env
-.env.local
-credentials.json
-secrets.json
+*.key
+*.pem
+secrets/
 
-# Build artifacts
-dist/
-build/
-*.egg-info/
+# Data cache
+data/cache/
+*.parquet.tmp
 
-# Coverage
-.coverage
-htmlcov/
+# Logs
+logs/*.log
 
-# Documentation builds
-docs/_build/
-site/
-
+# Temporary
+tmp/
+temp/
+*.tmp
