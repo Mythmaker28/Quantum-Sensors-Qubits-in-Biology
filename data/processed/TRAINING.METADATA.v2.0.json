@@ -1,6 +1,6 @@
 {
   "version": "v2.0",
-  "rows": 100,
+  "rows": 113,
   "columns": [
     "SystemID",
     "protein_name",
@@ -38,5 +38,5 @@
   ],
   "source_canonical": "atlas_fp_optical_v2_0.csv",
   "license_data": "CC BY 4.0",
-  "generated_by": "agent-fix-v2.0"
+  "generated_by": "agent-expand-v2.0"
 }
