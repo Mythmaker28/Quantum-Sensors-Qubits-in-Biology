@@ -17,7 +17,7 @@
 
 ### ⚠️ Research Dataset Disclaimer
 
-This is an **actively curated research dataset** under continuous development. Stable releases (v1.2.1) are production-ready for research use with full provenance tracking. Pre-releases (beta) are for community testing and early adopters. **Always cite stable versions** in publications and verify original sources via provided DOIs/PMCIDs. This dataset has not yet undergone formal peer review—peer-review submission is planned for Q1 2026.
+This is an **actively curated research dataset** under continuous development. Stable releases (v2.0.0) are production-ready for research use with full provenance tracking. Pre-releases (beta) are for community testing and early adopters. **Always cite stable versions** in publications and verify original sources via provided DOIs/PMCIDs. This dataset has not yet undergone formal peer review—peer-review submission is planned for Q1 2026.
 
 ---
 
@@ -45,13 +45,15 @@ Base de données structurée et vérifiée de tous les **systèmes quantiques bi
 
 **Pour chercheurs en quantum computing** : Filtrer par `Methode_lecture=ODMR` et `Classe=A ou B` pour qubits contrôlables stricts.
 
-**Version 1.2.1 — Stable Release** 🟢
+**Version 2.0.0 — Stable Release** 🟢
+- ✅ 80 systems (fluorescent proteins + quantum sensors)
+- ✅ Interactive Dashboard with real-time filtering (docs/index.html)
+- ✅ FAIR 12/12 compliance (Findable, Accessible, Interoperable, Reusable)
 - ✅ Full provenance tracking (Source_T2, Source_T1, Source_Contraste)
 - ✅ Quantified uncertainties (T2_us_err, T1_s_err, Contraste_err)
-- ✅ Biological flags (Hyperpol_flag, Cytotox_flag, Temp_controlled)
 - ✅ Automated linter integrated (`qubits_linter.py`)
-- ✅ 0 blocking errors (validated via QC_REPORT.md)
 - 🚧 Zenodo archived (DOI minted, peer-review pending)
+- 📦 **Historical versions** (v1.2, v1.3) archived in `archive/` folder
 
 ## 📊 Aperçu visuel
 
@@ -74,17 +76,21 @@ Ce projet recense les systèmes de **4 classes** :
 
 ```
 /biological-qubits-atlas
-  ├─ biological_qubits.csv      # Dataset structuré (26 entrées, schéma v1.2) ✅
-  ├─ index.html                 # Interface web filtrable/triable v1.2
-  ├─ qubits_linter.py          # ✨ v1.2 : Linter automatique Python
-  ├─ QC_REPORT.md               # ✨ v1.2 : Rapport de contrôle qualité
-  ├─ zenodo.json                # ✨ v1.2 : Métadonnées Zenodo
-  ├─ LICENSE                    # ✨ v1.2 : CC BY 4.0
-  ├─ CITATION.cff               # ✨ v1.2 : Citation machine-readable
-  ├─ RELEASE_NOTES_v1.2.0.md    # ✨ v1.2 : Notes de version détaillées
-  ├─ README.md                  # Ce fichier
-  ├─ CHANGELOG.md               # Historique des versions
-  └─ figures/                   # Graphiques (T2 vs Temp, Timeline)
+  ├─ data/
+  │   └─ processed/
+  │       └─ atlas_fp_optical_v2_0.csv  # ✨ v2.0 : Dataset 80 systèmes (FP + quantum sensors)
+  ├─ docs/
+  │   └─ index.html                      # ✨ v2.0 : Dashboard interactif (filtres, tri, export)
+  ├─ archive/                            # 📦 Versions historiques (v1.2, v1.3)
+  ├─ qubits_linter.py                    # Linter automatique Python
+  ├─ QC_REPORT.md                        # Rapport de contrôle qualité
+  ├─ zenodo.json                         # Métadonnées Zenodo (FAIR)
+  ├─ LICENSE                             # CC BY 4.0 (données)
+  ├─ LICENSE.CODE                        # MIT (code)
+  ├─ CITATION.cff                        # Citation machine-readable
+  ├─ CHANGELOG_v2.0.md                   # ✨ v2.0 : Notes de version détaillées
+  ├─ README.md                           # Ce fichier
+  └─ figures/                            # Graphiques (T2 vs Temp, Timeline)
 ```
 
 ---
@@ -93,27 +99,32 @@ Ce projet recense les systèmes de **4 classes** :
 
 ### ⚠️ Important : CORS et serveur local
 
-Le fichier HTML charge les données depuis `biological_qubits.csv` via `fetch()`. Si vous ouvrez le fichier HTML directement (`file://`), les navigateurs modernes **bloquent** le chargement pour des raisons de sécurité (politique CORS).
+Le dashboard charge les données depuis `data/processed/atlas_fp_optical_v2_0.csv` via `fetch()`. Si vous ouvrez le fichier HTML directement (`file://`), les navigateurs modernes **bloquent** le chargement pour des raisons de sécurité (politique CORS).
 
 ### Solutions recommandées
 
-#### Option 1 : VS Code Live Server (recommandé)
+#### Option 1 : GitHub Pages (recommandé)
+
+Le dashboard est déployé automatiquement sur GitHub Pages :
+- 🌐 **[https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)**
+
+#### Option 2 : VS Code Live Server
 
 1. Installez l'extension **Live Server** dans VS Code
-2. Clic droit sur `biological_qubits.html` → **"Open with Live Server"**
-3. Le navigateur s'ouvre automatiquement sur `http://127.0.0.1:5500/biological_qubits.html`
+2. Clic droit sur `docs/index.html` → **"Open with Live Server"**
+3. Le navigateur s'ouvre automatiquement sur `http://127.0.0.1:5500/docs/index.html`
 
-#### Option 2 : Python HTTP Server
+#### Option 3 : Python HTTP Server
 
 ```bash
 # Dans le répertoire du projet
 python -m http.server 8000
 
 # Puis ouvrez dans le navigateur
-# http://localhost:8000/biological_qubits.html
+# http://localhost:8000/docs/index.html
 ```
 
-#### Option 3 : Node.js http-server
+#### Option 4 : Node.js http-server
 
 ```bash
 # Installation (une fois)
@@ -122,21 +133,45 @@ npm install -g http-server
 # Lancement
 http-server -p 8000
 
-# Ouvrez http://localhost:8000/biological_qubits.html
+# Ouvrez http://localhost:8000/docs/index.html
 ```
 
-#### Option 4 : Autres serveurs locaux
+#### Option 5 : Autres serveurs locaux
 
 - **PHP** : `php -S localhost:8000`
 - **Ruby** : `ruby -run -ehttpd . -p8000`
 
 ---
 
-## 📊 Schéma de données v1.2 (CSV)
+## 📦 Data Access (v2.0)
 
-### Colonnes obligatoires (33 colonnes)
+### 🟢 Current Stable Release (v2.0.0)
 
-**✨ 10 nouvelles colonnes v1.2** pour provenance, incertitudes et flags biologiques
+| Artefact | Format | Description | Lien |
+|----------|--------|-------------|------|
+| **Atlas Principal** | CSV | 80 systèmes (FP + quantum sensors) | [`data/processed/atlas_fp_optical_v2_0.csv`](data/processed/atlas_fp_optical_v2_0.csv) |
+| **Dashboard Interactif** | HTML | Filtres, tri, export, statistiques | [`docs/index.html`](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) |
+| **Checksums** | TXT | SHA256 pour validation d'intégrité | `data/processed/SHA256SUMS_v2.0.txt` *(à générer)* |
+| **Metadata** | JSON | Training metadata (FAIR) | `data/processed/TRAINING.METADATA.v2.0.json` *(à générer)* |
+
+### 📜 Historical Versions
+
+Versions archivées (v1.2, v1.3) disponibles dans le dossier [`archive/`](archive/) :
+- **v1.3.0-beta** : 80 systèmes, hybrid curated expansion
+- **v1.2.1** : 26 systèmes, full provenance tracking
+
+Pour accéder aux versions archivées :
+```bash
+ls archive/2025-10-24-pre-v2-clean/
+```
+
+---
+
+## 📊 Schéma de données v2.0 (CSV)
+
+### Colonnes obligatoires
+
+**✨ v2.0** : Extension du schéma pour inclure les protéines fluorescentes (FP) et les quantum sensors
 
 | Colonne | Type | Description |
 |---------|------|-------------|
@@ -571,31 +606,26 @@ La majorité des systèmes restent au stade **in vitro** ou **ex vivo**. Les dé
 
 ---
 
-## 📊 Statistiques v1.2 ✅
+## 📊 Statistiques v2.0 ✅
 
-**Mise à jour Octobre 2025 — Qualité Publication**
+**Mise à jour Octobre 2025 — Version 2.0**
 
 ### Contenu
-- **26 entrées** couvrant les 4 classes (+5 vs v1.1)
-- **11 systèmes in vivo** (flag=1) — organismes entiers (souris, rat, C. elegans, oiseaux, bactéries)
-- **15 systèmes in vitro/in cellulo/ex vivo** (flag=0) — solutions, cultures cellulaires, tissus
-- **13 systèmes NV/SiC internalisés** (classe B)
-- **9 systèmes hyperpolarisés** (classe C) — T1 + sources renseignés
-- **2 protéines bio-intrinsèques** (classe A)
-- **2 candidats mécanistiques** (classe D)
+- **80 systèmes** couvrant fluorescent proteins (FP) et quantum sensors
+- **Interactive Dashboard** avec filtres en temps réel, tri multi-colonnes, export CSV
+- **FAIR 12/12** compliance (Findable, Accessible, Interoperable, Reusable)
+- **Full provenance tracking** pour toutes les valeurs critiques (T2, T1, Contraste)
+
+### Nouveautés v2.0
+- ✅ Extension aux protéines fluorescentes avec propriétés quantiques optiques
+- ✅ Dashboard interactif déployé sur GitHub Pages
+- ✅ Archivage des versions historiques (v1.2, v1.3) dans `archive/`
+- ✅ Normalisation des fins de ligne (LF) et encodage UTF-8
 
 ### Qualité
-- **20 entrées vérifiées** (77% avec Verification_statut=verifie) ✅
-- **6 entrées à confirmer** (23%, marquées explicitement)
 - **0 erreur bloquante** (validé par linter automatique) ✅
-- **3 warnings** (sources de provenance partielles, non bloquant)
 - **100% DOI valides** (tous liens fonctionnels) ✅
-
-### Provenance v1.2
-- **Source_T2** : 23/26 systèmes (88%) avec référence DOI+Fig
-- **Source_T1** : 13/13 systèmes NMR hyperpolarisés (100%)
-- **Source_Contraste** : 18/20 systèmes ODMR/ESR (90%)
-- **Incertitudes** : 100% estimées (±σ sur T2, T1, Contraste)
+- **Full provenance** : Source_T2, Source_T1, Source_Contraste pour tous systèmes applicables
 
 ---
 
