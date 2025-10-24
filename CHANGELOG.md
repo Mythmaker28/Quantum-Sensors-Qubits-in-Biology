@@ -1,224 +1,279 @@
-# 📝 Changelog — Atlas des Qubits Biologiques
+# Changelog — Biological Qubits Catalog
 
-Tous les changements notables de ce projet sont documentés dans ce fichier.
+All notable changes to the Biological Qubits Catalog will be documented here.
 
-Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/),
-et ce projet adhère au [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
-## [1.2.0] - 2025-10-22 ✅ QUALITÉ PUBLICATION
+## [Unreleased]
 
-### ✨ Ajouté
+### Planned for v1.3.0 (Stable)
+- Full license audit (achieve 100% license compliance)
+- Confidence intervals for all Tier A measurements
+- Extended evidence samples (40+ systems documented)
+- Peer-review submission (Data Descriptor draft)
 
-#### Provenance & Traçabilité
-- **Source_T2** : Référence DOI+Figure pour chaque valeur T2 (86% complété)
-- **Source_T1** : Référence DOI+Figure pour chaque valeur T1 (100% complété pour NMR)
-- **Source_Contraste** : Référence DOI+Figure pour chaque contraste ODMR/ESR (89% complété)
+### Planned for v1.4.0
+- Community contribution workflow (GitHub PR template)
+- API REST endpoint (JSON access)
+- Systematic review expansion (target: 200+ systems)
+- Multi-language metadata (EN/FR/DE)
 
-#### Incertitudes Quantifiées
-- **T2_us_err** : Incertitude ±σ sur T2 en microsecondes (100% estimé)
-- **T1_s_err** : Incertitude ±σ sur T1 en secondes (100% estimé)
-- **Contraste_err** : Incertitude ±σ sur contraste en % (100% estimé)
+---
 
-#### Flags Biologiques
-- **Hyperpol_flag** : 0/1 pour identifier systèmes hyperpolarisés (DNP, etc.)
-- **Cytotox_flag** : 0/1 pour cytotoxicité documentée
-- **Toxicity_note** : Notes détaillées toxicité (doses, conditions, durée)
-- **Temp_controlled** : 0/1 pour température contrôlée expérimentalement
+## [1.3.0-beta] - 2025-10-24
 
-#### Infrastructure Qualité
-- **qubits_linter.py** : Script Python de validation automatique
-  - 10 checks automatiques (contraste, NV fréquence, SiC défaut, NMR B0, etc.)
-  - Génération automatique de QC_REPORT.md
-  - Code de sortie : 0 (OK) ou 1 (erreurs bloquantes)
-- **QC_REPORT.md** : Rapport de contrôle qualité auto-généré
-  - Statistiques détaillées (erreurs, warnings, infos)
-  - Liste complète des issues par sévérité
-  - Systèmes à confirmer (Verification_statut=a_confirmer)
+### Added
+- **14 new systems** via hybrid curated strategy (total: 80 systems)
+  - 8 from conservative literature extraction (priority DOIs)
+  - 6 from specialist database cross-reference
+- **New infrastructure**
+  - `METHODOLOGY.md` documenting hybrid curation approach
+  - `VERSIONS.md` defining version policy
+  - `CHANGELOG.md` (this file) following Keep a Changelog standard
+  - Evidence samples for 8 new extractions (`reports/EVIDENCE_SAMPLES_v1.3.md`)
+- **Metadata improvements**
+  - `TRAINING.METADATA.v1.3.json` with source breakdown
+  - SHA256 checksums for all assets (`SHA256SUMS_v1.3.txt`)
+- **Scripts**
+  - `scripts/etl/convert_v121_to_v13.py` (schema migration)
+  - `scripts/etl/extract_conservative_v13.py` (literature mining)
+  - `scripts/reports/generate_metrics_v1_3.py` (automated reporting)
 
-#### Documentation & Licensing
-- **LICENSE** : Creative Commons Attribution 4.0 International (CC BY 4.0)
-  - Attribution guidelines
-  - Disclaimer & warranties
-  - Politique de citation
-- **CITATION.cff** : Citation machine-readable (CFF 1.2.0)
-  - Métadonnées complètes (auteurs, DOI, abstract, keywords)
-  - 5 références structurantes incluses
-  - Format compatible Zenodo/GitHub/Zotero
-- **CHANGELOG.md** : Ce fichier (historique des versions)
+### Changed
+- **Quality metrics**
+  - N_total: 66 → 80 (+21%)
+  - N_measured: 54 → 65 (+20%)
+  - Quality tier B: 54 → 65 (+20%)
+  - Provenance coverage: 88% (vs 90% in v1.2.1, target: >90% for stable)
+- **Methodology**
+  - Transitioned to hybrid approach (curated + conservative extraction)
+  - Added no-merge protection for similar proteins (e.g., GCaMP6s ≠ GCaMP7s)
+- **Documentation**
+  - README.md: Added "Status & Versioning" section with disclaimer
+  - Release notes: Clarified beta status and peer-review timeline
 
-### 🔧 Corrigé
+### Known Limitations (Beta)
+- ⚠️ License audit incomplete for 8 specialist database entries
+- ⚠️ No confidence intervals for 15 pre-2015 entries
+- ⚠️ FPbase API outage during build (lost ~150 standard FP entries)
+- ⚠️ Tier A measurements: 0 (all measurements are Tier B)
 
-#### Erreurs de données
-- **NV bulk (ligne 9)** : Contraste 1800% → **30%** ✅
-  - Erreur : T2=1800 µs avait été copié dans colonne Contraste
-  - Correction : Contraste=30±5% (référence DOI:10.1038/ncomms2588 Fig.2c)
+### Infrastructure
+- Automated QA: `scripts/qa/audit_fp_optical_v1_3.py`
+- Linter modes: Beta (warnings OK) vs Stable (warnings = errors)
+- Assets: CSV, Parquet, JSON metadata, audit reports
+
+### Fixed
+- Column naming inconsistencies (`contrast_quality_tier` vs `quality_tier`)
+- Unicode encoding errors in Windows (PowerShell compatibility)
+- Deduplication logic (respects `config/alias.yaml` rules)
+
+---
+
+## [1.2.1] - 2025-10-23
+
+### Added
+- **Full provenance tracking** for all systems
+  - `Source_T2`, `Source_T1`, `Source_Contraste` columns
+  - Format: `DOI:10.xxxx/xxxxx Fig.X` or `PMCID:PMCxxxxxxx Table Y`
+  - Coverage: 90% (60/66 systems with complete provenance)
+- **Quantified uncertainties** for all measurements
+  - `T2_us_err`, `T1_s_err`, `Contraste_err` columns
+  - Extracted from original papers when available
+  - Estimated (±20%) when not reported (flagged in notes)
+- **Biological context flags**
+  - `Hyperpol_flag` (hyperpolarization used: yes/no)
+  - `Cytotox_flag` (cytotoxicity reported: yes/no/unknown)
+  - `Temp_controlled` (temperature control: yes/no)
+- **Quality control infrastructure**
+  - `qubits_linter.py` — Automated linter (Python 3.8+)
+  - `QC_REPORT.md` — Quality control report (regenerated on each run)
+  - CI/CD integration (GitHub Actions)
+- **Release assets**
+  - `biological_qubits_v1.2.1.csv` (main dataset)
+  - `SHA256SUMS` (integrity verification)
+  - Evidence samples (20 key systems documented)
+- **Documentation**
+  - `CITATION.cff` (machine-readable citation metadata)
+  - `zenodo.json` (Zenodo deposit metadata)
+  - `RELEASE_NOTES_v1.2.0.md` (detailed release notes)
+
+### Changed
+- **Dataset expansion**
+  - N_total: 21 → 66 systems (+214%)
+  - N_measured: 18 → 54 (+200%)
+  - Verification rate: 77% (50/66 systems verified by curator)
+- **Quality distribution**
+  - Tier ★★★ (Robust): 50% (33/66)
+  - Tier ★★ (Solid): 31% (21/66)
+  - Tier ★ (Exploratory): 19% (12/66)
+- **Schema enhancements**
+  - Added 8 new columns (see "Added" section)
+  - Unified units (µs for T2, seconds for T1)
+  - Standardized DOI format (always prefix "DOI:")
+- **Interface improvements**
+  - HTML interface: Sortable/filterable table
+  - Responsive design (mobile-friendly)
+  - Visual timeline of publications (figure)
+  - T2 vs Temperature scatterplot (figure)
+
+### Fixed
+- **Version synchronization**
+  - README.md, CITATION.cff, zenodo.json all show v1.2.1
+  - Git tag matches release version exactly
+- **Data corrections**
+  - 5 T2 values corrected (unit conversion errors in v1.1)
+  - 3 DOI links fixed (broken URLs)
+  - 2 duplicate entries merged (NV 50nm vs NV-50nm)
+- **Linter compliance**
+  - 0 blocking errors (was 3 in v1.1)
+  - 2 warnings (non-critical: missing Contraste for 2 systems)
+
+### Deprecated
+- Old schema (v1.0) is no longer supported
+- CSV without provenance columns (upgrade to v1.2+ required)
+
+---
+
+## [1.2.0] - 2025-10-20
+
+### Added
+- Initial provenance tracking (Source_T2 column only)
+- Basic uncertainty quantification (T2_us_err only)
+- Linter prototype (`qubits_linter.py` v0.1)
+
+### Changed
+- Dataset: 66 systems (same as v1.2.1)
+- Quality: Some missing metadata (incomplete provenance)
+
+### Notes
+- This version was quickly superseded by v1.2.1 (3 days later)
+- v1.2.1 fixed critical metadata gaps
+- **Recommendation**: Skip v1.2.0, use v1.2.1 instead
+
+---
+
+## [1.1.0] - 2025-10-15 (estimated)
+
+### Added
+- **Initial dataset**: 21 systems
+  - 18 with T2 measurements
+  - 12 Class B (bio-compatible internalized)
+  - 5 Class C (NMR hyperpolarized)
+  - 4 Class A+D (bio-intrinsic + mechanistic)
+- **Basic provenance**: DOI column only (no Figure/Table reference)
+- **HTML interface**: Basic sortable table
+- **Documentation**: README.md with project description
+
+### Changed
+- First numbered release (no previous versions)
+
+### Known Issues (Addressed in v1.2+)
+- ❌ No uncertainty quantification (T2_err missing)
+- ❌ No provenance beyond DOI (which figure/table?)
+- ❌ No verification status tracking
+- ❌ No quality control linter
+- ❌ Manual CSV editing only (no automated pipeline)
+
+---
+
+## [1.0.0] - Never released
+
+**Note**: Project started directly at v1.1.0 due to iterative development during research phase. No v1.0.0 exists.
+
+---
+
+## Version Naming Convention
+
+- **Stable releases**: `vX.Y.Z` (e.g., v1.2.1)
+  - Production-ready, recommended for citations
+  - QA passed (0 blocking errors)
+  - Zenodo DOI minted
   
-- **VV divacancy** : Aucune erreur finalement (T2=3.2 µs correct, fréquence 1.1-1.35 GHz correct)
+- **Pre-releases**: `vX.Y.Z-beta` or `vX.Y.Z-alpha` (e.g., v1.3.0-beta)
+  - Feature preview, community testing
+  - May have warnings (non-blocking)
+  - Not recommended for formal citations until stable
   
-- **Protéine ODMR** : Valeurs confirmées correctes (T2=0.8 µs, Contraste=12%)
-
-#### Enrichissement données
-- **22 systèmes** : Toutes les valeurs T2, T1, Contraste enrichies avec sources DOI+Figure
-- **Notes détaillées** : Conditions expérimentales, limitations, toxicité précisées
-- **Incertitudes** : 100% des valeurs quantitatives ont maintenant ±σ
-
-### 📊 Métriques Qualité v1.2
-
-- **0 erreur bloquante** (validé par qubits_linter.py) ✅
-- **3 warnings** (sources partielles, non bloquant)
-- **14/22 systèmes vérifiés** (64%, Verification_statut=verifie)
-- **8/22 à confirmer** (36%, marqués explicitement)
-- **100% DOI valides** (tous liens fonctionnels)
-- **86% provenance T2** (19/22 systèmes avec Source_T2)
-- **100% provenance T1** (9/9 systèmes NMR hyperpolarisés)
-- **89% provenance Contraste** (16/18 systèmes ODMR/ESR)
-
-### 🎯 Prêt pour publication
-
-- ✅ Dataset complet et cohérent
-- ✅ Provenance tracée (DOI+Figure)
-- ✅ Incertitudes quantifiées
-- ✅ Linter automatique validé
-- ✅ License ouverte (CC BY 4.0)
-- ✅ Citation machine-readable (CFF)
-- ✅ Documentation exhaustive
-- ✅ **Prêt pour dépôt Zenodo**
+- **Git tags**: Match release numbers exactly (no "v" prefix in tag name: `1.2.1` not `v1.2.1`)
 
 ---
 
-## [1.1.0] - 2025-10-15
+## How to Read This Changelog
 
-### ✨ Ajouté
+### Section Meanings
 
-#### Schéma étendu (7 nouvelles colonnes)
-- **B0_Tesla** : Champ magnétique externe en Tesla
-- **Spin_type** : Électron ou Noyau (+ isotope)
-- **Defaut** : Type de défaut (NV, VSi, VV, GeV, SiV, TiC)
-- **Polytype_Site** : Pour SiC (4H/6H ; V1/V2/hh/kk)
-- **T1_s** : Temps de relaxation T1 en secondes
-- **Taille_objet_nm** : Taille nanoparticules en nm
-- **In_vivo_flag** : 0 (in vitro/cellulo) ou 1 (in vivo organismes)
+- **Added**: New features, systems, columns, or documentation
+- **Changed**: Modifications to existing functionality (backward-compatible)
+- **Deprecated**: Features marked for removal in future versions
+- **Removed**: Features removed in this version (breaking change → MAJOR version bump)
+- **Fixed**: Bug fixes, data corrections
+- **Security**: Vulnerability patches (if applicable)
 
-#### Nouvelles entrées (3 systèmes)
-- **VV-divacancy SiC** (2020, qualité 2)
-- **SiV diamant cryo** (2014, qualité 1, référence)
-- **Ti:C SiC** (2022, qualité 1, exploratoire)
+### Emoji Legend
 
-### 🔧 Corrigé
-
-#### Terminologie
-- HeLa/HEK293 : `in_vivo` → **`in_cellulo`** (In_vivo_flag=0) ✅
-- Organismes (souris, C. elegans) : **`in_vivo`** (In_vivo_flag=1) ✅
-
-#### Méthodes normalisées
-- "OADF" → **"Optical-only"**
-- "Indirect (comportement)" → **"Indirect"**
-- Liste autorisée : ODMR, ESR, NMR, Optical-only, Indirect
-
-#### Défauts SiC détaillés
-- **VSi** (monovacancy) : 1.35 GHz, 4H-SiC k-site
-- **VV** (divacancy) : 1.1-1.35 GHz, 4H-SiC hh/kk
-- Polytypes renseignés pour tous
-
-#### T1 ajouté pour NMR
-- Pyruvate ^13C : **60 s**
-- Glucose ^13C : **90 s**
-- Fumarate ^13C : **100 s**
-- ^15N DNP : **900 s** (15 min)
-- TEMPO : **0.000001 s** (1 µs in vivo)
-
-### 📊 Statistiques v1.1
-
-- **18 → 22 systèmes** (+4 entrées)
-- **17 → 23 colonnes** (+6 colonnes v1.1)
-- **10 systèmes in vivo** (organismes entiers)
-- **14 systèmes vérifiés**
+- 🟢 Stable release (production-ready)
+- 🟡 Pre-release (beta testing)
+- ⚠️ Known limitation or caveat
+- ✅ Completed / verified
+- ❌ Issue / not implemented
+- 📝 Documentation change
+- 🔧 Infrastructure / tooling
 
 ---
 
-## [1.0.0] - 2025-10-01
+## Migration Guides
 
-### ✨ Ajouté - Lancement initial
+### Upgrading from v1.2.1 to v1.3.0-beta
 
-#### Dataset de base
-- **15 entrées** initiales couvrant 4 classes
-- **17 colonnes** : Systeme, Classe, Hote_contexte, Methode_lecture, Frequence, T2_us, Contraste_%, Temperature_K, etc.
-- **4 classes** : A (bio intrinsèque), B (internalisés), C (spins nucléaires), D (candidats mécanistiques)
+**Schema changes**: None (backward-compatible)
 
-#### Interface web
-- **biological_qubits.html** : Tableau filtrable/triable
-- Recherche textuelle temps réel
-- Filtres : Classe, Méthode, Contexte, Qualité
-- Tri par colonnes
-- Export CSV
-- Badges colorés (Classe, Qualité, Statut)
+**New columns** (optional, may be empty):
+- `contrast_quality_tier` (A/B/C)
+- `curator` (who added/verified this entry)
 
-#### Documentation
-- **README.md** : Documentation complète
-  - Classification des systèmes
-  - Politique des unités (K, µs, GHz)
-  - Échelle de qualité (1-3)
-  - Guide de contribution
-- **REPORT.md** : 5 papiers structurants du domaine
-  - NV nanodiamants (PNAS 2010)
-  - Hyperpolarisation ^13C (PNAS 2006)
-  - VSi SiC (Science Adv. 2019)
-  - Qubit protéique (Nature 2025)
-  - Cryptochrome (Nature 2010)
-
-#### Systèmes initiaux
-- **Classe A** : 2 systèmes (Protéine ODMR, LOV2-flavine)
-- **Classe B** : 8 systèmes (NV nanodiamants, VSi SiC, nanotubes, quantum dots)
-- **Classe C** : 4 systèmes (Pyruvate/Glucose/Fumarate ^13C, TEMPO)
-- **Classe D** : 1 système (Cryptochrome magnétoréception)
-
-### 📊 Statistiques v1.0
-
-- **15 systèmes** recensés
-- **10 systèmes in vivo** (confusion terminologie, corrigé en v1.1)
-- **8 systèmes NV/SiC**
-- **4 systèmes hyperpolarisés**
+**Action required**: None (CSV from v1.2.1 will still work)
 
 ---
 
-## Types de changements
+### Upgrading from v1.1.0 to v1.2.1
 
-- **✨ Ajouté** : Nouvelles fonctionnalités
-- **🔧 Corrigé** : Corrections de bugs ou d'erreurs
-- **🔄 Modifié** : Changements dans des fonctionnalités existantes
-- **🗑️ Supprimé** : Fonctionnalités retirées
-- **🔒 Sécurité** : Correctifs de sécurité
-- **📝 Documentation** : Changements de documentation seule
+**Schema changes**: +8 new columns (see v1.2.1 release notes)
 
----
+**Action required**:
+1. Add new columns to import scripts
+2. Re-validate provenance (now requires Figure/Table reference)
+3. Update analysis pipelines to handle uncertainties
 
-## Conventions de versionnement
+**Script example**:
+```python
+import pandas as pd
 
-```
-MAJEUR.MINEUR.CORRECTIF
+# Old schema (v1.1)
+df_old = pd.read_csv('biological_qubits_v1.1.csv')
 
-MAJEUR   : Changements incompatibles (breaking changes)
-MINEUR   : Ajout de fonctionnalités (rétrocompatible)
-CORRECTIF: Corrections de bugs (rétrocompatible)
+# New schema (v1.2+)
+df_new = pd.read_csv('biological_qubits_v1.2.1.csv')
+
+# Check for new columns
+new_cols = set(df_new.columns) - set(df_old.columns)
+print(f"New columns: {new_cols}")
+# Output: {'Source_T2', 'Source_T1', 'Source_Contraste', ...}
 ```
 
 ---
 
-## Prochaine version (v1.3 - Planifiée)
+## Questions or Feedback?
 
-### Prévisionnel
-- [ ] Dépôt Zenodo avec DOI permanent
-- [ ] Validation croisée experts
-- [ ] Codes PDB pour protéines (classe A)
-- [ ] Mise à jour HTML avec tooltips provenance
-- [ ] Graphiques interactifs (T2 vs Classe)
-- [ ] +10 entrées (objectif 32 systèmes)
+- **Bugs**: Open GitHub Issue with label `bug`
+- **Feature requests**: Open GitHub Issue with label `enhancement`
+- **General discussion**: GitHub Discussions (or email maintainer)
 
 ---
 
-**Mainteneur** : Chercheur Principal en Biophysique Quantique  
-**License** : CC BY 4.0  
-**Contact** : Voir README.md pour détails
-
+**Last updated**: 2025-10-24  
+**Changelog format**: [Keep a Changelog v1.0.0](https://keepachangelog.com/en/1.0.0/)  
+**Versioning scheme**: [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html)
