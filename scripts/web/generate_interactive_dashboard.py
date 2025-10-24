@@ -178,7 +178,7 @@ def generate_dashboard_html(atlas_csv: str, output_html: str = "index_v2_interac
     
     <script>
         const rawData = {data_json};
-        const data = rawData.filter(d => d.temperature_k);
+        const data = rawData; // Tous les systèmes (pas de filtre température)
         
         // === STATISTIQUES ===
         const stats = [

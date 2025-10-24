@@ -9,10 +9,11 @@
 
 ## 📊 Status & Versioning
 
-- 🟢 **Stable**: [v1.2.1](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.2.1) — 66 systems, 54 measured, QA passed
-- 🟡 **Pre-release**: [v1.3.0-beta](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.3.0-beta) — 80 systems, hybrid curated expansion (+21%)
+- 🟢 **Stable**: [v2.0.0](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v2.0.0) — 80 systems, Interactive Dashboard, FAIR 12/12 ✨
+- 🟡 **Previous**: [v1.3.0-beta](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.3.0-beta) — 80 systems, hybrid curated expansion
 - 📝 **Peer-review**: Planned (Data Descriptor submission Q1 2026)
 - 🔗 **DOI**: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) (archived snapshot)
+- 🌐 **Interactive Dashboard**: [Live Demo](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
 
 ### ⚠️ Research Dataset Disclaimer
 
