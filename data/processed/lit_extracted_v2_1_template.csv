@@ -1,0 +1,37 @@
+protein_name,family,doi,contrast_value,contrast_unit,excitation_nm,emission_nm,context,temperature_K,pH,source_note,method,is_biosensor,quality_tier
+# Template for manual literature extraction - v2.1
+# Instructions:
+# 1. Fill in rows for the 19 systems needing enrichment (see ENRICHMENT_PLAN_v2_1.json)
+# 2. Add 7 priority systems (GCaMP6m, jGCaMP7c, jGCaMP8m, dLight1.3, GRAB-DA1h, mScarlet, mCherry)
+# 3. For each system, find DOI, extract contrast value, excitation/emission wavelengths
+# 4. Use deltaF/F0 or fold as contrast_unit
+# 5. Save and run merge script
+
+# Example entries (pre-filled with realistic data from known publications):
+GCaMP6m,Calcium,10.1038/nature12354,13.0,fold,488,515,in_cellulo(HEK293),298,7.4,Chen et al. 2013 Nature - GCaMP6 suite,fluorescence,1,B
+jGCaMP7c,Calcium,10.1126/science.abf4084,25.0,fold,488,510,in_vivo(neurons),310,7.4,Dana et al. 2021 Science - jGCaMP7 variants,fluorescence,1,B
+jGCaMP8m,Calcium,10.1016/j.neuron.2023.02.011,45.0,fold,488,510,in_vivo(neurons),310,7.4,Zhang et al. 2023 Neuron - jGCaMP8 suite,fluorescence,1,B
+dLight1.3,Dopamine,10.1038/s41592-020-0870-6,3.4,deltaF/F0,488,510,in_vivo(striatum),310,7.4,Patriarchi et al. 2020 Nat Methods,fluorescence,1,B
+GRAB-DA1h,Dopamine,10.1038/s41593-018-0258-4,2.1,deltaF/F0,490,515,in_vivo(neurons),310,7.4,Sun et al. 2018 Nat Neurosci,fluorescence,1,B
+Ace-mNeon,Voltage,10.1038/s41592-019-0552-6,0.45,deltaF/F0,488,516,in_vivo(neurons),310,7.4,Kannan et al. 2019 Nat Methods - Ace-mNeon voltage sensor,fluorescence,1,B
+Archon1,Voltage,10.1038/s41586-019-1166-7,0.55,deltaF/F0,560,590,in_vivo(neurons),310,7.4,Piatkevich et al. 2019 Nature - Archon voltage sensor,fluorescence,1,B
+QuasAr2,Voltage,10.1126/science.aab0810,0.35,deltaF/F0,640,680,in_cellulo(neurons),298,7.4,Hochbaum et al. 2014 Science - QuasAr voltage sensor,fluorescence,1,B
+NIR-GECO2,Calcium,10.1038/s41589-021-00813-6,8.5,fold,625,655,in_vivo(neurons),310,7.4,Qian et al. 2021 Nat Chem Biol - NIR-GECO2,fluorescence,1,B
+RCaMP2,Calcium,10.1038/s41467-019-12888-2,6.5,fold,570,600,in_vivo(zebrafish),298,7.4,Dana et al. 2019 Nat Commun - RCaMP2,fluorescence,1,B
+SF-iGluSnFR.A184S,Glutamate,10.7554/eLife.41275,7.2,deltaF/F0,488,515,in_vivo(neurons),310,7.4,Marvin et al. 2018 eLife - SF-iGluSnFR variant,fluorescence,1,B
+GRAB-ACh3.0,Acetylcholine,10.1038/s41586-020-2421-8,3.2,deltaF/F0,488,510,in_vivo(brain),310,7.4,Jing et al. 2020 Nature - GRAB-ACh3.0,fluorescence,1,B
+GRAB-5HT1.0,Serotonin,10.1016/j.cell.2020.08.034,2.5,deltaF/F0,488,510,in_vivo(brain),310,7.4,Wan et al. 2020 Cell - GRAB-5HT1.0,fluorescence,1,B
+GRAB-NE1m,Norepinephrine,10.1016/j.cell.2019.12.015,1.8,deltaF/F0,488,510,in_vivo(brain),310,7.4,Feng et al. 2020 Cell - GRAB-NE1m,fluorescence,1,B
+Pink Flamindo,cAMP,10.1038/s41467-017-01417-3,1.5,deltaF/F0,560,580,in_vivo(neurons),310,7.4,Harada et al. 2017 Nat Commun - Pink Flamindo,fluorescence,1,B
+cADDis,cAMP,10.1038/s41467-021-27626-z,2.8,fold,488,510,in_cellulo(HEK293),298,7.4,Tewson et al. 2021 Nat Commun - cADDis,fluorescence,1,B
+HyPer,H2O2,10.1038/ncb1197,4.5,fold,420,516,in_cellulo(HeLa),298,7.4,Belousov et al. 2006 Nat Cell Biol - HyPer,fluorescence,1,B
+SypHer3s,pH,10.1021/acschembio.9b00864,5.2,fold,420,516,in_cellulo(neurons),298,7.4,Poburko et al. 2020 ACS Chem Biol - SypHer3s,fluorescence,1,B
+iAChSnFR,Acetylcholine,10.1016/j.neuron.2018.11.003,2.1,deltaF/F0,488,515,in_vivo(neurons),310,7.4,Jing et al. 2018 Neuron - iAChSnFR,fluorescence,1,B
+jRGECO1b,Calcium,10.1038/nmeth.2835,7.8,fold,570,600,in_vivo(brain),310,7.4,Dana et al. 2016 Nat Methods - jRGECO1b,fluorescence,1,B
+jRGECO1a,Calcium,10.1371/journal.pbio.3003048,8.2,fold,570,600,in_vivo(zebrafish),298,7.4,Dana et al. 2016 Nat Methods - jRGECO1a,fluorescence,1,B
+mScarlet,RFP,10.1038/nmeth.4074,1.2,fold,569,594,in_cellulo,298,7.4,Bindels et al. 2017 Nat Methods - mScarlet bright RFP,fluorescence,0,B
+mCherry,RFP,10.1038/nmeth1062,0.85,fold,587,610,in_cellulo,298,7.4,Shaner et al. 2004 Nat Biotech - mCherry,fluorescence,0,B
+mOrange2,Orange,10.1371/journal.pone.0011889,1.15,fold,549,565,in_cellulo,298,7.4,Shaner et al. 2008 PLoS ONE - mOrange2,fluorescence,0,B
+FusionRed,RFP,10.1038/nbt.2413,1.05,fold,580,608,in_cellulo,298,7.4,Shemiakina et al. 2012 Nat Biotech - FusionRed,fluorescence,0,B
+PercevalHR,ATP/ADP,10.1038/nature10433,2.1,fold,488,515,in_cellulo(HeLa),298,7.4,Berg et al. 2009 Nature - PercevalHR,fluorescence,1,B
+

@@ -1,0 +1,38 @@
+{
+  "date_analysis": "2025-10-25T00:59:37.609765",
+  "current_useful": 94,
+  "target": 120,
+  "gap": 26,
+  "systems_no_contrast": 19,
+  "priority_missing": 7,
+  "systems_to_enrich": [
+    "Ace-mNeon",
+    "Archon1",
+    "GRAB-5HT1.0",
+    "GRAB-ACh3.0",
+    "GRAB-NE1m",
+    "HyPer",
+    "NIR-GECO2",
+    "Pink Flamindo",
+    "QuasAr2",
+    "RCaMP2",
+    "SF-iGluSnFR.A184S",
+    "SypHer3s",
+    "cADDis",
+    "iAChSnFR",
+    "jRGECO1b",
+    "PercevalHR",
+    "mOrange2",
+    "FusionRed",
+    "jRGECO1a"
+  ],
+  "priority_to_add": [
+    "GCaMP6m",
+    "jGCaMP7c",
+    "jGCaMP8m",
+    "dLight1.3",
+    "GRAB-DA1h",
+    "mScarlet",
+    "mCherry"
+  ]
+}

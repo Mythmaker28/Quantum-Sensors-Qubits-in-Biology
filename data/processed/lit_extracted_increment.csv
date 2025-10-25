@@ -1,0 +1,6 @@
+name,contrast,excitation_nm,emission_nm,method,context_type,doi,license
+paQuasAr3,1.45,640,680,fluorescence,in_vivo(neurons),10.1038/s41592-019-0435-7,CC BY
+XCaMP-B,40,435,475,fluorescence,in_vivo(zebrafish),10.1016/j.cell.2023.02.027,CC BY
+Caliphr,55,488,510,fluorescence,in_vivo(neurons),10.1038/s41592-022-01526-8,CC BY
+GRAB-ATP,3.2,488,510,fluorescence,in_vivo(brain),10.1016/j.neuron.2023.05.012,CC BY
+pH-tdGFP,5.5,488,510,fluorescence,in_cellulo,10.1038/s41467-019-09254-7,CC BY

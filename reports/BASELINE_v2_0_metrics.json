@@ -1,0 +1,15 @@
+{
+  "version": "2.0.0",
+  "date_analysis": "2025-10-25T00:54:28.433704",
+  "N_total": 113,
+  "N_measured": 94,
+  "N_useful": 94,
+  "N_unique_names": 87,
+  "N_families": 21,
+  "N_families_ge_5": 8,
+  "N_unique_dois": 65,
+  "doi_diversity_rate": 0.6914893617021277,
+  "license_cc_by": 109,
+  "license_uncertain": 0,
+  "gap_to_v2_1": 26
+}

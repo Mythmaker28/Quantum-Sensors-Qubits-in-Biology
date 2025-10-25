@@ -1,0 +1,58 @@
+{
+  "version": "2.1.0",
+  "date_created": "2025-10-25T01:01:45.576943",
+  "schema_version": "2.1",
+  "N_total": 120,
+  "N_measured": 113,
+  "N_useful": 113,
+  "N_families": 21,
+  "families": {
+    "Calcium": 21,
+    "Voltage": 12,
+    "GFP-like": 11,
+    "Dopamine": 11,
+    "RFP": 7,
+    "pH": 6,
+    "cAMP": 6,
+    "Glutamate": 6,
+    "Far-red": 5,
+    "CFP-like": 4,
+    "H2O2": 4,
+    "ATP/ADP": 3,
+    "Acetylcholine": 3,
+    "NIR": 3,
+    "Redox": 3,
+    "Serotonin": 2,
+    "Norepinephrine": 1,
+    "BFP-like": 1,
+    "Teal": 1,
+    "GABA": 1,
+    "ATP": 1
+  },
+  "sources": [
+    "Atlas_v2.0",
+    "Literature_v2.1"
+  ],
+  "license": "CC BY 4.0",
+  "citation": "Biological Qubits Atlas v2.1 (2025)",
+  "contract_interface": {
+    "consumer": "fp-qubit-design",
+    "guaranteed_columns": [
+      "canonical_name",
+      "family",
+      "excitation_nm",
+      "emission_nm",
+      "stokes_shift_nm",
+      "method",
+      "context_type",
+      "contrast_normalized",
+      "source",
+      "provenance",
+      "license",
+      "excitation_missing",
+      "emission_missing",
+      "contrast_missing"
+    ],
+    "stability": "Stable - No breaking changes without major version bump"
+  }
+}

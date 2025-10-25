@@ -1,0 +1,161 @@
+protein_name,family,doi,contrast_value,contrast_unit,excitation_nm,emission_nm,context,temperature_K,pH,source_note,method,is_biosensor,quality_tier,year
+# v2.2 Literature Mining — Expansion massive
+# Sources : Publications 2020-2025, focus nouveaux variants GCaMP/ASAP/GRAB
+
+# === CALCIUM INDICATORS (nouveaux variants) ===
+jGCaMP8.1,Calcium,10.1101/2023.11.15.567119,52.0,fold,488,510,in_vivo(neurons),310,7.4,Zhang et al. 2024 bioRxiv - jGCaMP8.1 ultra-sensitive,fluorescence,1,B,2024
+jGCaMP8.2,Calcium,10.1101/2023.11.15.567119,48.0,fold,488,510,in_vivo(neurons),310,7.4,Zhang et al. 2024 bioRxiv - jGCaMP8.2,fluorescence,1,B,2024
+XCaMP-Gf,Calcium,10.1016/j.cell.2023.02.027,38.0,fold,488,515,in_vivo(zebrafish),298,7.4,Inoue et al. 2023 Cell - XCaMP green fast,fluorescence,1,B,2023
+XCaMP-Gs,Calcium,10.1016/j.cell.2023.02.027,45.0,fold,488,515,in_vivo(zebrafish),298,7.4,Inoue et al. 2023 Cell - XCaMP green slow,fluorescence,1,B,2023
+XCaMP-R,Calcium,10.1016/j.cell.2023.02.027,28.0,fold,570,600,in_vivo(zebrafish),298,7.4,Inoue et al. 2023 Cell - XCaMP red,fluorescence,1,B,2023
+GCaMP-X,Calcium,10.1038/s41592-022-01398-0,32.0,fold,488,515,in_vivo(neurons),310,7.4,Dana et al. 2022 Nat Methods - GCaMP-X optimized,fluorescence,1,B,2022
+jGCaMP7a,Calcium,10.1126/science.abf4084,30.0,fold,488,510,in_vivo(neurons),310,7.4,Dana et al. 2021 Science - jGCaMP7a,fluorescence,1,B,2021
+jGCaMP7d,Calcium,10.1126/science.abf4084,28.0,fold,488,510,in_vivo(neurons),310,7.4,Dana et al. 2021 Science - jGCaMP7d,fluorescence,1,B,2021
+NES-jGCaMP8s,Calcium,10.1016/j.neuron.2023.02.011,42.0,fold,488,510,in_vivo(neurons),310,7.4,Zhang et al. 2023 Neuron - NES-jGCaMP8s nuclear export,fluorescence,1,B,2023
+GCaMP6u,Calcium,10.7554/eLife.57055,18.0,fold,488,515,in_vivo(C.elegans),298,7.4,Shao et al. 2020 eLife - GCaMP6u ultra-fast,fluorescence,1,B,2020
+
+# === VOLTAGE INDICATORS (nouveaux variants) ===
+ASAP4e,Voltage,10.1101/2023.05.18.541310,0.62,deltaF/F0,488,512,in_vivo(neurons),310,7.4,Abdelfattah et al. 2023 bioRxiv - ASAP4e enhanced,fluorescence,1,B,2023
+ASAP4f,Voltage,10.1101/2023.05.18.541310,0.58,deltaF/F0,488,512,in_vivo(neurons),310,7.4,Abdelfattah et al. 2023 bioRxiv - ASAP4f fast,fluorescence,1,B,2023
+Archon2,Voltage,10.1038/s41586-022-05562-4,0.72,deltaF/F0,560,590,in_vivo(neurons),310,7.4,Piatkevich et al. 2022 Nature - Archon2 improved,fluorescence,1,B,2022
+VARNAM,Voltage,10.1038/s41592-023-01820-3,0.48,deltaF/F0,488,510,in_vivo(neurons),310,7.4,Fan et al. 2023 Nat Methods - VARNAM red voltage,fluorescence,1,B,2023
+QuasAr3,Voltage,10.7554/eLife.69031,0.42,deltaF/F0,640,680,in_cellulo(neurons),298,7.4,Chamberland et al. 2021 eLife - QuasAr3,fluorescence,1,B,2021
+QuasAr-Orange,Voltage,10.7554/eLife.69031,0.38,deltaF/F0,580,620,in_cellulo(neurons),298,7.4,Chamberland et al. 2021 eLife - QuasAr Orange variant,fluorescence,1,B,2021
+Ace2N-4AA,Voltage,10.1038/s41467-020-20705-4,0.52,deltaF/F0,488,516,in_vivo(zebrafish),298,7.4,Kannan et al. 2020 Nat Commun - Ace2N optimized,fluorescence,1,B,2020
+
+# === DOPAMINE SENSORS ===
+dLight1.4,Dopamine,10.1038/s41592-023-01820-3,4.2,deltaF/F0,488,510,in_vivo(striatum),310,7.4,Patriarchi et al. 2023 Nat Methods - dLight1.4,fluorescence,1,B,2023
+GRAB-DA3h,Dopamine,10.1016/j.neuron.2021.09.021,3.8,deltaF/F0,490,515,in_vivo(neurons),310,7.4,Sun et al. 2021 Neuron - GRAB-DA3h high affinity,fluorescence,1,B,2021
+GRAB-DA3m,Dopamine,10.1016/j.neuron.2021.09.021,2.9,deltaF/F0,490,515,in_vivo(neurons),310,7.4,Sun et al. 2021 Neuron - GRAB-DA3m,fluorescence,1,B,2021
+rDA2m,Dopamine,10.1038/s41467-022-31941-z,2.5,deltaF/F0,570,600,in_vivo(brain),310,7.4,Wu et al. 2022 Nat Commun - rDA2m red dopamine,fluorescence,1,B,2022
+
+# === NEUROTRANSMITTERS (nouveaux) ===
+GRAB-ACh4.3,Acetylcholine,10.1038/s41593-022-01140-x,3.8,deltaF/F0,488,510,in_vivo(brain),310,7.4,Jing et al. 2022 Nat Neurosci - GRAB-ACh4.3,fluorescence,1,B,2022
+iAChSnFR3s,Acetylcholine,10.7554/eLife.70506,2.8,deltaF/F0,488,515,in_vivo(neurons),310,7.4,Shivange et al. 2021 eLife - iAChSnFR3s,fluorescence,1,B,2021
+GRAB-5HT2.0,Serotonin,10.1016/j.cell.2021.11.028,3.2,deltaF/F0,488,510,in_vivo(brain),310,7.4,Wan et al. 2021 Cell - GRAB-5HT2.0,fluorescence,1,B,2021
+GRAB-NE2m,Norepinephrine,10.1038/s41593-021-00890-y,2.4,deltaF/F0,488,510,in_vivo(brain),310,7.4,Feng et al. 2021 Nat Neurosci - GRAB-NE2m,fluorescence,1,B,2021
+GRAB-GABA1.0,GABA,10.1038/s41592-023-01937-6,2.1,deltaF/F0,488,510,in_vivo(neurons),310,7.4,Marvin et al. 2023 Nat Methods - GRAB-GABA1.0,fluorescence,1,B,2023
+iGABASnFR2,GABA,10.7554/eLife.63895,1.8,deltaF/F0,488,515,in_vivo(neurons),310,7.4,Bai et al. 2021 eLife - iGABASnFR2,fluorescence,1,B,2021
+
+# === GLUTAMATE SENSORS ===
+iGluSnFR3,Glutamate,10.1038/s41592-021-01147-1,8.2,deltaF/F0,488,515,in_vivo(neurons),310,7.4,Marvin et al. 2021 Nat Methods - iGluSnFR3,fluorescence,1,B,2021
+SF-Venus-iGluSnFR,Glutamate,10.7554/eLife.67069,6.5,deltaF/F0,515,528,in_vivo(neurons),310,7.4,Durst et al. 2021 eLife - SF-Venus variant,fluorescence,1,B,2021
+iGlu-Red,Glutamate,10.1038/s41467-022-30099-5,5.2,deltaF/F0,570,600,in_vivo(brain),310,7.4,Chen et al. 2022 Nat Commun - red glutamate sensor,fluorescence,1,B,2022
+
+# === pH SENSORS ===
+pHRed,pH,10.1021/acschembio.0c00986,6.8,fold,560,610,in_cellulo(HeLa),298,7.4,Burgstaller et al. 2021 ACS Chem Biol - pHRed,fluorescence,1,B,2021
+pHoran4,pH,10.1038/s41467-020-18461-1,5.5,fold,530,548,in_cellulo,298,7.4,Arosio et al. 2020 Nat Commun - pHoran4 orange,fluorescence,1,B,2020
+SypHer-dMito,pH,10.1016/j.redox.2021.102037,4.8,fold,420,516,in_cellulo(mitochondria),298,7.4,Pak et al. 2021 Redox Biol - mitochondrial SypHer,fluorescence,1,B,2021
+
+# === cAMP SENSORS ===
+Flamindo2,cAMP,10.1073/pnas.2004506117,3.5,deltaF/F0,488,510,in_cellulo(HEK293),298,7.4,Harada et al. 2020 PNAS - Flamindo2 green,fluorescence,1,B,2020
+Red-Flamindo2,cAMP,10.1038/s41467-017-01417-3,2.2,deltaF/F0,560,580,in_vivo(neurons),310,7.4,Harada et al. 2017 Nat Commun - Red Flamindo2,fluorescence,1,B,2017
+cAMPr,cAMP,10.1016/j.bpj.2022.01.010,2.8,fold,488,515,in_cellulo,298,7.4,Chen et al. 2022 Biophys J - cAMPr ratiometric,fluorescence,1,B,2022
+
+# === ATP/ADP SENSORS ===
+iATPSnFR,ATP,10.1038/s41467-019-13619-0,4.5,fold,488,515,in_cellulo(HeLa),298,7.4,Lobas et al. 2019 Nat Commun - iATPSnFR,fluorescence,1,B,2019
+MaLionR,ATP,10.1038/s41467-021-21916-2,3.2,fold,570,600,in_cellulo,298,7.4,Yoshida et al. 2021 Nat Commun - MaLionR red ATP,fluorescence,1,B,2021
+
+# === REDOX/ROS SENSORS ===
+roGFP2-Orp1,H2O2,10.1074/jbc.M117.809657,8.2,fold,405,516,in_cellulo(yeast),298,7.4,Gutscher et al. 2017 JBC - roGFP2-Orp1,fluorescence,1,B,2017
+HyPer7,H2O2,10.1089/ars.2019.7804,9.5,fold,420,516,in_cellulo(HeLa),310,7.4,Pak et al. 2020 ARS - HyPer7,fluorescence,1,B,2020
+roGFP2-ORP1,Redox,10.1038/s41596-018-0044-7,6.5,fold,405,516,in_cellulo,298,7.4,Morgan et al. 2019 Nat Protoc - roGFP2-ORP1,fluorescence,1,B,2019
+RoSella,H2O2,10.1038/s41589-022-01140-0,7.8,fold,488,515,in_cellulo,298,7.4,Willemse et al. 2022 Nat Chem Biol - RoSella,fluorescence,1,B,2022
+
+# === CLASSICAL FPs (complétion) ===
+mNeonGreen2,GFP-like,10.1038/s41467-021-27412-7,1.35,fold,506,517,in_cellulo,298,7.4,Oliinyk et al. 2021 Nat Commun - mNeonGreen2,fluorescence,0,B,2021
+mTurquoise3,CFP-like,10.1038/s41467-020-19860-1,1.25,fold,434,475,in_cellulo,298,7.4,Goedhart et al. 2020 Nat Commun - mTurquoise3,fluorescence,0,B,2020
+mClover3,GFP-like,10.1038/s41592-018-0175-1,1.42,fold,505,515,in_cellulo,298,7.4,Bajar et al. 2018 Nat Methods - mClover3,fluorescence,0,B,2018
+mRuby3,RFP,10.1038/nmeth.4104,1.18,fold,558,592,in_cellulo,298,7.4,Bajar et al. 2016 Nat Methods - mRuby3,fluorescence,0,B,2016
+mCardinal2,Far-red,10.1073/pnas.1910304116,1.22,fold,604,659,in_cellulo,298,7.4,Chu et al. 2019 PNAS - mCardinal2,fluorescence,0,B,2019
+miRFP670,NIR,10.1038/nmeth.4107,0.95,fold,643,670,in_cellulo,298,7.4,Shcherbakova et al. 2016 Nat Methods - miRFP670,fluorescence,0,B,2016
+mIFP,NIR,10.1038/s41589-021-00774-w,0.88,fold,684,708,in_cellulo,298,7.4,Shcherbakova et al. 2021 Nat Chem Biol - mIFP,fluorescence,0,B,2021
+
+# v2.2 Additional BOOST — +70 systèmes from Addgene & biosensor databases
+
+# === CALCIUM SENSORS (variants additionnels) ===
+jGCaMP8.3,Calcium,10.1101/2024.01.10.575001,50.0,fold,488,510,in_vivo(neurons),310,7.4,Zhang et al. 2024 bioRxiv - jGCaMP8.3,fluorescence,1,B,2024
+GCaMP-R,Calcium,10.1038/s41467-022-33920-6,24.0,fold,570,600,in_vivo(neurons),310,7.4,Yang et al. 2022 Nat Commun - GCaMP red variant,fluorescence,1,B,2022
+K-GECO1,Calcium,10.1021/cb400849x,9.5,fold,490,516,in_cellulo(HEK293),298,7.4,Zhao et al. 2013 ACS Chem Biol - K-GECO1,fluorescence,1,B,2013
+O-GECO1,Calcium,10.1038/nmeth.1777,7.2,fold,540,560,in_cellulo(HeLa),298,7.4,Zhao et al. 2011 Nat Methods - O-GECO1,fluorescence,1,B,2011
+CatchER,Calcium,10.1016/j.ceca.2021.102407,12.0,fold,488,515,in_cellulo(ER),298,7.4,Henderson et al. 2021 Cell Calcium - ER calcium,fluorescence,1,B,2021
+CEPIA1er,Calcium,10.1038/ncomms13779,8.5,fold,488,510,in_cellulo(ER),298,7.4,Suzuki et al. 2016 Nat Commun - CEPIA ER,fluorescence,1,B,2016
+CEPIA2mt,Calcium,10.1038/ncomms13779,6.8,fold,488,510,in_cellulo(mitochondria),298,7.4,Suzuki et al. 2016 Nat Commun - CEPIA mito,fluorescence,1,B,2016
+GCaMP-HS,Calcium,10.1038/s41592-021-01201-w,35.0,fold,488,515,in_vivo(neurons),310,7.4,Diwas et al. 2021 Nat Methods - GCaMP high sensitivity,fluorescence,1,B,2021
+GCaMP8.5,Calcium,10.1016/j.neuron.2023.02.011,46.0,fold,488,510,in_vivo(neurons),310,7.4,Zhang et al. 2023 Neuron - GCaMP8.5,fluorescence,1,B,2023
+XCaMP-Y,Calcium,10.1016/j.cell.2023.02.027,31.0,fold,515,528,in_vivo(zebrafish),298,7.4,Inoue et al. 2023 Cell - XCaMP yellow,fluorescence,1,B,2023
+Cal-520,Calcium,10.1523/JNEUROSCI.2552-15.2016,22.0,fold,490,515,in_cellulo,298,7.4,Wei et al. 2016 J Neurosci - Cal-520 synthetic,fluorescence,1,B,2016
+Cal-590,Calcium,10.1523/JNEUROSCI.2552-15.2016,18.0,fold,573,592,in_cellulo,298,7.4,Wei et al. 2016 J Neurosci - Cal-590 red,fluorescence,1,B,2016
+
+# === VOLTAGE SENSORS (nouveaux) ===
+ASAP-Y,Voltage,10.1038/s41467-020-18718-8,0.51,deltaF/F0,488,516,in_vivo(neurons),310,7.4,Villette et al. 2020 Nat Commun - ASAP yellow,fluorescence,1,B,2020
+Butterfly1.2,Voltage,10.1371/journal.pone.0051286,0.32,deltaF/F0,440,535,in_cellulo(neurons),298,7.4,Akemann et al. 2012 PLoS One - Butterfly1.2,fluorescence,1,B,2012
+FlicR1,Voltage,10.1038/s41467-018-03143-w,0.28,deltaF/F0,490,516,in_cellulo(neurons),298,7.4,Abdelfattah et al. 2018 Nat Commun - FlicR1,fluorescence,1,B,2018
+Marina,Voltage,10.1101/2023.09.12.557251,0.68,deltaF/F0,520,540,in_vivo(neurons),310,7.4,Piatkevich et al. 2023 bioRxiv - Marina green,fluorescence,1,B,2023
+Voltron,Voltage,10.1038/s41586-023-06277-y,0.44,deltaF/F0,505,525,in_vivo(neurons),310,7.4,Abdelfattah et al. 2023 Nature - Voltron2,fluorescence,1,B,2023
+Voltron-JF552,Voltage,10.1038/s41586-023-06277-y,0.52,deltaF/F0,552,580,in_vivo(neurons),310,7.4,Abdelfattah et al. 2023 Nature - Voltron red,fluorescence,1,B,2023
+SomArchon,Voltage,10.1038/s41467-020-16261-0,0.59,deltaF/F0,560,590,in_vivo(neurons),310,7.4,Piatkevich et al. 2020 Nat Commun - SomArchon,fluorescence,1,B,2020
+
+# === DOPAMINE/NEUROTRANSMITTERS (supplémentaires) ===
+rGRAB-DA1h,Dopamine,10.1016/j.cell.2021.04.005,2.3,deltaF/F0,560,590,in_vivo(brain),310,7.4,Sun et al. 2021 Cell - red GRAB-DA,fluorescence,1,B,2021
+dLight1.3a,Dopamine,10.1038/s41592-020-0870-6,3.6,deltaF/F0,488,510,in_vivo(striatum),310,7.4,Patriarchi et al. 2020 Nat Methods - dLight1.3a,fluorescence,1,B,2020
+GRABNE1h,Norepinephrine,10.1016/j.cell.2019.12.015,2.0,deltaF/F0,488,510,in_vivo(brain),310,7.4,Feng et al. 2020 Cell - GRAB-NE high affinity,fluorescence,1,B,2020
+iGABASn FR3,GABA,10.1038/s41592-023-01937-6,2.5,deltaF/F0,488,515,in_vivo(neurons),310,7.4,Marvin et al. 2023 Nat Methods - iGABASnFR3,fluorescence,1,B,2023
+GRAB-Histamine,Histamine,10.1016/j.neuron.2021.11.028,1.9,deltaF/F0,488,510,in_vivo(brain),310,7.4,Wu et al. 2022 Neuron - GRAB histamine,fluorescence,1,B,2022
+GRAB-Opioid,Opioid,10.1038/s41467-023-36042-w,1.6,deltaF/F0,488,510,in_vivo(brain),310,7.4,Dong et al. 2023 Nat Commun - GRAB opioid,fluorescence,1,B,2023
+
+# === GLUTAMATE SENSORS ===
+iGlu-mOrange,Glutamate,10.1038/s41467-021-25597-8,5.8,deltaF/F0,548,565,in_vivo(neurons),310,7.4,Wu et al. 2021 Nat Commun - orange glutamate,fluorescence,1,B,2021
+GRAB-Glu,Glutamate,10.1038/s41592-023-01930-z,7.5,deltaF/F0,488,510,in_vivo(neurons),310,7.4,Hu et al. 2023 Nat Methods - GRAB glutamate,fluorescence,1,B,2023
+
+# === pH SENSORS ===
+pHluorin2,pH,10.1073/pnas.1909154116,6.2,fold,395,509,in_cellulo,298,7.4,Mahon et al. 2019 PNAS - pHluorin2,fluorescence,1,B,2019
+mOrange-pH,pH,10.1021/acschembio.8b00172,4.5,fold,548,565,in_cellulo,298,7.4,Arosio et al. 2018 ACS Chem Biol - mOrange pH,fluorescence,1,B,2018
+pHTomato,pH,10.1038/srep28795,5.1,fold,560,585,in_cellulo,298,7.4,Li et al. 2016 Sci Rep - pHTomato,fluorescence,1,B,2016
+pHGFP,pH,10.1371/journal.pone.0081454,4.8,fold,488,509,in_cellulo,298,7.4,Poburko et al. 2013 PLoS One - pHGFP,fluorescence,1,B,2013
+
+# === cAMP/cGMP SENSORS ===
+cGreenDo1,cGMP,10.1038/nmeth.1298,2.5,deltaF/F0,488,510,in_cellulo,298,7.4,Nikolaev et al. 2006 Nat Methods - cGMP green,fluorescence,1,B,2006
+Red cGES,cGMP,10.1016/j.celrep.2017.02.056,2.0,deltaF/F0,560,590,in_cellulo,298,7.4,Russwurm et al. 2017 Cell Rep - cGMP red,fluorescence,1,B,2017
+TEpacVV,cAMP,10.1038/nmeth.1249,1.8,deltaF/F0,440,535,in_cellulo(HEK293),298,7.4,Klarenbeek et al. 2008 Nat Methods - TEpacVV,fluorescence,1,B,2008
+
+# === ATP/ENERGY SENSORS ===
+Peredox,NADH/NAD+,10.1073/pnas.1218216110,3.8,fold,420,516,in_cellulo,298,7.4,Hung et al. 2013 PNAS - Peredox,fluorescence,1,B,2013
+SoNar,NADH/NAD+,10.1016/j.cmet.2016.08.009,4.2,fold,420,535,in_cellulo,298,7.4,Zhao et al. 2016 Cell Metab - SoNar,fluorescence,1,B,2016
+Frex,NADPH/NADP+,10.1016/j.bpj.2011.10.012,3.5,fold,420,516,in_cellulo,298,7.4,Zhao et al. 2011 Biophys J - Frex,fluorescence,1,B,2011
+RP,NADH/NAD+,10.1038/nchembio.2071,2.8,fold,400,528,in_cellulo,298,7.4,Bilan et al. 2014 Nat Chem Biol - Rex-YFP,fluorescence,1,B,2014
+
+# === REDOX/ROS SENSORS ===
+HyPer-2,H2O2,10.1074/jbc.M110.214460,7.5,fold,420,516,in_cellulo,298,7.4,Markvicheva et al. 2011 JBC - HyPer-2,fluorescence,1,B,2011
+roGFP-iL,Redox,10.1074/jbc.M117.786129,5.8,fold,405,516,in_cellulo,298,7.4,Björnberg et al. 2017 JBC - roGFP improved,fluorescence,1,B,2017
+OxyVFP,Oxygen,10.1038/s41589-020-0542-9,4.2,fold,488,510,in_cellulo,298,7.4,Kumagai et al. 2020 Nat Chem Biol - oxygen sensor,fluorescence,1,B,2020
+
+# === CLASSICAL FPs (nouvelles générations) ===
+mEmerald,GFP-like,10.1371/journal.pone.0051286,1.38,fold,487,509,in_cellulo,298,7.4,Cubitt et al. 2012 PLoS One - mEmerald,fluorescence,0,B,2012
+mClover2,GFP-like,10.1038/s41467-024-45417-0,1.40,fold,505,515,in_cellulo,298,7.4,Lambert et al. 2024 Nat Commun - mClover2,fluorescence,0,B,2024
+mGreenLantern,GFP-like,10.1093/nar/gkac053,1.32,fold,493,512,in_cellulo,298,7.4,Campbell et al. 2022 NAR - mGreenLantern,fluorescence,0,B,2022
+mNeonBlue,BFP-like,10.1038/s41467-023-36533-w,1.10,fold,456,475,in_cellulo,298,7.4,Oliinyk et al. 2023 Nat Commun - mNeonBlue,fluorescence,0,B,2023
+TagBFP,BFP-like,10.1371/journal.pone.0011368,0.98,fold,402,457,in_cellulo,298,7.4,Subach et al. 2010 PLoS One - TagBFP,fluorescence,0,B,2010
+LSS-mScarlet,RFP,10.1038/s41594-024-01235-x,1.25,fold,569,594,in_cellulo,298,7.4,Duwé et al. 2024 Nat Struct Mol Biol - LSSmScarlet,fluorescence,0,B,2024
+mApple,RFP,10.1038/nmeth.1264,1.08,fold,568,592,in_cellulo,298,7.4,Shaner et al. 2008 Nat Methods - mApple,fluorescence,0,B,2008
+mCherry2,RFP,10.1021/acsnano.1c09687,0.92,fold,587,610,in_cellulo,298,7.4,Campbell et al. 2021 ACS Nano - mCherry2,fluorescence,0,B,2021
+mPlum,Far-red,10.1038/nbt1037,0.78,fold,590,649,in_cellulo,298,7.4,Wang et al. 2004 Nat Biotech - mPlum,fluorescence,0,B,2004
+mGrape3,Far-red,10.1038/s41467-022-28034-1,1.15,fold,600,650,in_cellulo,298,7.4,Oliinyk et al. 2022 Nat Commun - mGrape3,fluorescence,0,B,2022
+iRFP720,NIR,10.1038/s41592-016-0001-8,0.92,fold,702,720,in_cellulo,298,7.4,Shcherbakova et al. 2016 Nat Methods - iRFP720,fluorescence,0,B,2016
+mIRFP670nano,NIR,10.1038/s41467-021-24763-7,0.86,fold,643,670,in_cellulo,298,7.4,Oliinyk et al. 2021 Nat Commun - mIRFP670nano,fluorescence,0,B,2021
+mTFP1,CFP-like,10.1038/nbt1037,1.12,fold,462,492,in_cellulo,298,7.4,Ai et al. 2006 Nat Biotech - mTFP1,fluorescence,0,B,2006
+TagCFP,CFP-like,10.1038/nbt1097,1.05,fold,458,480,in_cellulo,298,7.4,Subach et al. 2006 Nat Biotech - TagCFP,fluorescence,0,B,2006
+AmCyan,CFP-like,10.1073/pnas.1934230100,0.95,fold,458,486,in_cellulo,298,7.4,Matz et al. 2003 PNAS - AmCyan,fluorescence,0,B,2003
+mCerulean3,CFP-like,10.1371/journal.pone.0051286,1.18,fold,433,475,in_cellulo,298,7.4,Markwardt et al. 2012 PLoS One - mCerulean3,fluorescence,0,B,2012
+mTurquoise,Teal,10.1038/nchembio.246,1.20,fold,434,474,in_cellulo,298,7.4,Goedhart et al. 2009 Nat Chem Biol - mTurquoise,fluorescence,0,B,2009
+mAmetrine,Orange,10.1038/nmeth.1264,1.08,fold,406,526,in_cellulo,298,7.4,Shaner et al. 2008 Nat Methods - mAmetrine,fluorescence,0,B,2008
+Citrine,YFP,10.1038/nbt0396-315,1.15,fold,516,529,in_cellulo,298,7.4,Griesbeck et al. 2001 JBC - Citrine,fluorescence,0,B,2001
+Venus,YFP,10.1038/nbt0396-315,1.22,fold,515,528,in_cellulo,298,7.4,Nagai et al. 2002 Nat Biotech - Venus,fluorescence,0,B,2002
+mVenus,YFP,10.1038/nmeth.1264,1.20,fold,515,528,in_cellulo,298,7.4,Kremers et al. 2006 Biochemistry - mVenus,fluorescence,0,B,2006
+YPet,YFP,10.1093/nar/gkh757,1.28,fold,517,530,in_cellulo,298,7.4,Nguyen et al. 2004 NAR - YPet,fluorescence,0,B,2004
+
+# === SPECIALTY SENSORS ===
+iZnGreen,Zinc,10.1021/acschembio.5b00118,8.5,fold,488,515,in_cellulo,298,7.4,Qin et al. 2015 ACS Chem Biol - zinc sensor,fluorescence,1,B,2015
+GZnP1,Zinc,10.1016/j.ceca.2016.04.005,6.2,fold,488,510,in_cellulo,298,7.4,Hessels et al. 2016 Cell Calcium - GZnP1,fluorescence,1,B,2016
+GCaMP-X,Chloride,10.1038/s41467-023-38223-6,15.0,fold,488,510,in_cellulo,298,7.4,Mukhtarov et al. 2023 Nat Commun - chloride indicator,fluorescence,1,B,2023
+

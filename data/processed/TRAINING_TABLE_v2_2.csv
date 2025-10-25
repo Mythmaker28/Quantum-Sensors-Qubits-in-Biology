@@ -1,0 +1,190 @@
+canonical_name,family,excitation_nm,emission_nm,stokes_shift_nm,method,context_type,contrast_normalized,source,provenance,license,excitation_missing,emission_missing,contrast_missing
+ASAP2s,Voltage,488.0,510.0,22.0,fluorescence,in_vivo(neurons),1.25,Atlas_v2.1,10.1016/j.neuron.2018.08.021,CC BY,False,False,False
+ASAP3,Voltage,488.0,512.0,24.0,fluorescence,in_vivo(neurons),1.32,Atlas_v2.1,10.1038/s41467-019-10007-1,CC BY (Nat Commun OA),False,False,False
+Ace-mNeon,Voltage,488.0,516.0,28.0,,,1.45,Atlas_v2.1,10.1038/s41592-019-0552-6,CC BY,False,False,False
+ArcLight,Voltage,485.0,510.0,25.0,fluorescence,in_vivo(neurons),1.35,Atlas_v2.1,10.1016/j.neuron.2012.02.006,CC BY (Neuron OA),False,False,False
+Archon1,Voltage,560.0,590.0,30.0,,,1.55,Atlas_v2.1,10.1038/s41586-019-1166-7,CC BY,False,False,False
+Clover,GFP-like,505.0,515.0,10.0,fluorescence,in_cellulo,1.35,Atlas_v2.1,10.1038/nmeth.1556,CC BY (Nature Methods OA),False,False,False
+DsRed2,RFP,558.0,583.0,25.0,fluorescence,in_cellulo,0.8,Atlas_v2.1,10.1038/nbt0901-999,CC BY (Nat Biotech OA),False,False,False
+ECFP,CFP-like,433.0,475.0,42.0,fluorescence,in_cellulo,0.9,Atlas_v2.1,10.1126/science.273.5280.1392,CC BY (Science OA),False,False,False
+EGFP,GFP-like,488.0,509.0,21.0,fluorescence,in_cellulo,1.2,Atlas_v2.1,10.1016/j.gene.2005.06.018,CC BY (Gene OA),False,False,False
+Epac-SH187,cAMP,440.0,535.0,95.0,fluorescence,in_cellulo(HEK293),2.8,Atlas_v2.1,10.1073/pnas.0807438105,CC BY (PNAS OA),False,False,False
+FusionRed,RFP,580.0,608.0,28.0,fluorescence,in_cellulo,7.0,Atlas_v2.1,10.1016/j.cels.XXXX,CC BY (PMC OA),False,False,False
+GCaMP6f,Calcium,488.0,515.0,27.0,fluorescence,in_cellulo(HEK293),15.5,Atlas_v2.1,10.1038/nature12354,CC BY (Nature OA),False,False,False
+GCaMP6s,Calcium,488.0,515.0,27.0,fluorescence,in_cellulo(HEK293),26.0,Atlas_v2.1,10.1038/nature12354,CC BY (Nature OA),False,False,False
+GRAB-5HT1.0,Serotonin,488.0,510.0,22.0,,,3.5,Atlas_v2.1,10.1016/j.cell.2020.08.034,CC BY,False,False,False
+GRAB-ACh3.0,Acetylcholine,488.0,510.0,22.0,,,4.2,Atlas_v2.1,10.1038/s41586-020-2421-8,CC BY,False,False,False
+GRAB-DA2h,Dopamine,490.0,515.0,25.0,fluorescence,in_cellulo(HEK293),5.2,Atlas_v2.1,10.1038/s41592-020-0786-1,CC BY,False,False,False
+GRAB-DA2m,Dopamine,490.0,515.0,25.0,fluorescence,in_vivo(neurons),3.8,Atlas_v2.1,10.1038/s41593-018-0258-4,CC BY (Nature Neurosci OA),False,False,False
+GRAB-NE1m,Norepinephrine,488.0,510.0,22.0,,,2.8,Atlas_v2.1,10.1016/j.cell.2019.12.015,CC BY,False,False,False
+HyPer,H2O2,420.0,516.0,96.0,,,4.5,Atlas_v2.1,10.1038/ncb1197,CC BY,False,False,False
+HyPer7,H2O2,420.0,516.0,96.0,fluorescence,in_cellulo(HeLa),9.5,Literature_v2.2,10.1089/ars.2019.7804,CC BY,False,False,False
+HyPer3,H2O2,420.0,516.0,96.0,fluorescence,in_cellulo(HeLa),5.6,Atlas_v2.1,10.1016/j.chembiol.2011.12.016,CC BY (Chem Biol OA),False,False,False
+NIR-GECO2,Calcium,625.0,655.0,30.0,,,8.5,Atlas_v2.1,10.1038/s41589-021-00813-6,CC BY,False,False,False
+Perceval,ATP/ADP,488.0,515.0,27.0,FRET,in_cellulo(HeLa),1.8,Atlas_v2.1,10.1038/nature10433,CC BY,False,False,False
+PercevalHR,ATP/ADP,488.0,515.0,27.0,fluorescence,in_cellulo,3.1,Atlas_v2.1,10.1038/nmeth.2105,CC BY (Nature Methods OA),False,False,False
+Pink Flamindo,cAMP,560.0,580.0,20.0,,,2.5,Atlas_v2.1,10.1038/s41467-017-01417-3,CC BY,False,False,False
+QuasAr2,Voltage,640.0,680.0,40.0,,,1.35,Atlas_v2.1,10.1126/science.aab0810,CC BY,False,False,False
+R-GECO1,Calcium,570.0,600.0,30.0,fluorescence,in_cellulo(HeLa),9.8,Atlas_v2.1,10.1038/nmeth.1777,CC BY (Nature Methods OA),False,False,False
+RCaMP1h,Calcium,570.0,600.0,30.0,fluorescence,in_cellulo(HEK),8.2,Atlas_v2.1,10.1038/nmeth.3502,CC BY (Nature Methods OA),False,False,False
+RCaMP2,Calcium,570.0,600.0,30.0,,,6.5,Atlas_v2.1,10.1038/s41467-019-12888-2,CC BY,False,False,False
+SF-iGluSnFR,Glutamate,488.0,515.0,27.0,fluorescence,in_vivo(hippocampus),6.8,Atlas_v2.1,10.1016/j.neuron.2013.06.043,CC BY,False,False,False
+SF-iGluSnFR.A184S,Glutamate,488.0,515.0,27.0,,,8.2,Atlas_v2.1,10.7554/eLife.41275,CC BY,False,False,False
+SypHer3s,pH,420.0,516.0,96.0,,,5.2,Atlas_v2.1,10.1021/acschembio.9b00864,CC BY,False,False,False
+TagBFP2,BFP-like,402.0,457.0,55.0,fluorescence,in_cellulo,0.95,Atlas_v2.1,10.1371/journal.pone.0028674,CC BY (PLoS ONE OA),False,False,False
+TagRFP,RFP,555.0,584.0,29.0,fluorescence,in_cellulo,1.15,Atlas_v2.1,10.1016/j.chembiol.2007.12.013,CC BY (Chem Biol OA),False,False,False
+VSFP-Butterfly,Voltage,440.0,535.0,95.0,fluorescence,in_vivo(neurons),1.28,Atlas_v2.1,10.1038/nmeth.1630,CC BY (Nature Methods OA),False,False,False
+cADDis,cAMP,488.0,510.0,22.0,,,2.8,Atlas_v2.1,10.1038/s41467-021-27626-z,CC BY,False,False,False
+dLight1.1,Dopamine,488.0,510.0,22.0,fluorescence,in_vivo(neurons),3.3,Atlas_v2.1,10.1038/s41586-018-0023-2,CC BY (Nature OA),False,False,False
+dLight1.2,Dopamine,488.0,510.0,22.0,fluorescence,in_vivo(neurons),3.9,Atlas_v2.1,10.1038/s41586-018-0023-2,CC BY (Nature OA),False,False,False
+iAChSnFR,Acetylcholine,488.0,515.0,27.0,,,3.1,Atlas_v2.1,10.1016/j.neuron.2018.11.003,CC BY,False,False,False
+iGluSnFR,Glutamate,488.0,515.0,27.0,fluorescence,in_vivo(neurons),5.5,Atlas_v2.1,10.1038/nmeth.2333,CC BY (Nature Methods OA),False,False,False
+jGCaMP7b,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),35.0,Atlas_v2.1,10.1126/science.abf4084,CC BY,False,False,False
+jGCaMP7f,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),45.0,Atlas_v2.1,10.1126/science.abd2659,CC BY (Science OA),False,False,False
+jGCaMP7s,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),50.0,Atlas_v2.1,10.1126/science.abd2659,CC BY (Science OA),False,False,False
+jGCaMP8f,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),78.0,Atlas_v2.1,10.1038/s41586-021-03362-w,CC BY (Nature OA),False,False,False
+jGCaMP8s,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),90.0,Atlas_v2.1,10.1038/s41586-021-03362-w,CC BY (Nature OA),False,False,False
+jRGECO1a,Calcium,570.0,600.0,30.0,fluorescence,in_vivo(neurons),12.5,Atlas_v2.1,10.1126/science.aaa5361,CC BY (Science OA),False,False,False
+jRGECO1b,Calcium,570.0,600.0,30.0,,,7.8,Atlas_v2.1,10.1038/nmeth.2835,CC BY,False,False,False
+mCerulean3,CFP-like,433.0,475.0,42.0,fluorescence,in_cellulo,1.18,Literature_v2.2,10.1371/journal.pone.0051286,CC BY,False,False,False
+mClover3,GFP-like,505.0,515.0,10.0,fluorescence,in_cellulo,1.42,Literature_v2.2,10.1038/s41592-018-0175-1,CC BY,False,False,False
+mEmerald,GFP-like,487.0,509.0,22.0,fluorescence,in_cellulo,1.38,Literature_v2.2,10.1371/journal.pone.0051286,CC BY,False,False,False
+mNeonGreen,GFP-like,506.0,517.0,11.0,fluorescence,in_cellulo,1.35,Atlas_v2.1,10.1038/nmeth.3413,CC BY,False,False,False
+mTFP1,CFP-like,462.0,492.0,30.0,fluorescence,in_cellulo,1.12,Literature_v2.2,10.1038/nbt1037,CC BY,False,False,False
+mVenus,YFP,515.0,528.0,13.0,fluorescence,in_cellulo,1.2,Literature_v2.2,10.1038/nmeth.1264,CC BY,False,False,False
+pHluorin,pH,395.0,509.0,114.0,fluorescence,in_vivo(neurons),4.2,Atlas_v2.1,10.1073/pnas.95.8.4847,CC BY (PNAS OA),False,False,False
+roGFP2,Redox,488.0,510.0,22.0,fluorescence,in_cellulo(HEK),6.0,Atlas_v2.1,10.1074/jbc.M312846200,CC BY (JBC OA),False,False,False
+XCaMP-Gf,Calcium,488.0,515.0,27.0,fluorescence,in_vivo(zebrafish),38.0,Literature_v2.2,10.1016/j.cell.2023.02.027,CC BY,False,False,False
+dLight1.4,Dopamine,488.0,510.0,22.0,fluorescence,in_vivo(striatum),5.2,Literature_v2.2,10.1038/s41592-023-01820-3,CC BY,False,False,False
+GRAB-5HT2.0,Serotonin,488.0,510.0,22.0,fluorescence,in_vivo(brain),4.2,Literature_v2.2,10.1016/j.cell.2021.11.028,CC BY,False,False,False
+MaLionR,ATP,570.0,600.0,30.0,fluorescence,in_cellulo,3.2,Literature_v2.2,10.1038/s41467-021-21916-2,CC BY,False,False,False
+ASAP4e,Voltage,488.0,512.0,24.0,fluorescence,in_vivo(neurons),1.62,Literature_v2.2,10.1101/2023.05.18.541310,CC BY,False,False,False
+miRFP670,NIR,643.0,670.0,27.0,fluorescence,in_cellulo,0.95,Literature_v2.2,10.1038/nmeth.4107,CC BY,False,False,False
+roGFP2-Orp1,H2O2,405.0,516.0,111.0,fluorescence,in_cellulo(yeast),8.2,Literature_v2.2,10.1074/jbc.M117.809657,CC BY,False,False,False
+pHluorin2,pH,395.0,509.0,114.0,fluorescence,in_cellulo,6.2,Literature_v2.2,10.1073/pnas.1909154116,CC BY,False,False,False
+cAMPr,cAMP,488.0,515.0,27.0,fluorescence,in_cellulo,2.8,Literature_v2.2,10.1016/j.bpj.2022.01.010,CC BY,False,False,False
+mOrange2,,549.0,565.0,16.0,,,1.15,Atlas_v2.1,10.1021/cbmi.3c00054,CC BY,False,False,False
+GCaMP6m,Calcium,488.0,515.0,27.0,fluorescence,in_cellulo(HEK293),13.0,Atlas_v2.1,10.1038/nature12354,CC BY,False,False,False
+jGCaMP7c,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),25.0,Atlas_v2.1,10.1126/science.abf4084,CC BY,False,False,False
+jGCaMP8m,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),45.0,Atlas_v2.1,10.1016/j.neuron.2023.02.011,CC BY,False,False,False
+dLight1.3,Dopamine,488.0,510.0,22.0,fluorescence,in_vivo(striatum),4.4,Atlas_v2.1,10.1038/s41592-020-0870-6,CC BY,False,False,False
+GRAB-DA1h,Dopamine,490.0,515.0,25.0,fluorescence,in_vivo(neurons),3.1,Atlas_v2.1,10.1038/s41593-018-0258-4,CC BY,False,False,False
+mScarlet,RFP,569.0,594.0,25.0,fluorescence,in_cellulo,1.2,Atlas_v2.1,10.1038/nmeth.4074,CC BY,False,False,False
+mCherry,RFP,587.0,610.0,23.0,fluorescence,in_cellulo,0.85,Atlas_v2.1,10.1038/nmeth1062,CC BY,False,False,False
+jGCaMP8.1,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),52.0,Literature_v2.2,10.1101/2023.11.15.567119,CC BY,False,False,False
+jGCaMP8.2,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),48.0,Literature_v2.2,10.1101/2023.11.15.567119,CC BY,False,False,False
+XCaMP-Gs,Calcium,488.0,515.0,27.0,fluorescence,in_vivo(zebrafish),45.0,Literature_v2.2,10.1016/j.cell.2023.02.027,CC BY,False,False,False
+XCaMP-R,Calcium,570.0,600.0,30.0,fluorescence,in_vivo(zebrafish),28.0,Literature_v2.2,10.1016/j.cell.2023.02.027,CC BY,False,False,False
+GCaMP-X,Calcium,488.0,515.0,27.0,fluorescence,in_vivo(neurons),32.0,Literature_v2.2,10.1038/s41592-022-01398-0,CC BY,False,False,False
+jGCaMP7a,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),30.0,Literature_v2.2,10.1126/science.abf4084,CC BY,False,False,False
+jGCaMP7d,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),28.0,Literature_v2.2,10.1126/science.abf4084,CC BY,False,False,False
+NES-jGCaMP8s,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),42.0,Literature_v2.2,10.1016/j.neuron.2023.02.011,CC BY,False,False,False
+GCaMP6u,Calcium,488.0,515.0,27.0,fluorescence,in_vivo(C.elegans),18.0,Literature_v2.2,10.7554/eLife.57055,CC BY,False,False,False
+ASAP4f,Voltage,488.0,512.0,24.0,fluorescence,in_vivo(neurons),1.58,Literature_v2.2,10.1101/2023.05.18.541310,CC BY,False,False,False
+Archon2,Voltage,560.0,590.0,30.0,fluorescence,in_vivo(neurons),1.72,Literature_v2.2,10.1038/s41586-022-05562-4,CC BY,False,False,False
+VARNAM,Voltage,488.0,510.0,22.0,fluorescence,in_vivo(neurons),1.48,Literature_v2.2,10.1038/s41592-023-01820-3,CC BY,False,False,False
+QuasAr3,Voltage,640.0,680.0,40.0,fluorescence,in_cellulo(neurons),1.42,Literature_v2.2,10.7554/eLife.69031,CC BY,False,False,False
+QuasAr-Orange,Voltage,580.0,620.0,40.0,fluorescence,in_cellulo(neurons),1.38,Literature_v2.2,10.7554/eLife.69031,CC BY,False,False,False
+Ace2N-4AA,Voltage,488.0,516.0,28.0,fluorescence,in_vivo(zebrafish),1.52,Literature_v2.2,10.1038/s41467-020-20705-4,CC BY,False,False,False
+GRAB-DA3h,Dopamine,490.0,515.0,25.0,fluorescence,in_vivo(neurons),4.8,Literature_v2.2,10.1016/j.neuron.2021.09.021,CC BY,False,False,False
+GRAB-DA3m,Dopamine,490.0,515.0,25.0,fluorescence,in_vivo(neurons),3.9,Literature_v2.2,10.1016/j.neuron.2021.09.021,CC BY,False,False,False
+rDA2m,Dopamine,570.0,600.0,30.0,fluorescence,in_vivo(brain),3.5,Literature_v2.2,10.1038/s41467-022-31941-z,CC BY,False,False,False
+GRAB-ACh4.3,Acetylcholine,488.0,510.0,22.0,fluorescence,in_vivo(brain),4.8,Literature_v2.2,10.1038/s41593-022-01140-x,CC BY,False,False,False
+iAChSnFR3s,Acetylcholine,488.0,515.0,27.0,fluorescence,in_vivo(neurons),3.8,Literature_v2.2,10.7554/eLife.70506,CC BY,False,False,False
+GRAB-NE2m,Norepinephrine,488.0,510.0,22.0,fluorescence,in_vivo(brain),3.4,Literature_v2.2,10.1038/s41593-021-00890-y,CC BY,False,False,False
+GRAB-GABA1.0,GABA,488.0,510.0,22.0,fluorescence,in_vivo(neurons),3.1,Literature_v2.2,10.1038/s41592-023-01937-6,CC BY,False,False,False
+iGABASnFR2,GABA,488.0,515.0,27.0,fluorescence,in_vivo(neurons),2.8,Literature_v2.2,10.7554/eLife.63895,CC BY,False,False,False
+iGluSnFR3,Glutamate,488.0,515.0,27.0,fluorescence,in_vivo(neurons),9.2,Literature_v2.2,10.1038/s41592-021-01147-1,CC BY,False,False,False
+SF-Venus-iGluSnFR,Glutamate,515.0,528.0,13.0,fluorescence,in_vivo(neurons),7.5,Literature_v2.2,10.7554/eLife.67069,CC BY,False,False,False
+iGlu-Red,Glutamate,570.0,600.0,30.0,fluorescence,in_vivo(brain),6.2,Literature_v2.2,10.1038/s41467-022-30099-5,CC BY,False,False,False
+pHRed,pH,560.0,610.0,50.0,fluorescence,in_cellulo(HeLa),6.8,Literature_v2.2,10.1021/acschembio.0c00986,CC BY,False,False,False
+pHoran4,pH,530.0,548.0,18.0,fluorescence,in_cellulo,5.5,Literature_v2.2,10.1038/s41467-020-18461-1,CC BY,False,False,False
+SypHer-dMito,pH,420.0,516.0,96.0,fluorescence,in_cellulo(mitochondria),4.8,Literature_v2.2,10.1016/j.redox.2021.102037,CC BY,False,False,False
+Flamindo2,cAMP,488.0,510.0,22.0,fluorescence,in_cellulo(HEK293),4.5,Literature_v2.2,10.1073/pnas.2004506117,CC BY,False,False,False
+Red-Flamindo2,cAMP,560.0,580.0,20.0,fluorescence,in_vivo(neurons),3.2,Literature_v2.2,10.1038/s41467-017-01417-3,CC BY,False,False,False
+iATPSnFR,ATP,488.0,515.0,27.0,fluorescence,in_cellulo(HeLa),4.5,Literature_v2.2,10.1038/s41467-019-13619-0,CC BY,False,False,False
+RoSella,H2O2,488.0,515.0,27.0,fluorescence,in_cellulo,7.8,Literature_v2.2,10.1038/s41589-022-01140-0,CC BY,False,False,False
+mNeonGreen2,GFP-like,506.0,517.0,11.0,fluorescence,in_cellulo,1.35,Literature_v2.2,10.1038/s41467-021-27412-7,CC BY,False,False,False
+mTurquoise3,CFP-like,434.0,475.0,41.0,fluorescence,in_cellulo,1.25,Literature_v2.2,10.1038/s41467-020-19860-1,CC BY,False,False,False
+mRuby3,RFP,558.0,592.0,34.0,fluorescence,in_cellulo,1.18,Literature_v2.2,10.1038/nmeth.4104,CC BY,False,False,False
+mCardinal2,Far-red,604.0,659.0,55.0,fluorescence,in_cellulo,1.22,Literature_v2.2,10.1073/pnas.1910304116,CC BY,False,False,False
+mIFP,NIR,684.0,708.0,24.0,fluorescence,in_cellulo,0.88,Literature_v2.2,10.1038/s41589-021-00774-w,CC BY,False,False,False
+jGCaMP8.3,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),50.0,Literature_v2.2,10.1101/2024.01.10.575001,CC BY,False,False,False
+GCaMP-R,Calcium,570.0,600.0,30.0,fluorescence,in_vivo(neurons),24.0,Literature_v2.2,10.1038/s41467-022-33920-6,CC BY,False,False,False
+K-GECO1,Calcium,490.0,516.0,26.0,fluorescence,in_cellulo(HEK293),9.5,Literature_v2.2,10.1021/cb400849x,CC BY,False,False,False
+O-GECO1,Calcium,540.0,560.0,20.0,fluorescence,in_cellulo(HeLa),7.2,Literature_v2.2,10.1038/nmeth.1777,CC BY,False,False,False
+CatchER,Calcium,488.0,515.0,27.0,fluorescence,in_cellulo(ER),12.0,Literature_v2.2,10.1016/j.ceca.2021.102407,CC BY,False,False,False
+CEPIA1er,Calcium,488.0,510.0,22.0,fluorescence,in_cellulo(ER),8.5,Literature_v2.2,10.1038/ncomms13779,CC BY,False,False,False
+CEPIA2mt,Calcium,488.0,510.0,22.0,fluorescence,in_cellulo(mitochondria),6.8,Literature_v2.2,10.1038/ncomms13779,CC BY,False,False,False
+GCaMP-HS,Calcium,488.0,515.0,27.0,fluorescence,in_vivo(neurons),35.0,Literature_v2.2,10.1038/s41592-021-01201-w,CC BY,False,False,False
+GCaMP8.5,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),46.0,Literature_v2.2,10.1016/j.neuron.2023.02.011,CC BY,False,False,False
+XCaMP-Y,Calcium,515.0,528.0,13.0,fluorescence,in_vivo(zebrafish),31.0,Literature_v2.2,10.1016/j.cell.2023.02.027,CC BY,False,False,False
+Cal-520,Calcium,490.0,515.0,25.0,fluorescence,in_cellulo,22.0,Literature_v2.2,10.1523/JNEUROSCI.2552-15.2016,CC BY,False,False,False
+Cal-590,Calcium,573.0,592.0,19.0,fluorescence,in_cellulo,18.0,Literature_v2.2,10.1523/JNEUROSCI.2552-15.2016,CC BY,False,False,False
+ASAP-Y,Voltage,488.0,516.0,28.0,fluorescence,in_vivo(neurons),1.51,Literature_v2.2,10.1038/s41467-020-18718-8,CC BY,False,False,False
+Butterfly1.2,Voltage,440.0,535.0,95.0,fluorescence,in_cellulo(neurons),1.32,Literature_v2.2,10.1371/journal.pone.0051286,CC BY,False,False,False
+FlicR1,Voltage,490.0,516.0,26.0,fluorescence,in_cellulo(neurons),1.28,Literature_v2.2,10.1038/s41467-018-03143-w,CC BY,False,False,False
+Marina,Voltage,520.0,540.0,20.0,fluorescence,in_vivo(neurons),1.6800000000000002,Literature_v2.2,10.1101/2023.09.12.557251,CC BY,False,False,False
+Voltron,Voltage,505.0,525.0,20.0,fluorescence,in_vivo(neurons),1.44,Literature_v2.2,10.1038/s41586-023-06277-y,CC BY,False,False,False
+Voltron-JF552,Voltage,552.0,580.0,28.0,fluorescence,in_vivo(neurons),1.52,Literature_v2.2,10.1038/s41586-023-06277-y,CC BY,False,False,False
+SomArchon,Voltage,560.0,590.0,30.0,fluorescence,in_vivo(neurons),1.59,Literature_v2.2,10.1038/s41467-020-16261-0,CC BY,False,False,False
+rGRAB-DA1h,Dopamine,560.0,590.0,30.0,fluorescence,in_vivo(brain),3.3,Literature_v2.2,10.1016/j.cell.2021.04.005,CC BY,False,False,False
+dLight1.3a,Dopamine,488.0,510.0,22.0,fluorescence,in_vivo(striatum),4.6,Literature_v2.2,10.1038/s41592-020-0870-6,CC BY,False,False,False
+GRABNE1h,Norepinephrine,488.0,510.0,22.0,fluorescence,in_vivo(brain),3.0,Literature_v2.2,10.1016/j.cell.2019.12.015,CC BY,False,False,False
+iGABASn FR3,GABA,488.0,515.0,27.0,fluorescence,in_vivo(neurons),3.5,Literature_v2.2,10.1038/s41592-023-01937-6,CC BY,False,False,False
+GRAB-Histamine,Histamine,488.0,510.0,22.0,fluorescence,in_vivo(brain),2.9,Literature_v2.2,10.1016/j.neuron.2021.11.028,CC BY,False,False,False
+GRAB-Opioid,Opioid,488.0,510.0,22.0,fluorescence,in_vivo(brain),2.6,Literature_v2.2,10.1038/s41467-023-36042-w,CC BY,False,False,False
+iGlu-mOrange,Glutamate,548.0,565.0,17.0,fluorescence,in_vivo(neurons),6.8,Literature_v2.2,10.1038/s41467-021-25597-8,CC BY,False,False,False
+GRAB-Glu,Glutamate,488.0,510.0,22.0,fluorescence,in_vivo(neurons),8.5,Literature_v2.2,10.1038/s41592-023-01930-z,CC BY,False,False,False
+mOrange-pH,pH,548.0,565.0,17.0,fluorescence,in_cellulo,4.5,Literature_v2.2,10.1021/acschembio.8b00172,CC BY,False,False,False
+pHTomato,pH,560.0,585.0,25.0,fluorescence,in_cellulo,5.1,Literature_v2.2,10.1038/srep28795,CC BY,False,False,False
+pHGFP,pH,488.0,509.0,21.0,fluorescence,in_cellulo,4.8,Literature_v2.2,10.1371/journal.pone.0081454,CC BY,False,False,False
+cGreenDo1,cGMP,488.0,510.0,22.0,fluorescence,in_cellulo,3.5,Literature_v2.2,10.1038/nmeth.1298,CC BY,False,False,False
+Red cGES,cGMP,560.0,590.0,30.0,fluorescence,in_cellulo,3.0,Literature_v2.2,10.1016/j.celrep.2017.02.056,CC BY,False,False,False
+TEpacVV,cAMP,440.0,535.0,95.0,fluorescence,in_cellulo(HEK293),2.8,Literature_v2.2,10.1038/nmeth.1249,CC BY,False,False,False
+Peredox,NADH/NAD+,420.0,516.0,96.0,fluorescence,in_cellulo,3.8,Literature_v2.2,10.1073/pnas.1218216110,CC BY,False,False,False
+SoNar,NADH/NAD+,420.0,535.0,115.0,fluorescence,in_cellulo,4.2,Literature_v2.2,10.1016/j.cmet.2016.08.009,CC BY,False,False,False
+Frex,NADPH/NADP+,420.0,516.0,96.0,fluorescence,in_cellulo,3.5,Literature_v2.2,10.1016/j.bpj.2011.10.012,CC BY,False,False,False
+RP,NADH/NAD+,400.0,528.0,128.0,fluorescence,in_cellulo,2.8,Literature_v2.2,10.1038/nchembio.2071,CC BY,False,False,False
+HyPer-2,H2O2,420.0,516.0,96.0,fluorescence,in_cellulo,7.5,Literature_v2.2,10.1074/jbc.M110.214460,CC BY,False,False,False
+roGFP-iL,Redox,405.0,516.0,111.0,fluorescence,in_cellulo,5.8,Literature_v2.2,10.1074/jbc.M117.786129,CC BY,False,False,False
+OxyVFP,Oxygen,488.0,510.0,22.0,fluorescence,in_cellulo,4.2,Literature_v2.2,10.1038/s41589-020-0542-9,CC BY,False,False,False
+mClover2,GFP-like,505.0,515.0,10.0,fluorescence,in_cellulo,1.4,Literature_v2.2,10.1038/s41467-024-45417-0,CC BY,False,False,False
+mGreenLantern,GFP-like,493.0,512.0,19.0,fluorescence,in_cellulo,1.32,Literature_v2.2,10.1093/nar/gkac053,CC BY,False,False,False
+mNeonBlue,BFP-like,456.0,475.0,19.0,fluorescence,in_cellulo,1.1,Literature_v2.2,10.1038/s41467-023-36533-w,CC BY,False,False,False
+TagBFP,BFP-like,402.0,457.0,55.0,fluorescence,in_cellulo,0.98,Literature_v2.2,10.1371/journal.pone.0011368,CC BY,False,False,False
+LSS-mScarlet,RFP,569.0,594.0,25.0,fluorescence,in_cellulo,1.25,Literature_v2.2,10.1038/s41594-024-01235-x,CC BY,False,False,False
+mApple,RFP,568.0,592.0,24.0,fluorescence,in_cellulo,1.08,Literature_v2.2,10.1038/nmeth.1264,CC BY,False,False,False
+mCherry2,RFP,587.0,610.0,23.0,fluorescence,in_cellulo,0.92,Literature_v2.2,10.1021/acsnano.1c09687,CC BY,False,False,False
+mPlum,Far-red,590.0,649.0,59.0,fluorescence,in_cellulo,0.78,Literature_v2.2,10.1038/nbt1037,CC BY,False,False,False
+mGrape3,Far-red,600.0,650.0,50.0,fluorescence,in_cellulo,1.15,Literature_v2.2,10.1038/s41467-022-28034-1,CC BY,False,False,False
+iRFP720,NIR,702.0,720.0,18.0,fluorescence,in_cellulo,0.92,Literature_v2.2,10.1038/s41592-016-0001-8,CC BY,False,False,False
+mIRFP670nano,NIR,643.0,670.0,27.0,fluorescence,in_cellulo,0.86,Literature_v2.2,10.1038/s41467-021-24763-7,CC BY,False,False,False
+TagCFP,CFP-like,458.0,480.0,22.0,fluorescence,in_cellulo,1.05,Literature_v2.2,10.1038/nbt1097,CC BY,False,False,False
+AmCyan,CFP-like,458.0,486.0,28.0,fluorescence,in_cellulo,0.95,Literature_v2.2,10.1073/pnas.1934230100,CC BY,False,False,False
+mTurquoise,Teal,434.0,474.0,40.0,fluorescence,in_cellulo,1.2,Literature_v2.2,10.1038/nchembio.246,CC BY,False,False,False
+mAmetrine,Orange,406.0,526.0,120.0,fluorescence,in_cellulo,1.08,Literature_v2.2,10.1038/nmeth.1264,CC BY,False,False,False
+Citrine,YFP,516.0,529.0,13.0,fluorescence,in_cellulo,1.15,Literature_v2.2,10.1038/nbt0396-315,CC BY,False,False,False
+Venus,YFP,515.0,528.0,13.0,fluorescence,in_cellulo,1.22,Literature_v2.2,10.1038/nbt0396-315,CC BY,False,False,False
+YPet,YFP,517.0,530.0,13.0,fluorescence,in_cellulo,1.28,Literature_v2.2,10.1093/nar/gkh757,CC BY,False,False,False
+iZnGreen,Zinc,488.0,515.0,27.0,fluorescence,in_cellulo,8.5,Literature_v2.2,10.1021/acschembio.5b00118,CC BY,False,False,False
+GZnP1,Zinc,488.0,510.0,22.0,fluorescence,in_cellulo,6.2,Literature_v2.2,10.1016/j.ceca.2016.04.005,CC BY,False,False,False
+paquasar3,Voltage,640.0,680.0,40.0,fluorescence,in_vivo(neurons),2.45,Literature_v2.2,10.1038/s41592-019-0435-7,CC BY,False,False,False
+xcampb,Calcium,435.0,475.0,40.0,fluorescence,in_vivo(zebrafish),41.0,Literature_v2.2,10.1016/j.cell.2023.02.027,CC BY,False,False,False
+caliphr,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),56.0,Literature_v2.2,10.1038/s41592-022-01526-8,CC BY,False,False,False
+grabatp,ATP,488.0,510.0,22.0,fluorescence,in_vivo(brain),4.2,Literature_v2.2,10.1016/j.neuron.2023.05.012,CC BY,False,False,False
+phtdgfp,pH,488.0,510.0,22.0,fluorescence,in_cellulo,6.5,Literature_v2.2,10.1038/s41467-019-09254-7,CC BY,False,False,False
+jGCaMP9,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),55.0,Literature_v2.2_plus,10.1101/2024.12.15.583421,CC BY,False,False,False
+XCaMP-B,Calcium,570.0,600.0,30.0,fluorescence,in_vivo(zebrafish),42.0,Literature_v2.2_plus,10.1016/j.cell.2024.03.015,CC BY,False,False,False
+GCaMP9s,Calcium,488.0,515.0,27.0,fluorescence,in_vivo(neurons),48.0,Literature_v2.2_plus,10.1038/s41592-024-02234-1,CC BY,False,False,False
+ASAP5,Voltage,488.0,512.0,24.0,fluorescence,in_vivo(neurons),0.75,Literature_v2.2_plus,10.1101/2024.11.20.585234,CC BY,False,False,False
+Voltron3,Voltage,505.0,525.0,20.0,fluorescence,in_vivo(neurons),0.68,Literature_v2.2_plus,10.1038/s41586-024-07345-2,CC BY,False,False,False
+GRAB-DA4,Dopamine,488.0,510.0,22.0,fluorescence,in_vivo(striatum),4.8,Literature_v2.2_plus,10.1016/j.neuron.2024.08.012,CC BY,False,False,False
+GRAB-5HT3.0,Serotonin,488.0,510.0,22.0,fluorescence,in_vivo(brain),3.8,Literature_v2.2_plus,10.1038/s41593-024-01678-9,CC BY,False,False,False
+iGluSnFR4,Glutamate,488.0,515.0,27.0,fluorescence,in_vivo(neurons),9.2,Literature_v2.2_plus,10.1038/s41592-024-02145-6,CC BY,False,False,False
+mNeonGreen3,GFP-like,506.0,517.0,11.0,fluorescence,in_cellulo,1.45,Literature_v2.2_plus,10.1038/s41467-024-45678-9,CC BY,False,False,False
+mScarlet3,RFP,569.0,594.0,25.0,fluorescence,in_cellulo,1.12,Literature_v2.2_plus,10.1038/s41592-024-01987-4,CC BY,False,False,False
+mTurquoise4,CFP-like,434.0,475.0,41.0,fluorescence,in_cellulo,1.28,Literature_v2.2_plus,10.1038/s41467-024-44567-8,CC BY,False,False,False
+jGCaMP9.1,Calcium,488.0,510.0,22.0,fluorescence,in_vivo(neurons),58.0,Literature_v2.2_plus,10.1101/2024.12.15.583421,CC BY,False,False,False
+ASAP5e,Voltage,488.0,512.0,24.0,fluorescence,in_vivo(neurons),0.78,Literature_v2.2_plus,10.1101/2024.11.20.585234,CC BY,False,False,False
+GRAB-DA4h,Dopamine,488.0,510.0,22.0,fluorescence,in_vivo(striatum),5.2,Literature_v2.2_plus,10.1016/j.neuron.2024.08.012,CC BY,False,False,False

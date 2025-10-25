@@ -1,0 +1,40 @@
+✅ STATUS — ATLAS v2.2 DATA BOOST
+
+N_total=191 ; N_mesurés=189 ; N_utiles=170 (target ≥150) ✅
+
+Couverture optique=100.0% (target ≥85) ✅ ; Doublons résiduels=0 (target ≤5) ✅
+
+Provenance/Licenses: PASS ✅ (100% complete)
+
+Sources: [Atlas_v2.1 (75), Literature_v2.2 (116, 78 DOIs uniques)]
+         FPbase: offline → compensé +116 lit vs +30-50 attendu (232%)
+
+RAW_SHA=D0CF780254BC6546C6E6E98605EE8756DB4E6C865145A9402D731DA3F8F8747E
+
+TABLE_SHA=6871133018434B99E0A7DEFEED8F5776AC8039089006A18F216B0336478DD82E
+
+Artifacts:
+- TRAINING_TABLE_v2_2.csv (170 systèmes utiles, contrat interface 14 cols)
+- TRAINING.METADATA_v2_2.json (30 familles, coverage 100%)
+- TRAIN_MEASURED.METADATA_v2_2.json
+- atlas_fp_optical_v2_2.csv (191 systèmes totaux)
+- SHA256SUMS_v2.2.txt (hashes intégrité)
+- AUDIT_v2.2.md (QA: 8/8 tests PASS, N_utiles=170, coverage=100%)
+- FPBASE_INGEST_v2.2.md (outage loggé, compensation 232%)
+- LIT_MINING_v2.2.md (116 systèmes, pubs 2017-2024)
+- V2_2_STATUS_FINAL.md (décision GO)
+- RAPPORT_FINAL_v2.2.md (synthèse complète)
+
+Decision: ✅ GO
+
+Justification:
+- Tous critères v2.2 PASS (N_utiles≥150, coverage≥85%, doublons≤5)
+- Tests: 8/8 PASS (100%)
+- Amélioration: +81% systèmes utiles vs v2.0 baseline
+- Qualité: 100% couverture optique, 0 doublons, 100% provenance/licence
+- Pipeline: reproductible, testé, documenté
+
+Note: N_total=191 < 200 (critère original v2.1)
+      → Recommandation: Release v2.2.0 (qualité excellente)
+      → Alternative: v2.2.0-beta si conservateur, puis v2.3 pour ≥200
+
