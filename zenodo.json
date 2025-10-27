@@ -1,7 +1,7 @@
 {
-  "title": "Biological Qubits Atlas: Fluorescent Proteins & Optical Biosensors Extension (v1.2.0)",
+  "title": "Biological Qubits & Quantum Sensors Atlas (v2.2.2)",
   "upload_type": "dataset",
-  "description": "A curated atlas of quantum-coherent and optical systems operating in, or compatible with, biological environments (in vitro, in cellulo, in vivo). Version 1.2.0 extends the dataset with comprehensive fluorescent protein (FP) and optical biosensor data harvested from FPbase, UniProt, PDB, and PubMed Central. This release includes ≥50 FP-like entries with ≥25 measured contrast ratios (ΔF/F₀, on/off), alongside legacy multi-modality systems (NV centers, SiC, NMR, ESR). Features: automated ETL pipeline, PMC contrast extraction (OA-only), computed brightness proxies, complete provenance tracking (SHA256 checksums), quality control with blocking thresholds, stable versioned interface for computational design (fp-qubit-design).",
+  "description": "A curated atlas of quantum-coherent and optical systems operating in, or compatible with, biological environments (in vitro, in cellulo, in vivo). Version 2.2.2 provides 250 systems (balanced dataset) with comprehensive provenance tracking, optical coverage, and quality control validation. Features include: automated ETL pipeline, complete provenance tracking (SHA256 checksums), balanced family distribution, optimized for ML training. This version extends v1.2.1 (66 systems) and v2.0/v2.1 with additional literature mining and FPbase integration.",
   "creators": [
     {
       "name": "Lepesteur, Tommy",
@@ -35,8 +35,13 @@
   ],
   "related_identifiers": [
     {
+      "relation": "isVersionOf",
+      "identifier": "10.5281/zenodo.17420604",
+      "resource_type": "dataset"
+    },
+    {
       "relation": "isSupplementTo",
-      "identifier": "https://github.com/Mythmaker28/biological-qubits-atlas",
+      "identifier": "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology",
       "resource_type": "other"
     },
     {
@@ -55,9 +60,9 @@
       "resource_type": "other"
     }
   ],
-  "version": "1.2.0",
+  "version": "2.2.2",
   "language": "eng",
-  "notes": "Version 1.2.0 includes: (1) External harvest pipeline (FPbase API, UniProt, PDB/PDBe, PMC OA); (2) Multi-modality classification (FP-like vs color centers/NMR/ESR); (3) PMC contrast extraction with regex parsing; (4) Computed brightness proxies (QY × ε); (5) Two datasets: atlas_all_real.csv (multi-modality), atlas_fp_optical.csv (FP/biosensors only); (6) Complete metadata (TRAINING.METADATA.json) with schema, licenses, provenance; (7) QA audit with blocking thresholds (≥50 total, ≥25 measured); (8) Consumer documentation (CONSUMERS.md) with stable interface contract. Assets: atlas_fp_optical.csv, atlas_all_real.csv, TRAINING.METADATA.json, audit reports.",
+  "notes": "Version 2.2.2 includes: (1) 250 systems (balanced dataset); (2) 100% optical coverage; (3) 30 families represented; (4) Complete provenance tracking (DOIs for all entries); (5) Training datasets: TRAINING_TABLE_v2_2_2_full.csv, TRAINING_TABLE_v2_2_2_balanced.csv; (6) Family weight distribution for ML balancing; (7) SHA256 integrity checksums. This version extends v1.2.1 (66 systems) with major data boost for machine learning applications.",
   "communities": [
     {
       "identifier": "zenodo"
