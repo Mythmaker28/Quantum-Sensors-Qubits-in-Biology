@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "Stable public dataset (v2.2.2) for dev/ML. For Frontiers manuscript citation, see CITATION_v1.2.1.cff"
-title: "Biological Qubits Catalog"
+message: "Use this citation specifically for Frontiers manuscript (version frozen at v1.2.1)."
+title: "Biological Qubits & Quantum Sensors Atlas (v1.2.1 - Frontiers)"
 type: dataset
-version: "2.2.2"
-date-released: "2025-10-26"
-doi: "TBD"
+version: "1.2.1"
+date-released: "2025-10-23"
+doi: "10.5281/zenodo.17420604"
 authors:
   - family-names: "Lepesteur"
     given-names: "Tommy"
@@ -29,26 +29,22 @@ keywords:
   - "hyperpolarized carbon-13"
   - "quantum biology"
   - "biophysics"
-  - "machine learning"
-  - "computational design"
 abstract: |
   A curated catalog of quantum-coherent and optical systems operating in, or compatible 
-  with, biological environments (in vitro, in cellulo, in vivo). Version 2.2.2 provides 
-  250 quantum systems with comprehensive provenance tracking, balanced dataset for ML training,
+  with, biological environments (in vitro, in cellulo, in vivo). Version 1.2.1 provides 
+  66 quantum systems with comprehensive provenance tracking, quantified uncertainties, 
   and quality control validation. Includes NV centers, SiC defects, hyperpolarized nuclei, 
   and fluorescent protein biosensors. All entries are traceable to peer-reviewed literature 
-  with DOI references. This dataset is actively curated and has not yet undergone formal 
-  peer review (submission planned Q1 2026). Stable releases are production-ready for 
-  research use and ML model training.
+  with DOI references. This version is frozen for Frontiers publication submission.
 preferred-citation:
   type: dataset
-  title: "Biological Qubits Catalog v2.2.2"
+  title: "Biological Qubits Catalog v1.2.1 (Frontiers)"
   authors:
     - family-names: "Lepesteur"
       given-names: "Tommy"
       orcid: "https://orcid.org/0009-0009-0577-9563"
   year: 2025
-  version: "2.2.2"
-  doi: "TBD"
-  url: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v2.2.2"
-  notes: "Stable release (250 systems, balanced dataset for ML training). For Frontiers manuscript citation, see CITATION_v1.2.1.cff"
+  version: "1.2.1"
+  doi: "10.5281/zenodo.17420604"
+  url: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v1.2.1"
+  notes: "Stable release for Frontiers manuscript (66 systems, 54 measured). This version is frozen and should be used for manuscript submission."

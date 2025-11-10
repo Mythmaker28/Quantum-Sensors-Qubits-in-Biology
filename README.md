@@ -1,9 +1,13 @@
 # ⚛️ Biological Qubits & Quantum Sensors Atlas
 
-🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | 📊 [Data](data/processed/atlas_fp_optical_v2_0.csv) | 📖 [Full Documentation](DOCUMENTATION.md)
+[![Version (latest)](https://img.shields.io/badge/version-v2.2.2-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
+[![Stable (Frontiers)](https://img.shields.io/badge/frontiers-v1.2.1-lightgrey.svg)](#citation)
+[![Systems (v2.2.2)](https://img.shields.io/badge/systems-296-green.svg)](#whats-inside)
+[![Systems (v1.2.1)](https://img.shields.io/badge/systems-66-lightgrey.svg)](#citation)
+
+🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | 📊 [Data](data/processed/atlas_fp_optical_v2_2.csv) | 📖 [Full Documentation](DOCUMENTATION.md) | 🔀 [Version switch: v1.2.1 | v2.0 | v2.2.2](#citation)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
-[![Systems](https://img.shields.io/badge/Systems-113-blue?style=for-the-badge)](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![FAIR](https://img.shields.io/badge/FAIR-12/12-green?style=for-the-badge)](metadata/fair/)
 
@@ -19,8 +23,8 @@
 # Interactive Dashboard (recommended)
 https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/
 
-# Download Dataset
-wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_0.csv
+# Download Dataset (latest v2.2.2)
+wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_2.csv
 ```
 
 ### Use in Your Research
@@ -28,8 +32,8 @@ wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/d
 ```python
 import pandas as pd
 
-# Load atlas
-df = pd.read_csv('atlas_fp_optical_v2_0.csv')
+# Load atlas (latest v2.2.2)
+df = pd.read_csv('atlas_fp_optical_v2_2.csv')
 
 # Filter controlled qubits (ODMR)
 qubits = df[df['method'].str.contains('ODMR', na=False)]
@@ -44,13 +48,13 @@ ca_sensors = df[df['family'] == 'Calcium']
 
 | Category | Count | Examples |
 |----------|-------|----------|
-| **Voltage Sensors** | 35 | ASAP3, Archon1, ArcLight |
-| **Calcium Sensors** | 28 | GCaMP8, jGCaMP8, XCaMP |
-| **NV Centers** | 12 | Diamond nanoparticles (ODMR) |
-| **Neurotransmitters** | 15 | iGABASnFR, GRAB-ACh, dLight |
-| **Other Biosensors** | 23 | pH, ATP, glutamate, H2O2 |
+| **Voltage Sensors** | 23 | ASAP3, ASAP4e, ArcLight |
+| **Calcium Sensors** | 40 | GCaMP8, XCaMP, jRGECO |
+| **Dopamine Sensors** | 13 | dLight, GRAB-DA |
+| **Glutamate Sensors** | 10 | iGluSnFR, SF-iGluSnFR |
+| **Other Biosensors** | 110 | pH, ATP, GABA, cAMP, H2O2, etc. |
 
-**Total: 113 systems** with full provenance (DOI, temperature, contrast, coherence time when applicable)
+**Total: 296 systems** (latest v2.2.2) with full provenance and validated data integrity
 
 ---
 
@@ -69,10 +73,15 @@ ca_sensors = df[df['family'] == 'Calcium']
 
 ```
 📦 Quantum-Sensors-Qubits-in-Biology
-├── 📊 data/processed/atlas_fp_optical_v2_0.csv  # Main dataset (113 systems)
-├── 🌐 docs/index.html                           # Interactive dashboard
+├── 📊 data/processed/atlas_fp_optical_v2_2.csv  # Main dataset (296 systems, validated)
+├── 📊 data/staging/candidates_needing_curation.csv  # 844 candidates for manual review
+├── 🌐 docs/
+│   ├── index.html                               # Interactive dashboard
+│   └── ATLAS_SPEC.md                            # Dataset schema & inclusion criteria
 ├── 📜 DOCUMENTATION.md                          # Full technical documentation
-├── 🧬 scripts/                                  # Data processing & QA
+├── 🧬 scripts/
+│   ├── validate_atlas.py                        # Dataset validation tool
+│   └── qa/                                      # Quality assurance scripts
 ├── 📈 figures/                                  # Publication-quality plots
 └── 📦 metadata/fair/                            # FAIR compliance metadata
 ```
@@ -88,25 +97,75 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 **Quick contribution:**
 1. Fork this repo
-2. Add your system to `atlas_fp_optical_v2_0.csv`
-3. Run `python qubits_linter.py` to validate
+2. Add your system to `atlas_fp_optical_v2_2.csv`
+3. Run `python scripts/validate_atlas.py` to validate
 4. Submit a Pull Request
+
+---
+
+## 🛠️ Local Usage & Validation
+
+### Validate Dataset
+
+```bash
+# Run validation script
+python scripts/validate_atlas.py
+```
+
+This checks for:
+- Missing required columns
+- Invalid data ranges (temperature 270-320K, contrast > 0)
+- DOI format validation
+- Data completeness report
+
+### Run Static Site Locally
+
+```bash
+# Option 1: Python HTTP server
+python -m http.server 8000
+
+# Option 2: Node.js (if available)
+npx http-server .
+
+# Then open: http://localhost:8000/docs/index.html
+```
+
+### Enable GitHub Pages
+
+1. Go to repository **Settings** → **Pages**
+2. Select source: **Deploy from a branch**
+3. Branch: **`main`** / Folder: **`/ (root)`** or **`/docs`**
+4. Save and wait ~2 minutes
+5. Your site will be live at: `https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/`
+
+**Note:** If using `/` as root, GitHub Pages will automatically redirect `/` to `/docs/index.html` if present.
 
 ---
 
 ## 📖 Citation
 
-If you use this atlas in your research, please cite:
+**Frontiers manuscript (fixed dataset):**
+> **v1.2.1** — 66 systems (for manuscript submission)  
+> DOI: 10.5281/zenodo.17420604  
+> *This version is frozen for Frontiers publication.*
+
+**Latest stable for development/ML:**
+> **v2.2.2** — 296 systems (validated, deep enrichment via FPbase/UniProt)  
+> DOI: TBD (pending Zenodo deposit)  
+> *Use this version for research, ML training, and development.*
 
 ```bibtex
-@dataset{biological_qubits_atlas_2025,
-  title  = {Biological Qubits \& Quantum Sensors Atlas},
+@dataset{biological_qubits_atlas_v2_2,
+  title  = {Biological Qubits \& Quantum Sensors Atlas v2.2.2},
   author = {Mythmaker28},
   year   = {2025},
-  doi    = {10.5281/zenodo.17420604},
+  version = {2.2.2},
+  doi    = {TBD},
   url    = {https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology}
 }
 ```
+
+For the Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATION_v1.2.1.cff).
 
 ---
 
@@ -123,6 +182,7 @@ If you use this atlas in your research, please cite:
 - 📦 **Zenodo Archive**: https://doi.org/10.5281/zenodo.17420604
 - 📖 **Full Documentation**: [DOCUMENTATION.md](DOCUMENTATION.md)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues)
+- 📋 **Version Roadmap**: [VERSIONING_ROADMAP.md](VERSIONING_ROADMAP.md)
 
 ---
 
