@@ -4,7 +4,11 @@
 
 Le **Biological Qubits & Quantum Sensors Atlas** est une base de données curée de systèmes quantiques et bio-capteurs utilisés en contexte biologique. Cette spécification décrit le schéma de données, les critères d'inclusion, et comment les incertitudes sont représentées.
 
-**Version actuelle:** v2.2.2 (296 systèmes validés, enrichis via APIs multiples, aucune fabrication)
+**Version actuelle:** v2.2.2  
+**Tier 1 (curated, modeling-ready):** 180 systèmes  
+**Total (mixed, all tiers):** 296 systèmes
+
+See [DATA_TIERS.md](DATA_TIERS.md) for quality classification.
 
 ---
 
@@ -12,11 +16,20 @@ Le **Biological Qubits & Quantum Sensors Atlas** est une base de données curée
 
 ### Fichier Principal
 
-**`data/processed/atlas_fp_optical_v2_2.csv`** — 296 systèmes (v2.2.2, validated)
+**Files by Quality Tier:**
 
-**Fichier Staging (Curation Manuelle Requise):**
+| File | Tier | Count | Purpose |
+|------|------|-------|---------|
+| `data/processed/atlas_fp_optical_v2_2_curated.csv` | **Tier 1** | 180 | **RECOMMENDED:** Modeling-ready, fully curated |
+| `data/staging/atlas_fp_optical_v2_2_candidates.csv` | Tier 2 | 13 | Incomplete but real, needs curation |
+| `data/staging/atlas_fp_optical_v2_2_unknown.csv` | Tier 3 | 103 | Auto-harvested placeholders, not modeling-ready |
+| `data/processed/atlas_fp_optical_v2_2.csv` | Mixed | 296 | **Full dataset** (all tiers combined, audit only) |
 
-**`data/staging/candidates_needing_curation.csv`** — 844 candidats nécessitant vérification manuelle (DOI manquant ou données spectrales incomplètes)
+**Additional staging:**  
+`data/staging/candidates_needing_curation.csv` — 844 raw API harvest candidates requiring manual verification (DOI missing or ambiguous classification)
+
+**For downstream analysis (e.g., fp-qubit-design, ML pipelines):**  
+Use **`atlas_fp_optical_v2_2_curated.csv`** exclusively to avoid placeholder noise.
 
 ### Colonnes
 
