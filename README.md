@@ -2,7 +2,7 @@
 
 [![Version (latest)](https://img.shields.io/badge/version-v2.2.2-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
 [![Stable (Frontiers)](https://img.shields.io/badge/frontiers-v1.2.1-lightgrey.svg)](#citation)
-[![Systems (v2.2.2)](https://img.shields.io/badge/systems-250-green.svg)](#whats-inside)
+[![Systems (v2.2.2)](https://img.shields.io/badge/systems-193-green.svg)](#whats-inside)
 [![Systems (v1.2.1)](https://img.shields.io/badge/systems-66-lightgrey.svg)](#citation)
 
 🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | 📊 [Data](data/processed/atlas_fp_optical_v2_2.csv) | 📖 [Full Documentation](DOCUMENTATION.md) | 🔀 [Version switch: v1.2.1 | v2.0 | v2.2.2](#citation)
@@ -48,13 +48,13 @@ ca_sensors = df[df['family'] == 'Calcium']
 
 | Category | Count | Examples |
 |----------|-------|----------|
-| **Voltage Sensors** | 35 | ASAP3, Archon1, ArcLight |
-| **Calcium Sensors** | 38 | GCaMP8, XCaMP, jRGECO |
-| **NV Centers** | 12 | Diamond nanoparticles (ODMR) |
-| **Neurotransmitters** | 15 | iGABASnFR, GRAB-ACh, dLight |
-| **Other Biosensors** | 23 | pH, ATP, glutamate, H2O2 |
+| **Voltage Sensors** | 23 | ASAP3, ASAP4e, ArcLight |
+| **Calcium Sensors** | 40 | GCaMP8, XCaMP, jRGECO |
+| **Dopamine Sensors** | 13 | dLight, GRAB-DA |
+| **Glutamate Sensors** | 10 | iGluSnFR, SF-iGluSnFR |
+| **Other Biosensors** | 110 | pH, ATP, GABA, cAMP, H2O2, etc. |
 
-**Total: 250 systems** (latest v2.2.2) with full provenance (DOI, temperature, contrast, coherence time when applicable)
+**Total: 193 systems** (latest v2.2.2) with full provenance and validated data integrity
 
 ---
 
@@ -73,10 +73,14 @@ ca_sensors = df[df['family'] == 'Calcium']
 
 ```
 📦 Quantum-Sensors-Qubits-in-Biology
-├── 📊 data/processed/atlas_fp_optical_v2_2.csv  # Main dataset (250 systems)
-├── 🌐 docs/index.html                           # Interactive dashboard
+├── 📊 data/processed/atlas_fp_optical_v2_2.csv  # Main dataset (193 systems, validated)
+├── 🌐 docs/
+│   ├── index.html                               # Interactive dashboard
+│   └── ATLAS_SPEC.md                            # Dataset schema & inclusion criteria
 ├── 📜 DOCUMENTATION.md                          # Full technical documentation
-├── 🧬 scripts/                                  # Data processing & QA
+├── 🧬 scripts/
+│   ├── validate_atlas.py                        # Dataset validation tool
+│   └── qa/                                      # Quality assurance scripts
 ├── 📈 figures/                                  # Publication-quality plots
 └── 📦 metadata/fair/                            # FAIR compliance metadata
 ```
@@ -93,8 +97,47 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 **Quick contribution:**
 1. Fork this repo
 2. Add your system to `atlas_fp_optical_v2_2.csv`
-3. Run `python qubits_linter.py` to validate
+3. Run `python scripts/validate_atlas.py` to validate
 4. Submit a Pull Request
+
+---
+
+## 🛠️ Local Usage & Validation
+
+### Validate Dataset
+
+```bash
+# Run validation script
+python scripts/validate_atlas.py
+```
+
+This checks for:
+- Missing required columns
+- Invalid data ranges (temperature 270-320K, contrast > 0)
+- DOI format validation
+- Data completeness report
+
+### Run Static Site Locally
+
+```bash
+# Option 1: Python HTTP server
+python -m http.server 8000
+
+# Option 2: Node.js (if available)
+npx http-server .
+
+# Then open: http://localhost:8000/docs/index.html
+```
+
+### Enable GitHub Pages
+
+1. Go to repository **Settings** → **Pages**
+2. Select source: **Deploy from a branch**
+3. Branch: **`main`** / Folder: **`/ (root)`** or **`/docs`**
+4. Save and wait ~2 minutes
+5. Your site will be live at: `https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/`
+
+**Note:** If using `/` as root, GitHub Pages will automatically redirect `/` to `/docs/index.html` if present.
 
 ---
 
@@ -106,7 +149,7 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 > *This version is frozen for Frontiers publication.*
 
 **Latest stable for development/ML:**
-> **v2.2.2** — 250 systems (current stable)  
+> **v2.2.2** — 193 systems (validated, no fabricated data)  
 > DOI: TBD (pending Zenodo deposit)  
 > *Use this version for research, ML training, and development.*
 
