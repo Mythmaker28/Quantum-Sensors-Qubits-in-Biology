@@ -2,7 +2,7 @@
 
 [![Version (latest)](https://img.shields.io/badge/version-v2.2.2-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
 [![Stable (Frontiers)](https://img.shields.io/badge/frontiers-v1.2.1-lightgrey.svg)](#citation)
-[![Systems (v2.2.2)](https://img.shields.io/badge/systems-219-green.svg)](#whats-inside)
+[![Systems (v2.2.2)](https://img.shields.io/badge/systems-296-green.svg)](#whats-inside)
 [![Systems (v1.2.1)](https://img.shields.io/badge/systems-66-lightgrey.svg)](#citation)
 
 🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | 📊 [Data](data/processed/atlas_fp_optical_v2_2.csv) | 📖 [Full Documentation](DOCUMENTATION.md) | 🔀 [Version switch: v1.2.1 | v2.0 | v2.2.2](#citation)
@@ -54,7 +54,7 @@ ca_sensors = df[df['family'] == 'Calcium']
 | **Glutamate Sensors** | 10 | iGluSnFR, SF-iGluSnFR |
 | **Other Biosensors** | 110 | pH, ATP, GABA, cAMP, H2O2, etc. |
 
-**Total: 219 systems** (latest v2.2.2) with full provenance and validated data integrity
+**Total: 296 systems** (latest v2.2.2) with full provenance and validated data integrity
 
 ---
 
@@ -73,7 +73,8 @@ ca_sensors = df[df['family'] == 'Calcium']
 
 ```
 📦 Quantum-Sensors-Qubits-in-Biology
-├── 📊 data/processed/atlas_fp_optical_v2_2.csv  # Main dataset (219 systems, validated)
+├── 📊 data/processed/atlas_fp_optical_v2_2.csv  # Main dataset (296 systems, validated)
+├── 📊 data/staging/candidates_needing_curation.csv  # 844 candidates for manual review
 ├── 🌐 docs/
 │   ├── index.html                               # Interactive dashboard
 │   └── ATLAS_SPEC.md                            # Dataset schema & inclusion criteria
@@ -149,7 +150,7 @@ npx http-server .
 > *This version is frozen for Frontiers publication.*
 
 **Latest stable for development/ML:**
-> **v2.2.2** — 219 systems (validated, enriched via FPbase API)  
+> **v2.2.2** — 296 systems (validated, deep enrichment via FPbase/UniProt)  
 > DOI: TBD (pending Zenodo deposit)  
 > *Use this version for research, ML training, and development.*
 

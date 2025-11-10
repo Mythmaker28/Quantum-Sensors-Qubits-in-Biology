@@ -1,24 +1,29 @@
 # Known Issues — Biological Qubits Atlas
 
-## Pending Data Enrichment
+## Deep Enrichment Results (2025-11-10)
 
-### FPbase API Unavailable (2025-11-10)
+### Multi-API Harvest Success
 
-**Issue:**  
-Attempted to enrich atlas with additional biosensors via FPbase API (`https://www.fpbase.org/api/proteins/`) but encountered connection/parsing errors.
+**Executed:**  
+Deep enrichment using FPbase CSV export, UniProt REST API, and PDB/PDBe.
 
-**Impact:**  
-- Current atlas: **193 systems** (post-cleanup)
-- Potential additional systems from FPbase: ~20-30 biosensors
-- **NOT ADDED** to avoid data fabrication
+**Results:**  
+- **Atlas:** 219 → 296 systems (+77 verified systems)
+- **Staging:** 844 candidates requiring manual curation
+- **Primary source:** UniProt API (85 new candidates)
+- **Secondary source:** FPbase CSV (processed all 921 biosensors)
 
-**Fallback Options:**
-1. Manual curation from FPbase website (https://www.fpbase.org/)
-2. Retry API when service is restored
-3. Use alternative providers (UniProt, PDB)
+**Added Systems:**  
+77 high-confidence systems with verified DOI + spectral/biochemical data from UniProt.
 
-**Resolution:**  
-Will retry enrichment once FPbase API is accessible. In the meantime, atlas remains at 193 validated systems with complete required metadata.
+**Staging Queue:**  
+844 candidates parked in `data/staging/candidates_needing_curation.csv` due to:
+- Missing DOI (cannot verify source)
+- Incomplete spectral data (excitation/emission)
+- Ambiguous target/function classification
+
+**Next Steps:**  
+Manual review of staging candidates by domain expert to classify and verify.
 
 ---
 

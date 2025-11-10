@@ -4,7 +4,7 @@
 
 Le **Biological Qubits & Quantum Sensors Atlas** est une base de données curée de systèmes quantiques et bio-capteurs utilisés en contexte biologique. Cette spécification décrit le schéma de données, les critères d'inclusion, et comment les incertitudes sont représentées.
 
-**Version actuelle:** v2.2.2 (193 systèmes validés, sans fabrication de données)
+**Version actuelle:** v2.2.2 (296 systèmes validés, enrichis via APIs multiples, aucune fabrication)
 
 ---
 
@@ -12,7 +12,11 @@ Le **Biological Qubits & Quantum Sensors Atlas** est une base de données curée
 
 ### Fichier Principal
 
-**`data/processed/atlas_fp_optical_v2_2.csv`** — 193 systèmes (v2.2.2, validated)
+**`data/processed/atlas_fp_optical_v2_2.csv`** — 296 systèmes (v2.2.2, validated)
+
+**Fichier Staging (Curation Manuelle Requise):**
+
+**`data/staging/candidates_needing_curation.csv`** — 844 candidats nécessitant vérification manuelle (DOI manquant ou données spectrales incomplètes)
 
 ### Colonnes
 
