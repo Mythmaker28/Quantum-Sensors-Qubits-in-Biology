@@ -2,4 +2,8 @@ id,protein_or_complex,organism,observable,timescale_ns,field_sensitivity_uT,mfe_
 RP_CRY_001,Cryptochrome 4,Erithacus rubecula (European robin),magnetic_field_effect,1000,50,,298,10.1038/s41586-021-03618-9,A,non_optical_v1,"Migratory bird cryptochrome showing magnetic sensitivity"
 RP_CRY_002,Cryptochrome 1a,Drosophila melanogaster,anisotropy_change,500,,,293,10.1146/annurev-biophys-032116-094545,B,non_optical_v1,"Drosophila cryptochrome radical pair mechanism review"
 RP_PSII_001,Photosystem II D1-D2,Spinacia oleracea (spinach),singlet_yield,100,,,298,10.1073/pnas.1316207110,B,non_optical_v1,"Radical pair in PSII reaction center"
+RP_PHOTOLYASE_001,DNA photolyase FAD-TrpH,Escherichia coli,electron_transfer,1000,,,298,10.1021/ja203749t,A,non_optical_v1,"FAD-tryptophan radical pair in DNA repair enzyme"
+RP_BChl_001,Bacterial reaction center,Rhodobacter sphaeroides,charge_separation,10,,,293,10.1073/pnas.0408746102,A,non_optical_v1,"Primary charge separation P+HA- radical pair"
+RP_MITOCHONDRIA_001,Mitochondrial Complex I flavin,Bos taurus,electron_transfer,1000,,,310,10.1073/pnas.1220074110,B,non_optical_v2,"Flavin semiquinone radical in respiratory complex I"
+RP_6_4PHOTOLYASE_001,6-4 photolyase FAD,Xenopus laevis,electron_transfer,500,,,298,10.1038/nature11242,A,non_optical_v2,"FAD radical in 6-4 photolesion repair enzyme"
 

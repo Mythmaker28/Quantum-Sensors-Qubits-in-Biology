@@ -2,4 +2,8 @@ id,nucleus,host,system_type,T2_milliseconds,T1_milliseconds,temperature_K,measur
 NUC_13C_001,13C,diamond (coupled to NV),diamond_NV_coupled,1000,,298,dynamical_decoupling,130000,10.1103/PhysRevLett.109.137602,A,non_optical_v1,"13C nuclear spin coupled to NV center, room temperature"
 NUC_13C_002,13C,diamond (bulk),diamond_bulk,,,4,NMR,,10.1103/PhysRevLett.108.197601,A,non_optical_v1,"Bulk 13C nuclear spins in diamond at cryogenic temperature"
 NUC_31P_001,31P,silicon (donor),phosphorus_donor,30000,60000,2,pulsed_NMR,,10.1038/nature08812,A,non_optical_v1,"31P donor nuclear spin in silicon, long coherence times"
+NUC_14N_001,14N,diamond (NV center intrinsic),diamond_NV_coupled,3,,298,ODMR,2200000,10.1126/science.1231364,A,non_optical_v1,"14N nuclear spin intrinsic to NV center, room temperature control"
+NUC_29SI_001,29Si,silicon (bulk),silicon_bulk,1800000,,4.2,NMR,,10.1038/nature11449,A,non_optical_v1,"29Si nuclear spins in isotopically purified silicon"
+NUC_15N_001,15N,diamond (NV center substitutional),diamond_NV_coupled,,,298,ODMR,3100000,10.1103/PhysRevLett.110.167402,A,non_optical_v2,"15N substituted NV center showing long T1 at room temperature"
+NUC_1H_001,1H,protein backbone (ubiquitin),protein_NMR,,,298,solution_NMR,,10.1038/nature08705,B,non_optical_v2,"Proton nuclear spins in protein showing quantum coherence effects"
 

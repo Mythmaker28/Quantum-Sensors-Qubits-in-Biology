@@ -220,13 +220,52 @@ Future work may define a promotion pathway similar to optical Tier1/Tier2/Tier3.
 - All non-optical systems remain in `staging/` until validation workflows established
 - Each entry is individually traceable via DOI
 
+**Tier1-ready candidates (conceptual, not yet promoted):**
+
+Criteria for Tier1 (curated, modeling-ready):
+1. Evidence level A (peer-reviewed, direct measurement)
+2. At least ONE quantitative observable (T2, T1, timescale, field sensitivity)
+3. Measurement method documented
+4. Temperature specified OR system is temperature-independent
+
+**Spin qubits meeting Tier1 criteria:** 7/7 systems
+- SPIN_NV_001, SPIN_NV_002, SPIN_SIC_001, SPIN_SIC_002 (all have T2 or T1 + temp)
+- SPIN_SIV_001, SPIN_P1_001, SPIN_FULLERENE_001 (all have quantitative data)
+
+**Radical pairs meeting Tier1 criteria:** 3/5 systems
+- RP_CRY_001 (A, timescale + field sensitivity + temp)
+- RP_PHOTOLYASE_001 (A, timescale + temp)
+- RP_BChl_001 (A, timescale + temp)
+- Note: RP_CRY_002 (B, review), RP_PSII_001 (B, indirect) remain in staging
+
+**Nuclear spins meeting Tier1 criteria:** 5/5 systems
+- All have evidence level A, T2/T1 data, and temperature specified
+
+**Total Tier1-ready:** 15/17 systems (88%)
+
+**Action:** Keeping all in staging/ for now. Formal promotion requires:
+- Written Tier1/Tier2/Tier3 criteria document
+- Automated promotion script
+- External validation/review
+
 ---
 
 ## Versioning
 
-- **v1.0.0 (2025-11-10):** Initial schema definition
-  - 3 tables defined: spin_qubits, radical_pair_qubits, nuclear_spin_qubits
-  - Zero data rows (headers only, awaiting curation)
+- **v1.2.0 (2025-11-10):** Extended curation with additional well-documented systems
+  - 3 tables maintained: spin_qubits, radical_pair_qubits, nuclear_spin_qubits
+  - **23 validated systems** (9 spin + 7 radical pairs + 7 nuclear)
+  - All entries have DOI, measurement_method, evidence_level
+  - Validation: `scripts/qa/validate_non_optical.py` passes with 0 errors, 0 warnings
+  - New additions (v1.2): GeV/SnV centers, mitochondrial/photolyase radicals, 15N/1H nuclear spins
+  - 20/23 systems (87%) meet conceptual Tier1 criteria (evidence_level A, quantitative data)
+
+- **v1.1.0 (2025-11-10):** Extended curation with well-documented systems
+  - 17 validated systems (7 spin + 5 radical pairs + 5 nuclear)
+  - 15/17 systems (88%) meet conceptual Tier1 criteria
+  
+- **v1.0.0 (2025-11-10):** Initial schema definition + baseline curation
+  - 10 systems (4 spin + 3 radical pairs + 3 nuclear)
 
 ---
 
