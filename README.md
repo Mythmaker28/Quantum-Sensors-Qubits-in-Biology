@@ -2,10 +2,11 @@
 
 [![Version (latest)](https://img.shields.io/badge/version-v2.2.2-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
 [![Stable (Frontiers)](https://img.shields.io/badge/frontiers-v1.2.1-lightgrey.svg)](#citation)
-[![Systems (v2.2.2)](https://img.shields.io/badge/systems-296-green.svg)](#whats-inside)
+[![Systems (v2.2.2)](https://img.shields.io/badge/curated-180-green.svg)](#whats-inside)
+[![Total](https://img.shields.io/badge/total-296-lightgrey.svg)](#data-tiers)
 [![Systems (v1.2.1)](https://img.shields.io/badge/systems-66-lightgrey.svg)](#citation)
 
-🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | 📊 [Data](data/processed/atlas_fp_optical_v2_2.csv) | 📖 [Full Documentation](DOCUMENTATION.md) | 🔀 [Version switch: v1.2.1 | v2.0 | v2.2.2](#citation)
+🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | 📊 [Data](data/processed/atlas_fp_optical_v2_2_curated.csv) | 📖 [Full Documentation](DOCUMENTATION.md) | 🔀 [Version switch: v1.2.1 | v2.0 | v2.2.2](#citation)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -23,7 +24,10 @@
 # Interactive Dashboard (recommended)
 https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/
 
-# Download Dataset (latest v2.2.2)
+# Download Dataset (RECOMMENDED: curated tier for modeling)
+wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_2_curated.csv
+
+# Or full mixed dataset (includes 103 auto-harvested with placeholder data)
 wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_2.csv
 ```
 
@@ -32,40 +36,47 @@ wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/d
 ```python
 import pandas as pd
 
-# Load atlas (latest v2.2.2)
-df = pd.read_csv('atlas_fp_optical_v2_2.csv')
+# RECOMMENDED: Load curated tier (modeling-ready, 180 systems)
+df = pd.read_csv('atlas_fp_optical_v2_2_curated.csv')
 
 # Filter controlled qubits (ODMR)
 qubits = df[df['method'].str.contains('ODMR', na=False)]
 
 # Get calcium sensors
 ca_sensors = df[df['family'] == 'Calcium']
+
+# NOTE: Avoid 'atlas_fp_optical_v2_2.csv' (mixed, includes 103 placeholder systems)
 ```
 
 ---
 
 ## 📊 What's Inside
 
+**Tier 1: Curated Core (Modeling-Ready)**
+
 | Category | Count | Examples |
 |----------|-------|----------|
-| **Voltage Sensors** | 23 | ASAP3, ASAP4e, ArcLight |
 | **Calcium Sensors** | 40 | GCaMP8, XCaMP, jRGECO |
+| **Voltage Sensors** | 22 | ASAP3, ASAP4e, ArcLight |
 | **Dopamine Sensors** | 13 | dLight, GRAB-DA |
 | **Glutamate Sensors** | 10 | iGluSnFR, SF-iGluSnFR |
-| **Other Biosensors** | 110 | pH, ATP, GABA, cAMP, H2O2, etc. |
+| **Other Biosensors** | 95 | pH, ATP, GABA, cAMP, H2O2, etc. |
 
-**Total: 296 systems** (latest v2.2.2) with full provenance and validated data integrity
+**180 curated systems** (Tier 1: modeling-ready) with full provenance  
++13 candidates (Tier 2: incomplete) + 103 staging/unknown (Tier 3: placeholder data)
+
+See [Data Tiers](#data-tiers) for classification details.
 
 ---
 
 ## 🎯 Key Features
 
 ✅ **FAIR 12/12** — Findable, Accessible, Interoperable, Reusable  
-✅ **Full Provenance** — Source DOI/PMCID for every data point  
+✅ **Full Provenance** — Source DOI for every curated data point  
 ✅ **Interactive Dashboard** — D3.js visualizations with real-time filtering  
 ✅ **Normalized Data** — Temperature (K), contrast (fold-change), coherence (µs)  
-✅ **Quality Tiers** — A (peer-reviewed), B (measured but not audited)  
-✅ **Bio-Relevant** — Only systems tested at 270-320K displayed by default
+✅ **Quality Tiers** — Explicit separation: curated vs candidates vs placeholder  
+✅ **Bio-Relevant** — Systems tested at 270-320K
 
 ---
 
@@ -73,18 +84,45 @@ ca_sensors = df[df['family'] == 'Calcium']
 
 ```
 📦 Quantum-Sensors-Qubits-in-Biology
-├── 📊 data/processed/atlas_fp_optical_v2_2.csv  # Main dataset (296 systems, validated)
-├── 📊 data/staging/candidates_needing_curation.csv  # 844 candidates for manual review
+├── 📊 data/processed/
+│   ├── atlas_fp_optical_v2_2.csv         # Full dataset (296 systems, mixed quality)
+│   └── atlas_fp_optical_v2_2_curated.csv # RECOMMENDED: Tier 1 curated (180 systems)
+├── 📊 data/staging/
+│   ├── atlas_fp_optical_v2_2_candidates.csv  # Tier 2 (13 systems, incomplete)
+│   ├── atlas_fp_optical_v2_2_unknown.csv     # Tier 3 (103 systems, placeholder)
+│   └── candidates_needing_curation.csv       # 844 API harvest for manual review
 ├── 🌐 docs/
 │   ├── index.html                               # Interactive dashboard
-│   └── ATLAS_SPEC.md                            # Dataset schema & inclusion criteria
+│   ├── ATLAS_SPEC.md                            # Dataset schema & inclusion criteria
+│   ├── DATA_TIERS.md                            # Quality tier definitions
+│   └── STAGING_GUIDE.md                         # Manual curation workflow
 ├── 📜 DOCUMENTATION.md                          # Full technical documentation
 ├── 🧬 scripts/
 │   ├── validate_atlas.py                        # Dataset validation tool
-│   └── qa/                                      # Quality assurance scripts
+│   ├── qa/split_tiers.py                        # Reproducible tier splitting
+│   └── web/regenerate_dashboard.py              # Dashboard generator
 ├── 📈 figures/                                  # Publication-quality plots
 └── 📦 metadata/fair/                            # FAIR compliance metadata
 ```
+
+---
+
+## 📊 Data Tiers
+
+The atlas uses **explicit quality tiers** to separate curated data from auto-harvested placeholders:
+
+| Tier | Count | Description | File | Use Case |
+|------|-------|-------------|------|----------|
+| **Tier 1: CURATED** | 180 | Known family + DOI + (spectra OR contrast>1.5) | `atlas_fp_optical_v2_2_curated.csv` | ✅ **Modeling, analysis** |
+| **Tier 2: CANDIDATES** | 13 | Real systems, incomplete metadata | `atlas_fp_optical_v2_2_candidates.csv` | Manual curation queue |
+| **Tier 3: UNKNOWN** | 103 | Auto-harvested, placeholder data | `atlas_fp_optical_v2_2_unknown.csv` | Transparency only |
+
+**For machine learning / quantitative analysis:** Use **Tier 1 (curated)** only.
+
+**Why the split?**  
+During API harvesting (UniProt, FPbase), 103 systems were auto-added with `family="Unknown"` and `contrast_normalized=1.0` (placeholder). These introduce noise in models and are now explicitly isolated.
+
+See [docs/DATA_TIERS.md](docs/DATA_TIERS.md) for complete tier definitions.
 
 ---
 
@@ -97,8 +135,8 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 
 **Quick contribution:**
 1. Fork this repo
-2. Add your system to `atlas_fp_optical_v2_2.csv`
-3. Run `python scripts/validate_atlas.py` to validate
+2. Add your system to `atlas_fp_optical_v2_2_curated.csv` (Tier 1)
+3. Run `python scripts/validate_atlas.py curated` to validate
 4. Submit a Pull Request
 
 ---
@@ -108,8 +146,20 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 ### Validate Dataset
 
 ```bash
-# Run validation script
-python scripts/validate_atlas.py
+# Validate curated tier (recommended, strict)
+python scripts/validate_atlas.py curated
+
+# Validate full mixed dataset
+python scripts/validate_atlas.py mixed
+
+# Validate individual tiers
+python scripts/validate_atlas.py candidates
+python scripts/validate_atlas.py unknown
+```
+
+**Tier splitting (reproducible):**
+```bash
+python scripts/qa/split_tiers.py
 ```
 
 This checks for:
@@ -150,16 +200,21 @@ npx http-server .
 > *This version is frozen for Frontiers publication.*
 
 **Latest stable for development/ML:**
-> **v2.2.2** — 296 systems (validated, deep enrichment via FPbase/UniProt)  
+> **v2.2.2 (curated)** — 180 systems (modeling-ready, validated)  
 > DOI: TBD (pending Zenodo deposit)  
 > *Use this version for research, ML training, and development.*
 
+**Full dataset (mixed tiers):**
+> **v2.2.2 (mixed)** — 296 systems (includes 103 placeholder/staging)  
+> For transparency and API harvest audit only. **Not recommended for modeling.**
+
 ```bibtex
-@dataset{biological_qubits_atlas_v2_2,
-  title  = {Biological Qubits \& Quantum Sensors Atlas v2.2.2},
+@dataset{biological_qubits_atlas_v2_2_curated,
+  title  = {Biological Qubits \& Quantum Sensors Atlas v2.2.2 (Curated)},
   author = {Mythmaker28},
   year   = {2025},
-  version = {2.2.2},
+  version = {2.2.2-curated},
+  systems = {180},
   doi    = {TBD},
   url    = {https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology}
 }
@@ -180,6 +235,7 @@ For the Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATI
 
 - 🌐 **Live Dashboard**: https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/
 - 📦 **Zenodo Archive**: https://doi.org/10.5281/zenodo.17420604
+- 📖 **Data Tiers**: [docs/DATA_TIERS.md](docs/DATA_TIERS.md)
 - 📖 **Full Documentation**: [DOCUMENTATION.md](DOCUMENTATION.md)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues)
 - 📋 **Version Roadmap**: [VERSIONING_ROADMAP.md](VERSIONING_ROADMAP.md)
@@ -187,4 +243,3 @@ For the Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATI
 ---
 
 **⚛️ Built with scientific rigor | Maintained by an independent researcher | Contributions welcome**
-

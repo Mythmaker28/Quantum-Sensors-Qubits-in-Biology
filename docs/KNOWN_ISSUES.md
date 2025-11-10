@@ -1,29 +1,42 @@
 # Known Issues — Biological Qubits Atlas
 
-## Deep Enrichment Results (2025-11-10)
+## Data Quality Structure (2025-11-10)
 
-### Multi-API Harvest Success
+### Tier System Implemented
 
-**Executed:**  
-Deep enrichment using FPbase CSV export, UniProt REST API, and PDB/PDBe.
+**Problem Identified:**  
+After deep API harvesting (219 → 296 systems), downstream analysis (fp-qubit-design) revealed:
+- ~193 systems usable for modeling
+- ~103 systems with placeholder data (family="Unknown", contrast=1.0, no spectra)
+- Mixing tiers introduced noise regularization (not signal)
 
-**Results:**  
-- **Atlas:** 219 → 296 systems (+77 verified systems)
-- **Staging:** 844 candidates requiring manual curation
-- **Primary source:** UniProt API (85 new candidates)
-- **Secondary source:** FPbase CSV (processed all 921 biosensors)
+**Solution:**  
+Explicit non-destructive tier splitting:
 
-**Added Systems:**  
-77 high-confidence systems with verified DOI + spectral/biochemical data from UniProt.
+| Tier | Count | Description | File |
+|------|-------|-------------|------|
+| **Tier 1: CURATED** | 180 | Known family + DOI + (spectra OR contrast>1.5) | `atlas_fp_optical_v2_2_curated.csv` |
+| **Tier 2: CANDIDATES** | 13 | Real but incomplete (missing spectra) | `atlas_fp_optical_v2_2_candidates.csv` |
+| **Tier 3: UNKNOWN** | 103 | Auto-harvested placeholders | `atlas_fp_optical_v2_2_unknown.csv` |
 
-**Staging Queue:**  
-844 candidates parked in `data/staging/candidates_needing_curation.csv` due to:
-- Missing DOI (cannot verify source)
-- Incomplete spectral data (excitation/emission)
-- Ambiguous target/function classification
+**Data Preservation:**  
+- **0 systems deleted** — all 296 preserved
+- Original `atlas_fp_optical_v2_2.csv` kept as "mixed" audit view
+- Tier split programmatically reproducible via `scripts/qa/split_tiers.py`
 
-**Next Steps:**  
-Manual review of staging candidates by domain expert to classify and verify.
+**Tier 3 Composition (103 systems):**
+- 77 from UniProt deep harvest (`deep_harvest_uniprot_deep`)
+- 26 from FPbase API harvest (`api_harvest_fpbase_csv`)
+- All have `family="Unknown"` and `contrast_normalized=1.0` (placeholder)
+- All have DOI but insufficient metadata for modeling
+
+**Recommended for Downstream:**  
+Use **`atlas_fp_optical_v2_2_curated.csv`** (180 systems) for ML/modeling to avoid placeholder noise.
+
+**Manual Curation Queue:**  
+- Tier 2: 13 systems (high priority — real systems, just need spectral data)
+- Tier 3: 103 systems (lower priority — need family classification + contrast measurement)
+- Additional staging: 844 raw API candidates in `candidates_needing_curation.csv`
 
 ---
 

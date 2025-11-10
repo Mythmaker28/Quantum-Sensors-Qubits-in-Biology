@@ -18,14 +18,18 @@ import pandas as pd
 import re
 
 
-def validate_atlas(csv_path: Path) -> bool:
+def validate_atlas(csv_path: Path, tier_name: str = "MIXED") -> bool:
     """
     Valide le dataset principal de l'atlas.
+    
+    Args:
+        csv_path: Path to CSV file
+        tier_name: Tier name for reporting (CURATED, CANDIDATES, UNKNOWN, MIXED)
     
     Returns:
         True si validation complète réussie, False sinon
     """
-    print(f"[*] Validation de l'atlas: {csv_path}")
+    print(f"[*] Validation de l'atlas ({tier_name}): {csv_path}")
     print("=" * 60)
     
     errors = []
@@ -180,19 +184,37 @@ def validate_atlas(csv_path: Path) -> bool:
 
 def main():
     """Point d'entrée principal."""
-    # Détecter le chemin du CSV
+    import sys
+    
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent
-    csv_path = repo_root / "data" / "processed" / "atlas_fp_optical_v2_2.csv"
+    
+    # Parse arguments
+    tier_arg = sys.argv[1] if len(sys.argv) > 1 else "mixed"
+    
+    # Map tier to file
+    tier_files = {
+        "curated": ("data/processed/atlas_fp_optical_v2_2_curated.csv", "CURATED"),
+        "candidates": ("data/staging/atlas_fp_optical_v2_2_candidates.csv", "CANDIDATES"),
+        "unknown": ("data/staging/atlas_fp_optical_v2_2_unknown.csv", "UNKNOWN"),
+        "mixed": ("data/processed/atlas_fp_optical_v2_2.csv", "MIXED")
+    }
+    
+    if tier_arg not in tier_files:
+        print(f"[ERROR] Unknown tier: {tier_arg}")
+        print(f"Usage: python scripts/validate_atlas.py [curated|candidates|unknown|mixed]")
+        return 1
+    
+    csv_rel, tier_name = tier_files[tier_arg]
+    csv_path = repo_root / csv_rel
     
     if not csv_path.exists():
         print(f"[ERREUR] Fichier introuvable: {csv_path}")
-        print(f"   Lancez ce script depuis la racine du depot:")
-        print(f"   python scripts/validate_atlas.py")
+        print(f"   Tier: {tier_name}")
         return 1
     
     # Validation
-    success = validate_atlas(csv_path)
+    success = validate_atlas(csv_path, tier_name)
     
     return 0 if success else 1
 
