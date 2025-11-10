@@ -1,2 +1,5 @@
 id,protein_or_complex,organism,observable,timescale_ns,field_sensitivity_uT,mfe_percent,temperature_K,doi,evidence_level,curator,notes
+RP_CRY_001,Cryptochrome 4,Erithacus rubecula (European robin),magnetic_field_effect,1000,50,,298,10.1038/s41586-021-03618-9,A,non_optical_v1,"Migratory bird cryptochrome showing magnetic sensitivity"
+RP_CRY_002,Cryptochrome 1a,Drosophila melanogaster,anisotropy_change,500,,,293,10.1146/annurev-biophys-032116-094545,B,non_optical_v1,"Drosophila cryptochrome radical pair mechanism review"
+RP_PSII_001,Photosystem II D1-D2,Spinacia oleracea (spinach),singlet_yield,100,,,298,10.1073/pnas.1316207110,B,non_optical_v1,"Radical pair in PSII reaction center"
 
