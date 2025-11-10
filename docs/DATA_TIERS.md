@@ -162,9 +162,33 @@ Mixing curated + unknown tiers → introduces bias (Unknown systems act as noise
 
 ---
 
+## Non-Optical Qubit Systems (Separate Schema)
+
+**Scope:** The tiering system above applies ONLY to **optical fluorescent protein systems**. 
+
+**Non-optical quantum systems** (spin qubits, radical pairs, nuclear spins) are handled in a completely separate schema to avoid cross-contamination:
+
+### Separate Files (Non-Optical)
+
+| File | System Type | Status | Count |
+|------|-------------|--------|-------|
+| `data/staging/spin_qubit_candidates.csv` | Spin qubits (NV centers, SiC defects, etc.) | Staging | 0 (headers only) |
+| `data/staging/radical_pair_candidates.csv` | Radical pairs (cryptochrome, etc.) | Staging | 0 (headers only) |
+| `data/staging/nuclear_spin_candidates.csv` | Nuclear spin qubits | Staging | 0 (headers only) |
+
+**Schema documentation:** See `docs/EXTENDED_QUBITS_SCHEMA.md`
+
+**Guarantee:**
+- Non-optical systems are NEVER mixed with optical FP tiers (Tier1/Tier2/Tier3)
+- Optical counts (180+13+103=296) remain unchanged
+- Non-optical candidates require same quality standards (DOI, measurements, no fabrication)
+
+---
+
 **Contact:** Atlas curator  
 **References:**
-- `docs/ATLAS_SPEC.md` — Schema specification
+- `docs/ATLAS_SPEC.md` — Schema specification (optical systems)
+- `docs/EXTENDED_QUBITS_SCHEMA.md` — Schema specification (non-optical systems)
 - `docs/KNOWN_ISSUES.md` — Known data limitations
 - `docs/STAGING_GUIDE.md` — Manual curation workflow
 

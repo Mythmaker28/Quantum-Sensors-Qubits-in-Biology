@@ -16,6 +16,16 @@
 
 ---
 
+## 🏆 Post-Nobel 2025 Context
+
+The **2025 Nobel Prize in Physics** recognized pioneering work on Josephson junctions and superconducting quantum circuits—demonstrating that macroscopic engineered systems can exhibit genuine quantum behavior. This atlas extends that exploration to an orthogonal frontier: **room-temperature quantum platforms** compatible with biological contexts.
+
+**Why this matters:** While superconducting qubits operate at ~10-50 mK, the systems catalogued here function at **270-320 K** (ambient/physiological temperatures), enabling in vivo sensing, biological imaging, and exploration of quantum effects in living systems.
+
+📖 **[Read full context: Post-Josephson platforms and biological quantum systems →](docs/NOBEL2025_CONTEXT.md)**
+
+---
+
 ## 🚀 Quick Start
 
 ### Explore the Data
@@ -47,6 +57,22 @@ ca_sensors = df[df['family'] == 'Calcium']
 
 # NOTE: Avoid 'atlas_fp_optical_v2_2.csv' (mixed, includes 103 placeholder systems)
 ```
+
+---
+
+## 🔀 Which Version Should I Use?
+
+This atlas maintains **dual versioning** for different use cases:
+
+| Version | Status | Systems | Use Case | DOI |
+|---------|--------|---------|----------|-----|
+| **v2.2.2** | ✨ **Active** | 180 curated | Research, ML, development | ⏳ TBD (pending Zenodo) |
+| **v1.2.1** | 🔒 **Frozen** | 66 | Frontiers manuscript citation | ✅ [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) |
+
+**Quick guide:**
+- 👉 **For ML/modeling:** Use v2.2.2 curated (`atlas_fp_optical_v2_2_curated.csv`)
+- 👉 **For citing Frontiers manuscript:** Use v1.2.1
+- 👉 **Confused?** See detailed guide: [VERSIONS_CITATION.md](VERSIONS_CITATION.md)
 
 ---
 
@@ -123,6 +149,23 @@ The atlas uses **explicit quality tiers** to separate curated data from auto-har
 During API harvesting (UniProt, FPbase), 103 systems were auto-added with `family="Unknown"` and `contrast_normalized=1.0` (placeholder). These introduce noise in models and are now explicitly isolated.
 
 See [docs/DATA_TIERS.md](docs/DATA_TIERS.md) for complete tier definitions.
+
+---
+
+## 🔗 Related Projects
+
+This atlas is part of a broader ecosystem exploring quantum-inspired and quantum-compatible biological platforms:
+
+### [fp-qubit-design](https://github.com/Mythmaker28/fp-qubit-design)
+**Computational design of fluorescent protein mutants** — Uses atlas v2.2.2 curated data (180 systems) as training source for ML-guided protein engineering. Predicts spectral properties and dynamic range of novel biosensor variants.
+
+### [arrest-molecules](https://github.com/Mythmaker28/arrest-molecules)
+**Molecular arrest framework** — Theoretical framework for dampening compounds in biological regulation (10 compounds, 44 predictions, DOI: [10.5281/zenodo.17420685](https://doi.org/10.5281/zenodo.17420685)). Shares conceptual vocabulary with quantum metastability: energy landscapes, arrest kinetics, tunneling vs. activation barriers.
+
+### [ising-life-lab](https://github.com/Mythmaker28/ising-life-lab)
+**Computational sandbox for memory and energy landscapes** — Explores emergent properties in biological networks using Ising-inspired models. Principles of metastable states and network connectivity connect to quantum decoherence dynamics catalogued in this atlas.
+
+**Conceptual bridge:** Superconducting circuits (Nobel 2025) → Artificial quantum systems (this atlas) → Quantum-inspired biological computation (ising-life-lab) → Molecular design (fp-qubit-design, arrest-molecules).
 
 ---
 

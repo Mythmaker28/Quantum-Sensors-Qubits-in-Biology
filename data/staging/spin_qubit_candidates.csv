@@ -1,0 +1,10 @@
+id,label,system_type,host_material,T2_microseconds,T2_star_microseconds,T1_microseconds,temperature_K,measurement_method,magnetic_sensitivity_nT_rtHz,doi,evidence_level,curator,notes
+SPIN_NV_001,NV- center in diamond (room temp),NV_center,diamond,1800,,6000000,298,ODMR,130,10.1016/j.physrep.2013.02.001,A,non_optical_v1,"Negatively charged nitrogen-vacancy center, typical values at room temperature"
+SPIN_NV_002,NV- center in diamond (77K),NV_center,diamond,600000,,,,ODMR,,10.1103/PhysRevB.79.075203,A,non_optical_v1,"NV- at liquid nitrogen temperature, extended coherence"
+SPIN_SIC_001,VSi defect in 4H-SiC,SiC_defect,silicon_carbide,160,,,,ODMR,,10.1038/nmat4145,A,non_optical_v1,"Silicon vacancy in 4H polytype, room temperature ODMR control"
+SPIN_SIC_002,Divacancy in 4H-SiC,SiC_defect,silicon_carbide,,,1000,20,pulsed_ESR,,10.1103/PhysRevLett.112.187601,A,non_optical_v1,"Neutral divacancy defect at cryogenic temperature"
+SPIN_SIV_001,SiV- center in diamond,SiV_center,diamond,13,,,,ODMR,,10.1103/PhysRevLett.113.020503,A,non_optical_v1,"Negatively charged silicon vacancy, narrow optical linewidth"
+SPIN_P1_001,P1 center in diamond,P1_center,diamond,50,600,,298,ODMR,,10.1103/PhysRevB.79.075203,A,non_optical_v1,"Substitutional nitrogen (neutral), room temperature ESR"
+SPIN_FULLERENE_001,N@C60 endohedral fullerene,endohedral_fullerene,fullerene_cage,,,600000,230,pulsed_ESR,,10.1038/ncomms10240,A,non_optical_v1,"Nitrogen atom trapped in C60, exceptionally long T1 for molecular system"
+SPIN_GEV_001,GeV- center in diamond,GeV_center,diamond,,,100,4,ODMR,,10.1103/PhysRevLett.119.253601,A,non_optical_v2,"Germanium vacancy, narrow zero-phonon line at cryogenic temperature"
+SPIN_SNV_001,SnV- center in diamond,SnV_center,diamond,3.5,,,,ODMR,,10.1103/PhysRevLett.113.020503,A,non_optical_v2,"Tin vacancy, shows Fourier-limited optical transitions"

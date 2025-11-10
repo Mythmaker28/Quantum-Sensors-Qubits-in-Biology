@@ -696,6 +696,46 @@ python qubits_linter.py
 
 ---
 
+## 🔗 Related Projects
+
+This atlas is part of a broader ecosystem exploring quantum-inspired and quantum-compatible biological platforms:
+
+### [fp-qubit-design](https://github.com/Mythmaker28/fp-qubit-design)
+**Computational design of fluorescent protein mutants** — Uses atlas v2.2.2 curated data (180 systems) as training source for ML-guided protein engineering. Predicts spectral properties and dynamic range of novel biosensor variants.
+
+**Connection to atlas:** Downstream consumer. Validates atlas quality by using it as ML training data. Feedback loop identifies errors or missing systems.
+
+### [arrest-molecules](https://github.com/Mythmaker28/arrest-molecules)
+**Molecular arrest framework** — Theoretical framework for dampening compounds in biological regulation (10 compounds, 44 predictions, DOI: [10.5281/zenodo.17420685](https://doi.org/10.5281/zenodo.17420685)). 
+
+**Shared vocabulary:** Energy landscapes (arrest → metastable states), tunneling vs. activation barriers (Josephson junctions → protein conformational dynamics), coherence vs. decoherence (quantum sensors → biological dampening).
+
+**Connection to atlas:** Complementary theoretical framework. Arrest-molecules explores molecular dampening; atlas explores quantum sensing. Both address noise-robust function in biological contexts.
+
+### [ising-life-lab](https://github.com/Mythmaker28/ising-life-lab)
+**Computational sandbox for memory and energy landscapes** — Explores emergent properties in biological networks using Ising-inspired models. Principles of metastable states and network connectivity connect to quantum decoherence dynamics catalogued in this atlas.
+
+**Connection to atlas:** Conceptual exploration. Ising-lab tests abstract principles (memory, metastability, network collapse); atlas provides concrete biological implementations (NV centers, fluorescent proteins, hyperpolarized nuclei).
+
+### Conceptual Bridge (Post-Nobel 2025)
+
+```
+Superconducting circuits (Nobel 2025, cryogenic)
+    ↓
+Room-temperature quantum platforms (this atlas)
+    ↓
+Quantum-inspired biological computation (ising-life-lab)
+    ↓
+Molecular design & dampening (fp-qubit-design, arrest-molecules)
+```
+
+**Unifying themes:**
+- **Macroscopic quantum behavior** (Josephson → NV centers → biosensors)
+- **Energy landscapes & metastability** (quantum barriers → protein folding → arrest kinetics)
+- **Noise-robust function** (decoherence tolerance → biological noise → dampening)
+
+---
+
 ## 📧 Contact
 
 Ce projet est maintenu par un **chercheur independant
