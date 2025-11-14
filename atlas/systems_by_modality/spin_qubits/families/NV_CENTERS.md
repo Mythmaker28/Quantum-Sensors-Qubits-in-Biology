@@ -1,5 +1,11 @@
 # NV Centers (Nitrogen-Vacancy in Diamond) — État de l'Art
 
+**Status :** STABLE  
+**Scope :** Overview NV- defects in diamond (ODMR spin qubits), biocompatibility, intracellular thermometry/magnetometry  
+**Systems in Atlas :** 2 (SPIN_NV_001 @ RT, SPIN_NV_002 @ 77K)
+
+---
+
 ## Systèmes Catalogués dans Atlas
 
 | ID | Label | Temperature | T2 | T1 | Magnetic Sensitivity | Evidence | DOI |

@@ -1,5 +1,11 @@
 # Photolyase Radical Pairs — État de l'Art
 
+**Status :** STABLE  
+**Scope :** FAD-Trp radical pairs in DNA repair enzymes (CPD, 6-4 photolyases), electron transfer kinetics  
+**Systems in Atlas :** 2 (RP_PHOTOLYASE_001 E. coli, RP_6_4PHOTOLYASE_001 Xenopus)
+
+---
+
 ## Systèmes Catalogués dans Atlas
 
 | ID | Protein | Organism | Function | Timescale | Temperature | Evidence | DOI |

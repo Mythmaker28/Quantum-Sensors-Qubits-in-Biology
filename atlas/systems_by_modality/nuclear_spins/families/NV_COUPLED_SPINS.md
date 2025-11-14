@@ -1,5 +1,11 @@
 # NV-Coupled Nuclear Spins (Diamond) — État de l'Art
 
+**Status :** STABLE  
+**Scope :** ¹³C, ¹⁴N, ¹⁵N nuclear spins coupled to NV electron spin (hybrid qubits, quantum memory @ RT)  
+**Systems in Atlas :** 3 (NUC_13C_001, NUC_14N_001, NUC_15N_001)
+
+---
+
 ## Systèmes Catalogués dans Atlas
 
 | ID | Nucleus | Host | T2 | T1 | Temperature | Coupling Strength | Method | Evidence | DOI |

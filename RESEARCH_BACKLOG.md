@@ -499,3 +499,8 @@ Cette structure backlog + issues + critères clairs va permettre une croissance 
 
 
 
+
+
+
+
+

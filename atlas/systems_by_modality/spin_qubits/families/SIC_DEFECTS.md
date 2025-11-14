@@ -1,5 +1,11 @@
 # SiC Defects (Silicon Carbide Vacancies) — État de l'Art
 
+**Status :** STABLE  
+**Scope :** VSi and divacancy defects in 4H/6H-SiC, ODMR control, NIR advantage over NV  
+**Systems in Atlas :** 4 (SPIN_SIC_001-004: VSi V1/V2, Divacancy 4H/6H)
+
+---
+
 ## Systèmes Catalogués dans Atlas
 
 | ID | Label | Defect Type | Polytype | Temperature | T2 | T1 | Method | Evidence | DOI |

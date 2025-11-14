@@ -1,5 +1,11 @@
 # Cryptochrome Radical Pairs — État de l'Art
 
+**Status :** STABLE  
+**Scope :** Cryptochrome FAD-Trp radical pairs (magnetoreception hypothesis), MFE measurements, [AVÉRÉ] vs [HYPOTHÈSE] classification  
+**Systems in Atlas :** 3 (RP_CRY_001 robin [AVÉRÉ], RP_CRY_002 Drosophila [HYPOTHÈSE], RP_CRY_003 Arabidopsis [HYPOTHÈSE])
+
+---
+
 ## Systèmes Catalogués dans Atlas
 
 | ID | Protein | Organism | Observable | Timescale | Field Sensitivity | Temperature | Evidence | DOI |

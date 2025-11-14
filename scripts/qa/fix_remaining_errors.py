@@ -25,3 +25,8 @@ print(f"\n[OK] Apres correction: {len(df)} systemes")
 df.to_csv(csv_path, index=False)
 print(f"[OK] Sauvegarde: {csv_path}")
 
+
+
+
+
+
