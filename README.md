@@ -106,29 +106,96 @@ See [Data Tiers](#data-tiers) for classification details.
 
 ---
 
-## 📁 Repository Structure
+## Datasets Overview
+
+This project contains **TWO DISTINCT datasets** for different applications:
+
+### 1. Fluorescent Protein Atlas (Primary - 180 systems)
+
+**File:** `data/processed/atlas_fp_optical_v2_2_curated.csv`
+
+**Content:**
+- 180 curated fluorescent protein systems (Tier 1 - modeling-ready)
+- Families: Calcium (40), Voltage (22), Dopamine (13), Glutamate (10), Others (95)
+- Properties: contrast (deltaF/F0), spectra, temperature, pH
+- Applications: Neural imaging, biosensing, cell biology
+
+**Quality tiers:**
+- Tier 1 (180): Curated, full metadata [RECOMMENDED FOR ML/MODELING]
+- Tier 2 (13): Candidates, incomplete (`data/staging/atlas_fp_optical_v2_2_candidates.csv`)
+- Tier 3 (103): Staging, placeholder data (`data/staging/atlas_fp_optical_v2_2_unknown.csv`)
+
+**Validation:** `python scripts/validate_atlas.py curated`
+
+---
+
+### 2. Biological Qubits Dataset (Secondary - 34 systems)
+
+**File:** `data/qubits/biological_qubits.csv`
+
+**Content:**
+- 34 quantum systems (spin qubits, NMR, radical pairs)
+- Classes: A (3 - FP with ODMR), B (15 - NV/VSi), C (12 - hyperpolarized nuclei), D (4 - radical pairs)
+- Properties: T2 (coherence), T1 (relaxation), ODMR contrast
+- Applications: Quantum magnetometry, thermometry, quantum sensing
+
+**Reading methods:** ODMR, NMR, ESR
+
+**Validation:** `python scripts/qa/validate_qubits_data.py`
+
+**Documentation:** See `data/qubits/README.md` for detailed distinction
+
+---
+
+## Analysis & Reproducibility
+
+All datasets have **functional analysis scripts** generating reproducible outputs:
+
+```bash
+# FP Atlas statistics
+python analysis/descriptive_stats.py       # Overall stats (180 systems)
+python analysis/class_comparisons.py       # Family comparisons (30 families)
+
+# Qubits statistics  
+python analysis/qubits_stats.py            # Qubit stats (34 systems)
+python analysis/qubits_class_comparisons.py # Class A/B/C/D comparisons
+
+# Outputs generated in analysis/output/ (JSON + Markdown)
+```
+
+---
+
+## Repository Structure
 
 ```
-📦 Quantum-Sensors-Qubits-in-Biology
-├── 📊 data/processed/
-│   ├── atlas_fp_optical_v2_2.csv         # Full dataset (296 systems, mixed quality)
-│   └── atlas_fp_optical_v2_2_curated.csv # RECOMMENDED: Tier 1 curated (180 systems)
-├── 📊 data/staging/
-│   ├── atlas_fp_optical_v2_2_candidates.csv  # Tier 2 (13 systems, incomplete)
-│   ├── atlas_fp_optical_v2_2_unknown.csv     # Tier 3 (103 systems, placeholder)
-│   └── candidates_needing_curation.csv       # 844 API harvest for manual review
-├── 🌐 docs/
-│   ├── index.html                               # Interactive dashboard
-│   ├── ATLAS_SPEC.md                            # Dataset schema & inclusion criteria
-│   ├── DATA_TIERS.md                            # Quality tier definitions
-│   └── STAGING_GUIDE.md                         # Manual curation workflow
-├── 📜 DOCUMENTATION.md                          # Full technical documentation
-├── 🧬 scripts/
-│   ├── validate_atlas.py                        # Dataset validation tool
-│   ├── qa/split_tiers.py                        # Reproducible tier splitting
-│   └── web/regenerate_dashboard.py              # Dashboard generator
-├── 📈 figures/                                  # Publication-quality plots
-└── 📦 metadata/fair/                            # FAIR compliance metadata
+Quantum-Sensors-Qubits-in-Biology
+├── data/processed/
+│   ├── atlas_fp_optical_v2_2.csv         # Full FP dataset (296 systems, mixed)
+│   └── atlas_fp_optical_v2_2_curated.csv # [RECOMMENDED] Tier 1 (180 systems)
+├── data/qubits/
+│   ├── biological_qubits.csv             # Qubits dataset (34 systems)
+│   └── README.md                         # Explains FP vs qubits distinction
+├── data/staging/
+│   ├── atlas_fp_optical_v2_2_candidates.csv  # Tier 2 (13 systems)
+│   ├── atlas_fp_optical_v2_2_unknown.csv     # Tier 3 (103 systems)
+│   └── candidates_needing_curation.csv       # API harvest queue (844)
+├── analysis/
+│   ├── qubits_stats.py, class_comparisons.py # Functional analysis scripts
+│   └── output/                               # Reproducible JSON/Markdown outputs
+├── docs/
+│   ├── index.html                            # Interactive dashboard
+│   ├── ATLAS_SPEC.md                         # Dataset schema & criteria
+│   ├── DATA_TIERS.md                         # Quality tier definitions
+│   ├── quantum_mechanisms.md                 # Quantum physics documentation
+│   └── [photosynthesis, magnetoreception, nv_centers_qubits].md
+├── scripts/
+│   ├── validate_atlas.py                     # FP validation tool
+│   ├── qa/validate_qubits_data.py            # Qubits validation tool
+│   ├── qa/split_tiers.py                     # Reproducible tier splitting
+│   └── web/regenerate_dashboard.py           # Dashboard generator
+├── DOCUMENTATION.md                          # Full technical documentation
+├── figures/                                  # Publication-quality plots
+└── metadata/fair/                            # FAIR compliance metadata
 ```
 
 ---

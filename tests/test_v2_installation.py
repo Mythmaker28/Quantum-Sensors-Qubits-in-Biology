@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Tests de validation installation v2.0
+Tests de validation installation v2.2.2
 Vérifie que toutes les dépendances et scripts sont fonctionnels
 Licence: MIT
+Updated: 2025-11-15 (v2.2.2 alignment)
 """
 
 import sys
@@ -37,17 +38,17 @@ class TestInstallation:
             pytest.skip("Dépendances ML non installées (optionnel)")
 
 class TestScripts:
-    """Tests scripts v2.0"""
+    """Tests scripts v2.2.2"""
     
     def test_fair_metadata_generator(self):
         """Test générateur FAIR"""
         from scripts.fair.generate_fair_metadata import FAIRMetadataGenerator
         
         # Mock CSV path
-        csv_path = "data/processed/atlas_fp_optical_v1_3.csv"
+        csv_path = "data/processed/atlas_fp_optical_v2_2_curated.csv"
         
         if os.path.exists(csv_path):
-            generator = FAIRMetadataGenerator(csv_path, version="2.0.0")
+            generator = FAIRMetadataGenerator(csv_path, version="2.2.2")
             schema = generator.generate_schema_org()
             
             assert schema["@type"] == "Dataset"
@@ -104,7 +105,7 @@ class TestDataIntegrity:
     
     def test_atlas_csv_exists(self):
         """Vérifie existence atlas principal"""
-        csv_path = "data/processed/atlas_fp_optical_v1_3.csv"
+        csv_path = "data/processed/atlas_fp_optical_v2_2_curated.csv"
         
         if not os.path.exists(csv_path):
             pytest.skip("Atlas CSV non trouvé (normal si première installation)")
@@ -153,18 +154,18 @@ class TestEnvironment:
 def print_test_summary():
     """Affiche résumé après tests"""
     print("\n" + "="*60)
-    print("✅ TESTS V2.0 TERMINÉS")
+    print("[OK] TESTS V2.2.2 COMPLETED")
     print("="*60)
-    print("\n📋 Checklist Installation:")
-    print("  [✅] Python 3.8+")
-    print("  [✅] Dépendances core (pandas, numpy, requests)")
-    print("  [⚠️ ] Dépendances ML (optionnel)")
-    print("  [✅] Scripts v2.0 fonctionnels")
-    print("\n🚀 Prochaines étapes:")
-    print("  1. Configuration API: export NCBI_API_KEY='votre_cle'")
-    print("  2. Phase 1: make phase1")
-    print("  3. Dashboard: make serve")
-    print("\n📚 Documentation: README_v2.0_ROADMAP.md")
+    print("\n[CHECKLIST] Installation:")
+    print("  [OK] Python 3.8+")
+    print("  [OK] Core dependencies (pandas, numpy, requests)")
+    print("  [SKIP] ML dependencies (optional)")
+    print("  [OK] Scripts v2.2.2 functional")
+    print("\n[NEXT] Steps:")
+    print("  1. Validate: python scripts/validate_atlas.py curated")
+    print("  2. Qubits: python scripts/qa/validate_qubits_data.py")
+    print("  3. Analysis: python analysis/qubits_stats.py")
+    print("\n[DOCS] See: DOCUMENTATION.md, README.md")
     print("="*60)
 
 if __name__ == "__main__":

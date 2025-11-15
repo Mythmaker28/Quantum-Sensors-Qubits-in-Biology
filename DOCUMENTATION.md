@@ -7,20 +7,27 @@
 [![CI - Lint & QC](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml)
 [![GitHub Pages](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/pages.yml/badge.svg)](https://mythmaker28.github.io/biological-qubits-atlas/)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-![Systems](https://img.shields.io/badge/Systems-113-blue?style=for-the-badge)
+![Systems](https://img.shields.io/badge/Systems-214-blue?style=for-the-badge) ![Curated](https://img.shields.io/badge/Curated-180_FP-green?style=for-the-badge) ![Qubits](https://img.shields.io/badge/Qubits-34-purple?style=for-the-badge)
 
 ---
 
-## 📊 Status & Versioning
+## Status & Versioning
 
-- 🟢 **Stable**: [v2.0.0](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v2.0.0) — **113 systems**, Interactive Dashboard, FAIR 12/12 ✨
-- 📝 **Peer-review**: Planned (Data Descriptor submission Q1 2026)
-- 🔗 **DOI**: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) (archived snapshot)
-- 🌐 **Interactive Dashboard**: [Live Demo](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
+- **Current Stable**: v2.2.2 — **180 curated FP systems + 34 qubits**, Interactive Dashboard, FAIR 12/12
+- **Peer-review**: Planned (Data Descriptor submission Q1 2026)
+- **DOI**: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) (v1.2.1 archived)
+- **Live Dashboard**: [https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
 
-### ⚠️ Research Dataset Disclaimer
+### Research Dataset Disclaimer
 
-This is an **actively curated research dataset** under continuous development. Stable releases (v2.0.0) are production-ready for research use with full provenance tracking. Pre-releases (beta) are for community testing and early adopters. **Always cite stable versions** in publications and verify original sources via provided DOIs/PMCIDs. This dataset has not yet undergone formal peer review—peer-review submission is planned for Q1 2026.
+This is an **actively curated research dataset** under continuous development. Stable release v2.2.2 is production-ready for research use with full provenance tracking. **Always cite stable versions** in publications and verify original sources via provided DOIs/PMCIDs. This dataset has not yet undergone formal peer review—peer-review submission is planned for Q1 2026.
+
+**Data Quality Tiers:**
+- **Tier 1 (Curated)**: 180 FP systems - modeling-ready, full metadata
+- **Tier 2 (Candidates)**: 13 systems - incomplete metadata, curation queue
+- **Tier 3 (Unknown/Staging)**: 103 systems - placeholder data, transparency only
+
+**Use Tier 1 (curated) for machine learning and quantitative analysis.**
 
 ---
 
@@ -48,15 +55,16 @@ Base de données structurée et vérifiée de tous les **systèmes quantiques bi
 
 **Pour chercheurs en quantum computing** : Filtrer par `Methode_lecture=ODMR` et `Classe=A ou B` pour qubits contrôlables stricts.
 
-**Version 2.0.0 — Stable Release** 🟢
-- ✅ **113 systems** (fluorescent proteins + quantum sensors)
-- ✅ Interactive Dashboard with real-time filtering (docs/index.html)
-- ✅ FAIR 12/12 compliance (Findable, Accessible, Interoperable, Reusable)
-- ✅ Full provenance tracking (Source_T2, Source_T1, Source_Contraste)
-- ✅ Quantified uncertainties (T2_us_err, T1_s_err, Contraste_err)
-- ✅ Automated linter integrated (`qubits_linter.py`)
-- 🚧 Zenodo archived (DOI minted, peer-review pending)
-- 📦 **Historical versions** (v1.2, v1.3) archived in `archive/` folder
+**Version 2.2.2 — Current Stable Release**
+- [OK] **180 curated FP systems** (data/processed/atlas_fp_optical_v2_2_curated.csv)
+- [OK] **34 qubits** (data/qubits/biological_qubits.csv) - DISTINCT dataset
+- [OK] Interactive Dashboard with real-time filtering (docs/index.html)
+- [OK] FAIR 12/12 compliance (Findable, Accessible, Interoperable, Reusable)
+- [OK] Full provenance tracking (Source_T2, Source_T1, Source_Contraste, DOI)
+- [OK] Quantified uncertainties (T2_us_err, T1_s_err, Contraste_err)
+- [OK] Reproducible analysis layer (analysis/*.py with JSON/Markdown outputs)
+- [OK] Cross-platform validation (Windows/Linux/Mac compatible)
+- [ARCHIVE] Historical versions (v1.2, v1.3, v2.0) in `archive/` folder
 
 ## 📊 Aperçu visuel
 
@@ -80,20 +88,33 @@ Ce projet recense les systèmes de **4 classes** :
 ```
 /biological-qubits-atlas
   ├─ data/
-  │   └─ processed/
-  │       └─ atlas_fp_optical_v2_0.csv  # ✨ v2.0 : Dataset 80 systèmes (FP + quantum sensors)
+  │   ├─ processed/
+  │   │   ├─ atlas_fp_optical_v2_2_curated.csv  # v2.2.2: 180 FP systems (curated, modeling-ready)
+  │   │   └─ atlas_fp_optical_v2_2.csv          # v2.2.2: 296 systems (mixed tiers)
+  │   └─ qubits/
+  │       ├─ biological_qubits.csv              # 34 quantum systems (DISTINCT from FP)
+  │       └─ README.md                          # Explains FP vs qubits distinction
+  ├─ analysis/
+  │   ├─ qubits_stats.py                        # Qubit statistics (functional)
+  │   ├─ class_comparisons.py                   # FP family comparisons (functional)
+  │   ├─ descriptive_stats.py                   # FP descriptive stats (functional)
+  │   └─ output/                                # Reproducible outputs (JSON/Markdown)
+  ├─ scripts/
+  │   ├─ qa/                                    # Quality assurance (validate_*.py)
+  │   ├─ etl/                                   # Extract, transform, load
+  │   └─ web/                                   # Dashboard generation
   ├─ docs/
-  │   └─ index.html                      # ✨ v2.0 : Dashboard interactif (filtres, tri, export)
-  ├─ archive/                            # 📦 Versions historiques (v1.2, v1.3)
-  ├─ qubits_linter.py                    # Linter automatique Python
-  ├─ QC_REPORT.md                        # Rapport de contrôle qualité
-  ├─ zenodo.json                         # Métadonnées Zenodo (FAIR)
-  ├─ LICENSE                             # CC BY 4.0 (données)
-  ├─ LICENSE.CODE                        # MIT (code)
-  ├─ CITATION.cff                        # Citation machine-readable
-  ├─ CHANGELOG_v2.0.md                   # ✨ v2.0 : Notes de version détaillées
-  ├─ README.md                           # Ce fichier
-  └─ figures/                            # Graphiques (T2 vs Temp, Timeline)
+  │   ├─ index.html                             # Interactive dashboard
+  │   ├─ quantum_mechanisms.md                  # Quantum physics documentation
+  │   ├─ photosynthesis.md, magnetoreception.md # Scientific docs
+  │   └─ nv_centers_qubits.md                   # NV centers reference
+  ├─ conversation-bus-module/                   # Multi-agent infrastructure
+  ├─ archive/                                   # Historical versions (v1.2, v1.3, v2.0)
+  ├─ LICENSE                                    # CC BY 4.0 (data)
+  ├─ LICENSE.CODE                               # MIT (code)
+  ├─ CITATION.cff                               # Citation machine-readable
+  ├─ README.md                                  # Main documentation
+  └─ DOCUMENTATION.md                           # This file (technical docs)
 ```
 
 ---

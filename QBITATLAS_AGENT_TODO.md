@@ -22,37 +22,51 @@
 - `analysis/output/class_comparisons_fp.json` (30 familles)
 - `analysis/output/descriptive_stats_fp.json` (180 systèmes)
 
-### 2. Fix tests and references
-- [ ] Mettre à jour tests pour v2.2.2 (pas v2.0 ou v1.3)
-- [ ] Vérifier `tests/test_dashboard_generation.py`
-- [ ] S'assurer références correctes aux fichiers actuels
+### 2. Fix tests and references [DONE]
+- [x] Mettre à jour tests pour v2.2.2 (pas v2.0 ou v1.3)
+- [x] Vérifier `tests/test_dashboard_generation.py` (v1_3 → v2_2_curated, index_v2 → docs/index.html)
+- [x] S'assurer références correctes aux fichiers actuels
+- [x] Mettre à jour `tests/test_v2_installation.py` (v2.0 → v2.2.2)
+- [x] Supprimer tous les emojis des tests
 
-### 3. Make qubit validation robust
-- [ ] Fix encodage UTF-8 dans `validate_qubits_data.py`
-- [ ] Tester sur Windows sans crash
-- [ ] Garder warnings pertinents
+### 3. Make qubit validation robust [DONE]
+- [x] Fix encodage UTF-8 dans `validate_qubits_data.py`
+- [x] Tester sur Windows sans crash
+- [x] Garder warnings pertinents
+- [x] Ajouter UTF-8 wrapper pour Windows
+- [x] Remplacer tous les emojis par [OK]/[ERROR]/[WARN]
 
-### 4. Repository hygiene
-- [ ] Déplacer docs bus vides vers `conversation-bus-module/docs/` ou supprimer
-- [ ] Clarifier ou supprimer références à `viz/` non-implémenté
-- [ ] Nettoyer structure racine
+### 4. Repository hygiene [DONE]
+- [x] Déplacer docs bus vides vers `conversation-bus-module/docs/`
+  * DEMARRAGE_RAPIDE_2_AGENTS.md
+  * SYSTEME_2_AGENTS_COMPLET.md  
+  * EXEMPLE_SESSION_COMPLETE.md
+  * COORDINATION_MANUELLE.md
+  * RATTRAPAGE_ERREURS.md
+  * README_WINDOWS.md
+  * GROK_DOCS_STATUS.md
+  * TEST_BUS_README.md (8 fichiers déplacés)
+- [x] Nettoyer structure racine
 
-### 5. Cross-link qubit documentation
-- [ ] Ajouter section "Datasets" claire dans README.md
-- [ ] Lister datasets FP + qubits
-- [ ] Pointer vers scripts QA
-- [ ] Expliquer validation
+### 5. Cross-link qubit documentation [DONE]
+- [x] Ajouter section "Datasets Overview" dans README.md
+- [x] Lister datasets FP + qubits avec distinction claire
+- [x] Pointer vers scripts QA (validate_atlas.py, validate_qubits_data.py)
+- [x] Expliquer validation et analysis scripts
+- [x] Ajouter section "Analysis & Reproducibility" avec exemples
 
 ---
 
 ## 📚 Phase 2 – Align docs & FAIR metadata
 
-### 6. Update DOCUMENTATION.md
-- [ ] Corriger version v2.2.2 partout (pas v2.0 avec 113 systèmes)
-- [ ] Comptes corrects (180 FP + 34 qubits)
-- [ ] Expliquer séparation FP vs qubits
-- [ ] Documenter tier system
-- [ ] Ajouter section Multi-agent & Bus
+### 6. Update DOCUMENTATION.md [DONE]
+- [x] Corriger version v2.2.2 partout (pas v2.0 avec 113 systèmes)
+- [x] Comptes corrects (180 FP + 34 qubits)
+- [x] Expliquer séparation FP vs qubits
+- [x] Documenter tier system
+- [x] Ajouter section Multi-agent & Bus (déjà présent)
+- [x] Mettre à jour badge systems (113 → 214 total, 180 FP curated, 34 qubits)
+- [x] Structure projet mise à jour avec analysis/ et data/qubits/
 
 ### 7. FAIR metadata completion
 - [ ] Compléter licenses manquantes dans atlas FP

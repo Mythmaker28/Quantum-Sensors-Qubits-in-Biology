@@ -20,10 +20,10 @@ class TestDashboardGeneration:
     
     def test_atlas_dataset_exists(self):
         """Vérifie dataset source existe"""
-        atlas = Path("data/processed/atlas_fp_optical_v1_3.csv")
+        atlas = Path("data/processed/atlas_fp_optical_v2_2_curated.csv")
         
         if not atlas.exists():
-            pytest.skip("Dataset v1.3 non trouvé (normal si test isolé)")
+            pytest.skip("Dataset v2.2.2 curated non trouvé (normal si test isolé)")
         
         assert atlas.stat().st_size > 1000, "Dataset trop petit"
     
@@ -50,7 +50,7 @@ class TestDashboardGeneration:
     
     def test_dashboard_html_exists(self):
         """Vérifie fichier HTML généré"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré (exécuter script d'abord)")
@@ -60,7 +60,7 @@ class TestDashboardGeneration:
     
     def test_dashboard_content_validity(self):
         """Vérifie contenu HTML valide"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré")
@@ -74,7 +74,7 @@ class TestDashboardGeneration:
     
     def test_dashboard_d3js_integration(self):
         """Vérifie intégration D3.js"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré")
@@ -90,7 +90,7 @@ class TestDashboardGeneration:
     
     def test_dashboard_visualizations(self):
         """Vérifie visualisations présentes"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré")
@@ -105,7 +105,7 @@ class TestDashboardGeneration:
     
     def test_dashboard_responsiveness(self):
         """Vérifie responsive design"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré")
@@ -118,7 +118,7 @@ class TestDashboardGeneration:
     
     def test_dashboard_stats_display(self):
         """Vérifie affichage statistiques"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré")
@@ -133,7 +133,7 @@ class TestDashboardPerformance:
     
     def test_html_size_reasonable(self):
         """Vérifie taille HTML raisonnable"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré")
@@ -145,7 +145,7 @@ class TestDashboardPerformance:
     
     def test_no_external_dependencies_except_d3(self):
         """Vérifie pas de dépendances externes sauf D3.js"""
-        dashboard = Path("index_v2_interactive.html")
+        dashboard = Path("docs/index.html")
         
         if not dashboard.exists():
             pytest.skip("Dashboard non généré")

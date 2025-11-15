@@ -1,0 +1,109 @@
+# Cursor Rules - QBitAtlas Project
+
+## Critical Rules
+
+### NO EMOJIS - EVER
+- NEVER use emojis in code, comments, or print statements
+- Replace with ASCII alternatives:
+  - ✅ → [OK] or SUCCESS
+  - ❌ → [ERROR] or FAILED
+  - ⚠️ → [WARN] or WARNING
+  - 📊 → [STATS] or [DATA]
+  - 🔍 → [SEARCH] or [FIND]
+  - 🚀 → [START] or [LAUNCH]
+- Reason: Windows PowerShell UnicodeEncodeError (cp1252 codec)
+
+### Python Output Encoding
+- For scripts with console output, add UTF-8 wrapper on Windows:
+  ```python
+  import sys
+  import io
+  if sys.platform == 'win32':
+      sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+  ```
+
+## Scientific Data Integrity
+
+### NEVER Fabricate Data
+- Do NOT invent experimental values (T2, T1, licenses, PMCIDs, pH, temperature)
+- Only derive from DOIs, metadata, or clearly mark as TODO
+- Preserve tier system and FAIR principles
+
+### Data Sources Priority
+1. DOI-referenced papers (highest trust)
+2. FPbase API / UniProt
+3. Zenodo metadata
+4. Clear TODO placeholders (if data unavailable)
+
+## Code Quality
+
+### Python Scripts
+- Always include docstrings (module, class, function)
+- Use type hints where beneficial
+- Handle encoding explicitly (UTF-8)
+- Graceful error handling with informative messages
+
+### Analysis Scripts
+- Generate reproducible outputs (JSON + Markdown)
+- Store in `analysis/output/`
+- Include metadata (timestamp, version, dataset path)
+- Never hard-code paths; use Path() from pathlib
+
+## Testing
+- Run scripts after modification
+- Test on Windows PowerShell (primary environment)
+- Verify outputs are generated correctly
+- Check linter errors when editing files
+
+## Documentation
+
+### Version Consistency
+- Current version: v2.2.2
+- 180 curated FP systems (data/processed/atlas_fp_optical_v2_2_curated.csv)
+- 34 qubits (data/qubits/biological_qubits.csv)
+- Remove all references to v2.0 (113 systems) or v1.3
+
+### Markdown
+- Use clear headings (##, ###)
+- Code blocks with language tags
+- Tables for comparisons
+- No emojis (use bold, italics, or [TAGS])
+
+## Git Workflow
+- Descriptive commit messages
+- Reference issue/eval when applicable (e.g., "STRICT_EVAL compliance")
+- Stage related changes together
+- Test before committing
+
+## Multi-Agent Bus
+- Write to ~/.conversation_bus/ (global, not local)
+- Use conversation-bus-module/ for bus infrastructure
+- Keep repo root clean (move bus-related docs to conversation-bus-module/docs/)
+
+## File Organization
+
+### analysis/
+- Functional scripts only (no empty files)
+- Output to analysis/output/
+- Naming: {dataset}_{analysis_type}.py (e.g., qubits_stats.py)
+
+### scripts/
+- qa/ - Quality assurance, validation
+- etl/ - Extract, transform, load
+- web/ - Dashboard generation
+
+### docs/
+- Scientific documentation (quantum_mechanisms.md, etc.)
+- User guides, specifications
+- NO bus-related docs here (use conversation-bus-module/docs/)
+
+## Performance
+- Prefer pandas for data analysis
+- Use Path() over string concatenation
+- Load CSV once, compute multiple stats
+- Cache expensive operations when possible
+
+---
+
+**Remember: No emojis, data integrity first, reproducibility always.**
+
