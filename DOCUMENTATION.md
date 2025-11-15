@@ -764,5 +764,133 @@ Ce projet s'appuie sur les travaux pionniers de :
 
 ---
 
+## 🔬 Documentation Scientifique Avancée (Nouveau - Nov 2025)
+
+### Mécanismes Quantiques
+
+**`docs/quantum_mechanisms.md`** (~500 lignes) - Documentation technique complète
+
+- Hamiltoniens de spin (NV, VSi, hyperpolarisation nucléaire)
+- Canaux de décohérence en environnement biologique
+- Critères DiVincenzo adaptés à la biologie
+- Analyse comparative par métriques quantiques (T₁, T₂, Contraste)
+- 4 classes de qubits : spin électronique (B), nucléaire (C), paires radicalaires (D), protéines ODMR (A)
+- Mécanismes de lecture : ODMR, NMR, ESR
+- 7 références clés académiques
+
+**Contenu clé :**
+- Qubits de spin électronique (NV, VSi, GeV, P1, SiV dans diamant/SiC)
+- Qubits nucléaires hyperpolarisés (^13C, ^15N - DNP)
+- Paires radicalaires (Cryptochrome, FMO complex)
+- Premier qubit protéique génétiquement encodable (GFP modifiée, 2025)
+
+### Centres NV dans le Diamant
+
+**`docs/nv_centers_qubits.md`** (~560 lignes) - Référence technique spécialisée
+
+- Structure atomique et Hamiltonien de spin (S=1)
+- Diamant bulk vs nanodiamants (50-100 nm)
+- Performances in cellulo/in vivo : T₂ ~ 0.8-1.5 µs
+- Applications : magnétométrie intracellulaire, thermométrie quantique
+- Techniques ODMR biologiques
+- Comparaison NV vs alternatives (VSi, GeV, P1, SiV)
+- 8 références clés (in cellulo, in vivo, applications)
+
+**Organismes démontrés :**
+- Cellules HeLa, HEK293, macrophages, neurones primaires (in cellulo)
+- C. elegans, souris (xénogreffes), cerveau souris (in vivo)
+
+### Photosynthèse Quantique
+
+**`docs/photosynthesis.md`** (~240 lignes)
+
+- FMO Complex (Fenna-Matthews-Olson) : cohérence ~660 fs
+- Photosystem II (PSII) : efficacité 95%, température ambiante
+- Photosystem I (PSI) : efficacité 100% (meilleure machine photochimique)
+- LH2 Complex : anneau 18 bactériochlorophylles
+- Superposition quantique et transfert d'énergie cohérent
+- Applications : photovoltaïque quantique, bio-calcul
+
+### Magnétoréception Quantique
+
+**`docs/magnetoreception.md`** (~345 lignes)
+
+- Cryptochrome : paires radicalaires pour boussole quantique
+- Mécanisme : conversion Singulet ↔ Triplet sensible au champ B
+- Cohérence : 1-100 µs, intrication des radicaux
+- Organismes : oiseaux migrateurs, drosophile, tortues marines
+- Preuves expérimentales : comportementales + moléculaires
+- Applications : capteurs magnétiques bio-inspirés, navigation sans GPS
+
+---
+
+## ⚛️ Dataset Qubits Quantiques (Distinct)
+
+### `data/qubits/biological_qubits.csv` - 34 systèmes
+
+**Type :** Vrais qubits quantiques et capteurs de spin
+
+**Distinction avec dataset principal :**
+
+| Aspect | biological_qubits.csv | atlas_fp_optical_v2_2_curated.csv |
+|--------|----------------------|-----------------------------------|
+| **Nombre** | 34 systèmes | 180 systèmes |
+| **Type** | Qubits quantiques | Protéines fluorescentes |
+| **Lecture** | ODMR, NMR, ESR | Fluorescence optique |
+| **Propriété clé** | T₂ (cohérence quantique) | Contraste (ΔF/F₀) |
+| **Applications** | Magnétométrie, thermométrie quantique | Imagerie neuronale, biocapteurs |
+
+**Classes de qubits :**
+- **Classe A** (3) : Protéines fluorescentes avec ODMR (génétiquement encodables)
+- **Classe B** (15) : Qubits de spin électronique (centres NV, VSi, GeV)
+- **Classe C** (12) : Hyperpolarisation nucléaire (^13C, ^15N - FDA approuvé)
+- **Classe D** (4) : Paires radicalaires (cryptochrome, photosynthèse)
+
+**Documentation :** `data/qubits/README.md`
+
+### Scripts d'Analyse Qubits
+
+**Validation :** `scripts/qa/validate_qubits_data.py`
+- Contraintes physiques (T₂ ≤ 2T₁)
+- Température cohérente avec contexte (in cellulo: 273-310 K)
+- Validation DOI, classes (A/B/C/D), ranges numériques
+
+**Statistiques :** `analysis/qubits_stats.py`
+- Statistiques descriptives par classe
+- Distribution T₂, T₁, contraste ODMR
+- Analyse température vs cohérence
+
+**Comparaisons :** `analysis/qubits_class_comparisons.py`
+- Comparaisons Classes A vs B vs C vs D
+- Performance in cellulo vs in vivo
+- Spin électronique vs nucléaire
+
+---
+
+## 🚌 Infrastructure Multi-Agents
+
+### Bus de Conversation
+
+**Architecture robuste pour migration worktree :** `conversation-bus-module/BUS_ARCHITECTURE.md`
+
+- Bus global dans `~/.conversation_bus/` (hors worktree Cursor)
+- Préservation historique lors des changements de worktree
+- Détection automatique nouveau worktree
+- Gestion conflits : file locks, zones de travail
+- Format JSON traçable et humainement lisible
+
+**Avantages :**
+- ✅ Continuation sans perte de contexte après migration worktree
+- ✅ Collaboration N agents simultanés
+- ✅ Traçabilité complète (messages séquentiels, timestamps, worktree_map)
+- ✅ Portable et indépendant du code source
+
+**Scripts :** 
+- `conversation-bus-module/conversation_bus.py` (module principal)
+- `conversation-bus-module/tests/` (18+ fichiers de test)
+- `conversation-bus-module/start_agent_*.py` (lanceurs agents)
+
+---
+
 **⚛️ Contribuez à l'Atlas des Qubits Biologiques — construisons ensemble la carte de la biophysique quantique !**
 
