@@ -1,19 +1,26 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
 Biological Qubits Atlas - Data Validation Script
 
 Validates biological_qubits.csv against physical constraints and schema rules.
 
-Author: SOFTWARE-ENGINEER-QA
+Author: SOFTWARE-ENGINEER-QA / CLAUDE-MAINTAINER
 Date: 2025-11-15
+Updated: 2025-11-15 (Windows encoding fix)
 """
 
 import csv
 import re
 import sys
+import io
 from pathlib import Path
 from typing import List, Dict, Tuple
 from dataclasses import dataclass
+
+# Force UTF-8 output on Windows
+if sys.platform == 'win32':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 
 @dataclass
@@ -227,18 +234,18 @@ class BiologicalQubitsValidator:
     def _print_report(self):
         """Print validation report"""
         print("\n" + "="*70)
-        print("📊 VALIDATION REPORT")
+        print("[VALIDATION REPORT]")
         print("="*70 + "\n")
         
         # Summary
         print(f"Total systems validated: {len(self.data)}")
-        print(f"❌ Errors (critical): {len(self.errors)}")
-        print(f"⚠️  Warnings: {len(self.warnings)}")
+        print(f"[ERROR] Errors (critical): {len(self.errors)}")
+        print(f"[WARN] Warnings: {len(self.warnings)}")
         
         # Errors
         if self.errors:
             print("\n" + "-"*70)
-            print("❌ ERRORS (Critical - must fix)")
+            print("[ERRORS] Critical - must fix")
             print("-"*70)
             for error in self.errors:
                 print(f"\nRow {error.row} | Column: {error.column}")
@@ -248,7 +255,7 @@ class BiologicalQubitsValidator:
         # Warnings
         if self.warnings:
             print("\n" + "-"*70)
-            print("⚠️  WARNINGS (Recommended fixes)")
+            print("[WARNINGS] Recommended fixes")
             print("-"*70)
             for warning in self.warnings[:20]:  # Limit to 20 warnings
                 print(f"\nRow {warning.row} | Column: {warning.column}")
@@ -261,11 +268,11 @@ class BiologicalQubitsValidator:
         # Final verdict
         print("\n" + "="*70)
         if len(self.errors) == 0:
-            print("✅ VALIDATION PASSED (no critical errors)")
+            print("[OK] VALIDATION PASSED (no critical errors)")
             if len(self.warnings) > 0:
-                print(f"⚠️  {len(self.warnings)} warnings should be reviewed")
+                print(f"[WARN] {len(self.warnings)} warnings should be reviewed")
         else:
-            print(f"❌ VALIDATION FAILED ({len(self.errors)} critical errors)")
+            print(f"[FAIL] VALIDATION FAILED ({len(self.errors)} critical errors)")
         print("="*70 + "\n")
         
         return len(self.errors) == 0
@@ -280,8 +287,8 @@ def main():
     )
     parser.add_argument(
         '--input',
-        default='biological_qubits.csv',
-        help='Path to CSV file (default: biological_qubits.csv)'
+        default='data/qubits/biological_qubits.csv',
+        help='Path to CSV file (default: data/qubits/biological_qubits.csv)'
     )
     
     args = parser.parse_args()

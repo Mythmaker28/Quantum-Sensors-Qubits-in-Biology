@@ -1,0 +1,14 @@
+{
+  "total_systems": 180,
+  "families": 30,
+  "biosensors": 141,
+  "tiers": {
+    "B": 165
+  },
+  "contrast": {
+    "mean": 9.265722222222221,
+    "median": 3.8,
+    "min": 0.78,
+    "max": 90.0
+  }
+}

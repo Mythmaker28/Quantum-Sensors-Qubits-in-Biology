@@ -1,0 +1,182 @@
+{
+  "Voltage": {
+    "count": 22,
+    "contrast_mean": 1.502727272727273,
+    "contrast_median": 1.4649999999999999,
+    "is_biosensor": 22
+  },
+  "GFP-like": {
+    "count": 8,
+    "contrast_mean": 1.34625,
+    "contrast_median": 1.35,
+    "is_biosensor": 0
+  },
+  "RFP": {
+    "count": 9,
+    "contrast_mean": 1.7144444444444442,
+    "contrast_median": 1.15,
+    "is_biosensor": 0
+  },
+  "CFP-like": {
+    "count": 6,
+    "contrast_mean": 1.075,
+    "contrast_median": 1.085,
+    "is_biosensor": 0
+  },
+  "cAMP": {
+    "count": 7,
+    "contrast_mean": 3.057142857142857,
+    "contrast_median": 2.8,
+    "is_biosensor": 7
+  },
+  "Calcium": {
+    "count": 40,
+    "contrast_mean": 30.095,
+    "contrast_median": 28.0,
+    "is_biosensor": 40
+  },
+  "Serotonin": {
+    "count": 2,
+    "contrast_mean": 3.85,
+    "contrast_median": 3.85,
+    "is_biosensor": 2
+  },
+  "Acetylcholine": {
+    "count": 5,
+    "contrast_mean": 4.42,
+    "contrast_median": 4.2,
+    "is_biosensor": 5
+  },
+  "Dopamine": {
+    "count": 13,
+    "contrast_mean": 4.107692307692307,
+    "contrast_median": 3.9,
+    "is_biosensor": 13
+  },
+  "Norepinephrine": {
+    "count": 3,
+    "contrast_mean": 3.0666666666666664,
+    "contrast_median": 3.0,
+    "is_biosensor": 3
+  },
+  "H2O2": {
+    "count": 6,
+    "contrast_mean": 7.183333333333334,
+    "contrast_median": 7.65,
+    "is_biosensor": 6
+  },
+  "ATP/ADP": {
+    "count": 2,
+    "contrast_mean": 2.45,
+    "contrast_median": 2.45,
+    "is_biosensor": 2
+  },
+  "Glutamate": {
+    "count": 10,
+    "contrast_mean": 7.51,
+    "contrast_median": 7.35,
+    "is_biosensor": 10
+  },
+  "pH": {
+    "count": 11,
+    "contrast_mean": 5.218181818181818,
+    "contrast_median": 5.1,
+    "is_biosensor": 11
+  },
+  "BFP-like": {
+    "count": 3,
+    "contrast_mean": 1.01,
+    "contrast_median": 0.98,
+    "is_biosensor": 0
+  },
+  "YFP": {
+    "count": 4,
+    "contrast_mean": 1.2125,
+    "contrast_median": 1.21,
+    "is_biosensor": 0
+  },
+  "Redox": {
+    "count": 2,
+    "contrast_mean": 5.9,
+    "contrast_median": 5.9,
+    "is_biosensor": 2
+  },
+  "GABA": {
+    "count": 4,
+    "contrast_mean": 4.55,
+    "contrast_median": 3.3,
+    "is_biosensor": 4
+  },
+  "ATP": {
+    "count": 3,
+    "contrast_mean": 3.966666666666667,
+    "contrast_median": 4.2,
+    "is_biosensor": 3
+  },
+  "NIR": {
+    "count": 4,
+    "contrast_mean": 0.9025,
+    "contrast_median": 0.9,
+    "is_biosensor": 0
+  },
+  "Far-red": {
+    "count": 3,
+    "contrast_mean": 1.05,
+    "contrast_median": 1.15,
+    "is_biosensor": 0
+  },
+  "Histamine": {
+    "count": 1,
+    "contrast_mean": 2.9,
+    "contrast_median": 2.9,
+    "is_biosensor": 1
+  },
+  "Opioid": {
+    "count": 1,
+    "contrast_mean": 2.6,
+    "contrast_median": 2.6,
+    "is_biosensor": 1
+  },
+  "cGMP": {
+    "count": 2,
+    "contrast_mean": 3.25,
+    "contrast_median": 3.25,
+    "is_biosensor": 2
+  },
+  "NADH/NAD+": {
+    "count": 3,
+    "contrast_mean": 3.6,
+    "contrast_median": 3.8,
+    "is_biosensor": 3
+  },
+  "NADPH/NADP+": {
+    "count": 1,
+    "contrast_mean": 3.5,
+    "contrast_median": 3.5,
+    "is_biosensor": 1
+  },
+  "Oxygen": {
+    "count": 1,
+    "contrast_mean": 4.2,
+    "contrast_median": 4.2,
+    "is_biosensor": 1
+  },
+  "Teal": {
+    "count": 1,
+    "contrast_mean": 1.2,
+    "contrast_median": 1.2,
+    "is_biosensor": 0
+  },
+  "Orange": {
+    "count": 1,
+    "contrast_mean": 1.08,
+    "contrast_median": 1.08,
+    "is_biosensor": 0
+  },
+  "Zinc": {
+    "count": 2,
+    "contrast_mean": 7.35,
+    "contrast_median": 7.35,
+    "is_biosensor": 2
+  }
+}

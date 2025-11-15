@@ -1,0 +1,26 @@
+{
+  "Class_A": {
+    "count": 3,
+    "T2_mean_us": 0.2783333333333334,
+    "T2_median_us": 0.02,
+    "primary_spin_type": "Electron"
+  },
+  "Class_B": {
+    "count": 15,
+    "T2_mean_us": 121.12539999999997,
+    "T2_median_us": 1.2,
+    "primary_spin_type": "Electron"
+  },
+  "Class_C": {
+    "count": 12,
+    "T2_mean_us": 56750.041666666664,
+    "T2_median_us": 7500.0,
+    "primary_spin_type": "Noyau; ^13C"
+  },
+  "Class_D": {
+    "count": 4,
+    "T2_mean_us": 0.0008666666666666666,
+    "T2_median_us": 0.001,
+    "primary_spin_type": "Electron; paires radicalaires"
+  }
+}
