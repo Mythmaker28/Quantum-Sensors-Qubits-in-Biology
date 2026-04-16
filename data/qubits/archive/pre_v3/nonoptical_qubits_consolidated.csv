@@ -1,0 +1,28 @@
+id,modality,system_name,system_type,host_material,T1_us,T2_us,temperature_K,method,source_doi,evidence,notes
+SPIN_NV_001,spin_qubit,NV- center in diamond (room temp),NV_center,diamond,6000000.0,1800.0,298.0,ODMR,10.1016/j.physrep.2013.02.001,A,"Negatively charged nitrogen-vacancy center, typical values at room temperature"
+SPIN_NV_002,spin_qubit,NV- center in diamond (77K),NV_center,diamond,,600000.0,,ODMR,10.1103/PhysRevB.79.075203,A,"NV- at liquid nitrogen temperature, extended coherence"
+SPIN_SIC_001,spin_qubit,VSi defect in 4H-SiC,SiC_defect,silicon_carbide,,160.0,,ODMR,10.1038/nmat4145,A,"Silicon vacancy in 4H polytype, room temperature ODMR control"
+SPIN_SIC_002,spin_qubit,Divacancy in 4H-SiC,SiC_defect,silicon_carbide,1000.0,,20.0,pulsed_ESR,10.1103/PhysRevLett.112.187601,A,Neutral divacancy defect at cryogenic temperature
+SPIN_SIV_001,spin_qubit,SiV- center in diamond,SiV_center,diamond,,13.0,,ODMR,10.1103/PhysRevLett.113.020503,A,"Negatively charged silicon vacancy, narrow optical linewidth"
+SPIN_P1_001,spin_qubit,P1 center in diamond,P1_center,diamond,,50.0,298.0,ODMR,10.1103/PhysRevB.79.075203,A,"Substitutional nitrogen (neutral), room temperature ESR"
+SPIN_FULLERENE_001,spin_qubit,N@C60 endohedral fullerene,endohedral_fullerene,fullerene_cage,600000.0,,230.0,pulsed_ESR,10.1038/ncomms10240,A,"Nitrogen atom trapped in C60, exceptionally long T1 for molecular system"
+SPIN_GEV_001,spin_qubit,GeV- center in diamond,GeV_center,diamond,100.0,,4.0,ODMR,10.1103/PhysRevLett.119.253601,A,"Germanium vacancy, narrow zero-phonon line at cryogenic temperature"
+SPIN_SNV_001,spin_qubit,SnV- center in diamond,SnV_center,diamond,,3.5,,ODMR,10.1103/PhysRevLett.113.020503,A,"Tin vacancy, shows Fourier-limited optical transitions"
+SPIN_SIC_003,spin_qubit,VSi defect 4H-SiC V1 site,SiC_defect,silicon_carbide,,120.0,,ODMR,10.1103/PhysRevB.92.115206,A,"Silicon vacancy V1 site in 4H polytype, complementary to V2"
+RP_CRY_001,radical_pair,Cryptochrome 4,magnetic_field_effect,Erithacus rubecula (European robin),,1.0,298.0,radical_pair_detection,10.1038/s41586-021-03618-9,A,Migratory bird cryptochrome showing magnetic sensitivity
+RP_CRY_002,radical_pair,Cryptochrome 1a,anisotropy_change,Drosophila melanogaster,,0.5,293.0,radical_pair_detection,10.1146/annurev-biophys-032116-094545,B,Drosophila cryptochrome radical pair mechanism review
+RP_PSII_001,radical_pair,Photosystem II D1-D2,singlet_yield,Spinacia oleracea (spinach),,0.1,298.0,radical_pair_detection,10.1073/pnas.1316207110,B,Radical pair in PSII reaction center
+RP_PHOTOLYASE_001,radical_pair,DNA photolyase FAD-TrpH,electron_transfer,Escherichia coli,,1.0,298.0,radical_pair_detection,10.1021/ja203749t,A,FAD-tryptophan radical pair in DNA repair enzyme
+RP_BChl_001,radical_pair,Bacterial reaction center,charge_separation,Rhodobacter sphaeroides,,0.01,293.0,radical_pair_detection,10.1073/pnas.0408746102,A,Primary charge separation P+HA- radical pair
+RP_MITOCHONDRIA_001,radical_pair,Mitochondrial Complex I flavin,electron_transfer,Bos taurus,,1.0,310.0,radical_pair_detection,10.1073/pnas.1220074110,B,Flavin semiquinone radical in respiratory complex I
+RP_6_4PHOTOLYASE_001,radical_pair,6-4 photolyase FAD,electron_transfer,Xenopus laevis,,0.5,298.0,radical_pair_detection,10.1038/nature11242,A,FAD radical in 6-4 photolesion repair enzyme
+RP_FMO_001,radical_pair,FMO complex,exciton_coherence,Chlorobium tepidum,,0.0006,77.0,radical_pair_detection,10.1038/nature05678,B,"Fenna-Matthews-Olson complex, 600fs coherence (debated, 2D spectroscopy)"
+RP_FERREDOXIN_001,radical_pair,Ferredoxin [4Fe-4S],electron_transfer,Spinacia oleracea,,1.0,298.0,radical_pair_detection,10.1016/0005-2728(96)00009-8,B,"Iron-sulfur cluster radical in spinach ferredoxin, EPR active"
+RP_LYSOZYME_001,radical_pair,Lysozyme Trp radical,electron_transfer,Hen egg white,,0.1,293.0,radical_pair_detection,10.1021/ja00283a062,B,"Tryptophan radical in lysozyme, transient EPR detection"
+NUC_13C_001,nuclear_spin,13C in diamond (coupled to NV),diamond_NV_coupled,diamond (coupled to NV),,1000000.0,298.0,dynamical_decoupling,10.1103/PhysRevLett.109.137602,A,"13C nuclear spin coupled to NV center, room temperature"
+NUC_31P_001,nuclear_spin,31P in silicon (donor),phosphorus_donor,silicon (donor),60000000.0,30000000.0,2.0,pulsed_NMR,10.1038/nature08812,A,"31P donor nuclear spin in silicon, long coherence times"
+NUC_14N_001,nuclear_spin,14N in diamond (NV center intrinsic),diamond_NV_coupled,diamond (NV center intrinsic),,3000.0,298.0,ODMR,10.1126/science.1231364,A,"14N nuclear spin intrinsic to NV center, room temperature control"
+NUC_29SI_001,nuclear_spin,29Si in silicon (bulk),silicon_bulk,silicon (bulk),,1800000000.0,4.2,NMR,10.1038/nature11449,A,29Si nuclear spins in isotopically purified silicon
+NUC_13C_PYRUVATE_001,nuclear_spin,13C in pyruvate (hyperpolarized),metabolic_tracer,pyruvate (hyperpolarized),60000000.0,,310.0,DNP_MRI,10.1073/pnas.0601319103,A,"Hyperpolarized 13C-pyruvate for in vivo metabolic imaging, FDA-approved"
+NUC_13C_LACTATE_001,nuclear_spin,13C in lactate (hyperpolarized),metabolic_tracer,lactate (hyperpolarized),45000000.0,,310.0,DNP_MRI,10.1002/mrm.25460,A,"Hyperpolarized 13C-lactate, downstream metabolite of pyruvate"
+NUC_15N_CHOLINE_001,nuclear_spin,15N in choline (hyperpolarized),membrane_tracer,choline (hyperpolarized),90000000.0,,298.0,DNP_MRI,10.1002/mrm.26854,A,Hyperpolarized 15N-choline for cell membrane imaging

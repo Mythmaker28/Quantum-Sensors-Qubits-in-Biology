@@ -14,6 +14,7 @@ Author: CLAUDE-MAINTAINER
 Date: 2025-11-15
 """
 
+import argparse
 import pandas as pd
 import numpy as np
 import json
@@ -21,7 +22,7 @@ from pathlib import Path
 from datetime import datetime
 
 
-def load_qubits_data(csv_path='data/qubits/biological_qubits.csv'):
+def load_qubits_data(csv_path='data/qubits/biological_qubits_v3.csv'):
     """Load qubits dataset"""
     try:
         df = pd.read_csv(csv_path)
@@ -157,12 +158,12 @@ def analyze_temperature_vs_t2(df):
     }
 
 
-def generate_markdown_report(stats, class_stats, temp_analysis, output_path):
+def generate_markdown_report(stats, class_stats, temp_analysis, output_path, dataset_path='data/qubits/biological_qubits_v3.csv'):
     """Generate Markdown summary report"""
-    report = f"""# 📊 Qubits Statistics Report
+    report = f"""# Qubits Statistics Report
 
 **Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}  
-**Dataset:** data/qubits/biological_qubits.csv
+**Dataset:** {dataset_path}
 
 ---
 
@@ -243,31 +244,33 @@ def generate_markdown_report(stats, class_stats, temp_analysis, output_path):
 
 def main():
     """Main execution"""
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--input', default='data/qubits/biological_qubits_v3.csv',
+                        help='Path to qubits CSV (default: v3)')
+    parser.add_argument('--version', default='3.0', help='Dataset version string')
+    args = parser.parse_args()
+
     print("="*70)
     print("[QUBITS STATISTICS ANALYSIS]")
     print("="*70 + "\n")
-    
-    # Load data
-    df = load_qubits_data()
+
+    df = load_qubits_data(args.input)
     if df is None:
         return 1
-    
-    # Create output directory
+
     output_dir = Path('analysis/output')
     output_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Compute statistics
+
     print("\n[Computing statistics...]")
     overall_stats = compute_overall_stats(df)
     class_stats = compute_class_stats(df)
     temp_analysis = analyze_temperature_vs_t2(df)
-    
-    # Combine results
+
     results = {
         'metadata': {
             'generated': datetime.now().isoformat(),
-            'dataset': 'data/qubits/biological_qubits.csv',
-            'version': '1.0'
+            'dataset': args.input,
+            'version': args.version,
         },
         'overall': overall_stats,
         'by_class': class_stats,
@@ -282,7 +285,7 @@ def main():
     
     # Save Markdown
     md_path = output_dir / 'qubits_stats.md'
-    generate_markdown_report(overall_stats, class_stats, temp_analysis, md_path)
+    generate_markdown_report(overall_stats, class_stats, temp_analysis, md_path, args.input)
     
     print("\n" + "="*70)
     print("[ANALYSIS COMPLETE]")

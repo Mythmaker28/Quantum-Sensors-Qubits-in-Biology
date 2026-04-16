@@ -1,0 +1,25 @@
+{
+  "dataset": "nonoptical_qubits_consolidated",
+  "version": "v1.0",
+  "generated_at": "2025-11-19T02:17:45.639949",
+  "total_systems": 27,
+  "by_modality": {
+    "spin_qubits": 10,
+    "radical_pairs": 10,
+    "nuclear_spins": 7
+  },
+  "by_evidence": {
+    "A": 21,
+    "B": 6
+  },
+  "temperature_range_K": {
+    "min": 2.0,
+    "max": 310.0
+  },
+  "coherence_times_us": {
+    "T1_min": 100.0,
+    "T1_max": 90000000.0,
+    "T2_min": 0.0006,
+    "T2_max": 1800000000.0
+  }
+}

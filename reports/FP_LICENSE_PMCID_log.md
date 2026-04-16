@@ -1,0 +1,130 @@
+# FP license + PMCID completion log
+
+Generated: 2026-04-16T23:25:30.454385+00:00
+
+Completed license: 63 rows
+Completed pmcid:   60 rows
+
+- [Archon1] pmcid <- PMC6613938
+- [GRAB-NE1m] pmcid <- PMC7891839
+- [HyPer7] license <- GREEN (via Unpaywall/repository)
+- [HyPer7] pmcid <- PMC6657292
+- [Pink Flamindo] pmcid <- PMC5668288
+- [QuasAr2] pmcid <- PMC4904846
+- [iAChSnFR] pmcid <- PMC6318033
+- [jRGECO1b] pmcid <- PMC4153392
+- [mCerulean3] license <- CC BY (via Unpaywall/publisher)
+- [mCerulean3] pmcid <- PMC3519846
+- [mEmerald] license <- CC BY (via Unpaywall/publisher)
+- [mEmerald] pmcid <- PMC3519846
+- [mTFP1] license <- CLOSED (via Unpaywall/publisher)
+- [mVenus] license <- CLOSED (via Unpaywall/publisher)
+- [mVenus] pmcid <- PMC4107390
+- [XCaMP-Gf] license <- GREEN (via Unpaywall/repository)
+- [XCaMP-Gf] pmcid <- PMC10876291
+- [dLight1.4] license <- GREEN (via Unpaywall/repository)
+- [dLight1.4] pmcid <- PMC10894646
+- [GRAB-5HT2.0] license <- BRONZE (via Unpaywall/publisher)
+- [GRAB-5HT2.0] pmcid <- PMC8722464
+- [miRFP670] license <- BRONZE (via Unpaywall/publisher)
+- [roGFP2-Orp1] license <- CC BY (via Unpaywall/publisher)
+- [roGFP2-Orp1] pmcid <- PMC5798290
+- [pHluorin2] license <- BRONZE (via Unpaywall/publisher)
+- [pHluorin2] pmcid <- PMC6731629
+- [cAMPr] license <- GREEN (via Unpaywall/repository)
+- [cAMPr] pmcid <- PMC8874027
+- [GCaMP6m] pmcid <- PMC3777791
+- [XCaMP-Gs] license <- GREEN (via Unpaywall/repository)
+- [XCaMP-Gs] pmcid <- PMC10876291
+- [XCaMP-R] license <- GREEN (via Unpaywall/repository)
+- [XCaMP-R] pmcid <- PMC10876291
+- [NES-jGCaMP8s] license <- BRONZE (via Unpaywall/publisher)
+- [VARNAM] license <- GREEN (via Unpaywall/repository)
+- [VARNAM] pmcid <- PMC10894646
+- [QuasAr3] license <- CC BY (via Unpaywall/publisher)
+- [QuasAr3] pmcid <- PMC9252579
+- [QuasAr-Orange] license <- CC BY (via Unpaywall/publisher)
+- [QuasAr-Orange] pmcid <- PMC9252579
+- [GRAB-DA3h] license <- GREEN (via Unpaywall/repository)
+- [GRAB-DA3h] pmcid <- PMC8639717
+- [GRAB-DA3m] license <- GREEN (via Unpaywall/repository)
+- [GRAB-DA3m] pmcid <- PMC8639717
+- [iAChSnFR3s] license <- CC BY (via Unpaywall/publisher)
+- [iAChSnFR3s] pmcid <- PMC8769651
+- [pHoran4] license <- CC BY (via Unpaywall/publisher)
+- [pHoran4] pmcid <- PMC7490346
+- [SypHer-dMito] license <- CC BY (via Unpaywall/publisher)
+- [SypHer-dMito] pmcid <- PMC8220403
+- [Red-Flamindo2] license <- CC BY (via Unpaywall/publisher)
+- [Red-Flamindo2] pmcid <- PMC5668288
+- [mRuby3] license <- CC BY NC ND (via Unpaywall/repository)
+- [jGCaMP8.3] license <- CC BY NC (via Unpaywall/repository)
+- [O-GECO1] license <- BRONZE (via Unpaywall/publisher)
+- [CatchER] license <- GREEN (via Unpaywall/repository)
+- [CatchER] pmcid <- PMC8628301
+- [CEPIA1er] license <- CC BY (via Unpaywall/publisher)
+- [CEPIA1er] pmcid <- PMC5171834
+- [CEPIA2mt] license <- CC BY (via Unpaywall/publisher)
+- [CEPIA2mt] pmcid <- PMC5171834
+- [GCaMP8.5] license <- BRONZE (via Unpaywall/publisher)
+- [XCaMP-Y] license <- GREEN (via Unpaywall/repository)
+- [XCaMP-Y] pmcid <- PMC10876291
+- [Butterfly1.2] license <- CC BY (via Unpaywall/publisher)
+- [Butterfly1.2] pmcid <- PMC3519846
+- [FlicR1] license <- CC BY (via Unpaywall/publisher)
+- [FlicR1] pmcid <- PMC5964169
+- [rGRAB-DA1h] license <- CC BY (via Unpaywall/publisher)
+- [rGRAB-DA1h] pmcid <- PMC8162421
+- [GRABNE1h] license <- GREEN (via Unpaywall/repository)
+- [GRABNE1h] pmcid <- PMC7891839
+- [GRAB-Histamine] license <- CLOSED (via Unpaywall/publisher)
+- [GRAB-Opioid] license <- CC BY (via Unpaywall/publisher)
+- [GRAB-Opioid] pmcid <- PMC9884278
+- [mOrange-pH] license <- CLOSED (via Unpaywall/publisher)
+- [pHTomato] license <- CC BY (via Unpaywall/publisher)
+- [pHTomato] pmcid <- PMC4937400
+- [pHGFP] license <- CC BY (via Unpaywall/publisher)
+- [pHGFP] pmcid <- PMC3904831
+- [cGreenDo1] license <- GREEN (via Unpaywall/repository)
+- [cGreenDo1] pmcid <- PMC2901231
+- [Red cGES] license <- CC BY NC ND (via Unpaywall/publisher)
+- [Red cGES] pmcid <- PMC5987258
+- [TEpacVV] license <- GREEN (via Unpaywall/repository)
+- [TEpacVV] pmcid <- PMC2574580
+- [SoNar] license <- BRONZE (via Unpaywall/publisher)
+- [SoNar] pmcid <- PMC5353360
+- [Frex] license <- BRONZE (via Unpaywall/publisher)
+- [Frex] pmcid <- PMC3218343
+- [HyPer-2] license <- CC BY (via Unpaywall/publisher)
+- [HyPer-2] pmcid <- PMC3093886
+- [roGFP-iL] license <- CC BY (via Unpaywall/publisher)
+- [roGFP-iL] pmcid <- PMC5519372
+- [OxyVFP] license <- GREEN (via Unpaywall/repository)
+- [OxyVFP] pmcid <- PMC7388658
+- [mGreenLantern] license <- OTHER OA (via Unpaywall/publisher)
+- [mGreenLantern] pmcid <- PMC9262593
+- [mNeonBlue] license <- CC BY (via Unpaywall/publisher)
+- [mNeonBlue] pmcid <- PMC9944321
+- [TagBFP] license <- CC BY (via Unpaywall/publisher)
+- [TagBFP] pmcid <- PMC2894075
+- [mApple] license <- CLOSED (via Unpaywall/publisher)
+- [mApple] pmcid <- PMC4107390
+- [mCherry2] license <- GREEN (via Unpaywall/repository)
+- [mPlum] license <- CLOSED (via Unpaywall/publisher)
+- [TagCFP] license <- CLOSED (via Unpaywall/publisher)
+- [mTurquoise] license <- CLOSED (via Unpaywall/publisher)
+- [mTurquoise] pmcid <- PMC2909773
+- [mAmetrine] license <- CLOSED (via Unpaywall/publisher)
+- [mAmetrine] pmcid <- PMC4107390
+- [Citrine] license <- CLOSED (via Unpaywall/publisher)
+- [Venus] license <- CLOSED (via Unpaywall/publisher)
+- [YPet] license <- BRONZE (via Unpaywall/publisher)
+- [YPet] pmcid <- PMC514378
+- [iZnGreen] license <- CC BY (via Unpaywall/publisher)
+- [GZnP1] license <- CLOSED (via Unpaywall/publisher)
+- [XCaMP-B] pmcid <- PMC10876291
+- [CaBLAM] pmcid <- PMC12791009
+- [iGluSnFR4f] pmcid <- PMC12904790
+- [iGluSnFR4s] pmcid <- PMC12904790
+- [ASAP4.4-Kv] pmcid <- PMC12246236
+- [PinkyCaMP] pmcid <- PMC11702558

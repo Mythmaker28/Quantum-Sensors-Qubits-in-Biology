@@ -145,10 +145,12 @@ class BiologicalQubitsValidator:
                     )
             
             # Check for unrealistic temperatures
-            if temp < 4 or temp > 400:
+            # Lower bound relaxed to 1 K to accommodate cryogenic benchmarks
+            # (e.g. 31P donors in Si at 2 K, SiV/GeV centers at 4 K)
+            if temp < 1 or temp > 400:
                 self._add_error(
                     row_num, 'Temperature_K', temp_str,
-                    f"Temperature {temp} K is unrealistic (expected 4-400 K)",
+                    f"Temperature {temp} K is unrealistic (expected 1-400 K)",
                     'error'
                 )
         except ValueError:
@@ -160,11 +162,11 @@ class BiologicalQubitsValidator:
         classe = row.get('Classe', '').strip()
         hyperpol = row.get('Hyperpol_flag', '').strip()
         
-        # Valid classes
-        if classe and classe not in ['A', 'B', 'C', 'D']:
+        # Valid classes (A_prime added in v3.0 for FP-qubits with direct ODMR)
+        if classe and classe not in ['A', 'A_prime', 'B', 'C', 'D']:
             self._add_error(
                 row_num, 'Classe', classe,
-                f"Invalid class '{classe}'. Expected A, B, C, or D",
+                f"Invalid class '{classe}'. Expected A, A_prime, B, C, or D",
                 'error'
             )
         
@@ -199,7 +201,7 @@ class BiologicalQubitsValidator:
             ('Contraste_%', 0, 100, "Contrast should be between 0 and 100%"),
             ('B0_Tesla', 0, 20, "Magnetic field should be between 0 and 20 T"),
             ('Qualite', 1, 3, "Quality should be 1, 2, or 3"),
-            ('Annee', 1990, 2026, "Year should be between 1990 and 2026"),
+            ('Annee', 1980, 2027, "Year should be between 1980 and 2027"),
         ]
         
         for field, min_val, max_val, msg in checks:

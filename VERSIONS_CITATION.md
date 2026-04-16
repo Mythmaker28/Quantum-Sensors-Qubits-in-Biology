@@ -1,46 +1,44 @@
-# 📚 Version Citation Guide — Biological Qubits Atlas
+# Version Citation Guide - Biological Qubits Atlas
 
-**Last updated:** 2025-11-10  
-**Purpose:** Clear instructions for citing the correct atlas version based on your use case
+**Last updated:** 2026-04-17  
+**Purpose:** instructions for citing the correct atlas version based on your use case.
 
 ---
 
-## Quick Decision Tree
+## Quick decision tree
 
 ```
-┌─────────────────────────────────────────────────┐
-│ Which version should I cite?                    │
-└──────────────────┬──────────────────────────────┘
-                   │
-        ┌──────────┴──────────┐
-        │                     │
-    Are you citing           Are you using
-    the Frontiers            atlas data for
-    manuscript?              research/ML?
-        │                     │
-        ↓                     ↓
-    v1.2.1                v2.2.2
-    (FROZEN)              (ACTIVE)
-    66 systems            180 curated
-    DOI: 10.5281/         DOI: TBD
-    zenodo.17420604       (pending)
+                Which version should I cite?
+                            |
+      +---------------------+---------------------+
+      |                                           |
+      v                                           v
+  Citing the Frontiers                  Using atlas data for
+  manuscript?                           research, ML, or clinical
+                                        context in 2026+?
+      |                                           |
+      v                                           v
+   v1.2.1                                     v3.0.0
+   (FROZEN)                                   (ACTIVE)
+   66 systems                                 82 qubits + 187 FP biosensors
+   DOI: 10.5281/zenodo.17420604               DOI: pending (Zenodo v3.0)
 ```
 
 ---
 
-## Version Comparison Table
+## Version comparison
 
-| Aspect | **v1.2.1** (Frontiers) | **v2.2.2** (Development/ML) |
-|--------|------------------------|----------------------------|
-| **Status** | 🔒 **FROZEN** (immutable) | ✨ **ACTIVE** (current stable) |
-| **Systems Count** | 66 | 180 curated + 13 candidates + 103 unknown |
-| **Purpose** | Manuscript publication | Research, ML training, downstream analysis |
-| **Data Quality** | Curated, peer-review ready | Tier 1 (180 curated), Tier 2 (13 incomplete), Tier 3 (103 placeholders) |
-| **DOI** | ✅ [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) | ⏳ **TBD** (Zenodo deposit in progress) |
-| **Main File** | `atlas_fp_optical_v1_2_1.csv` | `atlas_fp_optical_v2_2_curated.csv` |
-| **Release Date** | 2025-10-23 | 2025-10-26 (tag exists, release pending) |
-| **Use Case** | Cite in publications referencing Frontiers manuscript | ML pipelines, computational design, research analysis |
-| **Modifications** | ❌ Never modified (reproducibility) | ✅ May receive patches (v2.2.3, etc.) |
+| Aspect | v1.2.1 (Frontiers) | v2.2.2 (deprecated) | v3.0.0 (current) |
+|--------|--------------------|---------------------|------------------|
+| Status | Frozen (immutable) | Deprecated | Active |
+| Qubits | 66 legacy systems (mixed atlas) | 34 qubits | 82 qubits (classes A, A', B, C, D) |
+| FP biosensors | n/a | 180 curated + 13 + 103 | 187 curated |
+| Purpose | Manuscript publication | Superseded reference | Research, ML, clinical context |
+| DOI | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) | n/a | Pending Zenodo deposit |
+| Main files | `atlas_fp_optical_v1_2_1.csv` | `atlas_fp_optical_v2_2_curated.csv` | `biological_qubits_v3.csv`, `atlas_fp_optical_v3_curated.csv` |
+| Release date | 2025-10-23 | 2025-10-26 | 2026-04-17 |
+| Use case | Cite Frontiers manuscript | Historical compatibility | ML pipelines, computational design, clinical context |
+| Modifications | Never modified (reproducibility) | n/a | May receive patches (v3.0.1, etc.) |
 
 ---
 
@@ -90,173 +88,135 @@ wget https://zenodo.org/record/17420604/files/atlas_fp_optical_v1_2_1.csv
 
 ---
 
-## When to Use v2.2.2 (Development/ML)
+## When to use v3.0.0 (current)
 
-### ✅ Use v2.2.2 if:
+### Use v3.0.0 if:
 
-- You are **training machine learning models** (180 curated systems, no placeholders)
-- You need the **latest curated data** for research
-- You are **building downstream tools** (e.g., fp-qubit-design)
-- You want **balanced dataset** for computational analysis
-- You need **100% optical coverage** (all systems have spectral data or measured contrast)
+- You need the **consolidated qubits dataset** (82 systems, class A, A', B, C, D).
+- You train ML models or run analyses that benefit from the **2024-2026 literature** refresh.
+- You need class A' (direct ODMR FP-qubits) or the new non-optical benchmarks (SiC alkene, hBN, FND, first-in-human HP 13C,15N2-urea).
+- You build downstream tools such as `fp-qubit-design` or `ising-life-lab`.
 
-### ⚠️ Important Notes for v2.2.2
+### Important notes for v3.0.0
 
-1. **Use Tier 1 (curated) ONLY** for modeling/ML:
-   - File: `data/processed/atlas_fp_optical_v2_2_curated.csv` (180 systems)
-   - **Avoid** `atlas_fp_optical_v2_2.csv` (mixed, includes 103 placeholders)
+1. Canonical qubits file: `data/qubits/biological_qubits_v3.csv` (follows `data/qubits/SCHEMA_v3.md`).
+2. Canonical FP atlas: `data/optical/curated/atlas_fp_optical_v3_curated.csv` (mirrored in `data/processed/`).
+3. DOI pending: Zenodo deposit in preparation. Update your citation once the DOI is minted.
+4. Legacy CSVs remain accessible under `data/qubits/archive/pre_v3/` for reproducibility.
 
-2. **DOI is TBD:** Zenodo deposit in progress. Check [README.md](README.md) for updates.
-
-3. **May receive patches:** v2.2.3, v2.2.4 for bug fixes (backward compatible)
-
-### 📥 How to Download v2.2.2
+### How to download v3.0.0
 
 ```bash
-# Recommended: Curated tier ONLY (modeling-ready)
-wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_2_curated.csv
-
-# Full dataset (all tiers mixed, audit purposes only)
-wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_2.csv
-
-# Verify integrity (SHA256 checksums)
-wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/SHA256SUMS_v2_2_2.txt
-sha256sum -c SHA256SUMS_v2_2_2.txt
+wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/qubits/biological_qubits_v3.csv
+wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/optical/curated/atlas_fp_optical_v3_curated.csv
 ```
 
-### 📝 How to Cite v2.2.2
+### How to cite v3.0.0
 
-**BibTeX (temporary, until DOI minted):**
+BibTeX (pre-DOI):
 
 ```bibtex
-@dataset{biological_qubits_atlas_v2_2_2,
-  title  = {Biological Qubits \& Quantum Sensors Atlas v2.2.2 (Curated)},
-  author = {Lepesteur, Tommy},
-  year   = {2025},
-  month  = {October},
-  version = {2.2.2-curated},
-  systems = {180},
-  note   = {DOI pending Zenodo deposit},
-  url    = {https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology}
+@dataset{biological_qubits_atlas_v3_0,
+  title   = {Biological Qubits and Quantum Sensors Atlas v3.0.0},
+  author  = {Lepesteur, Tommy},
+  year    = {2026},
+  month   = {April},
+  version = {3.0.0},
+  systems = {82 qubits + 187 FP biosensors},
+  note    = {DOI pending Zenodo deposit},
+  url     = {https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology}
 }
 ```
 
-**Plain text:**
+Plain text:
 
-> Lepesteur, T. (2025). *Biological Qubits & Quantum Sensors Atlas v2.2.2 (Curated)* [Data set]. GitHub. https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology (DOI: TBD)
+> Lepesteur, T. (2026). *Biological Qubits and Quantum Sensors Atlas v3.0.0* [Data set]. GitHub. https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology (DOI: pending).
 
-**In-text:**
+In-text:
 
-> We used the Biological Qubits Atlas v2.2.2 curated tier (Lepesteur, 2025), comprising 180 modeling-ready systems with full provenance tracking.
+> We used the Biological Qubits Atlas v3.0.0 (Lepesteur, 2026), containing 82 qubits (classes A, A', B, C, D) and 187 curated FP biosensors with full provenance tracking.
 
-**⚠️ Once DOI is minted:** Update citations to include `doi = {10.5281/zenodo.XXXXXXX}` and replace GitHub URL with Zenodo permanent link.
-
----
-
-## Data Tier Explanation (v2.2.2)
-
-Understanding the tier system is critical for proper usage:
-
-| Tier | Count | Description | File | Modeling Use |
-|------|-------|-------------|------|--------------|
-| **Tier 1: CURATED** | 180 | Known family + DOI + (spectra OR contrast>1.5) | `atlas_fp_optical_v2_2_curated.csv` | ✅ **RECOMMENDED** |
-| **Tier 2: CANDIDATES** | 13 | Real systems, incomplete metadata | `atlas_fp_optical_v2_2_candidates.csv` | ⚠️ Manual curation queue |
-| **Tier 3: UNKNOWN** | 103 | Auto-harvested, placeholder data | `atlas_fp_optical_v2_2_unknown.csv` | ❌ **AVOID** (transparency only) |
-
-**For downstream analysis (ML, computational design):** Use **Tier 1 exclusively** to avoid placeholder noise.
-
-**Full documentation:** See [docs/DATA_TIERS.md](docs/DATA_TIERS.md)
+Once the DOI is minted, update the citations with `doi = {10.5281/zenodo.XXXXXXX}` and the permanent Zenodo URL.
 
 ---
 
-## Migration Guide: v1.2.1 → v2.2.2
+## Data tier explanation (v3.0.0, FP atlas)
 
-### Schema Compatibility
+| Tier | Count | Description | File | Modelling use |
+|------|-------|-------------|------|---------------|
+| Tier 1 (curated) | 187 | Known family + DOI + (spectra OR contrast > 1.5) | `atlas_fp_optical_v3_curated.csv` | Recommended |
+| Tier 2 (candidates) | ~13 | Real systems, incomplete metadata | `atlas_fp_optical_v2_2_candidates.csv` | Manual curation queue |
+| Tier 3 (unknown) | ~103 | Auto-harvested, placeholder data | `atlas_fp_optical_v2_2_unknown.csv` | Transparency only |
 
-✅ **Backward compatible:** All columns from v1.2.1 present in v2.2.2  
-✅ **No breaking changes:** Code written for v1.2.1 will work with v2.2.2  
-⚠️ **New columns added:** v2.2.2 includes additional metadata (e.g., `quality_tier`, `curator`)
+For downstream analysis (ML, computational design), use Tier 1 exclusively to avoid placeholder noise.
 
-### What Changed
+Full documentation: see [docs/DATA_TIERS.md](docs/DATA_TIERS.md).
 
-**Data expansion:**
-- v1.2.1: 66 systems (all curated)
-- v2.2.2: 180 curated + 116 staging (13 candidates + 103 unknown)
+---
 
-**New features:**
-- Explicit tier classification (Tier 1/2/3)
-- 100% optical coverage (excitation/emission or contrast>1.5 for all Tier 1)
-- Balanced family distribution (30 families represented)
-- Enhanced provenance tracking (curator field)
+## Migration guide: v2.2.2 -> v3.0.0
 
-**Migration steps:**
+Breaking changes:
+- Canonical qubit CSV moves from `data/qubits/biological_qubits.csv` to `data/qubits/biological_qubits_v3.csv`.
+- `Classe` now accepts `A_prime` in addition to `A`, `B`, `C`, `D`.
+- FP atlas exposes new required-ish columns (`year`, `name_normalized`) already present since v2.2.
+- Temperature validator range widened to 1-400 K (previously 4-400 K) to accommodate 2 K silicon donor benchmarks.
+
+Migration steps:
 
 ```python
-# Old code (v1.2.1)
 import pandas as pd
-df = pd.read_csv('atlas_fp_optical_v1_2_1.csv')
 
-# New code (v2.2.2, Tier 1 only)
-df = pd.read_csv('atlas_fp_optical_v2_2_curated.csv')
-
-# No other changes needed (schema compatible)
+qubits = pd.read_csv('data/qubits/biological_qubits_v3.csv')
+fp = pd.read_csv('data/optical/curated/atlas_fp_optical_v3_curated.csv')
 ```
 
----
-
-## Dual Versioning Policy
-
-### Why Two Versions Coexist?
-
-**Scientific reproducibility** requires frozen datasets for publications, while **active research** benefits from growing databases.
-
-**Solution:** Maintain both simultaneously:
-- **v1.2.1:** Frozen forever (cited in Frontiers manuscript)
-- **v2.2.2:** Active development (receives updates, patches)
-
-**Precedent:** Similar to TCGA (cancer genomics), UniProt (protein database), PDB (protein structures) — all maintain versioned releases alongside "current" data.
+Full change log: [`RELEASE_NOTES_v3.0.md`](RELEASE_NOTES_v3.0.md).
 
 ---
 
-## Zenodo DOI Status
+## Dual versioning policy
 
-### v1.2.1 (AVAILABLE)
+Scientific reproducibility requires frozen datasets for publications, while active research benefits from growing databases. The atlas therefore maintains three coexisting references:
+- v1.2.1 - frozen, cited in the Frontiers manuscript.
+- v2.2.2 - deprecated but preserved under `archive/` and in the git history.
+- v3.0.0 - active, growing, citable (pending DOI).
 
-✅ **DOI:** [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604)  
-✅ **Status:** Archived, permanent, citable  
-✅ **Files:** `atlas_fp_optical_v1_2_1.csv`, metadata, checksums
-
-### v2.2.2 (IN PROGRESS)
-
-⏳ **DOI:** TBD (Zenodo deposit being prepared)  
-⏳ **Expected:** Q4 2025  
-⏳ **Files planned:** `atlas_fp_optical_v2_2_curated.csv`, all tiers, training metadata, checksums
-
-**Track progress:** Check [README.md](README.md) "Citation" section for updates.
+Precedent: similar to TCGA (cancer genomics), UniProt (proteins), PDB (structures), all of which maintain versioned releases alongside "current" data.
 
 ---
 
-## Frequently Asked Questions
+## Zenodo DOI status
 
-### Q: Can I use v2.2.2 without a DOI?
+### v1.2.1 (available)
+- DOI: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604).
+- Status: archived, permanent, citable.
+- Files: `atlas_fp_optical_v1_2_1.csv`, metadata, checksums.
 
-**A:** Yes. GitHub releases are stable and citable. The DOI will be added retroactively once Zenodo deposit is complete. Your citation will remain valid (just update DOI field later).
+### v3.0.0 (in progress)
+- DOI: pending Zenodo deposit.
+- Files planned: `biological_qubits_v3.csv`, `atlas_fp_optical_v3_curated.csv`, schema, release notes, metadata, SHA256 checksums.
 
-### Q: Should I use the "mixed" file (296 systems) for ML?
+Track progress: see the citation section of [`README.md`](README.md).
 
-**A:** **No.** Use `atlas_fp_optical_v2_2_curated.csv` (180 systems) only. The mixed file includes 103 placeholder systems (family="Unknown", contrast=1.0) that introduce noise.
+---
 
-### Q: What if I need more than 180 systems?
+## Frequently asked questions
 
-**A:** Consider Tier 2 candidates (13 systems) — real systems with incomplete metadata. Requires manual verification. See [docs/STAGING_GUIDE.md](docs/STAGING_GUIDE.md).
+Q: Can I use v3.0.0 without a DOI?  
+A: Yes. GitHub releases are stable and citable; the DOI will be appended retroactively once the Zenodo deposit is complete.
 
-### Q: Will v1.2.1 ever be updated?
+Q: Should I use the "mixed" FP file?  
+A: No. Use `atlas_fp_optical_v3_curated.csv` (Tier 1) for modelling. The mixed file still contains placeholder rows.
 
-**A:** **No.** v1.2.1 is frozen for reproducibility. Critical errors (if discovered) would trigger v1.2.2, but v1.2.1 file itself never changes.
+Q: What if I need more than 82 qubits?  
+A: Class-specific staging pulls are welcome via pull request. See `scripts/etl/enrich_v3_literature_2024_2026.py` for the pattern.
 
-### Q: How often does v2.2.2 update?
+Q: Will v1.2.1 ever be updated?  
+A: No. v1.2.1 is frozen for reproducibility. Critical errors would trigger v1.2.2; the v1.2.1 file itself is immutable.
 
-**A:** Minor patches (v2.2.3, v2.2.4) for bug fixes as needed. Next minor version (v2.3.0) planned for 300+ systems. See [VERSIONING_ROADMAP.md](VERSIONING_ROADMAP.md).
+Q: How often will v3.0.x update?  
+A: Minor patches (v3.0.1, v3.0.2) for bug fixes and late literature additions as needed. See [VERSIONING_ROADMAP.md](VERSIONING_ROADMAP.md).
 
 ---
 

@@ -3,11 +3,16 @@
 Regenerate Dashboard with Latest Data
 ======================================
 
-Génère docs/index.html avec les données du CSV à jour.
+Generates docs/index.html for the v3.0 release.
+- Primary visualisation: FP optical biosensor atlas (187 rows).
+- Secondary stats: biological qubits v3.0 dataset (82 rows, including 8 rows
+  of the new class A' with direct ODMR readout).
 
 Usage:
     python scripts/web/regenerate_dashboard.py
 """
+
+from __future__ import annotations
 
 import json
 from pathlib import Path
@@ -15,32 +20,59 @@ import pandas as pd
 import numpy as np
 
 
-def generate_dashboard(csv_path: Path, output_path: Path):
-    """
-    Génère le fichier HTML du dashboard avec les données du CSV.
-    """
-    print(f"[*] Chargement des donnees depuis: {csv_path}")
+DASHBOARD_VERSION = "v3.0.0"
+
+
+def _qubit_summary(qubits_csv: Path) -> dict:
+    """Return headline counts from the canonical qubits v3 CSV."""
+    if not qubits_csv.exists():
+        return {
+            "total": None,
+            "a_prime": None,
+            "a": None,
+            "b": None,
+            "c": None,
+            "d": None,
+            "file": str(qubits_csv),
+        }
+    qdf = pd.read_csv(qubits_csv)
+    classes = qdf["Classe"].astype(str).str.strip() if "Classe" in qdf.columns else pd.Series([], dtype=str)
+    return {
+        "total": int(len(qdf)),
+        "a_prime": int((classes == "A_prime").sum()),
+        "a": int((classes == "A").sum()),
+        "b": int((classes == "B").sum()),
+        "c": int((classes == "C").sum()),
+        "d": int((classes == "D").sum()),
+        "file": str(qubits_csv),
+    }
+
+
+def generate_dashboard(csv_path: Path, output_path: Path, qubits_csv: Path) -> None:
+    """Generate the HTML dashboard with v3.0 data."""
+    print(f"[*] Loading FP atlas from: {csv_path}")
     df = pd.read_csv(csv_path)
-    
-    # Ajouter jitter pour visualisation
+
+    qubit_stats = _qubit_summary(qubits_csv)
+    print(f"[*] Qubit summary: {qubit_stats}")
+
     np.random.seed(42)
     df['temperature_K_jitter'] = df['temperature_K'] + np.random.uniform(-1, 1, len(df))
     df['contrast_normalized_jitter'] = df['contrast_normalized'] + np.random.uniform(-0.2, 0.2, len(df))
-    
-    # Calculer tailles de points proportionnelles au contraste
+
     df['point_size'] = 3 + (df['contrast_normalized'] / df['contrast_normalized'].max()) * 4
     df['opacity'] = 0.6
-    
-    # Convertir en JSON (gérer les NaN)
+
     data_dict = df.replace({np.nan: None}).to_dict('records')
     data_json = json.dumps(data_dict, indent=0)
+    qubit_stats_json = json.dumps(qubit_stats)
     
     html_content = f"""<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biological Qubits Atlas — Dashboard v2.2.2</title>
+    <title>Biological Qubits Atlas — Dashboard {DASHBOARD_VERSION}</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
@@ -163,32 +195,84 @@ def generate_dashboard(csv_path: Path, output_path: Path):
         .legend-item.dimmed {{
             opacity: 0.3;
         }}
+
+        .banner {{
+            background: linear-gradient(90deg, #4c51bf, #667eea);
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }}
+
+        .banner strong {{ color: #ffe27a; }}
+
+        .banner a {{ color: #ffe27a; text-decoration: underline; }}
+
+        .qubit-breakdown {{
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1rem auto 2rem;
+        }}
+
+        .qubit-pill {{
+            background: white;
+            border-radius: 999px;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            color: #2d3748;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }}
+
+        .qubit-pill strong {{ color: #4c51bf; }}
+
+        .a-prime {{
+            background: linear-gradient(90deg, #ffd36b, #ff9966);
+            color: #2d3748;
+            font-weight: bold;
+        }}
     </style>
 </head>
 <body>
     <header>
         <h1>⚛️ Biological Qubits Atlas</h1>
-        <p class="subtitle">Interactive Dashboard v2.2.2 — {len(df)} Systems</p>
+        <p class="subtitle">Interactive Dashboard {DASHBOARD_VERSION} — FP atlas: {len(df)} biosensors · Qubits atlas: {qubit_stats.get("total") or "n/a"} systems</p>
     </header>
-    
+
+    <div class="banner">
+        <strong>v3.0.0 · new class A'</strong> — {qubit_stats.get("a_prime") or 0} FP-qubits with direct ODMR readout (EYFP, MagLOV, mScarlet+FMN, DmCry, ...). See <a href="https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/blob/main/docs/FP_QUBITS_ODMR_2025.md">docs/FP_QUBITS_ODMR_2025.md</a>.
+    </div>
+
     <div class="container">
+        <div class="qubit-breakdown">
+            <div class="qubit-pill a-prime">Class A' · {qubit_stats.get("a_prime") or 0}</div>
+            <div class="qubit-pill">Class A · <strong>{qubit_stats.get("a") or 0}</strong></div>
+            <div class="qubit-pill">Class B · <strong>{qubit_stats.get("b") or 0}</strong></div>
+            <div class="qubit-pill">Class C · <strong>{qubit_stats.get("c") or 0}</strong></div>
+            <div class="qubit-pill">Class D · <strong>{qubit_stats.get("d") or 0}</strong></div>
+            <div class="qubit-pill">Total qubits · <strong>{qubit_stats.get("total") or 0}</strong></div>
+        </div>
+
         <div class="stats-grid" id="stats"></div>
-        
+
         <div class="viz-container">
-            <h2 class="viz-title">📊 Contrast vs Temperature</h2>
+            <h2 class="viz-title">📊 Contrast vs Temperature (FP atlas)</h2>
             <div id="scatter-contrast-temp"></div>
         </div>
-        
+
         <div class="viz-container">
-            <h2 class="viz-title">🧬 Systems by Family</h2>
+            <h2 class="viz-title">🧬 FP Systems by Family</h2>
             <div id="bar-families"></div>
         </div>
     </div>
-    
+
     <div class="tooltip" id="tooltip"></div>
-    
+
     <script>
         const rawData = {data_json};
+        const qubitStats = {qubit_stats_json};
         const data = rawData.filter(d => d.temperature_K && d.contrast_normalized);
         
         // === STATISTIQUES ===
@@ -388,14 +472,19 @@ def generate_dashboard(csv_path: Path, output_path: Path):
 def main():
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent.parent
-    csv_path = repo_root / "data" / "processed" / "atlas_fp_optical_v2_2.csv"
+    csv_path = repo_root / "data" / "processed" / "atlas_fp_optical_v3_curated.csv"
+    qubits_csv = repo_root / "data" / "qubits" / "biological_qubits_v3.csv"
     output_path = repo_root / "docs" / "index.html"
-    
+
     if not csv_path.exists():
-        print(f"[ERREUR] CSV introuvable: {csv_path}")
-        return 1
-    
-    generate_dashboard(csv_path, output_path)
+        fallback = repo_root / "data" / "optical" / "curated" / "atlas_fp_optical_v3_curated.csv"
+        if fallback.exists():
+            csv_path = fallback
+        else:
+            print(f"[ERREUR] FP atlas CSV introuvable: {csv_path}")
+            return 1
+
+    generate_dashboard(csv_path, output_path, qubits_csv)
     return 0
 
 

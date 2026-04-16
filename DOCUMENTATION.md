@@ -1,63 +1,64 @@
-# ⚛️ Biological Qubits Catalog
+# Biological Qubits Catalog - Technical Documentation
 
-🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
+[Live dashboard](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
 
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
-[![CI - Lint & QC](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml/badge.svg)](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/ci.yml)
-[![GitHub Pages](https://github.com/Mythmaker28/biological-qubits-atlas/actions/workflows/pages.yml/badge.svg)](https://mythmaker28.github.io/biological-qubits-atlas/)
+[![DOI (v1.2.1 frozen)](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-![Systems](https://img.shields.io/badge/Systems-214-blue?style=for-the-badge) ![Curated](https://img.shields.io/badge/Curated-180_FP-green?style=for-the-badge) ![Qubits](https://img.shields.io/badge/Qubits-34-purple?style=for-the-badge)
+![Qubits v3.0](https://img.shields.io/badge/Qubits-82-purple?style=for-the-badge)
+![FP biosensors v3.0](https://img.shields.io/badge/FP%20biosensors-187-green?style=for-the-badge)
+![Classes](https://img.shields.io/badge/Classes-A%2FA%27%2FB%2FC%2FD-blueviolet?style=for-the-badge)
 
 ---
 
-## Status & Versioning
+## Status and versioning
 
-- **Current Stable**: v2.2.2 — **180 curated FP systems + 34 qubits**, Interactive Dashboard, FAIR 12/12
-- **Peer-review**: Planned (Data Descriptor submission Q1 2026)
-- **DOI**: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) (v1.2.1 archived)
-- **Live Dashboard**: [https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
+- Current stable: **v3.0.0** - 82 qubits (classes A, A', B, C, D) + 187 curated FP biosensors.
+- Peer-review: planned (Data Descriptor submission Q1 2026).
+- DOI: pending Zenodo deposit for v3.0; `10.5281/zenodo.17420604` preserved for v1.2.1 (Frontiers).
+- Live dashboard: [https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/).
 
-### Research Dataset Disclaimer
+### Research dataset disclaimer
 
-This is an **actively curated research dataset** under continuous development. Stable release v2.2.2 is production-ready for research use with full provenance tracking. **Always cite stable versions** in publications and verify original sources via provided DOIs/PMCIDs. This dataset has not yet undergone formal peer review—peer-review submission is planned for Q1 2026.
+This is an actively curated research dataset under continuous development. Release v3.0.0 is production-ready for research use with full provenance tracking. Always cite stable versions in publications and verify original sources via provided DOIs and PMCIDs. This dataset has not yet undergone formal peer review; a Data Descriptor submission is planned for Q1 2026.
 
-**Data Quality Tiers:**
-- **Tier 1 (Curated)**: 180 FP systems - modeling-ready, full metadata
-- **Tier 2 (Candidates)**: 13 systems - incomplete metadata, curation queue
-- **Tier 3 (Unknown/Staging)**: 103 systems - placeholder data, transparency only
+### Data quality tiers (FP atlas)
 
-**Use Tier 1 (curated) for machine learning and quantitative analysis.**
+- Tier 1 (curated): 187 systems, modelling-ready, full metadata.
+- Tier 2 (candidates): ~13 systems, incomplete metadata, curation queue.
+- Tier 3 (unknown/staging): ~103 systems, placeholder data, kept for transparency.
+
+Use Tier 1 for machine learning and quantitative analysis.
 
 ---
 
-## 🎯 Vue d'ensemble
+## Vue d'ensemble
 
-Base de données structurée et vérifiée de tous les **systèmes quantiques biologiques ou bio-compatibles** utilisés comme qubits ou capteurs quantiques dans un contexte vivant (in vitro, in cellulo, in vivo).
+Base de données structurée et vérifiée de tous les systèmes quantiques biologiques ou bio-compatibles utilisés comme qubits ou capteurs quantiques dans un contexte vivant (in vitro, in cellulo, in vivo).
 
-### 📌 Clarification : "Qubits" vs "Sondes Quantiques"
+### Clarification - "Qubits" vs "Sondes quantiques"
 
-**Terminologie inclusive** : Cet atlas utilise "qubits biologiques" au sens large pour inclure :
+Terminologie inclusive : cet atlas utilise "qubits biologiques" au sens large pour inclure :
 
-1. **Qubits contrôlables** : Systèmes avec manipulation cohérente d'états quantiques
-   - Exemples : NV (ODMR), SiC (ODMR), Protéine ODMR
-   - Critère : Lecture de spin + manipulation micro-ondes démontrée
+1. Qubits contrôlables : systèmes avec manipulation cohérente d'états quantiques.
+   - Exemples : NV (ODMR), SiC (ODMR), EYFP / MagLOV / mScarlet-FMN (classe A', 2025), protéines ODMR-relay.
+   - Critère : lecture de spin + manipulation micro-ondes démontrée.
 
-2. **Sondes quantiques passives** : Systèmes exploitant propriétés quantiques pour mesure
-   - Exemples : NMR hyperpolarisé (spins nucléaires ¹³C), TEMPO (EPR imaging)
-   - Critère : Cohérence quantique mesurée, application biologique
+2. Sondes quantiques passives : systèmes exploitant des propriétés quantiques pour la mesure.
+   - Exemples : NMR hyperpolarisée (spins nucléaires 13C, 129Xe), TEMPO (imagerie EPR).
+   - Critère : cohérence quantique mesurée, application biologique.
 
-3. **Candidats mécanistiques** : Hypothèses de fonctions quantiques biologiques
-   - Exemples : Cryptochrome (magnétoréception), FMO (cohérence photosynthèse)
-   - Critère : Effet quantique proposé, débat scientifique actif
+3. Candidats mécanistiques : hypothèses de fonctions quantiques biologiques.
+   - Exemples : cryptochrome (magnétoréception), FMO (cohérence photosynthétique).
+   - Critère : effet quantique proposé, débat scientifique actif.
 
-**Justification** : La frontière "qubit pur" vs "sonde quantique" est floue en contexte biologique. L'atlas documente TOUS les systèmes quantiques pertinents pour applications biologiques.
+Justification : la frontière "qubit pur" vs "sonde quantique" est floue en contexte biologique. L'atlas documente tous les systèmes quantiques pertinents pour applications biologiques.
 
-**Pour chercheurs en quantum computing** : Filtrer par `Methode_lecture=ODMR` et `Classe=A ou B` pour qubits contrôlables stricts.
+Pour chercheurs en quantum computing : filtrer par `Methode_lecture=ODMR` et `Classe IN (A, A_prime, B)` pour les qubits contrôlables stricts.
 
-**Version 2.2.2 — Current Stable Release**
-- [OK] **180 curated FP systems** (data/processed/atlas_fp_optical_v2_2_curated.csv)
-- [OK] **34 qubits** (data/qubits/biological_qubits.csv) - DISTINCT dataset
+### Version 3.0.0 - Current stable release
+- `data/qubits/biological_qubits_v3.csv` : 82 qubits (single source of truth, schéma `SCHEMA_v3.md`).
+- `data/optical/curated/atlas_fp_optical_v3_curated.csv` : 187 biosensors FP (Tier 1).
+- Legacy CSVs (pre-v3) archivés sous `data/qubits/archive/pre_v3/` et `data/optical/curated/atlas_fp_optical_v2_2_curated.csv`.
 - [OK] Interactive Dashboard with real-time filtering (docs/index.html)
 - [OK] FAIR 12/12 compliance (Findable, Accessible, Interoperable, Reusable)
 - [OK] Full provenance tracking (Source_T2, Source_T1, Source_Contraste, DOI)

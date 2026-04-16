@@ -1,44 +1,55 @@
-# ⚛️ Biological Qubits & Quantum Sensors Atlas
+# Biological Qubits and Quantum Sensors Atlas
 
-[![Version (latest)](https://img.shields.io/badge/version-v2.2.2-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
+[![Version (latest)](https://img.shields.io/badge/version-v3.0.0-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
 [![Stable (Frontiers)](https://img.shields.io/badge/frontiers-v1.2.1-lightgrey.svg)](#citation)
-[![Systems (v2.2.2)](https://img.shields.io/badge/curated-180-green.svg)](#whats-inside)
-[![Total](https://img.shields.io/badge/total-296-lightgrey.svg)](#data-tiers)
-[![Systems (v1.2.1)](https://img.shields.io/badge/systems-66-lightgrey.svg)](#citation)
+[![Qubits (v3.0)](https://img.shields.io/badge/qubits-82-green.svg)](#whats-inside)
+[![FP biosensors (v3.0)](https://img.shields.io/badge/FP%20biosensors-187-green.svg)](#whats-inside)
+[![Classes](https://img.shields.io/badge/classes-A%2FA%E2%80%B2%2FB%2FC%2FD-blueviolet.svg)](#data-tiers)
 
-🔗 [**Live Dashboard**](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | 📊 [Data](data/processed/atlas_fp_optical_v2_2_curated.csv) | 📖 [Full Documentation](DOCUMENTATION.md) | 🔀 [Version switch: v1.2.1 | v2.0 | v2.2.2](#citation)
+[Live Dashboard](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | [Qubits dataset](data/qubits/biological_qubits_v3.csv) | [FP atlas](data/optical/curated/atlas_fp_optical_v3_curated.csv) | [Full documentation](DOCUMENTATION.md) | [Release notes](RELEASE_NOTES_v3.0.md)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
+[![DOI (v1.2.1, frozen)](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![FAIR](https://img.shields.io/badge/FAIR-12/12-green?style=for-the-badge)](metadata/fair/)
 
-> **Curated database of quantum systems (qubits, sensors, fluorescent proteins) used in biological contexts** — from ODMR-controlled NV centers to calcium biosensors with quantum optical properties.
+> Curated databases of quantum systems and fluorescent biosensors used in biological contexts — from directly ODMR-controlled fluorescent proteins (Class A') and NV/SiC colour centres to calcium biosensors and radical-pair magnetoreceptors.
 
 ---
 
-## 🏆 Post-Nobel 2025 Context
+## What is new in v3.0
 
-The **2025 Nobel Prize in Physics** recognized pioneering work on Josephson junctions and superconducting quantum circuits—demonstrating that macroscopic engineered systems can exhibit genuine quantum behavior. This atlas extends that exploration to an orthogonal frontier: **room-temperature quantum platforms** compatible with biological contexts.
+- **New class `A'` (A-prime): FP-qubits with direct ODMR readout.** Following the 2025 benchmarks on EYFP (Nature, DOI `10.1038/s41586-025-09417-w`) and on engineered LOV/flavin radical pairs (Nature, DOI `10.1038/s41586-025-09971-3`), fluorescent proteins are no longer only optical reporters: they have become a distinct class of biologically compatible spin qubits.
+- **Single source of truth for qubits.** All legacy CSVs (v1.2.1, v2.x, v2.3 drafts) have been consolidated into `data/qubits/biological_qubits_v3.csv` (82 systems, 35 columns). Earlier files are archived under `data/qubits/archive/pre_v3/`.
+- **2024 to 2026 literature refresh.** Classes B, C, D were updated with recent non-optical qubits: SiC alkene-functionalised defects, BNNT spin probes, SnV and GeV nanodiamonds, in vivo FND thermometry, hBN colour centres; first-in-human HP 13C, 15N2-urea MRI and additional FDA 129Xe trials; plus Flavin-Guanine SCRP (Comm Chem 2025) and room-temperature FMO coherence (Sci Adv 2025).
+- **FP atlas extended.** Seven 2024 to 2026 biosensors added (CaBLAM, HaloDA1.0, iGluSnFR4f/s, ASAP4.4-Kv, PinkyCaMP, OCaMP). Missing licences and PMCIDs were enriched via Unpaywall and NCBI ID Converter.
 
-**Why this matters:** While superconducting qubits operate at ~10-50 mK, the systems catalogued here function at **270-320 K** (ambient/physiological temperatures), enabling in vivo sensing, biological imaging, and exploration of quantum effects in living systems.
-
-📖 **[Read full context: Post-Josephson platforms and biological quantum systems →](docs/NOBEL2025_CONTEXT.md)**
+See [`RELEASE_NOTES_v3.0.md`](RELEASE_NOTES_v3.0.md) for the full changelog.
 
 ---
 
-## 🚀 Quick Start
+## Post-Nobel 2025 Context
+
+The 2025 Nobel Prize in Physics recognised pioneering work on Josephson junctions and superconducting quantum circuits, demonstrating that macroscopic engineered systems can exhibit genuine quantum behaviour. This atlas extends that exploration to an orthogonal frontier: room-temperature quantum platforms compatible with biological contexts.
+
+Superconducting qubits operate at around 10 to 50 mK; the systems catalogued here function at 77 to 320 K (cryogenic benchmarks to physiological temperatures), enabling in vivo sensing, biological imaging and exploration of quantum effects in living systems.
+
+[Read full context: post-Josephson platforms and biological quantum systems](docs/NOBEL2025_CONTEXT.md)
+
+---
+
+## Quick Start
 
 ### Explore the Data
 
 ```bash
-# Interactive Dashboard (recommended)
+# Interactive dashboard
 https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/
 
-# Download Dataset (RECOMMENDED: curated tier for modeling)
-wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_2_curated.csv
+# Qubits dataset (v3.0, 82 systems)
+wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/qubits/biological_qubits_v3.csv
 
-# Or full mixed dataset (includes 103 auto-harvested with placeholder data)
-wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/processed/atlas_fp_optical_v2_2.csv
+# FP biosensors atlas (v3.0 curated, 187 systems)
+wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/optical/curated/atlas_fp_optical_v3_curated.csv
 ```
 
 ### Use in Your Research
@@ -46,145 +57,147 @@ wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/d
 ```python
 import pandas as pd
 
-# RECOMMENDED: Load curated tier (modeling-ready, 180 systems)
-df = pd.read_csv('atlas_fp_optical_v2_2_curated.csv')
+qubits = pd.read_csv('biological_qubits_v3.csv')
+print(qubits['Classe'].value_counts())
+# B: 31, C: 23, D: 17, A_prime: 8, A: 3
 
-# Filter controlled qubits (ODMR)
-qubits = df[df['method'].str.contains('ODMR', na=False)]
+# Directly ODMR-controllable FP-qubits (new A' class)
+fp_qubits = qubits[qubits['Classe'] == 'A_prime']
 
-# Get calcium sensors
-ca_sensors = df[df['family'] == 'Calcium']
-
-# NOTE: Avoid 'atlas_fp_optical_v2_2.csv' (mixed, includes 103 placeholder systems)
+fp = pd.read_csv('atlas_fp_optical_v3_curated.csv')
+calcium = fp[fp['family'] == 'Calcium']
 ```
 
 ---
 
-## 🔀 Which Version Should I Use?
+## Which Version Should I Use?
 
-This atlas maintains **dual versioning** for different use cases:
+This atlas maintains semantic versioning with long-lived references for legacy citations:
 
-| Version | Status | Systems | Use Case | DOI |
-|---------|--------|---------|----------|-----|
-| **v2.2.2** | ✨ **Active** | 180 curated | Research, ML, development | ⏳ TBD (pending Zenodo) |
-| **v1.2.1** | 🔒 **Frozen** | 66 | Frontiers manuscript citation | ✅ [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) |
+| Version | Status | Qubits | FP biosensors | Use case | DOI |
+|---------|--------|--------|---------------|----------|-----|
+| **v3.0.0** | Active | 82 | 187 curated | Research, ML, clinical context, 2024-2026 literature | Pending (Zenodo) |
+| v2.2.2 | Deprecated | 34 | 180 curated | Superseded by v3.0.0 | n/a |
+| v1.2.1 | Frozen | 66 | n/a | Frontiers manuscript citation | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) |
 
-**Quick guide:**
-- 👉 **For ML/modeling:** Use v2.2.2 curated (`atlas_fp_optical_v2_2_curated.csv`)
-- 👉 **For citing Frontiers manuscript:** Use v1.2.1
-- 👉 **Confused?** See detailed guide: [VERSIONS_CITATION.md](VERSIONS_CITATION.md)
+Quick guide:
+- For current research and ML: use v3.0.0 (qubits + FP atlases).
+- For citing the Frontiers manuscript: use v1.2.1.
+- For a full discussion of versions and citation formats, see [`VERSIONS_CITATION.md`](VERSIONS_CITATION.md).
 
 ---
 
-## 📊 What's Inside
+## What's Inside
 
-**Tier 1: Curated Core (Modeling-Ready)**
+### Qubits dataset (v3.0, 82 systems)
+
+| Class | Count | Description |
+|-------|-------|-------------|
+| **A'** | 8 | FP-qubits with direct ODMR readout (EYFP, MagLOV/MagLOV2, mScarlet-FMN, DmCry...) |
+| A | 3 | Original FP "quantum-like" biosensors |
+| B | 31 | Solid-state colour centres in biocompatible hosts (NV, SiC, SnV, GeV, FND, hBN, BNNT...) |
+| C | 23 | Hyperpolarised nuclei (13C, 15N, 129Xe, 31P) including first-in-human clinical trials |
+| D | 17 | Radical-pair mechanisms and biological spin systems (cryptochromes, photolyases, FMO, ferredoxin...) |
+
+### Fluorescent biosensors atlas (v3.0 curated, 187 systems)
 
 | Category | Count | Examples |
 |----------|-------|----------|
-| **Calcium Sensors** | 40 | GCaMP8, XCaMP, jRGECO |
-| **Voltage Sensors** | 22 | ASAP3, ASAP4e, ArcLight |
-| **Dopamine Sensors** | 13 | dLight, GRAB-DA |
-| **Glutamate Sensors** | 10 | iGluSnFR, SF-iGluSnFR |
-| **Other Biosensors** | 95 | pH, ATP, GABA, cAMP, H2O2, etc. |
-
-**180 curated systems** (Tier 1: modeling-ready) with full provenance  
-+13 candidates (Tier 2: incomplete) + 103 staging/unknown (Tier 3: placeholder data)
-
-See [Data Tiers](#data-tiers) for classification details.
+| Calcium sensors | 45+ | GCaMP8, XCaMP, jRGECO, CaBLAM, OCaMP, PinkyCaMP |
+| Voltage sensors | 24+ | ASAP3, ASAP4e, ASAP4.4-Kv, Archon1, ArcLight |
+| Glutamate sensors | 12+ | iGluSnFR3, iGluSnFR4f/s |
+| Dopamine sensors | 14+ | dLight, GRAB-DA, HaloDA1.0 (far-red chemigenetic) |
+| Other biosensors | 90+ | pH, ATP, GABA, cAMP, H2O2, serotonin, acetylcholine, bioluminescent |
 
 ---
 
-## 🎯 Key Features
+## Key Features
 
-✅ **FAIR 12/12** — Findable, Accessible, Interoperable, Reusable  
-✅ **Full Provenance** — Source DOI for every curated data point  
-✅ **Interactive Dashboard** — D3.js visualizations with real-time filtering  
-✅ **Normalized Data** — Temperature (K), contrast (fold-change), coherence (µs)  
-✅ **Quality Tiers** — Explicit separation: curated vs candidates vs placeholder  
-✅ **Bio-Relevant** — Systems tested at 270-320K
+- FAIR 12/12 compliance (Findable, Accessible, Interoperable, Reusable).
+- Full provenance: DOI (and PMCID when available) for every curated data point.
+- Interactive dashboard with real-time filtering.
+- Normalised units: temperature in K, contrast in fold-change or deltaF/F, coherence in microseconds.
+- Explicit quality tiers: curated (Tier 1), candidates (Tier 2), placeholder (Tier 3).
+- Bio-relevant range: systems benchmarked from cryogenic controls (77-80 K) to physiological temperatures (295-320 K).
 
 ---
 
 ## Datasets Overview
 
-This project contains **TWO DISTINCT datasets** for different applications:
+This project contains two complementary datasets:
 
-### 1. Fluorescent Protein Atlas (Primary - 180 systems)
+### 1. Fluorescent-biosensor atlas (v3.0 curated, 187 systems)
 
-**File:** `data/processed/atlas_fp_optical_v2_2_curated.csv`
+File: `data/optical/curated/atlas_fp_optical_v3_curated.csv` (mirrored in `data/processed/atlas_fp_optical_v3_curated.csv`).
 
-**Content:**
-- 180 curated fluorescent protein systems (Tier 1 - modeling-ready)
-- Families: Calcium (40), Voltage (22), Dopamine (13), Glutamate (10), Others (95)
-- Properties: contrast (deltaF/F0), spectra, temperature, pH
-- Applications: Neural imaging, biosensing, cell biology
+Content:
+- 187 curated biosensors (Tier 1, modelling-ready).
+- Families: calcium, voltage, glutamate, dopamine, pH, ATP, GABA, cAMP, H2O2, serotonin, acetylcholine, bioluminescent, etc.
+- Properties: contrast (deltaF/F0 or fold-change), excitation/emission spectra, temperature, pH.
+- Applications: neural imaging, biosensing, cell biology.
 
-**Quality tiers:**
-- Tier 1 (180): Curated, full metadata [RECOMMENDED FOR ML/MODELING]
-- Tier 2 (13): Candidates, incomplete (`data/staging/atlas_fp_optical_v2_2_candidates.csv`)
-- Tier 3 (103): Staging, placeholder data (`data/staging/atlas_fp_optical_v2_2_unknown.csv`)
+New in v3.0: CaBLAM, HaloDA1.0, iGluSnFR4f, iGluSnFR4s, ASAP4.4-Kv, PinkyCaMP, OCaMP.
 
-**Validation:** `python scripts/validate_atlas.py curated`
+Validation: `python scripts/qa/analyze_atlas_quality.py --input data/optical/curated/atlas_fp_optical_v3_curated.csv`.
 
 ---
 
-### 2. Biological Qubits Dataset (Secondary - 34 systems)
+### 2. Biological qubits dataset (v3.0, 82 systems, single source of truth)
 
-**File:** `data/qubits/biological_qubits.csv`
+File: `data/qubits/biological_qubits_v3.csv`.
 
-**Content:**
-- 34 quantum systems (spin qubits, NMR, radical pairs)
-- Classes: A (3 - FP with ODMR), B (15 - NV/VSi), C (12 - hyperpolarized nuclei), D (4 - radical pairs)
-- Properties: T2 (coherence), T1 (relaxation), ODMR contrast
-- Applications: Quantum magnetometry, thermometry, quantum sensing
+Content:
+- 82 quantum systems with 35-column canonical schema (see [`data/qubits/SCHEMA_v3.md`](data/qubits/SCHEMA_v3.md)).
+- Classes: A' (8, new), A (3), B (31), C (23), D (17).
+- Properties: T2, T1, ODMR contrast, detection methods, hosts, references.
+- Applications: quantum magnetometry, thermometry, clinical MRI, magnetoreception.
 
-**Reading methods:** ODMR, NMR, ESR
+Reading methods: direct ODMR, ODMR-relay, pulsed ESR, pulsed NMR, DNP-MRI, radical-pair fluorescence.
 
-**Validation:** `python scripts/qa/validate_qubits_data.py`
+Validation: `python scripts/qa/validate_qubits_data.py --input data/qubits/biological_qubits_v3.csv`.
 
-**Documentation:** See `data/qubits/README.md` for detailed distinction
+Documentation: see [`data/qubits/README.md`](data/qubits/README.md) and [`data/qubits/SCHEMA_v3.md`](data/qubits/SCHEMA_v3.md).
 
 ---
 
-## Analysis & Reproducibility
-
-All datasets have **functional analysis scripts** generating reproducible outputs:
+## Analysis and Reproducibility
 
 ```bash
-# FP Atlas statistics
-python analysis/descriptive_stats.py       # Overall stats (180 systems)
-python analysis/class_comparisons.py       # Family comparisons (30 families)
+python analysis/descriptive_stats.py
+python analysis/class_comparisons.py
 
-# Qubits statistics  
-python analysis/qubits_stats.py            # Qubit stats (34 systems)
-python analysis/qubits_class_comparisons.py # Class A/B/C/D comparisons
+python analysis/qubits_stats.py --input data/qubits/biological_qubits_v3.csv --version 3.0
+python analysis/qubits_class_comparisons.py
 
-# Outputs generated in analysis/output/ (JSON + Markdown)
+# Outputs land in analysis/output/ (JSON + Markdown)
 ```
 
 ---
 
-## Repository Structure
+## Repository Structure (v3.0)
 
 ```
 Quantum-Sensors-Qubits-in-Biology
-├── data/processed/
-│   ├── atlas_fp_optical_v2_2.csv         # Full FP dataset (296 systems, mixed)
-│   └── atlas_fp_optical_v2_2_curated.csv # [RECOMMENDED] Tier 1 (180 systems)
-├── data/qubits/
-│   ├── biological_qubits.csv             # Qubits dataset (34 systems)
-│   └── README.md                         # Explains FP vs qubits distinction
-├── data/staging/
-│   ├── atlas_fp_optical_v2_2_candidates.csv  # Tier 2 (13 systems)
-│   ├── atlas_fp_optical_v2_2_unknown.csv     # Tier 3 (103 systems)
-│   └── candidates_needing_curation.csv       # API harvest queue (844)
+├── data/
+│   ├── qubits/
+│   │   ├── biological_qubits_v3.csv          # Canonical qubits dataset (82)
+│   │   ├── SCHEMA_v3.md                      # 35-column schema
+│   │   ├── README.md                         # Dataset overview
+│   │   └── archive/pre_v3/                   # Legacy CSVs (v1.2.1 to v2.3)
+│   ├── optical/
+│   │   └── curated/atlas_fp_optical_v3_curated.csv   # FP atlas (187)
+│   ├── processed/
+│   │   └── atlas_fp_optical_v3_curated.csv   # Mirror for tooling compatibility
+│   └── staging/                              # Tier 2/3 candidates
 ├── analysis/
-│   ├── qubits_stats.py, class_comparisons.py # Functional analysis scripts
-│   └── output/                               # Reproducible JSON/Markdown outputs
+│   ├── qubits_stats.py
+│   ├── qubits_class_comparisons.py
+│   ├── descriptive_stats.py
+│   └── output/                               # JSON + Markdown
 ├── docs/
 │   ├── index.html                            # Interactive dashboard
-│   ├── ATLAS_SPEC.md                         # Dataset schema & criteria
+│   ├── FP_QUBITS_ODMR_2025.md                # Class A' explanatory note (v3.0)
+│   ├── ATLAS_SPEC.md                         # Dataset schema and criteria
 │   ├── DATA_TIERS.md                         # Quality tier definitions
 │   ├── quantum_mechanisms.md                 # Quantum physics documentation
 │   └── [photosynthesis, magnetoreception, nv_centers_qubits].md
@@ -200,20 +213,19 @@ Quantum-Sensors-Qubits-in-Biology
 
 ---
 
-## 📊 Data Tiers
+## Data Tiers (FP atlas)
 
-The atlas uses **explicit quality tiers** to separate curated data from auto-harvested placeholders:
+The atlas uses explicit quality tiers to separate curated data from auto-harvested placeholders:
 
-| Tier | Count | Description | File | Use Case |
+| Tier | Count | Description | File | Use case |
 |------|-------|-------------|------|----------|
-| **Tier 1: CURATED** | 180 | Known family + DOI + (spectra OR contrast>1.5) | `atlas_fp_optical_v2_2_curated.csv` | ✅ **Modeling, analysis** |
-| **Tier 2: CANDIDATES** | 13 | Real systems, incomplete metadata | `atlas_fp_optical_v2_2_candidates.csv` | Manual curation queue |
-| **Tier 3: UNKNOWN** | 103 | Auto-harvested, placeholder data | `atlas_fp_optical_v2_2_unknown.csv` | Transparency only |
+| Tier 1 (curated) | 187 | Known family + DOI + (spectra OR contrast > 1.5) | `atlas_fp_optical_v3_curated.csv` | Modelling, analysis |
+| Tier 2 (candidates) | ~13 | Real systems, incomplete metadata | `atlas_fp_optical_v2_2_candidates.csv` | Manual curation queue |
+| Tier 3 (unknown) | ~103 | Auto-harvested, placeholder data | `atlas_fp_optical_v2_2_unknown.csv` | Transparency only |
 
-**For machine learning / quantitative analysis:** Use **Tier 1 (curated)** only.
+For machine learning or quantitative analysis, use Tier 1 (curated) only.
 
-**Why the split?**  
-During API harvesting (UniProt, FPbase), 103 systems were auto-added with `family="Unknown"` and `contrast_normalized=1.0` (placeholder). These introduce noise in models and are now explicitly isolated.
+Why the split? During API harvesting (UniProt, FPbase) about 103 systems were auto-added with `family="Unknown"` and `contrast_normalized=1.0`. They introduce noise in models and are kept isolated.
 
 See [docs/DATA_TIERS.md](docs/DATA_TIERS.md) for complete tier definitions.
 
@@ -224,7 +236,7 @@ See [docs/DATA_TIERS.md](docs/DATA_TIERS.md) for complete tier definitions.
 This atlas is part of a broader ecosystem exploring quantum-inspired and quantum-compatible biological platforms:
 
 ### [fp-qubit-design](https://github.com/Mythmaker28/fp-qubit-design)
-**Computational design of fluorescent protein mutants** — Uses atlas v2.2.2 curated data (180 systems) as training source for ML-guided protein engineering. Predicts spectral properties and dynamic range of novel biosensor variants.
+Computational design of fluorescent protein mutants. Uses the atlas (v3.0 curated, 187 systems) as training source for ML-guided protein engineering. Predicts spectral properties, dynamic range, and ODMR contrast for the new A' class.
 
 ### [arrest-molecules](https://github.com/Mythmaker28/arrest-molecules)
 **Molecular arrest framework** — Theoretical framework for dampening compounds in biological regulation (10 compounds, 44 predictions, DOI: [10.5281/zenodo.17420685](https://doi.org/10.5281/zenodo.17420685)). Shares conceptual vocabulary with quantum metastability: energy landscapes, arrest kinetics, tunneling vs. activation barriers.
@@ -243,11 +255,12 @@ We welcome contributions! See [CONTRIBUTING.md](CONTRIBUTING.md) for:
 - Updating existing data
 - Reporting errors
 
-**Quick contribution:**
-1. Fork this repo
-2. Add your system to `atlas_fp_optical_v2_2_curated.csv` (Tier 1)
-3. Run `python scripts/validate_atlas.py curated` to validate
-4. Submit a Pull Request
+Quick contribution (v3.0 workflow):
+1. Fork this repository.
+2. For new FP biosensors: add the row to `data/optical/curated/atlas_fp_optical_v3_curated.csv` (Tier 1).
+3. For new qubits (A, A', B, C or D): append to `data/qubits/biological_qubits_v3.csv` following [`data/qubits/SCHEMA_v3.md`](data/qubits/SCHEMA_v3.md).
+4. Run the validators: `python scripts/validate_atlas.py curated` and `python scripts/qa/validate_qubits_data.py --input data/qubits/biological_qubits_v3.csv`.
+5. Submit a pull request with the DOI of the primary reference.
 
 ---
 
@@ -304,15 +317,15 @@ npx http-server .
 
 ## 📖 Citation
 
-**Frontiers manuscript (fixed dataset):**
-> **v1.2.1** — 66 systems (for manuscript submission)  
-> DOI: 10.5281/zenodo.17420604  
-> *This version is frozen for Frontiers publication.*
+Frontiers manuscript (frozen dataset):
+> v1.2.1 — 66 systems (manuscript submission).  
+> DOI: [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604).  
+> This version is frozen for Frontiers publication.
 
-**Latest stable for development/ML:**
-> **v2.2.2 (curated)** — 180 systems (modeling-ready, validated)  
-> DOI: TBD (pending Zenodo deposit)  
-> *Use this version for research, ML training, and development.*
+Latest stable (research, ML, clinical context):
+> v3.0.0 — 82 qubits + 187 FP biosensors.  
+> DOI: pending Zenodo deposit.  
+> Use this version for current research, ML training, and development.
 
 **Full dataset (mixed tiers):**
 > **v2.2.2 (mixed)** — 296 systems (includes 103 placeholder/staging)  

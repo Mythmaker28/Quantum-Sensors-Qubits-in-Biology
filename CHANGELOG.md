@@ -1,4 +1,4 @@
-# Changelog — Biological Qubits Catalog
+# Changelog - Biological Qubits Catalog
 
 All notable changes to the Biological Qubits Catalog will be documented here.
 
@@ -7,19 +7,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.0.0] - 2026-04-17
+
+### Added
+- **New class A' (A-prime): FP-qubits with direct ODMR readout.** 8 entries (EYFP at 80 K and 295 K, MagLOV, MagLOV 2, mScarlet-FMN, mCherry-FMN, mScarlet-I-FMN, DmCry) sourced from Nature 2025 and related preprints.
+- **Class B refresh (+16 rows):** SiC alkene defects, BNNT spin probes, SnV / GeV nanodiamonds, FND in vivo thermometry, hBN colour centres.
+- **Class C refresh (+11 rows):** first-in-human HP 13C,15N2-urea MRI, FDA 129Xe updates, HP 13C pyruvate clinical trials, 31P silicon donor benchmark.
+- **Class D refresh (+13 rows):** Flavin-Guanine SCRP, 6-4 photolyase oxetane RP, room-temperature FMO coherence, GgCry4a, updated cryptochrome evidence.
+- **FP biosensors atlas (+7 rows):** CaBLAM, HaloDA1.0, iGluSnFR4f, iGluSnFR4s, ASAP4.4-Kv, PinkyCaMP, OCaMP (all 2024 to 2026).
+- Canonical schema documentation: `data/qubits/SCHEMA_v3.md` (35 columns).
+- `docs/FP_QUBITS_ODMR_2025.md` explaining class A'.
+- `RELEASE_NOTES_v3.0.md` with the complete changelog and reproducibility notes.
+
+### Changed
+- Canonical qubits CSV moved to `data/qubits/biological_qubits_v3.csv` (82 rows, single source of truth).
+- Canonical FP atlas moved to `data/optical/curated/atlas_fp_optical_v3_curated.csv` (187 rows, mirrored in `data/processed/`).
+- Validators updated: temperature range widened to 1-400 K, year range widened to 1980-2027, `A_prime` recognised as a valid class.
+- `analysis/qubits_stats.py` accepts `--input` and `--version` and correctly reflects the dataset path in its Markdown output.
+- Licences and PMCIDs enriched via Unpaywall and NCBI ID Converter: 63 licences and 60 PMCIDs automatically completed.
+- README, DOCUMENTATION, VERSIONS_CITATION, VERSIONING_ROADMAP rewritten for v3.0.0.
+
+### Deprecated
+- Cry1-related rows (Cryptochrome (Cry1) - paires radicalaires, Cryptochrome 1a) flagged `deprecated` after 2025 evidence reassigned their biological role.
+
+### Removed
+- No removals. Legacy CSVs archived under `data/qubits/archive/pre_v3/` and `data/optical/curated/atlas_fp_optical_v2_2_curated.csv`.
+
+### Fixed
+- Consolidation script now fills required defaults (`Spin_type`, `Temperature_K`, `Annee`, `Qualite`, `Verification_statut`) using inference from `Methode_lecture`, `Hote_contexte`, and DOI metadata.
+
+---
+
 ## [Unreleased]
 
-### Planned for v1.3.0 (Stable)
-- Full license audit (achieve 100% license compliance)
-- Confidence intervals for all Tier A measurements
-- Extended evidence samples (40+ systems documented)
-- Peer-review submission (Data Descriptor draft)
-
-### Planned for v1.4.0
-- Community contribution workflow (GitHub PR template)
-- API REST endpoint (JSON access)
-- Systematic review expansion (target: 200+ systems)
-- Multi-language metadata (EN/FR/DE)
+### Planned for v3.1.0
+- Promotion of Tier 2 FP biosensors to Tier 1 (manual curation).
+- CI bounds for coherence times (class B) via bootstrap.
+- Integration of 2026 H2 publications.
 
 ---
 

@@ -1,44 +1,44 @@
-# 📊 Qubits Statistics Report
+# Qubits Statistics Report
 
-**Generated:** 2025-11-15 23:32:45  
-**Dataset:** data/qubits/biological_qubits.csv
+**Generated:** 2026-04-17 01:27:55  
+**Dataset:** data/qubits/biological_qubits_v3.csv
 
 ---
 
 ## Overall Statistics
 
-- **Total systems:** 34
-- **Classes:** B: 15, C: 12, D: 4, A: 3
-- **Spin types:** 6
-- **Reading methods:** 5
+- **Total systems:** 82
+- **Classes:** B: 31, C: 23, D: 17, A_prime: 8, A: 3
+- **Spin types:** 24
+- **Reading methods:** 10
 
 ### Context Distribution
 
-- In cellulo: 6
-- In vivo: 18
-- In vitro: 8
+- In cellulo: 11
+- In vivo: 25
+- In vitro: 31
 
 ---
 
 ## T₂ (Coherence Time) Statistics
 
 
-- **Count:** 33
-- **Mean:** 20691.46 µs
+- **Count:** 65
+- **Mean:** 28189923.14 µs
 - **Median:** 1.50 µs
-- **Std Dev:** 104079.26 µs
-- **Range:** 0.00 - 600000.00 µs
-- **Q25-Q75:** 0.30 - 5000.00 µs
+- **Std Dev:** 223230824.24 µs
+- **Range:** 0.00 - 1800000000.00 µs
+- **Q25-Q75:** 0.50 - 5000.00 µs
 
 ---
 
 ## Temperature Statistics
 
-- **Count:** 34
-- **Mean:** 278.9 K
+- **Count:** 82
+- **Mean:** 265.9 K
 - **Median:** 295.0 K
-- **Range:** 4.0 - 310.0 K
-- **Physiological range (273-310 K):** 31 systems
+- **Range:** 2.0 - 310.0 K
+- **Physiological range (273-310 K):** 71 systems
 
 ---
 
@@ -50,41 +50,47 @@
 - **T₂ mean:** 0.28 µs (median: 0.02 µs)
 - **T₂ range:** 0.01 - 0.80 µs
 
+### Class A_prime
+- **Count:** 8
+- **Spin types:** Electron (triplet T1, S=1): 2, Electron (SCRP: RFP chromophore + FMN): 2, Electron (SCRP: flavin + backbone radical): 2, Electron (SCRP: FAD + TrpH): 1, Electron (SCRP): 1
+- **T₂ mean:** 8.50 µs (median: 8.50 µs)
+- **T₂ range:** 1.00 - 16.00 µs
+
 ### Class B
-- **Count:** 15
-- **Spin types:** Electron: 15
-- **T₂ mean:** 121.13 µs (median: 1.20 µs)
-- **T₂ range:** 0.00 - 1800.00 µs
+- **Count:** 31
+- **Spin types:** Electron: 23, Electron (S=1, divacancy): 1, Electron (S=1/2 spin pair): 1, Electron (NV): 1, Electron (NV, S=1): 1, Electron (S=1/2 group-IV): 1, Electron (S=1/2): 1, Electron (triplet, VB2): 1, Electron (color center): 1
+- **T₂ mean:** 25165.79 µs (median: 1.50 µs)
+- **T₂ range:** 0.00 - 600000.00 µs
 
 ### Class C
-- **Count:** 12
-- **Spin types:** Noyau; ^13C: 9, Noyau; ^15N: 1, Electron: 1, Noyau; ^13C+^15N: 1
-- **T₂ mean:** 56750.04 µs (median: 7500.00 µs)
-- **T₂ range:** 0.50 - 600000.00 µs
+- **Count:** 23
+- **Spin types:** Noyau; ^13C: 9, Noyau: 6, Electron: 2, Noyau; 13C: 2, Noyau; 13C + 15N: 1, Noyau; 129Xe: 1, Noyau; ^13C+^15N: 1, Noyau; ^15N: 1
+- **T₂ mean:** 91587050.03 µs (median: 8500.00 µs)
+- **T₂ range:** 0.50 - 1800000000.00 µs
 
 ### Class D
-- **Count:** 4
-- **Spin types:** Electron; paires radicalaires: 2, Electron: 1, Electron; radical tyrosyl: 1
-- **T₂ mean:** 0.00 µs (median: 0.00 µs)
-- **T₂ range:** 0.00 - 0.00 µs
+- **Count:** 17
+- **Spin types:** Electron: 10, Electron; paires radicalaires: 5, Electron; excitonic coherence: 1, Electron; radical tyrosyl: 1
+- **T₂ mean:** 0.42 µs (median: 0.30 µs)
+- **T₂ range:** 0.00 - 1.00 µs
 
 ---
 
 ## Temperature vs T₂ Analysis
 
-**Correlation coefficient:** 0.050
+**Correlation coefficient:** -0.409
 
 ### T₂ by Temperature Range
 
 **cryogenic_<100K:**
-- Count: 3
-- T₂ mean: 0.02 µs
-- T₂ median: 0.00 µs
+- Count: 7
+- T₂ mean: 261428573.75 µs
+- T₂ median: 0.20 µs
 
 **physiological_273-310K:**
-- Count: 30
-- T₂ mean: 22760.61 µs
-- T₂ median: 1.95 µs
+- Count: 58
+- T₂ mean: 40430.82 µs
+- T₂ median: 1.50 µs
 
 ---
 

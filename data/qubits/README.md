@@ -1,153 +1,84 @@
-# 🔬 Biological Qubits Dataset
+# Biological Qubits Dataset (v3.0)
 
-**34 vrais systèmes quantiques** - Qubits et capteurs de spin pour applications biologiques
+Single source of truth for genuine quantum systems (qubits and spin sensors)
+documented in biological contexts. This dataset is distinct from the
+fluorescent-protein optical atlas (`data/processed/atlas_fp_optical_*.csv`).
 
----
+## Primary file
 
-## 🎯 Différence avec le Dataset Principal
+`biological_qubits_v3.csv` — **58 curated systems** after consolidation of the
+legacy v2.3 dataset and pre-v3 cross-checks. Each row describes one quantum
+system with coherence metrics (T1, T2), readout method, host context, and
+provenance (DOI, year, quality tier).
 
-### Ce Dataset (`biological_qubits.csv`) - 34 systèmes
+**Schema**: see `SCHEMA_v3.md` (35 columns).
 
-**Type :** Vrais **qubits quantiques** et capteurs de spin
+## Classes
 
-**Systèmes inclus :**
-- Centres NV dans nanodiamants (Classe B)
-- Défauts VSi dans SiC (Classe B) 
-- Protéines fluorescentes avec ODMR (Classe A - NOUVEAU!)
-- Hyperpolarisation nucléaire ^13C, ^15N (Classe C)
-- Paires radicalaires (cryptochrome, photosynthèse) (Classe D)
+| Class | Description | Count (v3.0 initial) |
+| --- | --- | --- |
+| A | Bio-intrinsic electron-spin qubits (protein radicals, FP ODMR) | 3 |
+| A' (planned) | FP-qubits with direct ODMR readout (EYFP, MagLOV, mScarlet+FMN, 2025+) | 0 → to be added in Phase 2 |
+| B | Engineered solid-state spin defects in biological hosts (NV, VSi, SnV, GeV, SiC, hBN, BNNT) | 23 |
+| C | Hyperpolarized nuclear spins (13C, 15N, 129Xe) | 19 |
+| D | Radical-pair candidates and controversial bio-quantum mechanisms | 13 |
 
-**Propriétés mesurées :**
-- **T₂ (cohérence)** : 0.8 µs - 100 µs
-- **Méthode de lecture** : ODMR, NMR, ESR
-- **Spin** : Électronique (S=1/2 ou S=1) ou Nucléaire
-- **Température** : 4 K - 310 K
+After Phase 2 and 3 enrichment the target is **~85-100 systems**.
 
-**Applications :**
-- Magnétométrie quantique cellulaire
-- Thermométrie nanométrique 
-- Capteurs de champs biologiques
+## Archive
 
----
+Legacy CSV/JSON files from v1.2.1 through v2.3 have been moved to
+`archive/pre_v3/`. See `archive/pre_v3/README_ARCHIVE.md`.
 
-### Dataset Principal (`atlas_fp_optical_v2_2_curated.csv`) - 180 systèmes
+The following files are superseded and must not be edited:
+- `biological_qubits.csv` (v1.2.1, 34 systems)
+- `quantum_systems_unified.csv`, `_v2.csv`, `_v2_3.csv`, `_final.csv`
+- `nonoptical_qubits_consolidated.csv`
+- `environment_recategorization_log.csv`
 
-**Type :** **Protéines fluorescentes** et biosenseurs
+Any updates go into `biological_qubits_v3.csv` through
+`scripts/etl/build_qubits_v3.py` or the Phase 2/3 enrichment scripts.
 
-**Systèmes inclus :**
-- GCaMP, XCaMP (calcium)
-- ASAP3, ASAP4e (voltage)
-- dLight, GRAB-DA (dopamine)
-- iGluSnFR (glutamate)
-- Autres biosenseurs (pH, ATP, GABA, etc.)
+## Relationship to the FP optical atlas
 
-**Propriétés mesurées :**
-- **Contraste** : Δ F/F₀ (fold-change)
-- **Spectre** : Excitation/Émission (nm)
-- **Température** : 270-320 K (physiologique)
-- **Applications** : Imagerie calcium, voltage, neurotransmetteurs
+| Aspect | `biological_qubits_v3.csv` | `atlas_fp_optical_v*.csv` |
+| --- | --- | --- |
+| Domain | Quantum systems (spin coherence) | Fluorescent-protein biosensors |
+| Key observable | T2 coherence time, ODMR contrast | Fluorescence fold-change (dF/F) |
+| Readout | ODMR, ESR, NMR | Fluorescence microscopy |
+| Quantum addressing | Required (class A-C) or candidate (D) | Not required |
+| Typical size | ~60-100 entries | ~180-210 entries |
 
----
+The two datasets overlap only for class A/A' systems (proteins with both
+optical and quantum readout). In that overlap the protein appears with
+distinct semantics in each file; downstream joins must use DOI as the key.
 
-## 📊 Comparaison Rapide
-
-| Aspect | biological_qubits.csv | atlas_fp_optical_v2_2_curated.csv |
-|--------|----------------------|-----------------------------------|
-| **Nombre** | 34 systèmes | 180 systèmes |
-| **Type** | Qubits quantiques | Protéines fluorescentes |
-| **Lecture** | ODMR, NMR, ESR | Fluorescence optique |
-| **Propriété clé** | T₂ (cohérence quantique) | Contraste (ΔF/F₀) |
-| **Applications** | Magnétométrie, thermométrie quantique | Imagerie neuronale, biocapteurs |
-| **Classes** | A, B, C, D (qubits) | Familles (Calcium, Voltage, etc.) |
-
----
-
-## 🔬 Classes de Qubits (biological_qubits.csv)
-
-### Classe A : Protéines Fluorescentes avec ODMR
-- **3 systèmes**
-- Génétiquement encodables
-- T₂ ~ 0.8 µs
-- Premier "qubit protéique" (2025)
-
-### Classe B : Qubits de Spin Électronique
-- **15 systèmes**
-- Centres NV, VSi, GeV
-- T₂ ~ 0.8-3.2 µs (in cellulo)
-- Gold standard pour magnétométrie
-
-### Classe C : Hyperpolarisation Nucléaire
-- **12 systèmes**
-- ^13C, ^15N
-- T₁ = 15-900 s
-- FDA-approuvé (pyruvate)
-
-### Classe D : Paires Radicalaires
-- **4 systèmes**
-- Cryptochrome, photosynthèse
-- T₂ < 1 ns
-- Magnétoréception aviaire
-
----
-
-## 📂 Structure
-
-```
-data/qubits/
-├── biological_qubits.csv       # Dataset principal (34 systèmes)
-└── README.md                    # Ce fichier
-```
-
----
-
-## 🔗 Documentation Associée
-
-- **Mécanismes quantiques** : `docs/quantum_mechanisms.md`
-- **Centres NV** : `docs/nv_centers_qubits.md`
-- **Magnétoréception** : `docs/magnetoreception.md`
-- **Photosynthèse** : `docs/photosynthesis.md`
-
----
-
-## 🛠️ Scripts d'Analyse
-
-- **Validation** : `scripts/qa/validate_qubits_data.py`
-- **Statistiques** : `analysis/qubits_stats.py`
-- **Comparaisons** : `analysis/qubits_class_comparisons.py`
-
----
-
-## 🎯 Usage
+## Quick usage
 
 ```python
 import pandas as pd
 
-# Charger le dataset qubits
-df_qubits = pd.read_csv('data/qubits/biological_qubits.csv')
+qubits = pd.read_csv("data/qubits/biological_qubits_v3.csv")
+print(qubits["Classe"].value_counts())
 
-# Filtrer les centres NV
-nv = df_qubits[df_qubits['Systeme'].str.contains('NV', na=False)]
-
-# Filtrer par classe
-classe_b = df_qubits[df_qubits['Classe'] == 'B']
-
-# Analyser T₂
-print(f"T₂ moyen: {df_qubits['T2_us'].mean():.2f} µs")
+class_b = qubits[qubits["Classe"] == "B"]
+print(f"Class B mean T2: {class_b['T2_us'].mean():.2f} us")
 ```
 
----
+## Validation
 
-## ⚠️ Note Importante
+```bash
+python scripts/qa/validate_qubits_data.py --input data/qubits/biological_qubits_v3.csv
+```
 
-**Ce dataset est DISTINCT du dataset principal de protéines fluorescentes.**
+Expected result for the initial v3.0 build: 0 critical errors, 1 documented
+warning (FMO complex at 77 K is intentional, see entry notes).
 
-- Utilisez `biological_qubits.csv` pour : magnétométrie quantique, thermométrie, spin qubits
-- Utilisez `atlas_fp_optical_v2_2_curated.csv` pour : biosenseurs, imagerie neuronale, calcium/voltage
+## Provenance
 
-Ne les mélangez PAS - ce sont des domaines différents de la biologie quantique/optique !
+Each row is traceable via the `DOI`, `Source_T1`, `Source_T2`, and
+`Source_Contraste` fields. Dataset-level provenance is recorded in the
+`dataset_source` column (`biological_qubits_v1`, `nonoptical_merge_v2`,
+and future `enrichment_v3_*` markers).
 
----
-
-**Dernière mise à jour :** 2025-11-15  
-**Projet :** Biological Qubits & Quantum Sensors Atlas v2.2.2
-
+Last regeneration: see `reports/BUILD_QUBITS_V3_LOG.md`.
