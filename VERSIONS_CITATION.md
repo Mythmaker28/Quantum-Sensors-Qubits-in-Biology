@@ -21,7 +21,7 @@
    v1.2.1                                     v3.0.0
    (FROZEN)                                   (ACTIVE)
    66 systems                                 82 qubits + 187 FP biosensors
-   DOI: 10.5281/zenodo.17420604               DOI: pending (Zenodo v3.0)
+   DOI: 10.5281/zenodo.17420604               DOI: 10.5281/zenodo.19617435
 ```
 
 ---
@@ -34,7 +34,7 @@
 | Qubits | 66 legacy systems (mixed atlas) | 34 qubits | 82 qubits (classes A, A', B, C, D) |
 | FP biosensors | n/a | 180 curated + 13 + 103 | 187 curated |
 | Purpose | Manuscript publication | Superseded reference | Research, ML, clinical context |
-| DOI | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) | n/a | Pending Zenodo deposit |
+| DOI | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) | n/a | [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) (concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)) |
 | Main files | `atlas_fp_optical_v1_2_1.csv` | `atlas_fp_optical_v2_2_curated.csv` | `biological_qubits_v3.csv`, `atlas_fp_optical_v3_curated.csv` |
 | Release date | 2025-10-23 | 2025-10-26 | 2026-04-17 |
 | Use case | Cite Frontiers manuscript | Historical compatibility | ML pipelines, computational design, clinical context |
@@ -101,7 +101,7 @@ wget https://zenodo.org/record/17420604/files/atlas_fp_optical_v1_2_1.csv
 
 1. Canonical qubits file: `data/qubits/biological_qubits_v3.csv` (follows `data/qubits/SCHEMA_v3.md`).
 2. Canonical FP atlas: `data/optical/curated/atlas_fp_optical_v3_curated.csv` (mirrored in `data/processed/`).
-3. DOI pending: Zenodo deposit in preparation. Update your citation once the DOI is minted.
+3. Zenodo DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435); concept DOI (all versions): [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).
 4. Legacy CSVs remain accessible under `data/qubits/archive/pre_v3/` for reproducibility.
 
 ### How to download v3.0.0
@@ -113,30 +113,30 @@ wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/d
 
 ### How to cite v3.0.0
 
-BibTeX (pre-DOI):
+BibTeX:
 
 ```bibtex
-@dataset{biological_qubits_atlas_v3_0,
+@dataset{biological_qubits_atlas_v3_0_0,
   title   = {Biological Qubits and Quantum Sensors Atlas v3.0.0},
   author  = {Lepesteur, Tommy},
   year    = {2026},
   month   = {April},
   version = {3.0.0},
   systems = {82 qubits + 187 FP biosensors},
-  note    = {DOI pending Zenodo deposit},
-  url     = {https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology}
+  doi     = {10.5281/zenodo.19617435},
+  url     = {https://doi.org/10.5281/zenodo.19617435}
 }
 ```
 
 Plain text:
 
-> Lepesteur, T. (2026). *Biological Qubits and Quantum Sensors Atlas v3.0.0* [Data set]. GitHub. https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology (DOI: pending).
+> Lepesteur, T. (2026). *Biological Qubits and Quantum Sensors Atlas v3.0.0* [Data set]. Zenodo. https://doi.org/10.5281/zenodo.19617435
 
 In-text:
 
 > We used the Biological Qubits Atlas v3.0.0 (Lepesteur, 2026), containing 82 qubits (classes A, A', B, C, D) and 187 curated FP biosensors with full provenance tracking.
 
-Once the DOI is minted, update the citations with `doi = {10.5281/zenodo.XXXXXXX}` and the permanent Zenodo URL.
+For cross-version stability use the concept DOI `10.5281/zenodo.17420603`, which always resolves to the latest released version.
 
 ---
 
@@ -180,7 +180,7 @@ Full change log: [`RELEASE_NOTES_v3.0.md`](RELEASE_NOTES_v3.0.md).
 Scientific reproducibility requires frozen datasets for publications, while active research benefits from growing databases. The atlas therefore maintains three coexisting references:
 - v1.2.1 - frozen, cited in the Frontiers manuscript.
 - v2.2.2 - deprecated but preserved under `archive/` and in the git history.
-- v3.0.0 - active, growing, citable (pending DOI).
+- v3.0.0 - active, growing, citable via [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435).
 
 Precedent: similar to TCGA (cancer genomics), UniProt (proteins), PDB (structures), all of which maintain versioned releases alongside "current" data.
 
@@ -193,9 +193,10 @@ Precedent: similar to TCGA (cancer genomics), UniProt (proteins), PDB (structure
 - Status: archived, permanent, citable.
 - Files: `atlas_fp_optical_v1_2_1.csv`, metadata, checksums.
 
-### v3.0.0 (in progress)
-- DOI: pending Zenodo deposit.
-- Files planned: `biological_qubits_v3.csv`, `atlas_fp_optical_v3_curated.csv`, schema, release notes, metadata, SHA256 checksums.
+### v3.0.0 (archived)
+- DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435).
+- Concept DOI (all versions): [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).
+- Files archived: source zip (`Quantum-Sensors-Qubits-in-Biology-v3.0.0.zip`, 3.1 MB) containing `biological_qubits_v3.csv`, `atlas_fp_optical_v3_curated.csv`, schema, release notes, metadata.
 
 Track progress: see the citation section of [`README.md`](README.md).
 

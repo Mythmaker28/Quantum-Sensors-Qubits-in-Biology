@@ -8,6 +8,8 @@
 
 [Live Dashboard](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | [Qubits dataset](data/qubits/biological_qubits_v3.csv) | [FP atlas](data/optical/curated/atlas_fp_optical_v3_curated.csv) | [Full documentation](DOCUMENTATION.md) | [Release notes](RELEASE_NOTES_v3.0.md)
 
+[![DOI (v3.0.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.19617435.svg)](https://doi.org/10.5281/zenodo.19617435)
+[![Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420603.svg)](https://doi.org/10.5281/zenodo.17420603)
 [![DOI (v1.2.1, frozen)](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![FAIR](https://img.shields.io/badge/FAIR-12/12-green?style=for-the-badge)](metadata/fair/)
@@ -76,7 +78,7 @@ This atlas maintains semantic versioning with long-lived references for legacy c
 
 | Version | Status | Qubits | FP biosensors | Use case | DOI |
 |---------|--------|--------|---------------|----------|-----|
-| **v3.0.0** | Active | 82 | 187 curated | Research, ML, clinical context, 2024-2026 literature | Pending (Zenodo) |
+| **v3.0.0** | Active | 82 | 187 curated | Research, ML, clinical context, 2024-2026 literature | [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) |
 | v2.2.2 | Deprecated | 34 | 180 curated | Superseded by v3.0.0 | n/a |
 | v1.2.1 | Frozen | 66 | n/a | Frontiers manuscript citation | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) |
 
@@ -324,26 +326,23 @@ Frontiers manuscript (frozen dataset):
 
 Latest stable (research, ML, clinical context):
 > v3.0.0 — 82 qubits + 187 FP biosensors.  
-> DOI: pending Zenodo deposit.  
+> DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435).  
+> Concept DOI (all versions): [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).  
 > Use this version for current research, ML training, and development.
 
-**Full dataset (mixed tiers):**
-> **v2.2.2 (mixed)** — 296 systems (includes 103 placeholder/staging)  
-> For transparency and API harvest audit only. **Not recommended for modeling.**
-
 ```bibtex
-@dataset{biological_qubits_atlas_v2_2_curated,
-  title  = {Biological Qubits \& Quantum Sensors Atlas v2.2.2 (Curated)},
-  author = {Mythmaker28},
-  year   = {2025},
-  version = {2.2.2-curated},
-  systems = {180},
-  doi    = {TBD},
-  url    = {https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology}
+@dataset{biological_qubits_atlas_v3_0_0,
+  title   = {Biological Qubits and Quantum Sensors Atlas v3.0.0},
+  author  = {Lepesteur, Tommy},
+  year    = {2026},
+  version = {3.0.0},
+  note    = {82 qubits (classes A, A', B, C, D) + 187 curated FP biosensors},
+  doi     = {10.5281/zenodo.19617435},
+  url     = {https://doi.org/10.5281/zenodo.19617435}
 }
 ```
 
-For the Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATION_v1.2.1.cff).
+For the frozen Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATION_v1.2.1.cff).
 
 ---
 
@@ -357,7 +356,9 @@ For the Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATI
 ## 🔗 Links
 
 - 🌐 **Live Dashboard**: https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/
-- 📦 **Zenodo Archive**: https://doi.org/10.5281/zenodo.17420604
+- 📦 **Zenodo (v3.0.0)**: https://doi.org/10.5281/zenodo.19617435
+- 📦 **Zenodo (concept DOI, all versions)**: https://doi.org/10.5281/zenodo.17420603
+- 📦 **Zenodo (v1.2.1, frozen)**: https://doi.org/10.5281/zenodo.17420604
 - 📖 **Data Tiers**: [docs/DATA_TIERS.md](docs/DATA_TIERS.md)
 - 📖 **Full Documentation**: [DOCUMENTATION.md](DOCUMENTATION.md)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues)

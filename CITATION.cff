@@ -4,14 +4,21 @@ title: "Biological Qubits and Quantum Sensors Atlas"
 type: dataset
 version: "3.0.0"
 date-released: "2026-04-17"
-doi: "10.5281/zenodo.PENDING_V3_0"
+doi: "10.5281/zenodo.19617435"
 authors:
   - family-names: "Lepesteur"
     given-names: "Tommy"
     orcid: "https://orcid.org/0009-0009-0577-9563"
     affiliation: "Independent Researcher"
 repository-code: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology"
-url: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology"
+url: "https://doi.org/10.5281/zenodo.19617435"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.19617435"
+    description: "Version-specific DOI for v3.0.0"
+  - type: doi
+    value: "10.5281/zenodo.17420603"
+    description: "Concept DOI (all versions)"
 license: "CC-BY-4.0"
 keywords:
   - "biological qubits"
@@ -58,8 +65,8 @@ preferred-citation:
       orcid: "https://orcid.org/0009-0009-0577-9563"
   year: 2026
   version: "3.0.0"
-  doi: "10.5281/zenodo.PENDING_V3_0"
-  url: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases/tag/v3.0.0"
+  doi: "10.5281/zenodo.19617435"
+  url: "https://doi.org/10.5281/zenodo.19617435"
   notes: "Consolidated release: 82 qubits (classes A, A', B, C, D) and 187 curated FP biosensors. Single source of truth for qubits at data/qubits/biological_qubits_v3.csv."
 references:
   - type: dataset

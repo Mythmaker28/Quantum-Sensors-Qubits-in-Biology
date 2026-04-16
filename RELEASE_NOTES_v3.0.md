@@ -1,7 +1,9 @@
 # Release Notes - v3.0.0 (Zenodo)
 
 **Release date:** 2026-04-17  
-**Scope:** Biological Qubits and Quantum Sensors Atlas, full dataset + documentation refresh  
+**Scope:** Biological Qubits and Quantum Sensors Atlas, full dataset + documentation refresh.  
+**Zenodo DOI (v3.0.0):** [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435).  
+**Concept DOI (all versions):** [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).  
 **Citation:** see `CITATION.cff` (root) for the v3.0.0 block and `CITATION_v1.2.1.cff` for the frozen Frontiers release.
 
 ---
@@ -115,7 +117,8 @@ All enrichment steps are captured in scripts and logs:
 
 - v3.0 intentionally breaks the `data/qubits/biological_qubits.csv` contract. The legacy path is preserved via the archive but will no longer be updated.
 - v1.2.1 remains frozen for the Frontiers manuscript. Its DOI (`10.5281/zenodo.17420604`) and citation file are unchanged.
-- Dashboard (`docs/index.html`) will be regenerated in a follow-up pass to expose the new class A' and the refreshed numbers.
+- v3.0.0 is archived on Zenodo: DOI `10.5281/zenodo.19617435` (concept DOI `10.5281/zenodo.17420603`).
+- Dashboard (`docs/index.html`) has been regenerated for v3.0 to expose class A' and the refreshed numbers.
 
 ## Known limitations
 

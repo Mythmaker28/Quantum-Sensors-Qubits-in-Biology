@@ -14,7 +14,7 @@
 
 - Current stable: **v3.0.0** - 82 qubits (classes A, A', B, C, D) + 187 curated FP biosensors.
 - Peer-review: planned (Data Descriptor submission Q1 2026).
-- DOI: pending Zenodo deposit for v3.0; `10.5281/zenodo.17420604` preserved for v1.2.1 (Frontiers).
+- DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) for v3.0 (concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)); `10.5281/zenodo.17420604` preserved for v1.2.1 (Frontiers).
 - Live dashboard: [https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/).
 
 ### Research dataset disclaimer

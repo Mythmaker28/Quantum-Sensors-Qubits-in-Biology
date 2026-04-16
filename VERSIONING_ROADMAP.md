@@ -27,7 +27,7 @@
 - FP biosensors: 187 (Tier 1 curated).
 - Files: `data/qubits/biological_qubits_v3.csv`, `data/optical/curated/atlas_fp_optical_v3_curated.csv`.
 - Citation: [`CITATION.cff`](CITATION.cff).
-- DOI: pending Zenodo deposit.
+- DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) (concept DOI: [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)).
 - Status: active.
 
 ### v1.2.1 (Frontiers manuscript)

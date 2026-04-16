@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [3.0.0] - 2026-04-17
 
+**Zenodo DOI:** [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) - concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).
+
 ### Added
 - **New class A' (A-prime): FP-qubits with direct ODMR readout.** 8 entries (EYFP at 80 K and 295 K, MagLOV, MagLOV 2, mScarlet-FMN, mCherry-FMN, mScarlet-I-FMN, DmCry) sourced from Nature 2025 and related preprints.
 - **Class B refresh (+16 rows):** SiC alkene defects, BNNT spin probes, SnV / GeV nanodiamonds, FND in vivo thermometry, hBN colour centres.
