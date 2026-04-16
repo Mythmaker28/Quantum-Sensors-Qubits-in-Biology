@@ -1,0 +1,23 @@
+{
+  "dataset": "quantum_systems_unified",
+  "version": "v1.0",
+  "generated_at": "2025-11-19T02:19:30.338567",
+  "total_systems": 34,
+  "source": "biological_qubits.csv (primary)",
+  "by_class": {
+    "B": 15,
+    "C": 12,
+    "D": 4,
+    "A": 3
+  },
+  "by_evidence": {
+    "2": 14,
+    "3": 11,
+    "1": 9
+  },
+  "in_vivo_systems": 18,
+  "temperature_range_K": {
+    "min": 4.0,
+    "max": 310.0
+  }
+}

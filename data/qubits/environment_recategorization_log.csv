@@ -1,0 +1,24 @@
+index,systeme,ancien,nouveau,raison,timestamp
+34,NV- center in diamond (room temp),diamond,bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+35,NV- center in diamond (77K),diamond,in_vitro,"Système cryogénique, contexte in vitro",2025-11-22 19:51:19.439871
+36,VSi defect in 4H-SiC,silicon_carbide,bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+37,Divacancy in 4H-SiC,silicon_carbide,bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+38,P1 center in diamond,diamond,bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+39,N@C60 endohedral fullerene,fullerene_cage,bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+40,GeV- center in diamond,diamond,bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+41,VSi defect 4H-SiC V1 site,silicon_carbide,bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+42,Cryptochrome 4,Erithacus rubecula (European robin),in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+43,Cryptochrome 1a,Drosophila melanogaster,in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+44,Photosystem II D1-D2,Spinacia oleracea (spinach),in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+45,DNA photolyase FAD-TrpH,Escherichia coli,in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+46,Bacterial reaction center,Rhodobacter sphaeroides,in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+47,Mitochondrial Complex I flavin,Bos taurus,in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+48,6-4 photolyase FAD,Xenopus laevis,in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+49,Ferredoxin [4Fe-4S],Spinacia oleracea,in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+50,Lysozyme Trp radical,Hen egg white,in_vitro,"Système biologique, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+51,13C in diamond (coupled to NV),diamond (coupled to NV),bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+52,31P in silicon (donor),silicon (donor),bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+53,14N in diamond (NV center intrinsic),diamond (NV center intrinsic),bulk,Système matériau bulk par défaut,2025-11-22 19:51:19.439871
+55,13C in pyruvate (hyperpolarized),pyruvate (hyperpolarized),in_vitro,"Métabolite hyperpolarisé, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+56,13C in lactate (hyperpolarized),lactate (hyperpolarized),in_vitro,"Métabolite hyperpolarisé, contexte in vitro par défaut",2025-11-22 19:51:19.439871
+57,15N in choline (hyperpolarized),choline (hyperpolarized),in_vitro,"Métabolite hyperpolarisé, contexte in vitro par défaut",2025-11-22 19:51:19.439871

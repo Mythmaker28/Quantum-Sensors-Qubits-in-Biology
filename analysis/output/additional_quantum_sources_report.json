@@ -1,0 +1,116 @@
+{
+  "analysis_date": "2025-11-19T02:18:53.004272",
+  "biological_qubits_csv": {
+    "total_systems": 34,
+    "path": "data/qubits/biological_qubits.csv"
+  },
+  "external_sources": {
+    "Quantum Biology Database (QBD)": {
+      "url": "https://quantumbiology.org/database",
+      "status": "To verify",
+      "estimated_systems": "Unknown",
+      "data_types": "Quantum coherence in biology, cryptochrome, photosynthesis"
+    },
+    "NV Center Database (NVCDB)": {
+      "url": "https://nvcenterdatabase.org",
+      "status": "To verify",
+      "estimated_systems": "~100-200",
+      "data_types": "NV centers in diamond, T1/T2, ODMR parameters"
+    },
+    "SiC Defects Database": {
+      "url": "https://sicdefects.org or research papers",
+      "status": "No centralized DB, literature mining needed",
+      "estimated_systems": "~20-50",
+      "data_types": "VSi, divacancy, T1/T2, spin properties"
+    },
+    "Hyperpolarized MRI Database": {
+      "url": "FDA clinical trials + literature",
+      "status": "Dispersed across clinical trials",
+      "estimated_systems": "~15-30",
+      "data_types": "13C-pyruvate, 13C-lactate, T1 relaxation"
+    },
+    "FPbase (Fluorescent Proteins)": {
+      "url": "https://www.fpbase.org",
+      "status": "Already integrated in atlas_fp_optical",
+      "estimated_systems": "~1000+ (180 curated in QBitAtlas)",
+      "data_types": "Spectral properties, quantum yield, lifetime"
+    },
+    "Radical Pair Database": {
+      "url": "Literature mining (cryptochrome, photosynthesis)",
+      "status": "No centralized DB, manual curation needed",
+      "estimated_systems": "~20-40",
+      "data_types": "Radical pairs, timescales, magnetic field effects"
+    },
+    "ising-life-lab (Ising models)": {
+      "url": "https://github.com/Mythmaker28/ising-life-lab",
+      "status": "To explore",
+      "estimated_systems": "Unknown",
+      "data_types": "Computational models, energy landscapes, not necessarily T1/T2"
+    },
+    "fp-qubit-design": {
+      "url": "https://github.com/Mythmaker28/fp-qubit-design",
+      "status": "Uses QBitAtlas data as training",
+      "estimated_systems": "Predictions, not measured data",
+      "data_types": "ML-predicted FP mutants"
+    },
+    "arrest-molecules": {
+      "url": "https://github.com/Mythmaker28/arrest-molecules",
+      "status": "Molecular arrest framework",
+      "estimated_systems": "10 compounds, 44 predictions",
+      "data_types": "Metastability, not qubits"
+    }
+  },
+  "estimated_counts": {
+    "QBitAtlas - optical FP (v2.2.2 curated)": "180",
+    "QBitAtlas - non-optical (spin + radical + nuclear)": "27",
+    "QBitAtlas - biological_qubits.csv": "35",
+    "Potential NV centers (literature mining)": "50-100",
+    "Potential SiC defects (literature mining)": "20-50",
+    "Potential hyperpolarized nuclei (clinical trials)": "10-20",
+    "Potential radical pairs (literature mining)": "10-30"
+  },
+  "next_steps": [
+    {
+      "priority": "HIGH",
+      "task": "Compare biological_qubits.csv vs nonoptical_qubits_consolidated.csv",
+      "reason": "Identify overlaps and merge datasets",
+      "estimated_time": "30 min",
+      "systems_gained": "0 (deduplication)"
+    },
+    {
+      "priority": "HIGH",
+      "task": "Literature mining: NV centers in biology (2010-2025)",
+      "reason": "Well-documented field with many papers",
+      "estimated_time": "4-8 hours",
+      "systems_gained": "50-100"
+    },
+    {
+      "priority": "MEDIUM",
+      "task": "Literature mining: SiC defects (VSi, divacancy)",
+      "reason": "Growing field, room-temp operation",
+      "estimated_time": "3-5 hours",
+      "systems_gained": "20-50"
+    },
+    {
+      "priority": "MEDIUM",
+      "task": "Clinical trials: Hyperpolarized 13C MRI",
+      "reason": "FDA-approved, clinical data available",
+      "estimated_time": "2-4 hours",
+      "systems_gained": "10-20"
+    },
+    {
+      "priority": "LOW",
+      "task": "Literature mining: Radical pairs (cryptochrome, photosynthesis)",
+      "reason": "Controversial field, indirect measurements",
+      "estimated_time": "3-6 hours",
+      "systems_gained": "10-30"
+    },
+    {
+      "priority": "LOW",
+      "task": "Explore ising-life-lab repository",
+      "reason": "Check if contains additional quantum data",
+      "estimated_time": "1-2 hours",
+      "systems_gained": "Unknown (possibly 0)"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "nv_reduction_factor": {
+    "mean_reduction_factor": 1678.0959752321983,
+    "median_reduction_factor": 1697.3684210526317,
+    "ci_lower": 1350.0,
+    "ci_upper": 2006.1919504643965,
+    "ci_level": 0.95,
+    "n_bootstrap": 10000,
+    "n_bulk": 2,
+    "n_bio": 4,
+    "t2_bulk_mean": 1800.0,
+    "t2_bulk_std": 0.0,
+    "t2_bio_mean": 1.125,
+    "t2_bio_std": 0.25124689052802224
+  },
+  "nv_reduction_factors_individual": [
+    {
+      "systeme": "Nanodiamants NV (50-100 nm) en cellules HeLa",
+      "t2_bulk": 1800.0,
+      "t2_bio": 1.2,
+      "reduction_factor": 1500.0,
+      "hote_contexte": "Cellules HeLa (in_cellulo)"
+    },
+    {
+      "systeme": "Nanodiamants NV (25 nm) en C. elegans",
+      "t2_bulk": 1800.0,
+      "t2_bio": 0.95,
+      "reduction_factor": 1894.7368421052633,
+      "hote_contexte": "C. elegans (in_vivo)"
+    },
+    {
+      "systeme": "NV ensembles en microcristaux (10 µm) injectés",
+      "t2_bulk": 1800.0,
+      "t2_bio": 1.5,
+      "reduction_factor": 1200.0,
+      "hote_contexte": "Cerveau souris (in_vivo)"
+    },
+    {
+      "systeme": "NV nanodiamants (50 nm) en tumeurs solides",
+      "t2_bulk": 1800.0,
+      "t2_bio": 0.85,
+      "reduction_factor": 2117.6470588235293,
+      "hote_contexte": "Souris xénogreffe (in_vivo)"
+    }
+  ],
+  "last_updated": "2025-11-22T19:53:21.526398",
+  "dataset_version": "v2.3"
+}
