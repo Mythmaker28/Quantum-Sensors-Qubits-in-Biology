@@ -1,7 +1,7 @@
 {
-  "title": "Biological Qubits Atlas (v3.0.0) - FP-qubits (class A'), non-optical qubits, FP biosensors",
+  "title": "Biological Qubits Atlas (v4.0.0) - FP-qubits (class A'), non-optical qubits, FP biosensors",
   "upload_type": "dataset",
-  "description": "Biological Qubits Atlas v3.0.0 - a curated atlas of quantum-coherent and optical systems relevant to biology. This release unifies the qubits dataset into a single canonical file (82 systems across classes A, A', B, C, D) and extends the fluorescent-protein biosensor atlas to 195 entries. Version 3.0 introduces class A' (FP-qubits with direct ODMR readout): 8 rows covering EYFP 80/295 K, MagLOV, MagLOV2, mScarlet+FMN, mCherry+FMN, mScarlet-I+FMN, DmCry. Classes B, C, D are refreshed with 2024-2026 literature (SiC alkene, BNNT, SnV/GeV nanodiamonds, FND in vivo, hBN; first-in-human HP 13C,15N2-urea MRI and 129Xe FDA updates; Flavin-Guanine SCRP, 6-4 photolyase oxetane radical pair, room-temperature FMO coherence, GgCry4a). Cryptochrome Cry1 entries shown to be circadian-only are flagged as deprecated. The FP biosensor atlas adds CaBLAM, HaloDA1.0, iGluSnFR4 (f/s), ASAP4.4-Kv, PinkyCaMP, OCaMP. 63 licences and 60 PMCIDs were completed via Unpaywall and NCBI ID Converter. Validator accepts class A' and widened ranges (T: 1-400 K, year: 1980-2027). Companion documents: RELEASE_NOTES_v3.0.md, docs/FP_QUBITS_ODMR_2025.md, CITATION.cff.",
+  "description": "Biological Qubits Atlas v4.0.0 - a curated atlas of quantum-coherent and optical systems relevant to biology. This release unifies the qubits dataset into a single canonical file (82 systems across classes A, A', B, C, D) and extends the fluorescent-protein biosensor atlas to 195 entries. Version 4.0.0 introduces class A' (FP-qubits with direct ODMR readout): 8 rows covering EYFP 80/295 K, MagLOV, MagLOV2, mScarlet+FMN, mCherry+FMN, mScarlet-I+FMN, DmCry. Classes B, C, D are refreshed with 2024-2026 literature (SiC alkene, BNNT, SnV/GeV nanodiamonds, FND in vivo, hBN; first-in-human HP 13C,15N2-urea MRI and 129Xe FDA updates; Flavin-Guanine SCRP, 6-4 photolyase oxetane radical pair, room-temperature FMO coherence, GgCry4a). Cryptochrome Cry1 entries shown to be circadian-only are flagged as deprecated. The FP biosensor atlas adds CaBLAM, HaloDA1.0, iGluSnFR4 (f/s), ASAP4.4-Kv, PinkyCaMP, OCaMP plus 8 additional 2023-2025 biosensors (FR-GECO1a/1c, NEMOf/c, LifeCamp, ASAP6.1/6b, GRAB-NE2h). 63 licences and 60 PMCIDs were completed via Unpaywall and NCBI ID Converter. Validator accepts class A' and widened ranges (T: 1-400 K, year: 1980-2027). Note: v4.0.0 is a clean re-release of the v3.0.0 content (the earlier v3.0.0 bundle on Zenodo included historical artefacts and binary files with embedded author metadata and has been restricted). Companion documents: RELEASE_NOTES_v4.0.md, docs/FP_QUBITS_ODMR_2025.md, CITATION.cff.",
   "creators": [
     {
       "name": "Lepesteur, Tommy",
@@ -56,7 +56,7 @@
     },
     {
       "relation": "isNewVersionOf",
-      "identifier": "10.5281/zenodo.17420604",
+      "identifier": "10.5281/zenodo.19617435",
       "resource_type": "dataset"
     },
     {
@@ -90,9 +90,9 @@
       "resource_type": "other"
     }
   ],
-  "version": "3.0.0",
+  "version": "4.0.0",
   "language": "eng",
-  "notes": "Release v3.0.0 (Zenodo-only distribution, no journal submission). Highlights: (1) Single canonical qubits file (data/qubits/biological_qubits_v3.csv) with 82 rows; (2) New class A' with 8 FP-qubits demonstrating direct ODMR readout; (3) FP biosensor atlas extended to 195 rows (data/optical/curated/atlas_fp_optical_v3_curated.csv); (4) Class B/C/D refresh with 2024-2026 literature; (5) Updated validator and regenerated dashboard; (6) Full provenance via DOIs, PMCIDs and licence fields.",
+  "notes": "Release v4.0.0 (Zenodo clean re-release of v3.0.0 content). The earlier v3.0.0 bundle on Zenodo (DOI 10.5281/zenodo.19617435) was restricted because it included internal history artefacts and bioRxiv binary files with embedded author email metadata; this v4.0.0 release ships the same scientific content on a pruned repository. Highlights: (1) Single canonical qubits file (data/qubits/biological_qubits_v3.csv) with 82 rows; (2) Class A' with 8 FP-qubits demonstrating direct ODMR readout; (3) FP biosensor atlas extended to 195 rows (data/processed/atlas_fp_optical_v3_curated.csv); (4) Class B/C/D refresh with 2024-2026 literature; (5) Updated validator and regenerated dashboard; (6) Full provenance via DOIs, PMCIDs and licence fields.",
   "communities": [
     {
       "identifier": "zenodo"

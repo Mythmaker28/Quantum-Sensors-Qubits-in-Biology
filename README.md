@@ -1,14 +1,13 @@
 ﻿# Biological Qubits and Quantum Sensors Atlas
 
-[![Version (latest)](https://img.shields.io/badge/version-v3.0.0-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
+[![Version (latest)](https://img.shields.io/badge/version-v4.0.0-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
 [![Stable (Frontiers)](https://img.shields.io/badge/frontiers-v1.2.1-lightgrey.svg)](#citation)
 [![Qubits (v3.0)](https://img.shields.io/badge/qubits-82-green.svg)](#whats-inside)
 [![FP biosensors (v3.0)](https://img.shields.io/badge/FP%20biosensors-195-green.svg)](#whats-inside)
 [![Classes](https://img.shields.io/badge/classes-A%2FA%E2%80%B2%2FB%2FC%2FD-blueviolet.svg)](#data-tiers)
 
-[Live Dashboard](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | [Qubits dataset](data/qubits/biological_qubits_v3.csv) | [FP atlas](data/optical/curated/atlas_fp_optical_v3_curated.csv) | [Full documentation](DOCUMENTATION.md) | [Release notes](RELEASE_NOTES_v3.0.md)
+[Live Dashboard](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | [Qubits dataset](data/qubits/biological_qubits_v3.csv) | [FP atlas](data/processed/atlas_fp_optical_v3_curated.csv) | [Full documentation](DOCUMENTATION.md) | [Release notes](RELEASE_NOTES_v4.0.md)
 
-[![DOI (v3.0.0)](https://zenodo.org/badge/DOI/10.5281/zenodo.19617435.svg)](https://doi.org/10.5281/zenodo.19617435)
 [![Concept DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17420603.svg)](https://doi.org/10.5281/zenodo.17420603)
 [![DOI (v1.2.1, frozen)](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
@@ -25,7 +24,7 @@
 - **2024 to 2026 literature refresh.** Classes B, C, D were updated with recent non-optical qubits: SiC alkene-functionalised defects, BNNT spin probes, SnV and GeV nanodiamonds, in vivo FND thermometry, hBN colour centres; first-in-human HP 13C, 15N2-urea MRI and additional FDA 129Xe trials; plus Flavin-Guanine SCRP (Comm Chem 2025) and room-temperature FMO coherence (Sci Adv 2025).
 - **FP atlas extended.** Seven 2024 to 2026 biosensors added (CaBLAM, HaloDA1.0, iGluSnFR4f/s, ASAP4.4-Kv, PinkyCaMP, OCaMP). Missing licences and PMCIDs were enriched via Unpaywall and NCBI ID Converter.
 
-See [`RELEASE_NOTES_v3.0.md`](RELEASE_NOTES_v3.0.md) for the full changelog.
+See [`RELEASE_NOTES_v4.0.md`](RELEASE_NOTES_v4.0.md) for the full changelog.
 
 ---
 
@@ -78,12 +77,13 @@ This atlas maintains semantic versioning with long-lived references for legacy c
 
 | Version | Status | Qubits | FP biosensors | Use case | DOI |
 |---------|--------|--------|---------------|----------|-----|
-| **v3.0.0** | Active | 82 | 195 curated | Research, ML, clinical context, 2024-2026 literature | [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) |
-| v2.2.2 | Deprecated | 34 | 180 curated | Superseded by v3.0.0 | n/a |
+| **v4.0.0** | Active | 82 | 195 curated | Research, ML, clinical context, 2024-2026 literature | [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603) (concept) |
+| v3.0.0 | Restricted | 82 | 195 curated | Withdrawn on Zenodo (bundle issues); use v4.0.0 | [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) |
+| v2.2.2 | Deprecated | 34 | 180 curated | Superseded by v4.0.0 | n/a |
 | v1.2.1 | Frozen | 66 | n/a | Frontiers manuscript citation | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) |
 
 Quick guide:
-- For current research and ML: use v3.0.0 (qubits + FP atlases).
+- For current research and ML: use v4.0.0 (qubits + FP atlases).
 - For citing the Frontiers manuscript: use v1.2.1.
 - For a full discussion of versions and citation formats, see [`VERSIONS_CITATION.md`](VERSIONS_CITATION.md).
 
@@ -325,24 +325,24 @@ Frontiers manuscript (frozen dataset):
 > This version is frozen for Frontiers publication.
 
 Latest stable (research, ML, clinical context):
-> v3.0.0 — 82 qubits + 195 FP biosensors.  
-> DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435).  
-> Concept DOI (all versions): [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).  
-> Use this version for current research, ML training, and development.
+> v4.0.0 — 82 qubits + 195 FP biosensors (clean re-release of v3.0.0 content).  
+> Concept DOI (always latest): [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).  
+> Use this version for current research, ML training, and development.  
+> Note: v3.0.0 (DOI 10.5281/zenodo.19617435) is restricted on Zenodo because the bundle shipped internal artefacts and binary files with embedded author metadata; use v4.0.0 or the concept DOI instead.
 
 ```bibtex
-@dataset{biological_qubits_atlas_v3_0_0,
-  title   = {Biological Qubits and Quantum Sensors Atlas v3.0.0},
+@dataset{biological_qubits_atlas_v4_0_0,
+  title   = {Biological Qubits and Quantum Sensors Atlas v4.0.0},
   author  = {Lepesteur, Tommy},
   year    = {2026},
-  version = {3.0.0},
+  version = {4.0.0},
   note    = {82 qubits (classes A, A', B, C, D) + 195 curated FP biosensors},
-  doi     = {10.5281/zenodo.19617435},
-  url     = {https://doi.org/10.5281/zenodo.19617435}
+  doi     = {10.5281/zenodo.17420603},
+  url     = {https://doi.org/10.5281/zenodo.17420603}
 }
 ```
 
-For the frozen Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATION_v1.2.1.cff).
+For the frozen Frontiers manuscript citation (v1.2.1), see `CITATION.cff` (references section).
 
 ---
 
@@ -356,9 +356,9 @@ For the frozen Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff]
 ## 🔗 Links
 
 - 🌐 **Live Dashboard**: https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/
-- 📦 **Zenodo (v3.0.0)**: https://doi.org/10.5281/zenodo.19617435
-- 📦 **Zenodo (concept DOI, all versions)**: https://doi.org/10.5281/zenodo.17420603
-- 📦 **Zenodo (v1.2.1, frozen)**: https://doi.org/10.5281/zenodo.17420604
+- 📦 **Zenodo (concept DOI, always latest)**: https://doi.org/10.5281/zenodo.17420603
+- 📦 **Zenodo (v1.2.1, frozen Frontiers release)**: https://doi.org/10.5281/zenodo.17420604
+- ⚠️ **Zenodo (v3.0.0, restricted)**: https://doi.org/10.5281/zenodo.19617435 — replaced by v4.0.0
 - 📖 **Data Tiers**: [docs/DATA_TIERS.md](docs/DATA_TIERS.md)
 - 📖 **Full Documentation**: [DOCUMENTATION.md](DOCUMENTATION.md)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues)

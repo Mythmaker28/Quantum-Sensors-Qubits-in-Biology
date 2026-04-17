@@ -1,6 +1,6 @@
 # Class A' (A-prime): fluorescent-protein qubits with direct ODMR
 
-**Status:** curated documentation for v3.0.0 release.  
+**Status:** curated documentation for v4.0.0 release (preserved from v3.0.0).  
 **Scope:** explains the rationale, scientific evidence, and dataset encoding of the new class A' introduced in the Biological Qubits Atlas v3.0.
 
 ---
@@ -78,4 +78,4 @@ A' is therefore both a technical category and a research invitation: it formalis
 - Singh R. et al., "Coherent spin control of EYFP at room temperature", Nature (2025), DOI `10.1038/s41586-025-09417-w`.
 - "Engineered LOV-flavin radical pairs as room-temperature spin qubits", Nature (2025), DOI `10.1038/s41586-025-09971-3`.
 - "Red fluorescent protein SCRPs for RYDMR readout", bioRxiv preprint (2025), DOI `10.1101/2025.02.27.640669`.
-- Full bibliography in `data/qubits/biological_qubits_v3.csv` (class `A_prime`) and `RELEASE_NOTES_v3.0.md`.
+- Full bibliography in `data/qubits/biological_qubits_v3.csv` (class `A_prime`) and `RELEASE_NOTES_v4.0.md`.

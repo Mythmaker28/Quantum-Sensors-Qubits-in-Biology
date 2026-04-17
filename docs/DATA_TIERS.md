@@ -6,7 +6,7 @@ The Atlas contains systems from multiple sources with varying quality levels. Th
 
 ## Version
 
-Applies to: **v3.0.0** (195 FP biosensors + 82 biological qubits, as of 2026-04-17).
+Applies to: **v4.0.0** (195 FP biosensors + 82 biological qubits, as of 2026-04-17).
 
 The same three-tier philosophy is applied independently to each of the two datasets:
 
@@ -33,7 +33,7 @@ High-confidence systems suitable for:
 - Quantitative analysis
 - Direct experimental use
 
-**Expected count (v3.0.0):** 195 systems (all currently in Tier 1 after the v3 enrichment pass).
+**Expected count (v4.0.0):** 195 systems (all currently in Tier 1 after the v3 enrichment pass).
 
 **File:** `data/processed/atlas_fp_optical_v3_curated.csv`
 
@@ -57,7 +57,7 @@ Manual curation queue:
 - Can be promoted to Tier 1 after verification
 - NOT recommended for automated modeling
 
-**Expected count (v3.0.0):** 0 systems in the curated Tier 2 file. Legacy v2.2 Tier 2 candidates that could not be promoted were deprecated in `CHANGELOG.md` (v3.0.0, section "Deprecated").
+**Expected count (v4.0.0):** 0 systems in the curated Tier 2 file. Legacy v2.2 Tier 2 candidates that could not be promoted were deprecated in `CHANGELOG.md` (v3.0.0, section "Deprecated").
 
 **File (historical):** `data/staging/atlas_fp_optical_v2_2_candidates.csv`
 
@@ -87,7 +87,7 @@ Manual curation queue:
 Isolation zone:
 - NOT counted in official "N systems" for modeling
 - Kept for transparency/auditability
-- Reviewed during v3.0.0 curation; remaining noise-only rows live under `data/staging/`.
+- Reviewed during v3.0.0/v4.0.0 curation; remaining noise-only rows live under `data/staging/`.
 
 **Expected count (historical v2.2 harvest):** ~103 systems
 
@@ -115,7 +115,7 @@ Isolation zone:
 
 ### Non-Destructive Guarantee
 
-- **NO systems deleted arbitrarily** — v3.0.0 explicitly logs deprecations in `CHANGELOG.md` when systems are removed (e.g., ErCry4b, ErCry1 when 2024-2025 replication studies invalidated the original claims).
+- **NO systems deleted arbitrarily** — v3.0.0 (and v4.0.0) explicitly logs deprecations in `CHANGELOG.md` when systems are removed (e.g., ErCry4b, ErCry1 when 2024-2025 replication studies invalidated the original claims).
 - Historical v2.2 raw and tiered files remain available under `data/staging/` and in older Git tags (v2.2.x).
 - All tiers programmatically reproducible via `scripts/qa/split_tiers.py`.
 
@@ -159,7 +159,8 @@ Mixing curated + unknown tiers → introduces bias (Unknown systems act as noise
 
 ## Changelog
 
-- **2026-04-17 (v3.0.0):** Refreshed for the v3 release.
+- **2026-04-17 (v4.0.0):** Clean re-release of v3.0.0 content on a pruned repository (historical archives, internal debate module, QA logs and binary submission bundles removed from tracking).
+- **2026-04-17 (v3.0.0, RESTRICTED on Zenodo):** Refreshed for the v3 release.
   - Curated FP atlas promoted to 195 systems (all Tier 1) after the 2024-2026 literature enrichment pass.
   - Biological qubits dataset added (`biological_qubits_v3.csv`, 82 rows, classes A/A'/B/C/D).
   - Data Tiers doc retains the v2.2 three-tier philosophy for reproducibility; historical files are still available for audit under `data/staging/`.
@@ -191,7 +192,7 @@ Mixing curated + unknown tiers → introduces bias (Unknown systems act as noise
 ### Guarantee
 
 - Biological qubits are NEVER mixed with optical FP tiers.
-- Optical FP atlas counts (195 Tier 1 in v3.0.0) and qubit counts (82 across 5 classes) are reported separately.
+- Optical FP atlas counts (195 Tier 1 in v4.0.0) and qubit counts (82 across 5 classes) are reported separately.
 - Both datasets require DOI + measurable evidence for Tier 1 / Qualite ∈ {A1, A2}.
 
 ---

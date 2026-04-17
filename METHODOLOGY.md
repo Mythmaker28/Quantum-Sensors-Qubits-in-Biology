@@ -55,7 +55,7 @@ Provide a **comprehensive, traceable, and reproducible** catalog of quantum syst
 
 ---
 
-## 📊 Hybrid Curated Strategy (since v1.3, now default in v3.0.0)
+## 📊 Hybrid Curated Strategy (since v1.3, now default in v4.0.0)
 
 ### Overview
 
@@ -65,19 +65,19 @@ The Atlas uses a **3-tier hybrid approach**:
    - Human-verified extraction from primary literature
    - Every value cross-checked against original Figure/Table
    - Uncertainties extracted or estimated with transparent methodology
-   - **Coverage (v3.0.0)**: target ≥85% of biological qubits entries (82 total); 100% of FP atlas curated Tier 1 (195 total)
+   - **Coverage (v4.0.0)**: target ≥85% of biological qubits entries (82 total); 100% of FP atlas curated Tier 1 (195 total)
 
 2. **Tier 2: Conservative Automated Extraction**
    - Structured data only (XML tables, HTML tables, CSV supplements)
    - No OCR, no figure scraping
    - Ambiguous entries flagged for manual review
-   - **Coverage (v3.0.0)**: supplements Tier 1 via `scripts/etl/deep_enrichment_all_apis.py`; never replaces it
+   - **Coverage (v4.0.0)**: supplements Tier 1 via `scripts/etl/deep_enrichment_all_apis.py`; never replaces it
 
 3. **Tier 3: Specialist Database Cross-Reference**
    - Secondary extraction from trusted databases (FPbase, UniProt, PDB, Crossref, Unpaywall)
    - Original DOI traced and validated
    - Marked explicitly in `source` / `source_refs` columns
-   - **Coverage (v3.0.0)**: used for PMCID / license completion (`complete_fp_licenses_pmcids.py`)
+   - **Coverage (v4.0.0)**: used for PMCID / license completion (`complete_fp_licenses_pmcids.py`)
 
 ---
 
@@ -209,12 +209,12 @@ Stored in the `quality_tier` column of `data/processed/atlas_fp_optical_v3_curat
 
 ## 🧬 Classes (Biological Qubits Taxonomy)
 
-The v3.0.0 dataset organises qubits into five classes. All class definitions and boundary cases are documented in `docs/FP_QUBITS_ODMR_2025.md` (for class A'); a brief summary is given here:
+The v4.0.0 dataset organises qubits into five classes. All class definitions and boundary cases are documented in `docs/FP_QUBITS_ODMR_2025.md` (for class A'); a brief summary is given here:
 
 | Class | Description | Read-out | Typical host | Examples |
 |-------|-------------|----------|--------------|----------|
 | **A** | Protein-based qubits with indirect or spectroscopic evidence of coherence | ESR, optical (non-ODMR) | in_vitro / lysat | LOV2 flavin (ESR), tyrosyl in ribonucleotide reductase |
-| **A'** *(new in v3.0.0)* | **Fluorescent-protein qubits with direct ODMR readout** | ODMR / RYDMR on the protein itself | in_vitro, in_cellulo, in_vivo | EYFP (80 K/295 K), MagLOV, mScarlet+FMN (SCRP), mCherry+FMN, DmCry purified |
+| **A'** *(new in v3.0.0, preserved in v4.0.0)* | **Fluorescent-protein qubits with direct ODMR readout** | ODMR / RYDMR on the protein itself | in_vitro, in_cellulo, in_vivo | EYFP (80 K/295 K), MagLOV, mScarlet+FMN (SCRP), mCherry+FMN, DmCry purified |
 | **B** | Solid-state / engineered defects in biological environments | ODMR, pulsed ESR | nanoparticles, cells, tissues | NV in nanodiamonds, VSi/VV in SiC, SnV-/GeV- in diamond, hBN VB, charge-sensitive FND |
 | **C** | Nuclear-spin qubits for biological imaging | NMR, hyperpolarised MRI | in_vivo | Hyperpolarised 13C-pyruvate (clinical), 129Xe (XENOVIEW), HP [13C,15N2]-urea first-in-human |
 | **D** | Radical-pair qubits (biological magnetoreception and photobiology) | Magnetic-field effect, MARY / MARI / RYDMR | in_vitro, in_vivo | Cryptochromes (CRY1a, GgCry4a), FMO complex, flavin-guanine RP in DNA, (6-4)-photolyase |
@@ -325,9 +325,9 @@ NV 10nm,0.8,0.16,"T2 from ODMR spectrum. Uncertainty estimated ±20% (typical OD
 vMAJOR.MINOR.PATCH[-beta|-alpha|-rc.N]
 
 Examples:
-- v3.0.0       : Stable MAJOR (Zenodo-archived, DOI 10.5281/zenodo.19617435)
-- v3.1.0-beta  : Beta pre-release for next MINOR
-- v3.0.1       : Stable PATCH (bug fix over v3.0.0)
+- v4.0.0       : Stable MAJOR (Zenodo-archived, concept DOI 10.5281/zenodo.17420603)
+- v4.1.0-beta  : Beta pre-release for next MINOR
+- v4.0.1       : Stable PATCH (bug fix over v4.0.0)
 ```
 
 See `VERSIONS.md` for full policy.
@@ -336,23 +336,23 @@ See `VERSIONS.md` for full policy.
 
 ## 🚨 Known Limitations & Biases
 
-### Documented Limitations (v3.0.0)
+### Documented Limitations (v4.0.0)
 
 1. **License coverage partial**
    - ~12% of FP atlas entries list license as "publisher (see DOI)" because Unpaywall/Crossref returned no explicit OA license.
-   - Target: raise to >95% explicit by v3.1.0.
+   - Target: raise to >95% explicit by v4.1.0.
 
 2. **Some biological qubits lack confidence intervals**
    - Affected: pre-2015 papers (older methodology, error bars not reported) and some preprints.
    - Mitigation: conservative estimates (±20-25%) with explicit flagging in `Notes`.
-   - Target: bootstrap CIs for all Qualite A1 entries by v3.2.0.
+   - Target: bootstrap CIs for all Qualite A1 entries by v4.2.0.
 
 3. **Class D remains the most heterogeneous**
-   - Some magnetoreception claims (notably ErCry4b, ErCry1) were retracted in v3.0.0 after 2024-2025 replication failures (see `CHANGELOG.md`).
+   - Some magnetoreception claims (notably ErCry4b, ErCry1) were retracted in v3.0.0 (preserved in v4.0.0) after 2024-2025 replication failures (see `CHANGELOG.md`).
    - GgCry4a (chicken cryptochrome 4a, 2025) is the first peer-reviewed addition with direct spin dynamics; earlier cryptochrome entries are retained with Qualite B/C.
 
 4. **Class A' is new and narrow**
-   - Only 8 entries as of v3.0.0; the field is rapidly evolving (several relevant preprints from late 2025 / early 2026).
+   - Only 8 entries as of v4.0.0; the field is rapidly evolving (several relevant preprints from late 2025 / early 2026).
    - New entries will be admitted with Qualite C until peer review or independent replication.
 
 5. **Temporal bias**
@@ -737,5 +737,5 @@ This catalog's curation methodology is inspired by:
 **Last updated**: 2026-04-17  
 **Maintainer**: Atlas curator — contact via [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues) or [ORCID 0009-0009-0577-9563](https://orcid.org/0009-0009-0577-9563)  
 **License**: This methodology document is CC-BY-4.0  
-**Version**: 3.0 (aligned with catalog v3.0.0, Zenodo DOI 10.5281/zenodo.19617435)
+**Version**: 4.0 (aligned with catalog v4.0.0, concept DOI 10.5281/zenodo.17420603)
 

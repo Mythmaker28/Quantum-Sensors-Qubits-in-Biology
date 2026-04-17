@@ -7,9 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [3.0.0] - 2026-04-17
+## [4.0.0] - 2026-04-17
+
+**Zenodo concept DOI:** [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603) (always resolves to latest).  
+**Supersedes:** v3.0.0 (DOI [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435)), now **restricted on Zenodo** because the bundle shipped internal artefacts and binary files with embedded author metadata.
+
+### Added
+- 8 biosensors missed at the v3 data cut-off: FR-GECO1a / FR-GECO1c, NEMOf / NEMOc, LifeCamp, ASAP6.1 / ASAP6b, GRAB-NE2h (2023 to 2025 primary literature). FP atlas grows from 187 to 195 rows.
+- `RELEASE_NOTES_v4.0.md` documents the scope of the clean re-release.
+
+### Removed
+- `archive/`, `docs/archive/`, `reports/`, `conversation-bus-module/`, `logs/`, `.atlas_sync/`, `.n_sys`, `CITATION_v1.2.1.cff` — 226 files (~41k lines) of historical artefacts and internal logs removed from tracking. Public zip shrinks accordingly.
+- `submission/bioRxiv/` bundle (already moved to archive in the v3 audit; not tracked in v4).
+
+### Security
+- Redacted the maintainer's personal email from `atlas/ecosystem/BRIDGE_ISING_LIFE_LAB.md`, `docs/LAB_USAGE_GUIDE.md`, `metadata/fair/codemeta.json` and remaining archived text files.
+- Redacted the hardcoded NCBI API key from `config/env_template.txt` (key must be rotated by the maintainer; it remains visible in git history).
+
+### Unchanged vs v3.0.0
+- Dataset schema, column set, and scientific content are identical. Any analysis code built against v3 runs unmodified against v4.
+
+---
+
+## [3.0.0] - 2026-04-17 (RESTRICTED on Zenodo)
 
 **Zenodo DOI:** [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) - concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).
+
+> **Note:** The v3.0.0 Zenodo bundle is restricted because it included internal artefacts and binary files with embedded author metadata. Cite v4.0.0 or the concept DOI.
 
 ### Added
 - **New class A' (A-prime): FP-qubits with direct ODMR readout.** 8 entries (EYFP at 80 K and 295 K, MagLOV, MagLOV 2, mScarlet-FMN, mCherry-FMN, mScarlet-I-FMN, DmCry) sourced from Nature 2025 and related preprints.
@@ -42,7 +66,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned for v3.1.0
+### Planned for v4.1.0
 - Promotion of Tier 2 FP biosensors to Tier 1 (manual curation).
 - CI bounds for coherence times (class B) via bootstrap.
 - Integration of 2026 H2 publications.

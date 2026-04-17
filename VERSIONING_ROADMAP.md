@@ -8,7 +8,8 @@
 
 | Version | Date | Purpose | Systems | Status |
 |---------|------|---------|---------|--------|
-| **v3.0.0** | 2026-04-17 | Consolidated release; class A' introduced; 2024-2026 literature | 82 qubits + 195 FP biosensors | Current stable |
+| **v4.0.0** | 2026-04-17 | Clean re-release of v3.0.0 content on a pruned repository | 82 qubits + 195 FP biosensors | Current stable |
+| v3.0.0 | 2026-04-17 | Consolidated release (bundle issues) | 82 qubits + 195 FP biosensors | Restricted on Zenodo |
 | v2.2.2 | 2025-10-25 | Balanced dataset for ML (pre-consolidation) | 180 curated FP + 34 qubits | Superseded |
 | v2.2.0 | 2025-10-25 | Data boost | 191 total (170 usable) | Superseded |
 | v2.1.0 | 2025-10-24 | FPbase integration | 120 | Superseded |
@@ -21,19 +22,19 @@
 
 ## Current stable versions
 
-### v3.0.0 (latest stable, research and ML)
-- Purpose: research, ML, clinical context, 2024-2026 literature.
+### v4.0.0 (latest stable, research and ML)
+- Purpose: research, ML, clinical context, 2024-2026 literature. Clean re-release of v3.0.0 content.
 - Qubits: 82 (classes A, A', B, C, D).
 - FP biosensors: 195 (Tier 1 curated).
-- Files: `data/qubits/biological_qubits_v3.csv`, `data/optical/curated/atlas_fp_optical_v3_curated.csv`.
+- Files: `data/qubits/biological_qubits_v3.csv`, `data/processed/atlas_fp_optical_v3_curated.csv`.
 - Citation: [`CITATION.cff`](CITATION.cff).
-- DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) (concept DOI: [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)).
+- DOI: concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603) (always resolves to latest).
 - Status: active.
 
 ### v1.2.1 (Frontiers manuscript)
 - Purpose: publication submission (fixed dataset).
 - Systems: 66.
-- Citation: [`CITATION_v1.2.1.cff`](CITATION_v1.2.1.cff).
+- Citation: `CITATION.cff` references section.
 - DOI: `10.5281/zenodo.17420604`.
 - Status: frozen (do not modify).
 
@@ -44,12 +45,13 @@
 ### Why multiple versions coexist
 
 - v1.2.1 is frozen for the Frontiers publication (scientific reproducibility).
-- v3.0.0 is the active research and ML release (refreshed with 2024-2026 literature).
-- v2.x references remain reachable via the git history and `archive/` folders.
+- v4.0.0 is the active research and ML release (clean re-release of v3.0.0 content, refreshed with 2024-2026 literature).
+- v3.0.0 is restricted on Zenodo (bundle issues); do not cite.
+- v2.x references remain reachable via the git history.
 
 Both live versions are citable:
 - For Frontiers manuscript references: use v1.2.1 (DOI `10.5281/zenodo.17420604`).
-- For research, ML, or clinical-context work: use v3.0.0.
+- For research, ML, or clinical-context work: use v4.0.0 (concept DOI `10.5281/zenodo.17420603`).
 
 ### How to cite
 
@@ -59,19 +61,26 @@ See [`README.md#citation`](README.md#citation) and [`VERSIONS_CITATION.md`](VERS
 
 ## Migration guide
 
-### Upgrading from v2.2.2 to v3.0.0
+### Upgrading from v3.0.0 to v4.0.0
 
-Breaking changes:
+No migration is needed. v4.0.0 ships identical scientific content and the same file names. Only the public release bundle differs (internal archives, QA logs, and binary submission files are no longer shipped). If your code references `data/qubits/biological_qubits_v3.csv` or `data/processed/atlas_fp_optical_v3_curated.csv`, it continues to work unchanged.
+
+Update only your citation:
+- Replace the version-specific DOI `10.5281/zenodo.19617435` (v3.0.0, restricted) with the concept DOI `10.5281/zenodo.17420603` or the v4.0.0 version-specific DOI once Zenodo assigns it.
+
+### Upgrading from v2.2.2 to v4.0.0
+
+Breaking changes vs v2.2.2:
 - Canonical qubit CSV moves from `data/qubits/biological_qubits.csv` (34 rows) to `data/qubits/biological_qubits_v3.csv` (82 rows).
 - `Classe` now accepts the new value `A_prime` (FP-qubits with direct ODMR).
-- FP atlas canonical path becomes `data/optical/curated/atlas_fp_optical_v3_curated.csv` (195 rows) with a compatibility mirror in `data/processed/`.
+- FP atlas canonical path becomes `data/processed/atlas_fp_optical_v3_curated.csv` (195 rows).
 - Temperature validator widened to 1-400 K, year validator widened to 1980-2027.
 
 Migration steps:
 1. Point pipelines at `biological_qubits_v3.csv` and `atlas_fp_optical_v3_curated.csv`.
 2. If you filter by `Classe`, include `A_prime` (or use `Classe IN (A, A_prime, B)` for strict controllable qubits).
 3. Re-run validators: `python scripts/qa/validate_qubits_data.py --input data/qubits/biological_qubits_v3.csv` and FP linters.
-4. Update citations using `CITATION.cff` (v3.0) plus `CITATION_v1.2.1.cff` (Frontiers).
+4. Update citations using `CITATION.cff` (v4.0.0).
 
 ---
 
@@ -86,16 +95,16 @@ Strategic direction:
 - Isolated quantum systems -> quantum sensors in noisy biological environments.
 - Quantum computing -> quantum-enhanced sensing and imaging.
 
-### v3.1.0 (planned Q3 2026)
+### v4.1.0 (planned Q3 2026)
 - Integrate Tier 2 promotions (manual curation of the candidates queue).
 - Extend class A' with next-generation FP-qubits reported in 2026.
 - Add bootstrap-based confidence intervals for class B coherence times.
 
-### v3.2.0 (planned Q4 2026)
+### v4.2.0 (planned Q4 2026)
 - REST API for programmatic access to qubits and FP biosensors.
 - Integration of SciCrunch / RRID identifiers for reagents.
 
-### v4.0.0 (long-term, peer-review target)
+### v5.0.0 (long-term, peer-review target)
 - Goal: peer-reviewed Data Descriptor submission (Scientific Data or equivalent).
 - Breaking changes: possibly split `Classe` into `Classe_primary` and `Classe_secondary`.
 - Milestone: 150+ qubits and 300+ curated FP biosensors with CI-bounded measurements.

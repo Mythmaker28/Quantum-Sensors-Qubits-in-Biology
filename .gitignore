@@ -48,6 +48,16 @@ data/cache/
 
 # Logs
 logs/*.log
+logs/
+
+# Historical release artefacts (not part of public distribution)
+archive/
+docs/archive/
+reports/
+conversation-bus-module/
+.atlas_sync/
+.pytest_cache/
+.n_sys
 
 # Temporary
 tmp/

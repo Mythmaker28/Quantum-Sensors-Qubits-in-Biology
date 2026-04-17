@@ -1,24 +1,24 @@
 cff-version: 1.2.0
-message: "Use this citation for the latest (v3.0.0) release of the Biological Qubits and Quantum Sensors Atlas."
+message: "Use this citation for the latest (v4.0.0) release of the Biological Qubits and Quantum Sensors Atlas."
 title: "Biological Qubits and Quantum Sensors Atlas"
 type: dataset
-version: "3.0.0"
+version: "4.0.0"
 date-released: "2026-04-17"
-doi: "10.5281/zenodo.19617435"
+doi: "10.5281/zenodo.17420603"
 authors:
   - family-names: "Lepesteur"
     given-names: "Tommy"
     orcid: "https://orcid.org/0009-0009-0577-9563"
     affiliation: "Independent Researcher"
 repository-code: "https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology"
-url: "https://doi.org/10.5281/zenodo.19617435"
+url: "https://doi.org/10.5281/zenodo.17420603"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.19617435"
-    description: "Version-specific DOI for v3.0.0"
-  - type: doi
     value: "10.5281/zenodo.17420603"
-    description: "Concept DOI (all versions)"
+    description: "Concept DOI (all versions - always resolves to latest)"
+  - type: doi
+    value: "10.5281/zenodo.19617435"
+    description: "DOI of the superseded v3.0.0 release (restricted on Zenodo)"
 license: "CC-BY-4.0"
 keywords:
   - "biological qubits"
@@ -41,33 +41,37 @@ keywords:
   - "FMO complex"
   - "quantum biology"
 abstract: |
-  Biological Qubits and Quantum Sensors Atlas v3.0.0 is a consolidated,
+  Biological Qubits and Quantum Sensors Atlas v4.0.0 is a consolidated,
   machine-readable catalogue of quantum systems operating in or compatible
   with biological environments (in vitro, in cellulo, in vivo), together
-  with a curated collection of fluorescent-protein biosensors. The v3.0
-  release introduces class A' (A-prime), a new category of fluorescent
-  proteins demonstrating direct ODMR readout (EYFP, MagLOV, MagLOV2,
-  mScarlet-FMN, mCherry-FMN, mScarlet-I-FMN, DmCry), and refreshes
+  with a curated collection of fluorescent-protein biosensors. Version
+  4.0.0 is a clean re-release of the v3.0.0 scientific content on a pruned
+  repository (the earlier v3.0.0 Zenodo bundle has been restricted because
+  it shipped historical artefacts and binary files with embedded author
+  metadata). The release introduces class A' (A-prime), a new category of
+  fluorescent proteins demonstrating direct ODMR readout (EYFP, MagLOV,
+  MagLOV2, mScarlet-FMN, mCherry-FMN, mScarlet-I-FMN, DmCry), and refreshes
   classes B, C and D with 2024 to 2026 literature (SiC alkene defects,
   BNNT, SnV/GeV nanodiamonds, hBN color centres, first-in-human HP
   13C,15N2-urea MRI, room-temperature FMO coherence, Flavin-Guanine
   SCRP, updated cryptochrome evidence). The fluorescent-biosensor atlas
-  is extended with 2024 to 2026 biosensors (CaBLAM, HaloDA1.0, iGluSnFR4,
-  ASAP4.4-Kv, PinkyCaMP, OCaMP). The dataset totals 82 qubits and 195
-  FP biosensors, with full provenance (DOI, PMCID, license) for every
+  is extended with 2023 to 2026 biosensors (CaBLAM, HaloDA1.0, iGluSnFR4,
+  ASAP4.4-Kv, PinkyCaMP, OCaMP, FR-GECO1a/1c, NEMOf/c, LifeCamp,
+  ASAP6.1/6b, GRAB-NE2h). The dataset totals 82 qubits and 195 FP
+  biosensors, with full provenance (DOI, PMCID, license) for every
   curated entry.
 preferred-citation:
   type: dataset
-  title: "Biological Qubits and Quantum Sensors Atlas v3.0.0"
+  title: "Biological Qubits and Quantum Sensors Atlas v4.0.0"
   authors:
     - family-names: "Lepesteur"
       given-names: "Tommy"
       orcid: "https://orcid.org/0009-0009-0577-9563"
   year: 2026
-  version: "3.0.0"
-  doi: "10.5281/zenodo.19617435"
-  url: "https://doi.org/10.5281/zenodo.19617435"
-  notes: "Consolidated release: 82 qubits (classes A, A', B, C, D) and 195 curated FP biosensors. Single source of truth for qubits at data/qubits/biological_qubits_v3.csv."
+  version: "4.0.0"
+  doi: "10.5281/zenodo.17420603"
+  url: "https://doi.org/10.5281/zenodo.17420603"
+  notes: "Clean re-release: 82 qubits (classes A, A', B, C, D) and 195 curated FP biosensors. Single source of truth for qubits at data/qubits/biological_qubits_v3.csv. Supersedes v3.0.0 (10.5281/zenodo.19617435), now restricted."
 references:
   - type: dataset
     title: "Biological Qubits Catalog v1.2.1 (Frontiers)"

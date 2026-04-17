@@ -12,14 +12,14 @@
 
 ## Status and versioning
 
-- Current stable: **v3.0.0** - 82 qubits (classes A, A', B, C, D) + 195 curated FP biosensors.
+- Current stable: **v4.0.0** - 82 qubits (classes A, A', B, C, D) + 195 curated FP biosensors (clean re-release of v3.0.0 content).
 - Peer-review: planned (Data Descriptor submission Q1 2026).
-- DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) for v3.0 (concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)); `10.5281/zenodo.17420604` preserved for v1.2.1 (Frontiers).
+- DOI: concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603) (always resolves to latest). `10.5281/zenodo.19617435` (v3.0.0) is restricted on Zenodo; `10.5281/zenodo.17420604` preserved for v1.2.1 (Frontiers).
 - Live dashboard: [https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/).
 
 ### Research dataset disclaimer
 
-This is an actively curated research dataset under continuous development. Release v3.0.0 is production-ready for research use with full provenance tracking. Always cite stable versions in publications and verify original sources via provided DOIs and PMCIDs. This dataset has not yet undergone formal peer review; a Data Descriptor submission is planned for Q1 2026.
+This is an actively curated research dataset under continuous development. Release v4.0.0 is production-ready for research use with full provenance tracking. Always cite stable versions in publications and verify original sources via provided DOIs and PMCIDs. This dataset has not yet undergone formal peer review; a Data Descriptor submission is planned for Q1 2026.
 
 ### Data quality tiers (FP atlas)
 

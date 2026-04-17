@@ -20,7 +20,7 @@ import pandas as pd
 import numpy as np
 
 
-DASHBOARD_VERSION = "v3.0.0"
+DASHBOARD_VERSION = "v4.0.0"
 
 
 def _qubit_summary(qubits_csv: Path) -> dict:
@@ -242,7 +242,7 @@ def generate_dashboard(csv_path: Path, output_path: Path, qubits_csv: Path) -> N
     </header>
 
     <div class="banner">
-        <strong>v3.0.0 · new class A'</strong> — {qubit_stats.get("a_prime") or 0} FP-qubits with direct ODMR readout (EYFP, MagLOV, mScarlet+FMN, DmCry, ...). See <a href="https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/blob/main/docs/FP_QUBITS_ODMR_2025.md">docs/FP_QUBITS_ODMR_2025.md</a>.
+        <strong>v4.0.0 · class A'</strong> — {qubit_stats.get("a_prime") or 0} FP-qubits with direct ODMR readout (EYFP, MagLOV, mScarlet+FMN, DmCry, ...). See <a href="https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/blob/main/docs/FP_QUBITS_ODMR_2025.md">docs/FP_QUBITS_ODMR_2025.md</a>.
     </div>
 
     <div class="container">
