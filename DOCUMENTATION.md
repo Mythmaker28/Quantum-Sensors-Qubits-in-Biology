@@ -1,18 +1,18 @@
-# Biological Qubits Catalog - Technical Documentation
+﻿# Biological Qubits Catalog - Technical Documentation
 
 [Live dashboard](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/)
 
 [![DOI (v1.2.1 frozen)](https://zenodo.org/badge/DOI/10.5281/zenodo.17420604.svg)](https://doi.org/10.5281/zenodo.17420604)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 ![Qubits v3.0](https://img.shields.io/badge/Qubits-82-purple?style=for-the-badge)
-![FP biosensors v3.0](https://img.shields.io/badge/FP%20biosensors-187-green?style=for-the-badge)
+![FP biosensors v3.0](https://img.shields.io/badge/FP%20biosensors-195-green?style=for-the-badge)
 ![Classes](https://img.shields.io/badge/Classes-A%2FA%27%2FB%2FC%2FD-blueviolet?style=for-the-badge)
 
 ---
 
 ## Status and versioning
 
-- Current stable: **v3.0.0** - 82 qubits (classes A, A', B, C, D) + 187 curated FP biosensors.
+- Current stable: **v3.0.0** - 82 qubits (classes A, A', B, C, D) + 195 curated FP biosensors.
 - Peer-review: planned (Data Descriptor submission Q1 2026).
 - DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) for v3.0 (concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)); `10.5281/zenodo.17420604` preserved for v1.2.1 (Frontiers).
 - Live dashboard: [https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/).
@@ -23,7 +23,7 @@ This is an actively curated research dataset under continuous development. Relea
 
 ### Data quality tiers (FP atlas)
 
-- Tier 1 (curated): 187 systems, modelling-ready, full metadata.
+- Tier 1 (curated): 195 systems, modelling-ready, full metadata.
 - Tier 2 (candidates): ~13 systems, incomplete metadata, curation queue.
 - Tier 3 (unknown/staging): ~103 systems, placeholder data, kept for transparency.
 
@@ -57,7 +57,7 @@ Pour chercheurs en quantum computing : filtrer par `Methode_lecture=ODMR` et `Cl
 
 ### Version 3.0.0 - Current stable release
 - `data/qubits/biological_qubits_v3.csv` : 82 qubits (single source of truth, schéma `SCHEMA_v3.md`).
-- `data/optical/curated/atlas_fp_optical_v3_curated.csv` : 187 biosensors FP (Tier 1).
+- `data/optical/curated/atlas_fp_optical_v3_curated.csv` : 195 biosensors FP (Tier 1).
 - Legacy CSVs (pre-v3) archivés sous `data/qubits/archive/pre_v3/` et `data/optical/curated/atlas_fp_optical_v2_2_curated.csv`.
 - [OK] Interactive Dashboard with real-time filtering (docs/index.html)
 - [OK] FAIR 12/12 compliance (Findable, Accessible, Interoperable, Reusable)

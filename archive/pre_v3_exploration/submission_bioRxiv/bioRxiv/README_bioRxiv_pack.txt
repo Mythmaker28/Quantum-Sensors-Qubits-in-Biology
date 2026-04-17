@@ -97,7 +97,7 @@ MÉTHODE 3 : Conversion en Ligne (si pandoc indisponible)
  [ ] Auteur: Tommy Lepesteur
  [ ] Affiliation: Independent researcher, France
  [ ] ORCID: 0009-0009-0577-9563
- [ ] Email correspondant: tommy.lepesteur@hotmail.fr
+ [ ] Email correspondant: [contact: see GitHub Issues]
  [ ] Chiffres clés visibles: 80 total, 65 measured
  [ ] Liens GitHub et Zenodo cliquables
  [ ] DOI citations correctement formatés
@@ -119,7 +119,7 @@ AUTEUR(S)
   Country: France
   ORCID: 0009-0009-0577-9563
   Corresponding: Yes
-  Email: tommy.lepesteur@hotmail.fr
+  Email: [contact: see GitHub Issues]
 
 CATÉGORIE
   Primary: Biophysics
@@ -235,7 +235,7 @@ FICHIERS RÉFÉRENCÉS:
 ═══════════════════════════════════════════════════════════════════════
 
 AUTEUR: Tommy Lepesteur
-EMAIL: tommy.lepesteur@hotmail.fr
+EMAIL: [contact: see GitHub Issues]
 ORCID: 0009-0009-0577-9563
 
 GITHUB: https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology

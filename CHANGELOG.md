@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - Canonical qubits CSV moved to `data/qubits/biological_qubits_v3.csv` (82 rows, single source of truth).
-- Canonical FP atlas moved to `data/optical/curated/atlas_fp_optical_v3_curated.csv` (187 rows, mirrored in `data/processed/`).
+- Canonical FP atlas moved to `data/optical/curated/atlas_fp_optical_v3_curated.csv` (195 rows, mirrored in `data/processed/`).
 - Validators updated: temperature range widened to 1-400 K, year range widened to 1980-2027, `A_prime` recognised as a valid class.
 - `analysis/qubits_stats.py` accepts `--input` and `--version` and correctly reflects the dataset path in its Markdown output.
 - Licences and PMCIDs enriched via Unpaywall and NCBI ID Converter: 63 licences and 60 PMCIDs automatically completed.

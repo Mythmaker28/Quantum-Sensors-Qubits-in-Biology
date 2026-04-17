@@ -122,7 +122,7 @@ pandoc BQA_Supplement_bioRxiv.md -o BQA_Supplement_bioRxiv.pdf \
 - [ ] Auteur : **Tommy Lepesteur**
 - [ ] Affiliation : **Independent researcher, France**
 - [ ] ORCID : **0009-0009-0577-9563**
-- [ ] Email : **tommy.lepesteur@hotmail.fr**
+- [ ] Email : **[contact: see GitHub Issues]**
 - [ ] Métriques clés : **80 systèmes total, 65 measured**
 - [ ] Lien GitHub cliquable
 - [ ] Lien Zenodo présent
@@ -158,7 +158,7 @@ Affiliation: Independent researcher
 Country: France
 ORCID: 0009-0009-0577-9563
 Corresponding: Yes
-Email: tommy.lepesteur@hotmail.fr
+Email: [contact: see GitHub Issues]
 ```
 
 **Category** :
@@ -261,7 +261,7 @@ Archive: https://doi.org/10.5281/zenodo.17420604
 ## 📧 Contact Auteur
 
 **Nom** : Tommy Lepesteur  
-**Email** : tommy.lepesteur@hotmail.fr  
+**Email** : [contact: see GitHub Issues]  
 **ORCID** : 0009-0009-0577-9563  
 **Affiliation** : Independent researcher, France
 

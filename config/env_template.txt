@@ -1,10 +1,16 @@
-# Configuration Environment Variables — v2.0
-# Copier vers .env et remplir les valeurs
-# NE PAS COMMITER .env (protégé par .gitignore)
+# Configuration Environment Variables
+# Copier ce fichier vers `.env` (ignoré par git) et remplir avec vos propres valeurs.
+# NE JAMAIS commiter `.env` ou des valeurs réelles dans ce template.
+#
+# NCBI API — https://www.ncbi.nlm.nih.gov/account/settings/
+#   - Créez une clé dans votre compte NCBI
+#   - L'email est requis par la Politique NCBI E-utilities
+NCBI_API_KEY=REPLACE_ME_WITH_YOUR_NCBI_KEY
+NCBI_EMAIL=you@example.org
 
-NCBI_API_KEY=a0b0aa017e8720528fb9f89dc68088ce8208
-NCBI_EMAIL=tommy.lepesteur@hotmail.fr
+# FPbase API (optionnel) — https://www.fpbase.org/api/
 FPBASE_API_KEY=
+
+# GitHub Token (optionnel, pour opérations de release via `gh`)
+#   - Préférer GITHUB_TOKEN via secrets GitHub Actions
 GH_TOKEN=
-
-

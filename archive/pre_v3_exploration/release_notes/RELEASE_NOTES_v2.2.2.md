@@ -381,7 +381,7 @@ df = pd.read_csv('atlas_fp_optical_v2_2_curated.csv')  # 180 systems, no noise
 **Maintainer:** Tommy Lepesteur (Independent Researcher)  
 **Issues:** [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues)  
 **Discussions:** [GitHub Discussions](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/discussions)  
-**Email:** tommy.lepesteur@hotmail.fr
+**Email:** [contact: see GitHub Issues]
 
 ---
 

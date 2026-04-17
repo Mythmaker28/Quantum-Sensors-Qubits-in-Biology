@@ -246,7 +246,7 @@ print(f"Total systems: {len(optical) + len(spin) + len(radical) + len(nuclear)}"
 ---
 
 **Last updated :** 2025-11-13  
-**Maintainer :** Atlas curator (tommy.lepesteur@hotmail.fr)  
+**Maintainer :** Atlas curator (contact via [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues) / ORCID [0009-0009-0577-9563](https://orcid.org/0009-0009-0577-9563))  
 **Status :** ✅ Functional (MVP), ⚠️ Incomplete (field mapping, validation)  
 **Next steps :** Add schema validation, unit conversion, sync automation
 

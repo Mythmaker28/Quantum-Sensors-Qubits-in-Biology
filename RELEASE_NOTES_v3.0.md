@@ -28,7 +28,7 @@ Version 3.0.0 is a major consolidation release. It:
 | Class B | 15 | 31 | +16 |
 | Class C | 12 | 23 | +11 |
 | Class D | 4 | 17 | +13 |
-| FP biosensors (curated) | 180 | 187 | +7 |
+| FP biosensors (curated) | 180 | 195 | +15 |
 | Missing FP licences | 113 | 50 | -63 |
 | Missing FP PMCIDs | 148 | 88 | -60 |
 
@@ -99,7 +99,7 @@ Licences and PMCIDs for 63 + 60 rows respectively were filled via Unpaywall and 
 ## Validation status
 
 - `python scripts/qa/validate_qubits_data.py --input data/qubits/biological_qubits_v3.csv` returns **0 critical errors** and 2 warnings (legitimate cryogenic contexts at 77 K and 80 K).
-- FP atlas row count: 187, no duplicate `protein_name`.
+- FP atlas row count: 195, no duplicate `protein_name`.
 - Qubit dataset: no duplicate `(Classe, Systeme)`; DOI co-occurrences only for shared-paper entries (EYFP 80 K vs 295 K; DmCry / MagLOV / MagLOV2; mScarlet / mCherry / mScarlet-I; NV vs P1).
 
 ## Reproducibility

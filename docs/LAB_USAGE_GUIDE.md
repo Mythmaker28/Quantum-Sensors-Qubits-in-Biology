@@ -299,8 +299,8 @@ print(f"SiC defects @ RT: {len(sic_rt)}")  # Output: 1 (SPIN_SIC_001)
 ## Contact & Support
 
 **Questions about protocols :**
-- Open [GitHub Issue](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues) with label `lab-usage`
-- Email : tommy.lepesteur@hotmail.fr
+- Open a [GitHub Issue](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues) with label `lab-usage`
+- Contact via ORCID [0009-0009-0577-9563](https://orcid.org/0009-0009-0577-9563)
 
 **Report experimental results :**
 - Use [Data Fix template](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues/new?template=data_fix.yml) if Atlas data incorrect

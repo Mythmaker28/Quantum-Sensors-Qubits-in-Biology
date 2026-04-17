@@ -387,7 +387,7 @@ Implémentation Phase 1 v2.0 (Quick Wins) conforme PRD :
 **Phase 2** (Semaines 5-12) :
 - Expansion 200+ systèmes (auto-harvest PubMed/FPbase)
 - Curation manuelle
-- Clé NCBI configurée: `a0b0aa017e8720528fb9f89dc68088ce8208`
+- Clé NCBI configurée: `REDACTED` (voir `config/env_template.txt`)
 
 **Phase 3** (Semaines 13-24) :
 - ML GNN prédiction T2/contraste (R² >=0.75)

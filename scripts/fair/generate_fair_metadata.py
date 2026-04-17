@@ -139,7 +139,6 @@ class FAIRMetadataGenerator:
                 "givenName": "Tommy",
                 "familyName": "Lepesteur",
                 "@id": "https://orcid.org/0009-0009-0577-9563",
-                "email": "tommy.lepesteur@hotmail.fr",
                 "affiliation": {
                     "@type": "Organization",
                     "name": "Independent researcher"

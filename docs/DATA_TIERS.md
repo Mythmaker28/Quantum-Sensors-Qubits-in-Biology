@@ -2,11 +2,16 @@
 
 ## Purpose
 
-The atlas contains systems from multiple sources with varying quality levels. This document defines explicit tiers to separate **curated, modeling-ready data** from **staging candidates** and **unusable placeholders**.
+The Atlas contains systems from multiple sources with varying quality levels. This document defines explicit tiers to separate **curated, modeling-ready data** from **staging candidates** and **unusable placeholders**.
 
 ## Version
 
-Applies to: Atlas v2.2.2+ (296 total systems as of 2025-11-10)
+Applies to: **v3.0.0** (195 FP biosensors + 82 biological qubits, as of 2026-04-17).
+
+The same three-tier philosophy is applied independently to each of the two datasets:
+
+- `data/processed/atlas_fp_optical_v3_curated.csv` — **195 rows**, optical FP biosensors (this doc's primary scope).
+- `data/qubits/biological_qubits_v3.csv` — **82 rows**, biological qubits (classes A, A', B, C, D). Quality is encoded in the `Qualite` column (Tier A1/A2/A3/B/C) as documented in `SCHEMA_v3.0.md`.
 
 ---
 
@@ -28,9 +33,9 @@ High-confidence systems suitable for:
 - Quantitative analysis
 - Direct experimental use
 
-**Expected count:** ~180-193 systems
+**Expected count (v3.0.0):** 195 systems (all currently in Tier 1 after the v3 enrichment pass).
 
-**File:** `data/processed/atlas_fp_optical_v2_2_curated.csv`
+**File:** `data/processed/atlas_fp_optical_v3_curated.csv`
 
 ---
 
@@ -52,9 +57,9 @@ Manual curation queue:
 - Can be promoted to Tier 1 after verification
 - NOT recommended for automated modeling
 
-**Expected count:** ~13 systems
+**Expected count (v3.0.0):** 0 systems in the curated Tier 2 file. Legacy v2.2 Tier 2 candidates that could not be promoted were deprecated in `CHANGELOG.md` (v3.0.0, section "Deprecated").
 
-**File:** `data/staging/atlas_fp_optical_v2_2_candidates.csv`
+**File (historical):** `data/staging/atlas_fp_optical_v2_2_candidates.csv`
 
 ---
 
@@ -74,7 +79,7 @@ Manual curation queue:
 - Often generic fluorescent proteins without sensing function
 - Contrast set to 1.0 as conservative default (not measured)
 
-**Source breakdown:**
+**Source breakdown (historical):**
 - 77 systems from `deep_harvest_uniprot_deep` (UniProt API)
 - 26 systems from `api_harvest_fpbase_csv` (FPbase CSV)
 
@@ -82,11 +87,11 @@ Manual curation queue:
 Isolation zone:
 - NOT counted in official "N systems" for modeling
 - Kept for transparency/auditability
-- May be reviewed manually later
+- Reviewed during v3.0.0 curation; remaining noise-only rows live under `data/staging/`.
 
-**Expected count:** ~103 systems
+**Expected count (historical v2.2 harvest):** ~103 systems
 
-**File:** `data/staging/atlas_fp_optical_v2_2_unknown.csv`
+**File (historical):** `data/staging/atlas_fp_optical_v2_2_unknown.csv`
 
 ---
 
@@ -110,9 +115,9 @@ Isolation zone:
 
 ### Non-Destructive Guarantee
 
-- **NO systems deleted** — all 296 systems preserved
-- Original file `atlas_fp_optical_v2_2.csv` kept as "raw mixed" view
-- All tiers programmatically reproducible via `scripts/qa/split_tiers.py`
+- **NO systems deleted arbitrarily** — v3.0.0 explicitly logs deprecations in `CHANGELOG.md` when systems are removed (e.g., ErCry4b, ErCry1 when 2024-2025 replication studies invalidated the original claims).
+- Historical v2.2 raw and tiered files remain available under `data/staging/` and in older Git tags (v2.2.x).
+- All tiers programmatically reproducible via `scripts/qa/split_tiers.py`.
 
 ---
 
@@ -121,7 +126,7 @@ Isolation zone:
 ### For Downstream Analysis (e.g., fp-qubit-design)
 
 **Recommended:**  
-Use `atlas_fp_optical_v2_2_curated.csv` (~180-193 systems)
+Use `data/processed/atlas_fp_optical_v3_curated.csv` (195 systems) for optical FP biosensors, and `data/qubits/biological_qubits_v3.csv` (82 systems) for biological qubits.
 
 **Rationale:**
 - Clean, modeling-ready data
@@ -154,6 +159,10 @@ Mixing curated + unknown tiers → introduces bias (Unknown systems act as noise
 
 ## Changelog
 
+- **2026-04-17 (v3.0.0):** Refreshed for the v3 release.
+  - Curated FP atlas promoted to 195 systems (all Tier 1) after the 2024-2026 literature enrichment pass.
+  - Biological qubits dataset added (`biological_qubits_v3.csv`, 82 rows, classes A/A'/B/C/D).
+  - Data Tiers doc retains the v2.2 three-tier philosophy for reproducibility; historical files are still available for audit under `data/staging/`.
 - **2025-11-10:** Initial tier specification based on quality analysis
   - Tier 1: 180 systems (strict criteria)
   - Tier 2: 13 systems (incomplete)
@@ -162,33 +171,36 @@ Mixing curated + unknown tiers → introduces bias (Unknown systems act as noise
 
 ---
 
-## Non-Optical Qubit Systems (Separate Schema)
+## Biological Qubits (v3 — separate dataset)
 
-**Scope:** The tiering system above applies ONLY to **optical fluorescent protein systems**. 
+**Scope:** The Tier 1/2/3 scheme above applies ONLY to the **optical FP biosensor atlas** (`atlas_fp_optical_v3_curated.csv`, 195 rows).
 
-**Non-optical quantum systems** (spin qubits, radical pairs, nuclear spins) are handled in a completely separate schema to avoid cross-contamination:
+**Biological qubits** (classes A, A', B, C, D) are curated in a separate dataset with its own quality annotations:
 
-### Separate Files (Non-Optical)
+### Dataset
 
-| File | System Type | Status | Count |
-|------|-------------|--------|-------|
-| `data/staging/spin_qubit_candidates.csv` | Spin qubits (NV centers, SiC defects, etc.) | Staging | 0 (headers only) |
-| `data/staging/radical_pair_candidates.csv` | Radical pairs (cryptochrome, etc.) | Staging | 0 (headers only) |
-| `data/staging/nuclear_spin_candidates.csv` | Nuclear spin qubits | Staging | 0 (headers only) |
+- File: `data/qubits/biological_qubits_v3.csv` (82 rows)
+- Schema: `SCHEMA_v3.0.md`
+- Quality encoded in the `Qualite` column (values: `A1`, `A2`, `A3`, `B`, `C`):
+  - **A1**: Direct experimental values (T1/T2/contrast measured in the cited paper on the cited system)
+  - **A2**: Values from a closely related system (same defect/host, minor composition differences)
+  - **A3**: Values extrapolated from the literature with clear citation
+  - **B**: Qualitative evidence only (e.g., ODMR observed but T1/T2 not reported)
+  - **C**: Candidate / preliminary (preprint, unverified)
 
-**Schema documentation:** See `docs/EXTENDED_QUBITS_SCHEMA.md`
+### Guarantee
 
-**Guarantee:**
-- Non-optical systems are NEVER mixed with optical FP tiers (Tier1/Tier2/Tier3)
-- Optical counts (180+13+103=296) remain unchanged
-- Non-optical candidates require same quality standards (DOI, measurements, no fabrication)
+- Biological qubits are NEVER mixed with optical FP tiers.
+- Optical FP atlas counts (195 Tier 1 in v3.0.0) and qubit counts (82 across 5 classes) are reported separately.
+- Both datasets require DOI + measurable evidence for Tier 1 / Qualite ∈ {A1, A2}.
 
 ---
 
-**Contact:** Atlas curator  
+**Contact:** via [GitHub Issues](https://github.com/Mythmaker28/quantum-sensors-qubits-in-biology/issues).  
 **References:**
-- `docs/ATLAS_SPEC.md` — Schema specification (optical systems)
-- `docs/EXTENDED_QUBITS_SCHEMA.md` — Schema specification (non-optical systems)
+- `SCHEMA_v3.0.md` — Schema specification (qubits + FP systems, v3)
+- `docs/ATLAS_SPEC.md` — Schema specification (optical systems, legacy)
+- `docs/EXTENDED_QUBITS_SCHEMA.md` — Schema specification (non-optical systems, legacy)
 - `docs/KNOWN_ISSUES.md` — Known data limitations
 - `docs/STAGING_GUIDE.md` — Manual curation workflow
 

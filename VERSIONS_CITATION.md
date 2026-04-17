@@ -20,7 +20,7 @@
       v                                           v
    v1.2.1                                     v3.0.0
    (FROZEN)                                   (ACTIVE)
-   66 systems                                 82 qubits + 187 FP biosensors
+   66 systems                                 82 qubits + 195 FP biosensors
    DOI: 10.5281/zenodo.17420604               DOI: 10.5281/zenodo.19617435
 ```
 
@@ -32,7 +32,7 @@
 |--------|--------------------|---------------------|------------------|
 | Status | Frozen (immutable) | Deprecated | Active |
 | Qubits | 66 legacy systems (mixed atlas) | 34 qubits | 82 qubits (classes A, A', B, C, D) |
-| FP biosensors | n/a | 180 curated + 13 + 103 | 187 curated |
+| FP biosensors | n/a | 180 curated + 13 + 103 | 195 curated |
 | Purpose | Manuscript publication | Superseded reference | Research, ML, clinical context |
 | DOI | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) | n/a | [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) (concept DOI [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)) |
 | Main files | `atlas_fp_optical_v1_2_1.csv` | `atlas_fp_optical_v2_2_curated.csv` | `biological_qubits_v3.csv`, `atlas_fp_optical_v3_curated.csv` |
@@ -122,7 +122,7 @@ BibTeX:
   year    = {2026},
   month   = {April},
   version = {3.0.0},
-  systems = {82 qubits + 187 FP biosensors},
+  systems = {82 qubits + 195 FP biosensors},
   doi     = {10.5281/zenodo.19617435},
   url     = {https://doi.org/10.5281/zenodo.19617435}
 }
@@ -134,7 +134,7 @@ Plain text:
 
 In-text:
 
-> We used the Biological Qubits Atlas v3.0.0 (Lepesteur, 2026), containing 82 qubits (classes A, A', B, C, D) and 187 curated FP biosensors with full provenance tracking.
+> We used the Biological Qubits Atlas v3.0.0 (Lepesteur, 2026), containing 82 qubits (classes A, A', B, C, D) and 195 curated FP biosensors with full provenance tracking.
 
 For cross-version stability use the concept DOI `10.5281/zenodo.17420603`, which always resolves to the latest released version.
 
@@ -144,7 +144,7 @@ For cross-version stability use the concept DOI `10.5281/zenodo.17420603`, which
 
 | Tier | Count | Description | File | Modelling use |
 |------|-------|-------------|------|---------------|
-| Tier 1 (curated) | 187 | Known family + DOI + (spectra OR contrast > 1.5) | `atlas_fp_optical_v3_curated.csv` | Recommended |
+| Tier 1 (curated) | 195 | Known family + DOI + (spectra OR contrast > 1.5) | `atlas_fp_optical_v3_curated.csv` | Recommended |
 | Tier 2 (candidates) | ~13 | Real systems, incomplete metadata | `atlas_fp_optical_v2_2_candidates.csv` | Manual curation queue |
 | Tier 3 (unknown) | ~103 | Auto-harvested, placeholder data | `atlas_fp_optical_v2_2_unknown.csv` | Transparency only |
 

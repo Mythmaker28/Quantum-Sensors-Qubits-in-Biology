@@ -8,7 +8,7 @@
 
 | Version | Date | Purpose | Systems | Status |
 |---------|------|---------|---------|--------|
-| **v3.0.0** | 2026-04-17 | Consolidated release; class A' introduced; 2024-2026 literature | 82 qubits + 187 FP biosensors | Current stable |
+| **v3.0.0** | 2026-04-17 | Consolidated release; class A' introduced; 2024-2026 literature | 82 qubits + 195 FP biosensors | Current stable |
 | v2.2.2 | 2025-10-25 | Balanced dataset for ML (pre-consolidation) | 180 curated FP + 34 qubits | Superseded |
 | v2.2.0 | 2025-10-25 | Data boost | 191 total (170 usable) | Superseded |
 | v2.1.0 | 2025-10-24 | FPbase integration | 120 | Superseded |
@@ -24,7 +24,7 @@
 ### v3.0.0 (latest stable, research and ML)
 - Purpose: research, ML, clinical context, 2024-2026 literature.
 - Qubits: 82 (classes A, A', B, C, D).
-- FP biosensors: 187 (Tier 1 curated).
+- FP biosensors: 195 (Tier 1 curated).
 - Files: `data/qubits/biological_qubits_v3.csv`, `data/optical/curated/atlas_fp_optical_v3_curated.csv`.
 - Citation: [`CITATION.cff`](CITATION.cff).
 - DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) (concept DOI: [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603)).
@@ -64,7 +64,7 @@ See [`README.md#citation`](README.md#citation) and [`VERSIONS_CITATION.md`](VERS
 Breaking changes:
 - Canonical qubit CSV moves from `data/qubits/biological_qubits.csv` (34 rows) to `data/qubits/biological_qubits_v3.csv` (82 rows).
 - `Classe` now accepts the new value `A_prime` (FP-qubits with direct ODMR).
-- FP atlas canonical path becomes `data/optical/curated/atlas_fp_optical_v3_curated.csv` (187 rows) with a compatibility mirror in `data/processed/`.
+- FP atlas canonical path becomes `data/optical/curated/atlas_fp_optical_v3_curated.csv` (195 rows) with a compatibility mirror in `data/processed/`.
 - Temperature validator widened to 1-400 K, year validator widened to 1980-2027.
 
 Migration steps:

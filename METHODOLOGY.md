@@ -1,9 +1,9 @@
-# Curation Methodology — Biological Qubits Catalog
+# Curation Methodology — Biological Qubits Atlas
 
-**Version**: 1.3.0-beta  
-**Last updated**: 2025-10-24  
-**Status**: Active development (hybrid curated strategy)  
-**Document type**: Living methodology (updated with each major release)
+**Version**: 3.0.0  
+**Last updated**: 2026-04-17  
+**Status**: Stable (Zenodo-archived)  
+**Document type**: Living methodology (updated with each MAJOR/MINOR release)
 
 ---
 
@@ -55,29 +55,29 @@ Provide a **comprehensive, traceable, and reproducible** catalog of quantum syst
 
 ---
 
-## 📊 Hybrid Curated Strategy (v1.3+)
+## 📊 Hybrid Curated Strategy (since v1.3, now default in v3.0.0)
 
 ### Overview
 
-Starting with v1.3.0-beta, the catalog uses a **3-tier hybrid approach**:
+The Atlas uses a **3-tier hybrid approach**:
 
 1. **Tier 1: Manual Curation** (Gold Standard)
    - Human-verified extraction from primary literature
    - Every value cross-checked against original Figure/Table
    - Uncertainties extracted or estimated with transparent methodology
-   - **Coverage**: 65/80 systems (81% in v1.3.0-beta)
+   - **Coverage (v3.0.0)**: target ≥85% of biological qubits entries (82 total); 100% of FP atlas curated Tier 1 (195 total)
 
 2. **Tier 2: Conservative Automated Extraction**
    - Structured data only (XML tables, HTML tables, CSV supplements)
    - No OCR, no figure scraping
    - Ambiguous entries flagged for manual review
-   - **Coverage**: 8/80 systems (10% in v1.3.0-beta)
+   - **Coverage (v3.0.0)**: supplements Tier 1 via `scripts/etl/deep_enrichment_all_apis.py`; never replaces it
 
 3. **Tier 3: Specialist Database Cross-Reference**
-   - Secondary extraction from trusted databases (FPbase, UniProt, PDB)
+   - Secondary extraction from trusted databases (FPbase, UniProt, PDB, Crossref, Unpaywall)
    - Original DOI traced and validated
-   - Marked explicitly in `source` column
-   - **Coverage**: 43/80 systems (54% in v1.3.0-beta, metadata only)
+   - Marked explicitly in `source` / `source_refs` columns
+   - **Coverage (v3.0.0)**: used for PMCID / license completion (`complete_fp_licenses_pmcids.py`)
 
 ---
 
@@ -138,7 +138,7 @@ AND ("in vivo" OR "in vitro" OR "cells" OR "biological")
 
 **Mandatory fields**:
 - `Systeme` (system name)
-- `Classe` (A/B/C/D)
+- `Classe` (A, A', B, C, D — see "Classes" section below)
 - `T2_us` (coherence time, microseconds)
 - `Source_T2` (provenance: DOI + Figure/Table)
 - `DOI` (primary reference)
@@ -183,21 +183,51 @@ AND ("in vivo" OR "in vitro" OR "cells" OR "biological")
 
 ## 📏 Quality Tiers
 
-### Quantum Systems (T2-based)
+### Biological Qubits (T1/T2-based)
 
-| Tier | Criteria | Example | % in v1.2.1 |
-|------|----------|---------|-------------|
-| **★★★ (Robust)** | T2 >1µs + Major journal (Nature/Science/PNAS) + Reproduced | Pyruvate ^13C (FDA-approved), NV in HeLa (PNAS) | 50% |
-| **★★ (Solid)** | T2 >0.1µs + In vitro/cellulo + Peer-reviewed | SiC defects in buffer (Sci. Adv.) | 31% |
-| **★ (Exploratory)** | Indirect evidence OR T2 <0.1µs OR Hypothetical | Cryptochrome (behavioral only) | 19% |
+Quality is stored in the `Qualite` column of `data/qubits/biological_qubits_v3.csv`:
 
-### Optical Systems (Contrast-based, v1.3+)
+| Tier | Criteria | Example |
+|------|----------|---------|
+| **A1** | Values measured directly in the cited paper on the cited system | NV- centers in HeLa (PNAS), EYFP ODMR at 80 K (Nature 2025) |
+| **A2** | Values from closely related system (same defect/host, minor composition diff.) | VSi in SiC nanoparticles (vs. bulk SiC) |
+| **A3** | Values extrapolated from literature with clear citation | T2 estimated from bulk diamond scaled for nanodiamond size |
+| **B** | Qualitative evidence only (e.g., ODMR observed, no T1/T2 reported) | MagLOV (ODMR contrast reported, T2 pending full characterization) |
+| **C** | Candidate / preliminary (preprint, unverified) | Some 2026 preprints awaiting peer review |
 
-| Tier | Criteria | Example | % in v1.3.0-beta |
-|------|----------|---------|------------------|
-| **A** | Measured + CI/n + Table/Figure | GCaMP6s (Nature 2013, Table 1, n=8, SD=3.2) | 0% (target: 20% in v1.3.0 stable) |
-| **B** | Measured + Precise value | dLight1.1 (text: "ΔF/F0 = 2.3") | 100% |
-| **C** | Computed/Estimated | Brightness from QY × ε | 0% |
+### Optical FP Systems (Contrast-based)
+
+Stored in the `quality_tier` column of `data/processed/atlas_fp_optical_v3_curated.csv`:
+
+| Tier | Criteria | Example |
+|------|----------|---------|
+| **A** | Measured ΔF/F₀ with CI or n reported; paper peer-reviewed | GCaMP6s (Chen et al., Nat 2013), CaBLAM (Nat Methods 2026) |
+| **B** | Measured ΔF/F₀ with precise value, peer-reviewed or high-quality preprint | iGluSnFR4f (Nat Methods 2026), ASAP6.1 (bioRxiv 2024) |
+| **C** | Computed or estimated contrast (e.g., from QY × ε, FPbase) | Some legacy auto-harvested entries |
+
+---
+
+## 🧬 Classes (Biological Qubits Taxonomy)
+
+The v3.0.0 dataset organises qubits into five classes. All class definitions and boundary cases are documented in `docs/FP_QUBITS_ODMR_2025.md` (for class A'); a brief summary is given here:
+
+| Class | Description | Read-out | Typical host | Examples |
+|-------|-------------|----------|--------------|----------|
+| **A** | Protein-based qubits with indirect or spectroscopic evidence of coherence | ESR, optical (non-ODMR) | in_vitro / lysat | LOV2 flavin (ESR), tyrosyl in ribonucleotide reductase |
+| **A'** *(new in v3.0.0)* | **Fluorescent-protein qubits with direct ODMR readout** | ODMR / RYDMR on the protein itself | in_vitro, in_cellulo, in_vivo | EYFP (80 K/295 K), MagLOV, mScarlet+FMN (SCRP), mCherry+FMN, DmCry purified |
+| **B** | Solid-state / engineered defects in biological environments | ODMR, pulsed ESR | nanoparticles, cells, tissues | NV in nanodiamonds, VSi/VV in SiC, SnV-/GeV- in diamond, hBN VB, charge-sensitive FND |
+| **C** | Nuclear-spin qubits for biological imaging | NMR, hyperpolarised MRI | in_vivo | Hyperpolarised 13C-pyruvate (clinical), 129Xe (XENOVIEW), HP [13C,15N2]-urea first-in-human |
+| **D** | Radical-pair qubits (biological magnetoreception and photobiology) | Magnetic-field effect, MARY / MARI / RYDMR | in_vitro, in_vivo | Cryptochromes (CRY1a, GgCry4a), FMO complex, flavin-guanine RP in DNA, (6-4)-photolyase |
+
+### Admission criteria for class A'
+
+An entry qualifies as **class A'** (FP-qubit with direct ODMR) if **all** of the following hold:
+1. The fluorescent protein (or chromophore + biologically relevant cofactor, e.g. FMN) **itself** exhibits a spin-correlated radical pair (SCRP) or triplet sub-level addressable by RF.
+2. The read-out is **optical and ODMR-based** (not indirect via magnetic-field effect alone).
+3. The measurement is reported in a **peer-reviewed journal** or on a **high-profile preprint server** (arXiv, bioRxiv, chemRxiv) with accessible raw data or plasmids.
+4. Either T1 or T2 is reported (Qualite A1-A3), or ODMR contrast is reported (Qualite B).
+
+The class A' introduction is documented in `docs/FP_QUBITS_ODMR_2025.md` with full literature references.
 
 ---
 
@@ -292,12 +322,12 @@ NV 10nm,0.8,0.16,"T2 from ODMR spectrum. Uncertainty estimated ±20% (typical OD
 ### Version Numbering (Semantic Versioning)
 
 ```
-vMAJOR.MINOR.PATCH[-beta|-alpha]
+vMAJOR.MINOR.PATCH[-beta|-alpha|-rc.N]
 
 Examples:
-- v1.2.1       : Stable patch (bug fix over v1.2.0)
-- v1.3.0-beta  : Beta pre-release for v1.3.0
-- v2.0.0       : Major version (breaking schema changes)
+- v3.0.0       : Stable MAJOR (Zenodo-archived, DOI 10.5281/zenodo.19617435)
+- v3.1.0-beta  : Beta pre-release for next MINOR
+- v3.0.1       : Stable PATCH (bug fix over v3.0.0)
 ```
 
 See `VERSIONS.md` for full policy.
@@ -306,39 +336,40 @@ See `VERSIONS.md` for full policy.
 
 ## 🚨 Known Limitations & Biases
 
-### Documented Limitations (v1.3.0-beta)
+### Documented Limitations (v3.0.0)
 
-1. **License audit incomplete**
-   - 8 systems from specialist databases lack explicit license verification
-   - Status: "varies (see DOI)" → requires manual check
-   - Target: 100% verified by v1.3.0 stable
+1. **License coverage partial**
+   - ~12% of FP atlas entries list license as "publisher (see DOI)" because Unpaywall/Crossref returned no explicit OA license.
+   - Target: raise to >95% explicit by v3.1.0.
 
-2. **No confidence intervals for 15 systems**
-   - Affected: Pre-2015 papers (older methodology, error bars not reported)
-   - Mitigation: Conservative estimates (±20-25%) with explicit flagging
-   - Target: Re-extract from supplementary materials by v1.4.0
+2. **Some biological qubits lack confidence intervals**
+   - Affected: pre-2015 papers (older methodology, error bars not reported) and some preprints.
+   - Mitigation: conservative estimates (±20-25%) with explicit flagging in `Notes`.
+   - Target: bootstrap CIs for all Qualite A1 entries by v3.2.0.
 
-3. **Class D controversial**
-   - Cryptochrome magnetoreception: Debated mechanism (quantum vs classical)
-   - Magnetosomes: Coherence not directly measured
-   - Inclusion rationale: High-impact publications (Nature), active research area
-   - Marked explicitly: Tier ★ (Exploratory)
+3. **Class D remains the most heterogeneous**
+   - Some magnetoreception claims (notably ErCry4b, ErCry1) were retracted in v3.0.0 after 2024-2025 replication failures (see `CHANGELOG.md`).
+   - GgCry4a (chicken cryptochrome 4a, 2025) is the first peer-reviewed addition with direct spin dynamics; earlier cryptochrome entries are retained with Qualite B/C.
 
-4. **Temporal bias**
-   - 70% of systems from 2015-2025 (modern techniques: ODMR, optogenetics, super-res)
-   - Older literature (1990-2010): Under-represented (~15%)
-   - Mitigation: Systematic review planned (v2.0, target: 200+ systems, balanced timeline)
+4. **Class A' is new and narrow**
+   - Only 8 entries as of v3.0.0; the field is rapidly evolving (several relevant preprints from late 2025 / early 2026).
+   - New entries will be admitted with Qualite C until peer review or independent replication.
 
-5. **Geographic bias**
-   - Likely over-representation of US/EU research groups
-   - Reason: Language barrier (English-only search), database access (Web of Science)
-   - Mitigation: Collaborate with non-English-speaking groups (v1.4+ planned)
+5. **Temporal bias**
+   - 70% of systems from 2015-2026 (modern techniques: ODMR, optogenetics, super-resolution).
+   - Older literature (1990-2010) under-represented (~15%).
+   - Mitigation: systematic review planned for v4.0.0.
 
-6. **Measurement heterogeneity**
-   - T2 measured under different conditions (temp, field strength, pulse sequence)
-   - Optical contrast: Different stimuli, concentrations, time windows
-   - Normalization attempt: Document all conditions in `condition_text` column
-   - Future: Add normalized_T2 column with standard conditions (v2.0)
+6. **Geographic bias**
+   - Likely over-representation of US/EU research groups.
+   - Reason: language barrier (English-only search), database access (Web of Science).
+   - Mitigation: collaborate with non-English-speaking groups; invite contributions via GitHub Issues.
+
+7. **Measurement heterogeneity**
+   - T2 measured under different conditions (temp, field strength, pulse sequence).
+   - Optical contrast: different stimuli, concentrations, time windows.
+   - Normalization attempt: document all conditions in `Conditions` / `condition_text` columns.
+   - Future: add normalized columns with standard conditions (v4.0.0).
 
 ---
 
@@ -703,8 +734,8 @@ This catalog's curation methodology is inspired by:
 
 ---
 
-**Last updated**: 2025-10-24  
-**Maintainer**: Tommy Lepesteur  
+**Last updated**: 2026-04-17  
+**Maintainer**: Atlas curator — contact via [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues) or [ORCID 0009-0009-0577-9563](https://orcid.org/0009-0009-0577-9563)  
 **License**: This methodology document is CC-BY-4.0  
-**Version**: 1.3 (aligned with catalog v1.3.0-beta)
+**Version**: 3.0 (aligned with catalog v3.0.0, Zenodo DOI 10.5281/zenodo.19617435)
 

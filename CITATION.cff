@@ -53,7 +53,7 @@ abstract: |
   13C,15N2-urea MRI, room-temperature FMO coherence, Flavin-Guanine
   SCRP, updated cryptochrome evidence). The fluorescent-biosensor atlas
   is extended with 2024 to 2026 biosensors (CaBLAM, HaloDA1.0, iGluSnFR4,
-  ASAP4.4-Kv, PinkyCaMP, OCaMP). The dataset totals 82 qubits and 187
+  ASAP4.4-Kv, PinkyCaMP, OCaMP). The dataset totals 82 qubits and 195
   FP biosensors, with full provenance (DOI, PMCID, license) for every
   curated entry.
 preferred-citation:
@@ -67,7 +67,7 @@ preferred-citation:
   version: "3.0.0"
   doi: "10.5281/zenodo.19617435"
   url: "https://doi.org/10.5281/zenodo.19617435"
-  notes: "Consolidated release: 82 qubits (classes A, A', B, C, D) and 187 curated FP biosensors. Single source of truth for qubits at data/qubits/biological_qubits_v3.csv."
+  notes: "Consolidated release: 82 qubits (classes A, A', B, C, D) and 195 curated FP biosensors. Single source of truth for qubits at data/qubits/biological_qubits_v3.csv."
 references:
   - type: dataset
     title: "Biological Qubits Catalog v1.2.1 (Frontiers)"

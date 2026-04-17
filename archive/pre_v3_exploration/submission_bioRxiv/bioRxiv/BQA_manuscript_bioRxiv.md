@@ -3,7 +3,7 @@
 **Tommy Lepesteur**  
 Independent researcher, France  
 ORCID: 0009-0009-0577-9563  
-Corresponding author: tommy.lepesteur@hotmail.fr
+Corresponding author: [contact: see GitHub Issues]
 
 ---
 

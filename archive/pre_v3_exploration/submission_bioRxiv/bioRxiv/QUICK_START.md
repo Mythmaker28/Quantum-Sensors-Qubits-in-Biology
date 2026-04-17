@@ -48,7 +48,7 @@ submission/bioRxiv/
 - [ ] Chiffres clés visibles : **80 total, 65 measured**
 - [ ] Auteur : **Tommy Lepesteur**, Independent researcher, France
 - [ ] ORCID : **0009-0009-0577-9563**
-- [ ] Email : **tommy.lepesteur@hotmail.fr**
+- [ ] Email : **[contact: see GitHub Issues]**
 
 ### Sur bioRxiv
 
@@ -115,7 +115,7 @@ pip install markdown weasyprint
 ## 📧 Support
 
 **Auteur** : Tommy Lepesteur  
-**Email** : tommy.lepesteur@hotmail.fr  
+**Email** : [contact: see GitHub Issues]  
 **ORCID** : 0009-0009-0577-9563
 
 ---

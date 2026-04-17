@@ -1,9 +1,9 @@
-# Biological Qubits and Quantum Sensors Atlas
+﻿# Biological Qubits and Quantum Sensors Atlas
 
 [![Version (latest)](https://img.shields.io/badge/version-v3.0.0-blue.svg)](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/releases)
 [![Stable (Frontiers)](https://img.shields.io/badge/frontiers-v1.2.1-lightgrey.svg)](#citation)
 [![Qubits (v3.0)](https://img.shields.io/badge/qubits-82-green.svg)](#whats-inside)
-[![FP biosensors (v3.0)](https://img.shields.io/badge/FP%20biosensors-187-green.svg)](#whats-inside)
+[![FP biosensors (v3.0)](https://img.shields.io/badge/FP%20biosensors-195-green.svg)](#whats-inside)
 [![Classes](https://img.shields.io/badge/classes-A%2FA%E2%80%B2%2FB%2FC%2FD-blueviolet.svg)](#data-tiers)
 
 [Live Dashboard](https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/) | [Qubits dataset](data/qubits/biological_qubits_v3.csv) | [FP atlas](data/optical/curated/atlas_fp_optical_v3_curated.csv) | [Full documentation](DOCUMENTATION.md) | [Release notes](RELEASE_NOTES_v3.0.md)
@@ -50,7 +50,7 @@ https://mythmaker28.github.io/Quantum-Sensors-Qubits-in-Biology/
 # Qubits dataset (v3.0, 82 systems)
 wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/qubits/biological_qubits_v3.csv
 
-# FP biosensors atlas (v3.0 curated, 187 systems)
+# FP biosensors atlas (v3.0 curated, 195 systems)
 wget https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/raw/main/data/optical/curated/atlas_fp_optical_v3_curated.csv
 ```
 
@@ -78,7 +78,7 @@ This atlas maintains semantic versioning with long-lived references for legacy c
 
 | Version | Status | Qubits | FP biosensors | Use case | DOI |
 |---------|--------|--------|---------------|----------|-----|
-| **v3.0.0** | Active | 82 | 187 curated | Research, ML, clinical context, 2024-2026 literature | [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) |
+| **v3.0.0** | Active | 82 | 195 curated | Research, ML, clinical context, 2024-2026 literature | [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435) |
 | v2.2.2 | Deprecated | 34 | 180 curated | Superseded by v3.0.0 | n/a |
 | v1.2.1 | Frozen | 66 | n/a | Frontiers manuscript citation | [10.5281/zenodo.17420604](https://doi.org/10.5281/zenodo.17420604) |
 
@@ -101,7 +101,7 @@ Quick guide:
 | C | 23 | Hyperpolarised nuclei (13C, 15N, 129Xe, 31P) including first-in-human clinical trials |
 | D | 17 | Radical-pair mechanisms and biological spin systems (cryptochromes, photolyases, FMO, ferredoxin...) |
 
-### Fluorescent biosensors atlas (v3.0 curated, 187 systems)
+### Fluorescent biosensors atlas (v3.0 curated, 195 systems)
 
 | Category | Count | Examples |
 |----------|-------|----------|
@@ -128,12 +128,12 @@ Quick guide:
 
 This project contains two complementary datasets:
 
-### 1. Fluorescent-biosensor atlas (v3.0 curated, 187 systems)
+### 1. Fluorescent-biosensor atlas (v3.0 curated, 195 systems)
 
 File: `data/optical/curated/atlas_fp_optical_v3_curated.csv` (mirrored in `data/processed/atlas_fp_optical_v3_curated.csv`).
 
 Content:
-- 187 curated biosensors (Tier 1, modelling-ready).
+- 195 curated biosensors (Tier 1, modelling-ready).
 - Families: calcium, voltage, glutamate, dopamine, pH, ATP, GABA, cAMP, H2O2, serotonin, acetylcholine, bioluminescent, etc.
 - Properties: contrast (deltaF/F0 or fold-change), excitation/emission spectra, temperature, pH.
 - Applications: neural imaging, biosensing, cell biology.
@@ -187,7 +187,7 @@ Quantum-Sensors-Qubits-in-Biology
 │   │   ├── README.md                         # Dataset overview
 │   │   └── archive/pre_v3/                   # Legacy CSVs (v1.2.1 to v2.3)
 │   ├── optical/
-│   │   └── curated/atlas_fp_optical_v3_curated.csv   # FP atlas (187)
+│   │   └── curated/atlas_fp_optical_v3_curated.csv   # FP atlas (195)
 │   ├── processed/
 │   │   └── atlas_fp_optical_v3_curated.csv   # Mirror for tooling compatibility
 │   └── staging/                              # Tier 2/3 candidates
@@ -221,7 +221,7 @@ The atlas uses explicit quality tiers to separate curated data from auto-harvest
 
 | Tier | Count | Description | File | Use case |
 |------|-------|-------------|------|----------|
-| Tier 1 (curated) | 187 | Known family + DOI + (spectra OR contrast > 1.5) | `atlas_fp_optical_v3_curated.csv` | Modelling, analysis |
+| Tier 1 (curated) | 195 | Known family + DOI + (spectra OR contrast > 1.5) | `atlas_fp_optical_v3_curated.csv` | Modelling, analysis |
 | Tier 2 (candidates) | ~13 | Real systems, incomplete metadata | `atlas_fp_optical_v2_2_candidates.csv` | Manual curation queue |
 | Tier 3 (unknown) | ~103 | Auto-harvested, placeholder data | `atlas_fp_optical_v2_2_unknown.csv` | Transparency only |
 
@@ -238,7 +238,7 @@ See [docs/DATA_TIERS.md](docs/DATA_TIERS.md) for complete tier definitions.
 This atlas is part of a broader ecosystem exploring quantum-inspired and quantum-compatible biological platforms:
 
 ### [fp-qubit-design](https://github.com/Mythmaker28/fp-qubit-design)
-Computational design of fluorescent protein mutants. Uses the atlas (v3.0 curated, 187 systems) as training source for ML-guided protein engineering. Predicts spectral properties, dynamic range, and ODMR contrast for the new A' class.
+Computational design of fluorescent protein mutants. Uses the atlas (v3.0 curated, 195 systems) as training source for ML-guided protein engineering. Predicts spectral properties, dynamic range, and ODMR contrast for the new A' class.
 
 ### [arrest-molecules](https://github.com/Mythmaker28/arrest-molecules)
 **Molecular arrest framework** — Theoretical framework for dampening compounds in biological regulation (10 compounds, 44 predictions, DOI: [10.5281/zenodo.17420685](https://doi.org/10.5281/zenodo.17420685)). Shares conceptual vocabulary with quantum metastability: energy landscapes, arrest kinetics, tunneling vs. activation barriers.
@@ -325,7 +325,7 @@ Frontiers manuscript (frozen dataset):
 > This version is frozen for Frontiers publication.
 
 Latest stable (research, ML, clinical context):
-> v3.0.0 — 82 qubits + 187 FP biosensors.  
+> v3.0.0 — 82 qubits + 195 FP biosensors.  
 > DOI: [10.5281/zenodo.19617435](https://doi.org/10.5281/zenodo.19617435).  
 > Concept DOI (all versions): [10.5281/zenodo.17420603](https://doi.org/10.5281/zenodo.17420603).  
 > Use this version for current research, ML training, and development.
@@ -336,7 +336,7 @@ Latest stable (research, ML, clinical context):
   author  = {Lepesteur, Tommy},
   year    = {2026},
   version = {3.0.0},
-  note    = {82 qubits (classes A, A', B, C, D) + 187 curated FP biosensors},
+  note    = {82 qubits (classes A, A', B, C, D) + 195 curated FP biosensors},
   doi     = {10.5281/zenodo.19617435},
   url     = {https://doi.org/10.5281/zenodo.19617435}
 }
