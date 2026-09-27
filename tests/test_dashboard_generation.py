@@ -7,6 +7,7 @@ Licence: Apache-2.0
 import pytest
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 class TestDashboardGeneration:
@@ -36,7 +37,7 @@ class TestDashboardGeneration:
         
         # Exécuter script
         result = subprocess.run(
-            ["python", str(script)],
+            [sys.executable, str(script)],
             capture_output=True,
             text=True,
             cwd=Path.cwd()
@@ -46,7 +47,7 @@ class TestDashboardGeneration:
         assert result.returncode == 0, f"Erreur génération: {result.stderr}"
         
         # Vérifier output
-        assert "Dashboard généré" in result.stdout or "✅" in result.stdout, "Pas de confirmation génération"
+        assert "[OK] Dashboard genere:" in result.stdout, "Pas de confirmation génération"
     
     def test_dashboard_html_exists(self):
         """Vérifie fichier HTML généré"""
