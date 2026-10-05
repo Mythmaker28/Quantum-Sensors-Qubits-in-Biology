@@ -1,7 +1,7 @@
 # Known Issues & Limitations — Biological Qubits Catalog
 
 **Version**: v1.3.0-beta  
-**Last updated**: 2025-10-24  
+**Last updated**: 2026-10-05  
 **Status**: Active tracking (updated with each release)
 
 ---
@@ -158,6 +158,50 @@
 
 ---
 
+### Atlas v2.1 validation debt (observed 2026-10-05)
+
+**Scope**: the four failing assertions in `tests/test_optical_schema_v2_1.py`,
+evaluated against the tracked `data/processed/TRAINING_TABLE_v2_1.csv` on
+`main` commit `6759768`. These are unmet data-quality gates, not test defects.
+
+**Reproduction**:
+
+```bash
+python -m pytest tests/test_optical_schema_v2_1.py -q
+```
+
+Result: **11 passed, 4 failed**.
+
+| Gate | Observed | Required | Interpretation |
+|---|---:|---:|---|
+| Canonical-name uniqueness | 113 rows, 91 unique names; 22 extra duplicate occurrences | 0 duplicates | 22 names occur twice (44 affected rows). They must be reconciled by provenance/content before deduplication; duplicate rows do not establish independent useful systems. |
+| Useful-system count | 113 rows | at least 120 | Shortfall of 7 rows before accounting for duplicate names. The release-size target is not met. |
+| Minimal spectral coverage | excitation: 75/113 (66.4%); emission: 75/113 (66.4%); contrast: 113/113 (100%) | at least 90% for each field | Excitation and emission each need 27 additional populated rows to reach 102/113 (90.3%) at the current row count. |
+| Family distribution | 9 families with at least 5 systems (21 families total) | at least 10 | One additional family must reach five independently curated systems. |
+
+**Duplicated canonical names (22)**: `ASAP3`, `ArcLight`, `Epac-SH187`,
+`GRAB-DA2h`, `GRAB-DA2m`, `HyPer3`, `PercevalHR`, `R-GECO1`, `RCaMP1h`,
+`VSFP-Butterfly`, `dLight1.1`, `iGluSnFR`, `jGCaMP8s`, `jRGECO1a`,
+`mCardinal`, `mCitrine`, `mTurquoise2`, `mVenus`, `mWasabi`, `pHluorin`,
+`pHuji`, and `roGFP2`.
+
+**Families currently meeting the threshold (9)**: Calcium (21), Voltage (12),
+GFP-like (11), Dopamine (11), RFP (7), cAMP (6), Glutamate (6), pH (6),
+and Far-red (5).
+
+**Impact**:
+- the v2.1 compatibility table remains useful for inspection, but it does not
+  satisfy the release-readiness thresholds encoded by the test suite;
+- consumers should not treat 113 rows as 113 independent canonical systems;
+- spectral analyses must account for the 38 rows missing excitation and
+  emission values.
+
+**Resolution boundary**: this entry documents the observed state only. Do not
+weaken the assertions or fill, delete, merge, or relabel data without a
+separate curation task that preserves provenance and records the resulting
+counts.
+
+---
 ## ⚠️ Non-Critical Issues (Cosmetic or Low Priority)
 
 ### 8. Missing Contraste for Some Systems
