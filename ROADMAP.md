@@ -64,7 +64,7 @@ Commands run from the repository root, in an activated virtual environment (Pyth
 
 - **Evidence**: [.github/workflows/ci.yml:24-25](.github/workflows/ci.yml#L24-L25) and [:46-47](.github/workflows/ci.yml#L46-L47) only run `python qubits_linter.py`, and [requirements.txt](requirements.txt) does not list `pytest`.
   CI run 68 on `6759768` passed with the linter alone.
-- **Now**: `validate_atlas.py curated`, `validate_non_optical.py` and `pytest tests/test_optical_schema_v2_2.py tests/test_v2_installation.py` already pass and can become a CI job. The full suite waits for steps 2 and 3.
+- **Now**: `validate_atlas.py curated` and `validate_non_optical.py` exit 0, and `pytest tests/test_optical_schema_v2_2.py tests/test_v2_installation.py` reports 14 passed and 4 skipped, so these can become a CI job. The full suite waits for steps 2 and 3.
 - **Done when**: `grep -n -E 'pytest|validate_atlas|validate_non_optical' .github/workflows/ci.yml` lists these commands and the workflow is green.
 
 ### 6. Repair or retire the external FP pipeline — maintainer
