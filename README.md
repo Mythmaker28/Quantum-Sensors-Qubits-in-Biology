@@ -282,6 +282,7 @@ For the Frontiers manuscript citation (v1.2.1), see [CITATION_v1.2.1.cff](CITATI
 - 📖 **Full Documentation**: [DOCUMENTATION.md](DOCUMENTATION.md)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/Mythmaker28/Quantum-Sensors-Qubits-in-Biology/issues)
 - 📋 **Version Roadmap**: [VERSIONING_ROADMAP.md](VERSIONING_ROADMAP.md)
+- 🗺️ **Next Steps**: [ROADMAP.md](ROADMAP.md)
 
 ---
 
