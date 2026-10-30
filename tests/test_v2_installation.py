@@ -44,10 +44,10 @@ class TestScripts:
         from scripts.fair.generate_fair_metadata import FAIRMetadataGenerator
         
         # Mock CSV path
-        csv_path = "data/processed/atlas_fp_optical_v1_3.csv"
+        csv_path = "data/processed/atlas_fp_optical_v2_2_curated.csv"
         
         if os.path.exists(csv_path):
-            generator = FAIRMetadataGenerator(csv_path, version="2.0.0")
+            generator = FAIRMetadataGenerator(csv_path, version="2.2.2")
             schema = generator.generate_schema_org()
             
             assert schema["@type"] == "Dataset"
@@ -104,7 +104,7 @@ class TestDataIntegrity:
     
     def test_atlas_csv_exists(self):
         """Vérifie existence atlas principal"""
-        csv_path = "data/processed/atlas_fp_optical_v1_3.csv"
+        csv_path = "data/processed/atlas_fp_optical_v2_2_curated.csv"
         
         if not os.path.exists(csv_path):
             pytest.skip("Atlas CSV non trouvé (normal si première installation)")
