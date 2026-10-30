@@ -44,10 +44,10 @@ class TestScripts:
         from scripts.fair.generate_fair_metadata import FAIRMetadataGenerator
         
         # Mock CSV path
-        csv_path = "data/processed/atlas_fp_optical_v1_3.csv"
+        csv_path = "data/processed/atlas_fp_optical_v2_2_curated.csv"
         
         if os.path.exists(csv_path):
-            generator = FAIRMetadataGenerator(csv_path, version="2.0.0")
+            generator = FAIRMetadataGenerator(csv_path, version="2.2.2")
             schema = generator.generate_schema_org()
             
             assert schema["@type"] == "Dataset"
@@ -56,7 +56,7 @@ class TestScripts:
         else:
             pytest.skip("Atlas CSV non trouvé")
     
-    def test_in_vivo_validator(self):
+    def test_in_vivo_validator(self, tmp_path):
         """Test validateur in vivo"""
         from scripts.qa.in_vivo_validator import InVivoValidator
         import pandas as pd
@@ -73,19 +73,16 @@ class TestScripts:
             }
         ])
         
-        mock_csv = '/tmp/test_atlas.csv'
+        # tmp_path : répertoire temporaire propre à ce test, géré par pytest
+        mock_csv = str(tmp_path / 'test_atlas.csv')
         mock_data.to_csv(mock_csv, index=False)
         
-        try:
-            validator = InVivoValidator(mock_csv)
-            result = validator.score_in_vivo(mock_data.iloc[0])
-            
-            assert result['score'] > 0
-            assert result['organism'] == 'mouse'
-            assert result['validated'] is True
-        finally:
-            if os.path.exists(mock_csv):
-                os.remove(mock_csv)
+        validator = InVivoValidator(mock_csv)
+        result = validator.score_in_vivo(mock_data.iloc[0])
+        
+        assert result['score'] > 0
+        assert result['organism'] == 'mouse'
+        assert result['validated'] is True
     
     def test_auto_harvester(self):
         """Test harvester (sans API call réelle)"""
@@ -104,7 +101,7 @@ class TestDataIntegrity:
     
     def test_atlas_csv_exists(self):
         """Vérifie existence atlas principal"""
-        csv_path = "data/processed/atlas_fp_optical_v1_3.csv"
+        csv_path = "data/processed/atlas_fp_optical_v2_2_curated.csv"
         
         if not os.path.exists(csv_path):
             pytest.skip("Atlas CSV non trouvé (normal si première installation)")

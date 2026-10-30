@@ -1,7 +1,7 @@
 # Makefile for Biological Qubits Atlas
 # Quick commands for common tasks
 
-.PHONY: help setup lint validate qc figures clean
+.PHONY: help setup lint validate test qc figures clean
 
 # Default target
 help:
@@ -10,6 +10,7 @@ help:
 	@echo "  make setup      Install dependencies and setup environment"
 	@echo "  make lint       Run linter and validate CSV"
 	@echo "  make validate   Validate CSV schema and data quality"
+	@echo "  make test       Run the pytest suite (pip install -r requirements-dev.txt)"
 	@echo "  make qc         Generate QC_REPORT.md"
 	@echo "  make figures    Generate figures (T2 vs Temp, Timeline)"
 	@echo "  make clean      Remove generated files"
@@ -30,6 +31,11 @@ lint:
 
 # Validate: Alias for lint
 validate: lint
+
+# Test: Run the pytest suite (needs requirements-dev.txt)
+test:
+	@echo "Running tests..."
+	@python -m pytest tests/ -q
 
 # QC: Generate quality control report
 qc:

@@ -54,6 +54,10 @@ tmp/
 temp/
 *.tmp
 
+# Local output of scripts/web/generate_interactive_dashboard.py and its test
+# (the published dashboard is docs/index.html)
+/index_v2_interactive.html
+
 # Fichiers de rapport/documentation de session (non-professionnels)
 RAPPORT_*.md
 SYNTHESE_*.md
