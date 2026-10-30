@@ -1,0 +1,4 @@
+# Test dependencies, on top of the runtime dependencies
+# Usage: pip install -r requirements-dev.txt && make test
+-r requirements.txt
+pytest>=7.0

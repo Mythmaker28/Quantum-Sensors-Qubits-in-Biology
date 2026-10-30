@@ -513,6 +513,7 @@ L'atlas contient maintenant **2 radicaux tyrosyl** dans des contextes évolutifs
 ```bash
 make setup      # Installer dépendances
 make lint       # Valider le CSV
+make test       # Lancer les tests (pip install -r requirements-dev.txt)
 make qc         # Générer QC_REPORT.md
 make figures    # Générer les graphiques
 ```
