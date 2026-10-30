@@ -97,7 +97,7 @@ Isolation zone:
 **Tier 1 (strict):**
 - 0 critical errors allowed
 - All required fields present
-- `scripts/validate_atlas.py --tier curated` must pass
+- `scripts/validate_atlas.py curated` must pass
 
 **Tier 2 (moderate):**
 - DOI + family required
@@ -147,7 +147,7 @@ Mixing curated + unknown tiers → introduces bias (Unknown systems act as noise
 ## Implementation
 
 **Created by:** `scripts/qa/split_tiers.py` (reproducible)  
-**Validated by:** `scripts/validate_atlas.py --tier [curated|candidates|unknown]`  
+**Validated by:** `scripts/validate_atlas.py [curated|candidates|unknown]`  
 **Documented:** This file (`docs/DATA_TIERS.md`)
 
 ---
