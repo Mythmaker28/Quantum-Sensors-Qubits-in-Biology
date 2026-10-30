@@ -6,11 +6,11 @@ Merci de votre intérêt pour contribuer à l'Atlas des Qubits Biologiques ! Ce 
 
 ## 📋 Table des Matières
 
-1. [Comment Ajouter une Nouvelle Entrée](#ajouter-une-entrée)
-2. [Comment Corriger des Données](#corriger-des-données)
-3. [Standards de Qualité](#standards-de-qualité)
-4. [Workflow Git](#workflow-git)
-5. [Validation Automatique](#validation)
+1. [Comment Ajouter une Nouvelle Entrée](#-ajouter-une-nouvelle-entrée)
+2. [Comment Corriger des Données](#-corriger-des-données)
+3. [Standards de Qualité](#-standards-de-qualité)
+4. [Workflow Git](#-workflow-git)
+5. [Validation Automatique](#-validation-automatique)
 
 ---
 
