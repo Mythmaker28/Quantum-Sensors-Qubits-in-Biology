@@ -56,7 +56,7 @@ class TestScripts:
         else:
             pytest.skip("Atlas CSV non trouvé")
     
-    def test_in_vivo_validator(self):
+    def test_in_vivo_validator(self, tmp_path):
         """Test validateur in vivo"""
         from scripts.qa.in_vivo_validator import InVivoValidator
         import pandas as pd
@@ -73,19 +73,16 @@ class TestScripts:
             }
         ])
         
-        mock_csv = '/tmp/test_atlas.csv'
+        # tmp_path : répertoire temporaire propre à ce test, géré par pytest
+        mock_csv = str(tmp_path / 'test_atlas.csv')
         mock_data.to_csv(mock_csv, index=False)
         
-        try:
-            validator = InVivoValidator(mock_csv)
-            result = validator.score_in_vivo(mock_data.iloc[0])
-            
-            assert result['score'] > 0
-            assert result['organism'] == 'mouse'
-            assert result['validated'] is True
-        finally:
-            if os.path.exists(mock_csv):
-                os.remove(mock_csv)
+        validator = InVivoValidator(mock_csv)
+        result = validator.score_in_vivo(mock_data.iloc[0])
+        
+        assert result['score'] > 0
+        assert result['organism'] == 'mouse'
+        assert result['validated'] is True
     
     def test_auto_harvester(self):
         """Test harvester (sans API call réelle)"""
